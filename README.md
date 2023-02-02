@@ -5,11 +5,12 @@
 | 10/11/22 | Boh |
 | 12/11/22 | Individuazione del target degli utenti |
 
-##COSE DA FARE
+## COSE DA FARE
 - Aggiungere ai mockup rimozione e modifica piatti.
 - Ordinare use case numero 2
 - Controllare extend e include degli use case
 - Correggere cockburn
+- Migliorare individuazione utente
 
 ## Output
 Per le attività sopracitate, il Committente richiede i seguenti output:
