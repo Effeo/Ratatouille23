@@ -5,11 +5,6 @@
 | 10/11/22 | Boh |
 | 12/11/22 | Individuazione del target degli utenti |
 
-## Cose da fare:
-1. Vedere ListView ruolo in class creaUtente
-2. Cambiare nome nel button invece di login in creaUtente
-3. Aggiungere button torna indietro
-
 ## Output
 Per le attività sopracitate, il Committente richiede i seguenti output:
 1. Documento dei Requisiti Software
