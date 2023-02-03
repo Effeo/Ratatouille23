@@ -18,6 +18,6 @@
 
 | Subvariation | Step | Supervisore | System |
 | ------------ | ---- | ----------- | ------ |
-|  | 2.1 | Sceglie di scaricare il pdf del conto per quel tavolo | |
+| Vuole scaricare il pdf | 2.1 | Sceglie di scaricare il pdf del conto per quel tavolo | |
 |  | 2.2 | | Scarica il PDF |
 
