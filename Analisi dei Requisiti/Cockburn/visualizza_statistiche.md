@@ -23,42 +23,42 @@
 
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
-| Non inserisce campi | 3.1 | Clicca il bottone "CALCOLA MEDIA" |  |
+| Campo non compilato e nemmeno i successivi | 3.1 | Clicca il bottone "CALCOLA MEDIA" |  |
 |  | 3.2 |  | Errore: "Non hai inserito uno o più campi!" |
-Ritorna allo step 3
+| Ritorna allo step 3 |
 
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
-|  | 4.1 | Clicca il bottone "CALCOLA MEDIA" |  |
+| Campo non compilato e nemmeno i successivi  | 4.1 | Clicca il bottone "CALCOLA MEDIA" |  |
 |  | 4.2 |  | Errore: "Non hai inserito uno o più campi!" |
 | Ritorno allo step 4 |
 
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
-|  | 5.1 | Clicca il bottone "CALCOLA MEDIA" |  |
+| Campo non compilato e nemmeno i successivi | 5.1 | Clicca il bottone "CALCOLA MEDIA" |  |
 |  | 5.2 |  | Errore: "Non hai inserito uno o più campi!" |
 | Ritorno allo step 5 |
 
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
-|  | 6.1 | Clicca il bottone "CALCOLA MEDIA" |  |
+| Campo non compilato e nemmeno i successivi | 6.1 | Clicca il bottone "CALCOLA MEDIA" |  |
 |  | 6.2 |  | Errore: "Non hai inserito uno o più campi!" |
 | Ritorno allo step 6 |
 
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
-|  | 7.1 | Clicca il bottone "CALCOLA MEDIA" |  |
+| Campo non compilato e nemmeno i successivi | 7.1 | Clicca il bottone "CALCOLA MEDIA" |  |
 |  | 7.2 |  | Errore: "Non hai inserito uno o più campi!" |
 | Ritorno allo step 7 |
 
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
-|  | 8.1 | Clicca il bottone "CALCOLA MEDIA" |  |
+| Campo non compilato e nemmeno il successivo | 8.1 | Clicca il bottone "CALCOLA MEDIA" |  |
 |  | 8.2 |  | Errore: "Non hai inserito uno o più campi!" |
 | Ritorno allo step 8 |
 
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
-|  | 9.1 | Clicca il bottone "CALCOLA MEDIA" |  |
+| Campo non compilato | 9.1 | Clicca il bottone "CALCOLA MEDIA" |  |
 |  | 9.2 |  | Errore: "Non hai inserito uno o più campi!" |
 | Ritorno allo step 9 |
