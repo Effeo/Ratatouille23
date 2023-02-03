@@ -15,3 +15,8 @@
 |  | 3 | | Chiude il conto, e aggiorna il database |
 |  | 4 | | Aggiorna il database |
 
+| Extention | Step | User action | System |
+| --------- | ---- | ----------- | ------ |
+|  | 2.1 | Seleziona un diverso intervallo di tempo | |
+|  | 2.2 | | Restituisce le statistiche comprese nell'intervallo di tempo inserito |
+
