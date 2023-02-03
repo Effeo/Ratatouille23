@@ -10,13 +10,13 @@
 
 | Description | Step | Supervisore | System |
 | ----------- | ---- | ----------- | ------ |
-|  | 1 |  | Mostra il menù in formato PDF e l'opzione di chiudere il conto |
+|  | 1 |  | Mostra il menù e le opzioni di chiudere il conto o di scaricare in pdf |
 |  | 2 | Sceglie di chiudere il conto | |
-|  | 3 | | Chiude il conto, e aggiorna il database |
+|  | 3 | | Chiude il conto |
 |  | 4 | | Aggiorna il database |
 
 | Extention | Step | User action | System |
 | --------- | ---- | ----------- | ------ |
-|  | 2.1 | Seleziona un diverso intervallo di tempo | |
-|  | 2.2 | | Restituisce le statistiche comprese nell'intervallo di tempo inserito |
+|  | 2.1 | Sceglie di scaricare il pdf del conto per quel tavolo | |
+|  | 2.2 | | Scarica il PDF |
 
