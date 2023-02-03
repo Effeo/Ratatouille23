@@ -6,12 +6,14 @@
 | Success End Conditions | Le statistiche vengono visualizzate con successo | 
 | Failed End Conditions | Non è stato possibile visualizzare le statistiche | 
 | Primary Actor | L'amministratore  | 
-| Trigger | Clicca sulla scritta "HOME" | 
+| Trigger | Clicca sul bottone "STATISTICHE" | 
 
 | Description | Step | Amministratore | System |
 | ----------- | ---- | -------------- | ------ |
-|  | 1 | Click sulla scritta "HOME" |  |
-|  | 2 |  | Restituisce le statistiche comprese nell'intervallo di tempo \[t0,ADESSO\] |
+|  | 1 | Click sul bottone "STATISTICHE" |  |
+|  | 2 |  | Entri nella schermata delle statistiche |
+|  | 3 |  |  |
+
 
 | Extention | Step | User action | System |
 | --------- | ---- | ----------- | ------ |
