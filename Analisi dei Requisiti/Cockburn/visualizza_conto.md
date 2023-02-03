@@ -14,6 +14,7 @@
 |  | 2 | Sceglie di chiudere il conto | |
 |  | 3 | | Chiude il conto |
 |  | 4 | | Aggiorna il database |
+|  | 5 | | Scarica il PDF |
 
 | Subvariation | Step | User action | System |
 | ------------ | ---- | ----------- | ------ |
