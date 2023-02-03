@@ -14,6 +14,7 @@
 |  | 2 | Sceglie di chiudere il conto | |
 |  | 3 | | Chiude il conto |
 |  | 4 | | Aggiorna il database |
+
 | Subvariation | Step | User action | System |
 | ------------ | ---- | ----------- | ------ |
 |  | 2.1 | Sceglie di scaricare il pdf del conto per quel tavolo | |
