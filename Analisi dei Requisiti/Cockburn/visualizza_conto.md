@@ -3,7 +3,7 @@
 | Use case visualizza conto | Visualizzazione del conto  di un tavolo in PDF |
 | Goal in Context           | Un supervisore vuole visualizzare il conto di un tavolo, oppure vuole chiudere un conto |
 | Preconditions             | Il supervisore ha selezionato dal menù la voce "TAVOLI" |
-| Success End Conditions    | La visualizzazione del conto è avvenuta con successo | 
+| Success End Conditions    | La visualizzazione del conto è avvenuta con successo o chiude il conto correttamente | 
 | Failed End Conditions     | E' avvenuto un errore durante la visualizzazione del conto | 
 | Primary Actor             | Un supervisore  | 
 | Trigger                   | Click sul tavolo di cui si vuole vedere il conto | 
