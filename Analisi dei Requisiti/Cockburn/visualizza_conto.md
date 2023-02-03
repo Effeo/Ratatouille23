@@ -13,6 +13,7 @@
 |  | 1 |  | Mostra il menù in formato PDF e l'opzione di chiudere il conto |
 |  | 2 | Sceglie di chiudere il conto | |
 |  | 3 | | Chiude il conto, e aggiorna il database |
+|  | 4 | | Aggiorna il database |
 
 | Extention | Step | User action | System |
 | --------- | ---- | ----------- | ------ |
