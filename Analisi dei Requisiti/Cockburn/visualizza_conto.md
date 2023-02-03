@@ -16,7 +16,7 @@
 |  | 4 | | Aggiorna il database |
 |  | 5 | | Scarica il PDF |
 
-| Subvariation | Step | User action | System |
+| Subvariation | Step | Supervisore | System |
 | ------------ | ---- | ----------- | ------ |
 |  | 2.1 | Sceglie di scaricare il pdf del conto per quel tavolo | |
 |  | 2.2 | | Scarica il PDF |
