@@ -15,13 +15,3 @@
 |  | 3 | | Chiude il conto, e aggiorna il database |
 |  | 4 | | Aggiorna il database |
 
-| Extention | Step | User action | System |
-| --------- | ---- | ----------- | ------ |
-| Il supervisore torna indietro | 1.1 | Il supervisore clicca sul tasto indietro | |
-| Errore nella chiusura del conto | 2.1 |  | Mostra errore "IL CONTO NON E' STATO CHIUSO CORRETTAMENTE" all'interno della schermata "TAVOLI" |
-
-| Extention | Step | User action | System |
-| --------- | ---- | ----------- | ------ |
-| Il supervisore torna indietro | 1.2 | L'amministratore clicca sul tasto indietro | |
-| Errore nella chiusura del conto | 2.2 |  | Mostra errore "IL CONTO NON E' STATO CHIUSO CORRETTAMENTE" all'interno della schermata "TAVOLI" |
-
