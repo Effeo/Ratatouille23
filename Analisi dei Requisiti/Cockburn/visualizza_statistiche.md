@@ -25,7 +25,7 @@
 | --------- | ---- | ----------- | ------ |
 |  | 3.1 | Clicca il bottone "CALCOLA MEDIA" |  |
 |  | 3.2 |  | Errore: "Non hai inserito uno o più campi!" |
-Ritorno allo step 3
+| Ritorno allo step 3 |
 
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
