@@ -6,9 +6,7 @@
 | 12/11/22 | Individuazione del target degli utenti |
 
 ## COSE DA FARE
-- Aggiungere ai mockup rimozione e modifica piatti (Non so se Francesco l'ha fatto, ma se si, lo cancella lui).
 - Migliorare individuazione utente (Non so che cazzo sia, se la vede o me lo spiega Francesco).
-- Aggiungere nei mock up il tasto "CALCOLA MEDIA!" (che pisello, pensava che si avviasse da solo).
 - Nel cockburn di visualizza media non riesco a fare l'ultima riga tutta attaccata nelle Exstension
 
 ## Output
