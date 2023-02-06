@@ -8,6 +8,7 @@
 ## COSE DA FARE
 - Migliorare individuazione utente (Non so che cazzo sia, se la vede o me lo spiega Francesco).
 - Nel cockburn di visualizza media non riesco a fare l'ultima riga tutta attaccata nelle Exstension
+- Class diagram, chiedere a Ciro se le cose sono giuste (Forza Napoli).
 
 ## Output
 Per le attività sopracitate, il Committente richiede i seguenti output:
