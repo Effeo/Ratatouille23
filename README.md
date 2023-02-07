@@ -10,6 +10,7 @@
 - Nel cockburn di visualizza media non riesco a fare l'ultima riga tutta attaccata nelle Exstension
 - Class diagram, chiedere a Ciro se le cose sono giuste (Forza Napoli).
 - Class diagram, vedere che classe user per i grafi interattivi.
+- Class diagram, decidere se scrivere due volte le schermate di add food per supervisore e admin dove cambia solo il numero di bottoni.
 
 ## Output
 Per le attività sopracitate, il Committente richiede i seguenti output:
