@@ -7,7 +7,7 @@
 
 ## COSE DA FARE
 - ? Migliorare individuazione utente (Non so che cazzo sia, se la vede o me lo spiega Francesco).
-- (Vabbuò soft)Nel cockburn di visualizza media non riesco a fare l'ultima riga tutta attaccata nelle Exstension
+- (Vabbuò soft) Nel cockburn di visualizza media non riesco a fare l'ultima riga tutta attaccata nelle Exstension
 - (F) Class diagram, chiedere a Ciro se le cose sono giuste (Forza Napoli).
 - (F) Class diagram, vedere che classe user per i grafi interattivi.
 - (F) Class diagram, decidere se scrivere due volte le schermate di add food per supervisore e admin dove cambia solo il numero di bottoni.
