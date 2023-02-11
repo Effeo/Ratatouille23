@@ -6,14 +6,16 @@
 | 12/11/22 | Individuazione del target degli utenti |
 
 ## COSE DA FARE
-- Migliorare individuazione utente (Non so che cazzo sia, se la vede o me lo spiega Francesco).
-- Nel cockburn di visualizza media non riesco a fare l'ultima riga tutta attaccata nelle Exstension
-- Class diagram, chiedere a Ciro se le cose sono giuste (Forza Napoli).
-- Class diagram, vedere che classe user per i grafi interattivi.
-- Class diagram, decidere se scrivere due volte le schermate di add food per supervisore e admin dove cambia solo il numero di bottoni.
-- Class diagram, vedere cosa mettere per il pdf nel model conto.
-- Class diagram, controllo finale.
-- Class diagram, aggiungere le classi piatto, menu e vedi se anche altre.
+- ? Migliorare individuazione utente (Non so che cazzo sia, se la vede o me lo spiega Francesco).
+- (Vabbuò soft)Nel cockburn di visualizza media non riesco a fare l'ultima riga tutta attaccata nelle Exstension
+- (F) Class diagram, chiedere a Ciro se le cose sono giuste (Forza Napoli).
+- (F) Class diagram, vedere che classe user per i grafi interattivi.
+- (F) Class diagram, decidere se scrivere due volte le schermate di add food per supervisore e admin dove cambia solo il numero di bottoni.
+- (F) Class diagram, vedere cosa mettere per il pdf nel model conto.
+- (F) Class diagram, controllo finale.
+- (F) Class diagram, aggiungere le classi piatto, menu e vedi se anche altre.
+- (M) Vedere l'usabilità e il glossario.
+- (M) Vedere gli statecharts (quali fare ecc..).
 
 ## Output
 Per le attività sopracitate, il Committente richiede i seguenti output:
