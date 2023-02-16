@@ -2342,7 +2342,7 @@
 											"top": 263,
 											"width": 116.3271484375,
 											"height": 13,
-											"text": "Inserire Statistiche"
+											"text": "Statistiche Inserite"
 										},
 										{
 											"_type": "LabelView",
@@ -2733,7 +2733,7 @@
 										"$ref": "AAAAAAGGWvOazl1mmRQ="
 									},
 									"edgePosition": 1,
-									"text": "MostraMedia()"
+									"text": "CalcolaMedia()"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -2818,17 +2818,17 @@
 										"$ref": "AAAAAAGGWvhrS12sqGQ="
 									},
 									"font": "Arial;13;0",
-									"left": 549,
-									"top": 228,
+									"left": 544,
+									"top": 216,
 									"width": 87.419921875,
 									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 15,
+									"alpha": 2.5360472199850106,
+									"distance": 15.811388300841896,
 									"hostEdge": {
 										"$ref": "AAAAAAGGWvhrS12tG5w="
 									},
 									"edgePosition": 1,
-									"text": "CalcolaMedia()"
+									"text": "Inserisci"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -2940,7 +2940,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGGWnJ80lZ8kWY="
 							},
-							"name": "Inserire Statistiche"
+							"name": "Statistiche Inserite"
 						},
 						{
 							"_type": "UMLState",
@@ -3008,7 +3008,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGGWnJ80lZ8kWY="
 							},
-							"name": "MostraMedia()",
+							"name": "CalcolaMedia()",
 							"source": {
 								"$ref": "AAAAAAGGWu3ZC1yDl5o="
 							},
@@ -3022,7 +3022,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGGWnJ80lZ8kWY="
 							},
-							"name": "CalcolaMedia()",
+							"name": "Inserisci",
 							"source": {
 								"$ref": "AAAAAAGGWu3ZC1yDl5o="
 							},
