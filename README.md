@@ -17,6 +17,7 @@
 - (M) Vedere l'usabilità e il glossario.
 - (M) Vedere gli statecharts (quali fare ecc..).
 - (M) Mostrare a Francesco i Statechart (Chiedere a Francesco anche come spostare bene le frecce).
+- (M) Chiedere bene a kekkino come creare le cartelle su github per essere più ordinati
 
 ## Output
 Per le attività sopracitate, il Committente richiede i seguenti output:
