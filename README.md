@@ -16,6 +16,7 @@
 - (F) Class diagram, aggiungere le classi piatto, menu e vedi se anche altre.
 - (M) Vedere l'usabilità e il glossario.
 - (M) Vedere gli statecharts (quali fare ecc..).
+- (M) Mostrare a Francesco i Statechart (Chiedere a Francesco anche come spostare bene le frecce).
 
 ## Output
 Per le attività sopracitate, il Committente richiede i seguenti output:
