@@ -24,6 +24,6 @@
 
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
-| Il campo dell'inizio del range è maggiore rispetto a quello finale | 4.2 | Clicca il bottone "CALCOLA MEDIA" |  |
+| Il campo dell'inizio del range è maggiore rispetto a quello finale | 4.2 | Clicca il bottone "CALCOLA" |  |
 |  | 5.2 |  | Errore: "Il range è sbagliato!" |
 | Ritorna allo step 3 |
