@@ -13,11 +13,17 @@
 |  | 1 | Click sul bottone "STATISTICHE" |  |
 |  | 2 |  | Entri nella schermata delle statistiche |
 |  | 3 | Seleziona il range desiderato |  |
-|  | 9 | Clicca il bottone "CALCOLA MEDIA" |  |
-|  | 10 |  | Escono le varie medie |
+|  | 4 | Clicca il bottone "CALCOLA" |  |
+|  | 5 |  | Escone la media e i vari dati |
 
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
-| Omissione di uno o più campi | 3.1 | Clicca il bottone "CALCOLA MEDIA" |  |
-|  | 3.2 |  | Errore: "Non hai compilato uno o più campi!" |
+| Omissione di uno o più campi | 4.1 | Clicca il bottone "CALCOLA" |  |
+|  | 5.1 |  | Errore: "Non hai compilato uno o più campi!" |
+| Ritorna allo step 3 |
+
+| Extention | Step | Amministratore | System |
+| --------- | ---- | ----------- | ------ |
+| Il campo dell'inizio del range è maggiore rispetto a quello finale | 4.2 | Clicca il bottone "CALCOLA MEDIA" |  |
+|  | 5.2 |  | Errore: "Il range è sbagliato!" |
 | Ritorna allo step 3 |
