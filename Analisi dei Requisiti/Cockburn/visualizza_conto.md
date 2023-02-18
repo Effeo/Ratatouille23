@@ -22,9 +22,9 @@
 | Subvariation | Step | Supervisore | System |
 | ------------ | ---- | ----------- | ------ |
 | Vuole scaricare il pdf | 5.1 | Sceglie di scaricare il pdf del conto per quel tavolo | |
-|  | 5.2 | | Scarica il PDF |
+|  | 6.1 | | Scarica il PDF |
 
 | Extention | Step | Supervisore | System |
 | ------------ | ---- | ----------- | ------ |
-| Vuole scaricare il pdf | 3.3 | Sceglie di scaricare il pdf del conto per quel tavolo | |
+| Vuole scaricare il pdf | 3.2 | Sceglie di scaricare il pdf del conto per quel tavolo | |
 |  | 5.2 | | Scarica il PDF |
