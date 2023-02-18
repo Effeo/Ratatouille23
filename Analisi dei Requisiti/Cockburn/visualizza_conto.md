@@ -24,7 +24,22 @@
 | Vuole scaricare il pdf | 5.1 | Sceglie di scaricare il pdf del conto per quel tavolo | |
 |  | 6.1 | | Scarica il PDF |
 
-| Extention | Step | Supervisore | System |
-| ------------ | ---- | ----------- | ------ |
-| Vuole scaricare il pdf | 3.2 | Sceglie di scaricare il pdf del conto per quel tavolo | |
-|  | 5.2 | | Scarica il PDF |
+| Extention | Step | Amministratore | System |
+| --------- | ---- | ----------- | ------ |
+| Preme il bottone "LogOut" | 3.2 | Preme il bottone "LogOut" |  |
+|  | 4.2 |  | Torna nella schermata di LogIn |
+
+| Extention | Step | Amministratore | System |
+| --------- | ---- | ----------- | ------ |
+| Preme il bottone "Aggiungi piatto" | 3.3 | Preme il bottone "Aggiungi piatto" |  |
+|  | 4.3 |  | Va nella schermata "Aggiungi piatto" |
+
+| Extention | Step | Amministratore | System |
+| --------- | ---- | ----------- | ------ |
+| Preme il bottone "Modifica elimina cibo" | 3.4 | Preme il bottone "Modifica elimina cibo" |  |
+|  | 4.4 |  | Va nella schermata "ModiFica elimina cibo" |
+
+| Extention | Step | Amministratore | System |
+| --------- | ---- | ----------- | ------ |
+| Preme il bottone "Messaggi" | 3.5 | Preme il bottone "Messaggi" |  |
+|  | 4.5 |  | Va nella schermata "Messaggi" |
