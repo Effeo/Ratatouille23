@@ -10,7 +10,6 @@
 - (Vabbuò soft) Nel cockburn di visualizza media non riesco a fare l'ultima riga tutta attaccata nelle Exstension
 - (F) Class diagram, chiedere a Ciro se le cose sono giuste (Forza Napoli).
 - (F) Class diagram, vedere che classe user per i grafi interattivi.
-- (F) Class diagram, decidere se scrivere due volte le schermate di add food per supervisore e admin dove cambia solo il numero di bottoni.
 - (F) Class diagram, vedere cosa mettere per il pdf nel model conto.
 - (F) Class diagram, controllo finale.
 - (F) Class diagram, aggiungere le classi piatto, menu e vedi se anche altre.
