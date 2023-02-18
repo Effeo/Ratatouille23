@@ -7,7 +7,8 @@
 
 ## COSE DA FARE
 - ? Migliorare individuazione utente (Non so che cazzo sia, se la vede o me lo spiega Francesco).
-- (Vabbuò soft) Nel cockburn di visualizza media non riesco a fare l'ultima riga tutta attaccata nelle Exstension
+- CockBur, controllare se gli step nelle extention sono giuste.
+- Cockburn, pensare se nel mostra conto ci possono essere degli errori nel db o nello scaricamento del pdf.
 - (F) Class diagram, chiedere a Ciro se le cose sono giuste (Forza Napoli).
 - (F) Class diagram, vedere che classe user per i grafi interattivi.
 - (F) Class diagram, vedere cosa mettere per il pdf nel model conto.
