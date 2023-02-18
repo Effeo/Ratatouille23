@@ -10,14 +10,21 @@
 
 | Description | Step | Supervisore | System |
 | ----------- | ---- | ----------- | ------ |
-|  | 1 |  | Mostra il menù e le opzioni di chiudere il conto o di scaricare in pdf |
-|  | 2 | Sceglie di chiudere il conto | |
-|  | 3 | | Chiude il conto |
-|  | 4 | | Aggiorna il database |
-|  | 5 | | Scarica il PDF |
+|  | 1 | Preme il bottone "Conti" |  |
+|  | 2 |  | Mostra i tavoli e il conto del primo tavolo |
+|  | 3 | Clicca sul tavolo che vuole visualizzare |  |
+|  | 4 |  | Mostra il conto del tavolo selezionato |
+|  | 5 | Sceglie di chiudere il conto | |
+|  | 6 | | Chiude il conto |
+|  | 7 | | Aggiorna il database |
+|  | 8 | | Scarica il PDF |
 
 | Subvariation | Step | Supervisore | System |
 | ------------ | ---- | ----------- | ------ |
-| Vuole scaricare il pdf | 2.1 | Sceglie di scaricare il pdf del conto per quel tavolo | |
-|  | 2.2 | | Scarica il PDF |
+| Vuole scaricare il pdf | 5.1 | Sceglie di scaricare il pdf del conto per quel tavolo | |
+|  | 5.2 | | Scarica il PDF |
 
+| Extention | Step | Supervisore | System |
+| ------------ | ---- | ----------- | ------ |
+| Vuole scaricare il pdf | 3.3 | Sceglie di scaricare il pdf del conto per quel tavolo | |
+|  | 5.2 | | Scarica il PDF |
