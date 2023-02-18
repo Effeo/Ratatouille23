@@ -1,0 +1,36 @@
+Glossario:
+
+
+*Termini ambito Informatico*
+
+Usabilità - l’usabilità è il "grado in cui un prodotto può essere usato da particolari utenti per raggiungere certi obiettivi con efficacia, efficienza e soddisfazione in uno specifico contesto d’uso.
+
+Design Pattern - è una soluzione progettuale generale ad un problema ricorrente.
+
+Use Case Diagram - rappresenta una funzione o servizio offerto dal sistema a uno o più attori.
+
+Tabelle di CockBurn - Tabelle di rappresentazione di un caso d’uso create da Alistair Cockburn.
+
+Mock-up - Una rappresentazione iniziale e teorica che illustrano una rappresentano una bozza, senza le funzionalità del prodotto finale.
+
+Class Diagram - diagrammi previsti in un modello UML che consentono di descrivere tipi di entità, con le loro caratteristiche e le eventuali relazioni.
+
+Sequence Diagram - diagramma previsto dall’UML utilizzato per descrivere una determinata sequenza di azioni.
+
+StateChart - descrive il comportamento di sistemi reattivi. Le transizioni descrivono come l’entità modellata reagisce a eventi (generati dall’esterno o da se stesso).
+
+Android - sistema operativo mobile.
+
+Front end -  parte visibile all'utente di un programma e con cui egli può interagire.
+
+Back-end - parte di sviluppo che non opera sul client e che fornisce un servizio.
+
+Server - macchina che ha il compito di offrire servizi ai client che li richiedono.
+
+White Box - Modalità di testing in cui un metodo viene testato in base al codice che contiene, alla struttura dell’applicazion.
+
+Black Box - Modalità di testing in cui un’unità viene testata in base ai requisiti di quest’ultima.
+
+
+*Termini ambito Ristoro*
+
