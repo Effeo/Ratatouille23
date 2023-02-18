@@ -14,7 +14,8 @@
 - (F) Class diagram, vedere cosa mettere per il pdf nel model conto.
 - (F) Class diagram, controllo finale.
 - (F) Class diagram, aggiungere le classi piatto, menu e vedi se anche altre.
-- (M) Vedere l'usabilità e il glossario.
+- (M) Vedere l'usabilità.
+- (M) Completare il glossario lato Ristoro.
 - (M) Chiedere bene a kekkino come creare le cartelle su github per essere più ordinati
 
 ## Output
