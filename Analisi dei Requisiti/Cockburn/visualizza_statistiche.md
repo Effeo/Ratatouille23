@@ -11,10 +11,10 @@
 | Description | Step | Amministratore | System |
 | ----------- | ---- | -------------- | ------ |
 |  | 1 | Click sul bottone "STATISTICHE" |  |
-|  | 2 |  | Entri nella schermata delle statistiche |
+|  | 2 |  | Mostra schermata delle statistiche |
 |  | 3 | Seleziona il range desiderato |  |
 |  | 4 | Clicca il bottone "CALCOLA" |  |
-|  | 5 |  | Escone la media e i vari dati |
+|  | 5 |  | Mostra le medie e l'incasso complessivo |
 
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
