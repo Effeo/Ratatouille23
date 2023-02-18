@@ -27,3 +27,28 @@
 | Il campo dell'inizio del range è maggiore rispetto a quello finale | 4.2 | Clicca il bottone "CALCOLA" |  |
 |  | 5.2 |  | Errore: "Il range è sbagliato!" |
 | Ritorna allo step 3 |
+
+| Extention | Step | Amministratore | System |
+| --------- | ---- | ----------- | ------ |
+| Preme il bottone "LogOut" | 3.3 | Preme il bottone "LogOut" |  |
+|  | 4.3 |  | Torna nella schermata di LogIn |
+
+| Extention | Step | Amministratore | System |
+| --------- | ---- | ----------- | ------ |
+| Preme il bottone "Aggiungi piatto" | 3.4 | Preme il bottone "Aggiungi piatto" |  |
+|  | 4.4 |  | Va nella schermata "Aggiungi piatto" |
+
+| Extention | Step | Amministratore | System |
+| --------- | ---- | ----------- | ------ |
+| Preme il bottone "Modifica elimina cibo" | 3.5 | Preme il bottone "Modifica elimina cibo" |  |
+|  | 4.5 |  | Va nella schermata "ModiFica elimina cibo" |
+
+| Extention | Step | Amministratore | System |
+| --------- | ---- | ----------- | ------ |
+| Preme il bottone "Messaggi" | 3.6 | Preme il bottone "Messaggi" |  |
+|  | 4.6 |  | Va nella schermata "Messaggi" |
+
+| Extention | Step | Amministratore | System |
+| --------- | ---- | ----------- | ------ |
+| Preme il bottone "Crea utente" | 3.7 | Preme il bottone "Crea utente" |  |
+|  | 4.7 |  | Va nella schermata "Crea utente" |
