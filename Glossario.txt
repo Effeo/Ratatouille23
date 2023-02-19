@@ -3,6 +3,10 @@ Glossario:
 
 *Termini ambito Informatico*
 
+Requisiti funzionali - elenchi di funzionalità o servizi che il sistema deve fornire.
+
+Requisiti non funzionali - I requisiti non funzionali rappresentano i vincoli e le proprietà/caratteristiche relative al sistema.
+
 Usabilità - l’usabilità è il "grado in cui un prodotto può essere usato da particolari utenti per raggiungere certi obiettivi con efficacia, efficienza e soddisfazione in uno specifico contesto d’uso.
 
 Design Pattern - è una soluzione progettuale generale ad un problema ricorrente.
@@ -34,3 +38,24 @@ Black Box - Modalità di testing in cui un’unità viene testata in base ai req
 
 *Termini ambito Ristoro*
 
+Amministratore - Colui che crea utenti, pesonalizza il menù, invia avvisi, visualizza statistiche sugli introiti dell’attività di ristorazione, dato un certo intervallo di tempo personalizzabile.
+
+Supervisore - Colui che pesonalizza il menù, invia avvisi, può visualizzare e chiudere i conti dei tavoli.
+
+Cameriere - Colui che prende le comande.
+
+Chef - Colui che visualizza le comande per poter effettuare i piatti richiesti dai clienti.
+
+Messaggio - Serve per segnare eventuali avvisi che vengono comunicati dall'amministratore o dal supervisore
+
+Statistiche - dato un certo intervallo di tempo personalizzabile, è possibile visualizzare l’incasso medio, il valore medio di ciascun conto, l’incasso complessivo.
+
+Piatto - Pietanza ordinata dal cliente.
+
+Menù - Lista di piatti che possono essere ordinati dai clienti.
+
+Conto - La lista di tutti i piatti ordinati dal cliente con il corrispettivo costo.
+
+Ordine - La lista di tutti i piatti ordinati dal cliente.
+
+Tavolo - Viene occupato dai clienti per mangiare e si libera nel momento in cui i commensali pagano il conto.
