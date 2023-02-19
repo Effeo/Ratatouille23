@@ -6,8 +6,8 @@
 | 12/11/22 | Individuazione del target degli utenti |
 
 ## COSE DA FARE
-- Migliorare individuazione utente (Non so che cazzo sia, se la vede o me lo spiega Francesco).
-- CockBur, controllare se gli step nelle extention sono giuste.
+- Migliorare individuazione utente (Penso che sia risolto).
+- Cockburn, controllare se gli step nelle extention sono giuste.
 - Cockburn, pensare se nel mostra conto ci possono essere degli errori nel db o nello scaricamento del pdf.
 - (F) Class diagram, chiedere a Ciro se le cose sono giuste (Forza Napoli).
 - (F) Class diagram, vedere che classe user per i grafi interattivi.
