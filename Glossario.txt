@@ -38,13 +38,13 @@ Black Box - Modalità di testing in cui un’unità viene testata in base ai req
 
 *Termini ambito Ristoro*
 
-Amministratore - Colui che crea utenti, pesonalizza il menù, invia avvisi, visualizza statistiche sugli introiti dell’attività di ristorazione, dato un certo intervallo di tempo personalizzabile.
+Amministratore - Colui che crea utenti, pesonalizza il menù, invia visualizza gli avvisi, visualizza statistiche sugli introiti dell’attività di ristorazione, dato un certo intervallo di tempo personalizzabile.
 
-Supervisore - Colui che pesonalizza il menù, invia avvisi, può visualizzare e chiudere i conti dei tavoli.
+Supervisore - Colui che pesonalizza il menù, invia e visualizza gli avvisi, può visualizzare e chiudere i conti dei tavoli.
 
-Cameriere - Colui che prende le comande.
+Cameriere - Colui che prende le comande, visualizza gli avvisi, aggiunge un tavolo per le ordinazioni e visualizza il conto.
 
-Chef - Colui che visualizza le comande per poter effettuare i piatti richiesti dai clienti.
+Chef - Colui che visualizza le comande per poter effettuare i piatti richiesti dai clienti e visualizza gli avvisi.
 
 Messaggio - Serve per segnare eventuali avvisi che vengono comunicati dall'amministratore o dal supervisore
 
