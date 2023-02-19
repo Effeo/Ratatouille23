@@ -1,17 +1,9 @@
 # Ratatouille23
-| Giorno | Aggiornamento |
-| ------ | ------------- |
-|  09/11/22 | Use case diagrams |
-| 10/11/22 | Boh |
-| 12/11/22 | Individuazione del target degli utenti |
 
 ## COSE DA FARE
 - Migliorare individuazione utente (Penso che sia risolto).
 - Cockburn, controllare se gli step nelle extention sono giuste.
 - Cockburn, pensare se nel mostra conto ci possono essere degli errori nel db o nello scaricamento del pdf.
-- (F) Class diagram, chiedere a Ciro se le cose sono giuste (Forza Napoli).
-- (F) Class diagram, vedere che classe user per i grafi interattivi.
-- (F) Class diagram, vedere cosa mettere per il pdf nel model conto.
 - (F) Class diagram, controllo finale.
 - (F) Class diagram, aggiungere le classi piatto, menu e vedi se anche altre.
 - (M) Vedere l'usabilità.
