@@ -15,7 +15,7 @@
 - (F) Class diagram, controllo finale.
 - (F) Class diagram, aggiungere le classi piatto, menu e vedi se anche altre.
 - (M) Vedere l'usabilità.
-- (M) Completare il glossario lato Ristoro.
+- (M) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
 - (M) Chiedere bene a kekkino come creare le cartelle su github per essere più ordinati
 
 ## Output
