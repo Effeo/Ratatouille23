@@ -35,7 +35,7 @@ Per le attività sopracitate, il Committente richiede i seguenti output:
     - -[x] i Classi, oggetti e relazioni di analisi.
     - -[ ] ii Diagrammi di sequenza di analisi per due casi d’uso significativi a scelta dei
       contraenti tra quelli assegnati.
-    - -[ ] iii Prototipazione funzionale via statechart dell’interfaccia grafica, relativamente ai casi
+    - -[x] iii Prototipazione funzionale via statechart dell’interfaccia grafica, relativamente ai casi
       d’uso individuati al punto 1.a.iii; (solo gruppi “Nuovo Ordinamento”)
 
 2. Documento di Design del sistema.
