@@ -4,11 +4,8 @@
 - Migliorare individuazione utente (Penso che sia risolto).
 - Cockburn, controllare se gli step nelle extention sono giuste.
 - Cockburn, pensare se nel mostra conto ci possono essere degli errori nel db o nello scaricamento del pdf.
-- (F) Class diagram, controllo finale.
-- (F) Class diagram, aggiungere schermata cambia password e il pulsante cambia password in crea utente.
 - (M) Vedere l'usabilità.
 - (M) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
-- (M) Chiedere bene a kekkino come creare le cartelle su github per essere più ordinati
 
 ## Output
 Per le attività sopracitate, il Committente richiede i seguenti output:
