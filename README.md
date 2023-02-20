@@ -2,6 +2,7 @@
 
 ## COSE DA FARE
 - Migliorare individuazione utente (Penso che sia risolto).
+- (F) Aggiustare gli statechart.
 - (M) Controlla se ti trovi con la versione finale dei class, leggi prima le slide per vedere se ti trovi con me
 - (M) Vedere l'usabilità (Forse kekkino se lo controllerà come al solito, per il momento lo spunto).
 - (M) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
