@@ -37,7 +37,7 @@
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
 | Preme il bottone "Modifica elimina cibo" | 3.4 | Preme il bottone "Modifica elimina cibo" |  |
-|  | 4.4 |  | Va nella schermata "ModiFica elimina cibo" |
+|  | 4.4 |  | Va nella schermata "Modifica elimina cibo" |
 
 | Extention | Step | Amministratore | System |
 | --------- | ---- | ----------- | ------ |
