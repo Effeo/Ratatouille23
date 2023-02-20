@@ -7,6 +7,10 @@
 - (M) Vedere l'usabilità.
 - (M) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
 
+## Domande per Starace/SDM
+- L'amministratore deve poter visualizzare i messaggi che invia il supervisore?* 
+- Uno step che può capitare in un qualsiasi momento, come si segna?
+
 ## Output
 Per le attività sopracitate, il Committente richiede i seguenti output:
 1. Documento dei Requisiti Software
