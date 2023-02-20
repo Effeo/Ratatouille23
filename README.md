@@ -2,14 +2,13 @@
 
 ## COSE DA FARE
 - Migliorare individuazione utente (Penso che sia risolto).
-- Cockburn, controllare se gli step nelle extention sono giuste.
-- Cockburn, pensare se nel mostra conto ci possono essere degli errori nel db o nello scaricamento del pdf.
 - (M) Vedere l'usabilità.
 - (M) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
 
 ## Domande per Starace/SDM
 - L'amministratore deve poter visualizzare i messaggi che invia il supervisore?* 
 - Uno step che può capitare in un qualsiasi momento, come si segna?
+- Check se sono giusti gli step
 
 ## Output
 Per le attività sopracitate, il Committente richiede i seguenti output:
