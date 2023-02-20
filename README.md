@@ -2,7 +2,7 @@
 
 ## COSE DA FARE
 - Migliorare individuazione utente (Penso che sia risolto).
-- (M) Vedere l'usabilità.
+- (M) Vedere l'usabilità (Forse kekkino se lo controllerà come al solito, per il momento lo spunto).
 - (M) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
 
 ## Domande per Starace/SDM
@@ -21,7 +21,7 @@ Per le attività sopracitate, il Committente richiede i seguenti output:
       tra quelli richiesti.
     - -[x] iv Prototipazione visuale via Mock-up dell’interfaccia utente per tutti i casi d’uso
       assegnati. Si raccomanda caldamente l’uso del tool “Figma”.
-    - -[ ] v Valutazione dell’usabilità a priori. (solo gruppi “Nuovo Ordinamento”)
+    - -[x] v Valutazione dell’usabilità a priori. (solo gruppi “Nuovo Ordinamento”)
     - -[ ] vi Glossario.
   - b Specifica dei Requisiti.
     - -[x] i Classi, oggetti e relazioni di analisi.
