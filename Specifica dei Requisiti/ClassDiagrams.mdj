@@ -652,13 +652,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdE4ykKjJM/c=",
+											"_parent": {
+												"$ref": "AAAAAAGEtEjWg7ZeWYg="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE4yYKjG+Gw="
+											},
+											"font": "Arial;13;0",
+											"left": 381,
+											"top": 1014,
+											"width": 295,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 376,
 									"top": 977,
 									"width": 305,
-									"height": 40
+									"height": 55
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -681,7 +698,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 381,
-											"top": 1022,
+											"top": 1037,
 											"width": 295,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -698,7 +715,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 381,
-											"top": 1037,
+											"top": 1052,
 											"width": 295,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -715,7 +732,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 381,
-											"top": 1052,
+											"top": 1067,
 											"width": 295,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -732,18 +749,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 381,
-											"top": 1067,
+											"top": 1082,
 											"width": 295,
 											"height": 13,
 											"text": "+setRuolo(ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdE7I3KmR6eE=",
+											"_parent": {
+												"$ref": "AAAAAAGEtEjWg7ZfhRw="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE7IramOd9A="
+											},
+											"font": "Arial;13;0",
+											"left": 381,
+											"top": 1097,
+											"width": 295,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdE+QMarIx7Q=",
+											"_parent": {
+												"$ref": "AAAAAAGEtEjWg7ZfhRw="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE+QFKrFDOs="
+											},
+											"font": "Arial;13;0",
+											"left": 381,
+											"top": 1112,
+											"width": 295,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 376,
-									"top": 1017,
+									"top": 1032,
 									"width": 305,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -783,7 +834,7 @@
 							"left": 376,
 							"top": 952,
 							"width": 305,
-							"height": 133,
+							"height": 178,
 							"nameCompartment": {
 								"$ref": "AAAAAAGEtEjWg7ZZ8Ys="
 							},
@@ -827,7 +878,7 @@
 								"$ref": "AAAAAAGEtEjWg7ZYJWw="
 							},
 							"lineStyle": 1,
-							"points": "681:1015;727:1014"
+							"points": "681:1026;727:1022"
 						},
 						{
 							"_type": "UMLAssociationView",
@@ -1508,7 +1559,7 @@
 											"top": 493,
 											"width": 255,
 											"height": 13,
-											"text": "-supervisore: Button",
+											"text": "-supervisoreBtn: Button",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1525,7 +1576,7 @@
 											"top": 508,
 											"width": 255,
 											"height": 13,
-											"text": "-cameriere: Button",
+											"text": "-cameriereBtn: Button",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1542,7 +1593,7 @@
 											"top": 523,
 											"width": 255,
 											"height": 13,
-											"text": "-cuoco: Button",
+											"text": "-cuocoBtn: Button",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2728,7 +2779,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGEs8q8obT5Tew="
 							},
-							"name": "supervisore",
+							"name": "supervisoreBtn",
 							"visibility": "private",
 							"type": "Button"
 						},
@@ -2738,7 +2789,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGEs8q8obT5Tew="
 							},
-							"name": "cameriere",
+							"name": "cameriereBtn",
 							"visibility": "private",
 							"type": "Button"
 						},
@@ -2748,7 +2799,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGEs8q8obT5Tew="
 							},
-							"name": "cuoco",
+							"name": "cuocoBtn",
 							"visibility": "private",
 							"type": "Button"
 						},
@@ -3415,6 +3466,16 @@
 							"name": "ruolo",
 							"visibility": "private",
 							"type": "String"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGGdE4yYKjG+Gw=",
+							"_parent": {
+								"$ref": "AAAAAAGEtEjWg7ZWPlI="
+							},
+							"name": "password",
+							"visibility": "private",
+							"type": "String"
 						}
 					],
 					"operations": [
@@ -3490,6 +3551,44 @@
 										"$ref": "AAAAAAGEtE54qbcKH7I="
 									},
 									"name": "ruolo",
+									"type": "String"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGdE7IramOd9A=",
+							"_parent": {
+								"$ref": "AAAAAAGEtEjWg7ZWPlI="
+							},
+							"name": "getPassword",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGdE98PqqT8kw=",
+									"_parent": {
+										"$ref": "AAAAAAGGdE7IramOd9A="
+									},
+									"type": "String",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGdE+QFKrFDOs=",
+							"_parent": {
+								"$ref": "AAAAAAGEtEjWg7ZWPlI="
+							},
+							"name": "setPassword",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGdE/PgKrwG0A=",
+									"_parent": {
+										"$ref": "AAAAAAGGdE+QFKrFDOs="
+									},
+									"name": "password",
 									"type": "String"
 								}
 							]
@@ -3866,7 +3965,7 @@
 											"top": 155,
 											"width": 247,
 											"height": 13,
-											"text": "-creaUtente: Button",
+											"text": "-btnCreaUtente: Button",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4602,7 +4701,7 @@
 											"top": 567,
 											"width": 467.84765625,
 											"height": 13,
-											"text": "CreaUtenteController"
+											"text": "ControllerCreaUtente"
 										},
 										{
 											"_type": "LabelView",
@@ -4920,13 +5019,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFBfO6vKZbE=",
+											"_parent": {
+												"$ref": "AAAAAAGEx8+zU08h/kk="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFBfA6vHuIg="
+											},
+											"font": "Arial;13;0",
+											"left": 421,
+											"top": 844,
+											"width": 294,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 416,
 									"top": 809,
 									"width": 304,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -4949,7 +5065,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 421,
-											"top": 852,
+											"top": 867,
 											"width": 294,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -4984,7 +5100,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 421,
-											"top": 867,
+											"top": 882,
 											"width": 294,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -5001,7 +5117,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 421,
-											"top": 882,
+											"top": 897,
 											"width": 294,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -5036,18 +5152,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 421,
-											"top": 897,
+											"top": 912,
 											"width": 294,
 											"height": 13,
 											"text": "+setRuolo(Ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFDS8KxZWqQ=",
+											"_parent": {
+												"$ref": "AAAAAAGEx8+zU08ize4="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDSsaxWL7U="
+											},
+											"font": "Arial;13;0",
+											"left": 421,
+											"top": 927,
+											"width": 294,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFDuiKyMgJI=",
+											"_parent": {
+												"$ref": "AAAAAAGEx8+zU08ize4="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDuZKyJ4fQ="
+											},
+											"font": "Arial;13;0",
+											"left": 421,
+											"top": 942,
+											"width": 294,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 416,
-									"top": 847,
+									"top": 862,
 									"width": 304,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -5085,7 +5235,7 @@
 							"left": 416,
 							"top": 784,
 							"width": 304,
-							"height": 131,
+							"height": 176,
 							"nameCompartment": {
 								"$ref": "AAAAAAGEx8+zUk8cqOs="
 							},
@@ -6010,7 +6160,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGEx7okUkz5cws="
 							},
-							"name": "creaUtente",
+							"name": "btnCreaUtente",
 							"visibility": "private",
 							"type": "Button"
 						},
@@ -6349,7 +6499,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGEx6ma+0zD49c="
 					},
-					"name": "CreaUtenteController",
+					"name": "ControllerCreaUtente",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -6502,6 +6652,16 @@
 							"name": "ruolo",
 							"visibility": "private",
 							"type": "String"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGGdFBfA6vHuIg=",
+							"_parent": {
+								"$ref": "AAAAAAGEx8+zUk8ZvD8="
+							},
+							"name": "password: String",
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -6615,6 +6775,44 @@
 										"$ref": "AAAAAAGEx9EUkU+IDZw="
 									},
 									"name": "Ruolo",
+									"type": "String"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGdFDSsaxWL7U=",
+							"_parent": {
+								"$ref": "AAAAAAGEx8+zUk8ZvD8="
+							},
+							"name": "getPassword",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGdFE/0qzqpuw=",
+									"_parent": {
+										"$ref": "AAAAAAGGdFDSsaxWL7U="
+									},
+									"type": "String",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGdFDuZKyJ4fQ=",
+							"_parent": {
+								"$ref": "AAAAAAGEx8+zUk8ZvD8="
+							},
+							"name": "setPassword",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGdFFr4K1um4M=",
+									"_parent": {
+										"$ref": "AAAAAAGGdFDuZKyJ4fQ="
+									},
+									"name": "password",
 									"type": "String"
 								}
 							]
@@ -7857,13 +8055,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFApv6teZW8=",
+											"_parent": {
+												"$ref": "AAAAAAGGKLYd+XYTR3g="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE4yYKjG+Gw="
+											},
+											"font": "Arial;13;0",
+											"left": 197,
+											"top": 926,
+											"width": 295,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 192,
 									"top": 889,
 									"width": 305,
-									"height": 40
+									"height": 55
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -7886,7 +8101,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 197,
-											"top": 934,
+											"top": 949,
 											"width": 295,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -7903,7 +8118,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 197,
-											"top": 949,
+											"top": 964,
 											"width": 295,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -7920,7 +8135,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 197,
-											"top": 964,
+											"top": 979,
 											"width": 295,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -7937,18 +8152,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 197,
-											"top": 979,
+											"top": 994,
 											"width": 295,
 											"height": 13,
 											"text": "+setRuolo(ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFApwKthTUo=",
+											"_parent": {
+												"$ref": "AAAAAAGGKLYd+XYYduw="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE7IramOd9A="
+											},
+											"font": "Arial;13;0",
+											"left": 197,
+											"top": 1009,
+											"width": 295,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFApwatkHC8=",
+											"_parent": {
+												"$ref": "AAAAAAGGKLYd+XYYduw="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE+QFKrFDOs="
+											},
+											"font": "Arial;13;0",
+											"left": 197,
+											"top": 1024,
+											"width": 295,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 192,
-									"top": 929,
+									"top": 944,
 									"width": 305,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -7988,7 +8237,7 @@
 							"left": 192,
 							"top": 864,
 							"width": 305,
-							"height": 133,
+							"height": 178,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGKLYd+HYOIzg="
 							},
@@ -10541,13 +10790,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFGrAq21B8k=",
+											"_parent": {
+												"$ref": "AAAAAAGGK4A+8crpl9g="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFBfA6vHuIg="
+											},
+											"font": "Arial;13;0",
+											"left": 429,
+											"top": 668,
+											"width": 294,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 424,
 									"top": 633,
 									"width": 304,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -10570,7 +10836,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 429,
-											"top": 676,
+											"top": 691,
 											"width": 294,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -10605,7 +10871,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 429,
-											"top": 691,
+											"top": 706,
 											"width": 294,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -10622,7 +10888,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 429,
-											"top": 706,
+											"top": 721,
 											"width": 294,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -10657,18 +10923,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 429,
-											"top": 721,
+											"top": 736,
 											"width": 294,
 											"height": 13,
 											"text": "+setRuolo(Ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFGrA624Tf8=",
+											"_parent": {
+												"$ref": "AAAAAAGGK4A+8crtGlk="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDSsaxWL7U="
+											},
+											"font": "Arial;13;0",
+											"left": 429,
+											"top": 751,
+											"width": 294,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFGrBK27PLE=",
+											"_parent": {
+												"$ref": "AAAAAAGGK4A+8crtGlk="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDuZKyJ4fQ="
+											},
+											"font": "Arial;13;0",
+											"left": 429,
+											"top": 766,
+											"width": 294,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 424,
-									"top": 671,
+									"top": 686,
 									"width": 304,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -10708,7 +11008,7 @@
 							"left": 424,
 							"top": 608,
 							"width": 304,
-							"height": 131,
+							"height": 176,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGK4A+8crkj10="
 							},
@@ -11400,7 +11700,7 @@
 											"top": 471,
 											"width": 262,
 											"height": 13,
-											"text": "ControllerMessaggi"
+											"text": "ControllerMessaggiAdmin"
 										},
 										{
 											"_type": "LabelView",
@@ -12554,7 +12854,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGGK3/m2sonigU="
 					},
-					"name": "ControllerMessaggi",
+					"name": "ControllerMessaggiAdmin",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -13202,19 +13502,6 @@
 							}
 						},
 						{
-							"_type": "UMLTextView",
-							"_id": "AAAAAAGGK9EHYdmtd0k=",
-							"_parent": {
-								"$ref": "AAAAAAGGK8kAJdjBcEc="
-							},
-							"font": "Arial;13;0",
-							"left": 128,
-							"top": 56,
-							"width": 248,
-							"height": 56,
-							"text": "Vedere che classe usare per i grafi"
-						},
-						{
 							"_type": "UMLClassView",
 							"_id": "AAAAAAGGK9Np29qpyhE=",
 							"_parent": {
@@ -13799,13 +14086,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFHGPq3rOw0=",
+											"_parent": {
+												"$ref": "AAAAAAGGK9RqutyGqYw="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFBfA6vHuIg="
+											},
+											"font": "Arial;13;0",
+											"left": 448,
+											"top": 900,
+											"width": 294,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 443,
 									"top": 865,
 									"width": 304,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -13828,7 +14132,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 448,
-											"top": 908,
+											"top": 923,
 											"width": 294,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -13863,7 +14167,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 448,
-											"top": 923,
+											"top": 938,
 											"width": 294,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -13880,7 +14184,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 448,
-											"top": 938,
+											"top": 953,
 											"width": 294,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -13915,18 +14219,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 448,
-											"top": 953,
+											"top": 968,
 											"width": 294,
 											"height": 13,
 											"text": "+setRuolo(Ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFHGP63udz8=",
+											"_parent": {
+												"$ref": "AAAAAAGGK9RqutyKJeE="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDSsaxWL7U="
+											},
+											"font": "Arial;13;0",
+											"left": 448,
+											"top": 983,
+											"width": 294,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFHGP63xTn8=",
+											"_parent": {
+												"$ref": "AAAAAAGGK9RqutyKJeE="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDuZKyJ4fQ="
+											},
+											"font": "Arial;13;0",
+											"left": 448,
+											"top": 998,
+											"width": 294,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 443,
-									"top": 903,
+									"top": 918,
 									"width": 304,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -13966,7 +14304,7 @@
 							"left": 443,
 							"top": 840,
 							"width": 304,
-							"height": 131,
+							"height": 176,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGK9RqutyB850="
 							},
@@ -16691,13 +17029,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFHXsa4hP2g=",
+											"_parent": {
+												"$ref": "AAAAAAGGK9bYJ+osqGk="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFBfA6vHuIg="
+											},
+											"font": "Arial;13;0",
+											"left": 261,
+											"top": 1044,
+											"width": 294,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 256,
 									"top": 1009,
 									"width": 304,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -16720,7 +17075,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 261,
-											"top": 1052,
+											"top": 1067,
 											"width": 294,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -16755,7 +17110,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 261,
-											"top": 1067,
+											"top": 1082,
 											"width": 294,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -16772,7 +17127,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 261,
-											"top": 1082,
+											"top": 1097,
 											"width": 294,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -16807,18 +17162,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 261,
-											"top": 1097,
+											"top": 1112,
 											"width": 294,
 											"height": 13,
 											"text": "+setRuolo(Ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFHXsq4kxKs=",
+											"_parent": {
+												"$ref": "AAAAAAGGK9bYJ+owWhI="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDSsaxWL7U="
+											},
+											"font": "Arial;13;0",
+											"left": 261,
+											"top": 1127,
+											"width": 294,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFHXsq4nsdo=",
+											"_parent": {
+												"$ref": "AAAAAAGGK9bYJ+owWhI="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDuZKyJ4fQ="
+											},
+											"font": "Arial;13;0",
+											"left": 261,
+											"top": 1142,
+											"width": 294,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 256,
-									"top": 1047,
+									"top": 1062,
 									"width": 304,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -16858,7 +17247,7 @@
 							"left": 256,
 							"top": 984,
 							"width": 304,
-							"height": 131,
+							"height": 176,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGK9bYJuonJ/k="
 							},
@@ -20729,13 +21118,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFHlu65ID3Y=",
+											"_parent": {
+												"$ref": "AAAAAAGGLG8jZn5EfhU="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFBfA6vHuIg="
+											},
+											"font": "Arial;13;0",
+											"left": 405,
+											"top": 684,
+											"width": 294,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 400,
 									"top": 649,
 									"width": 304,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -20758,7 +21164,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 405,
-											"top": 692,
+											"top": 707,
 											"width": 294,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -20793,7 +21199,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 405,
-											"top": 707,
+											"top": 722,
 											"width": 294,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -20810,7 +21216,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 405,
-											"top": 722,
+											"top": 737,
 											"width": 294,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -20845,18 +21251,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 405,
-											"top": 737,
+											"top": 752,
 											"width": 294,
 											"height": 13,
 											"text": "+setRuolo(Ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFHlvK5LU+o=",
+											"_parent": {
+												"$ref": "AAAAAAGGLG8jZn5I87Q="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDSsaxWL7U="
+											},
+											"font": "Arial;13;0",
+											"left": 405,
+											"top": 767,
+											"width": 294,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFHlvK5O1qI=",
+											"_parent": {
+												"$ref": "AAAAAAGGLG8jZn5I87Q="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDuZKyJ4fQ="
+											},
+											"font": "Arial;13;0",
+											"left": 405,
+											"top": 782,
+											"width": 294,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 400,
-									"top": 687,
+									"top": 702,
 									"width": 304,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -20896,7 +21336,7 @@
 							"left": 400,
 							"top": 624,
 							"width": 304,
-							"height": 131,
+							"height": 176,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGLG8jZn4/Vw8="
 							},
@@ -23058,13 +23498,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFH2765ja4E=",
+											"_parent": {
+												"$ref": "AAAAAAGGLHphS4jhtNo="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFBfA6vHuIg="
+											},
+											"font": "Arial;13;0",
+											"left": 629,
+											"top": 956,
+											"width": 294,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 624,
 									"top": 921,
 									"width": 304,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -23087,7 +23544,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 629,
-											"top": 964,
+											"top": 979,
 											"width": 294,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -23122,7 +23579,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 629,
-											"top": 979,
+											"top": 994,
 											"width": 294,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -23139,7 +23596,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 629,
-											"top": 994,
+											"top": 1009,
 											"width": 294,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -23174,18 +23631,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 629,
-											"top": 1009,
+											"top": 1024,
 											"width": 294,
 											"height": 13,
 											"text": "+setRuolo(Ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFH28K5mLlw=",
+											"_parent": {
+												"$ref": "AAAAAAGGLHphS4jl79o="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDSsaxWL7U="
+											},
+											"font": "Arial;13;0",
+											"left": 629,
+											"top": 1039,
+											"width": 294,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFH28K5pKf0=",
+											"_parent": {
+												"$ref": "AAAAAAGGLHphS4jl79o="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDuZKyJ4fQ="
+											},
+											"font": "Arial;13;0",
+											"left": 629,
+											"top": 1054,
+											"width": 294,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 624,
-									"top": 959,
+									"top": 974,
 									"width": 304,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -23225,7 +23716,7 @@
 							"left": 624,
 							"top": 896,
 							"width": 304,
-							"height": 131,
+							"height": 176,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGLHphS4jcLLg="
 							},
@@ -25942,7 +26433,7 @@
 											"top": 958,
 											"width": 239,
 											"height": 13,
-											"text": "+idOrdine: int",
+											"text": "-idOrdine: int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -25959,7 +26450,7 @@
 											"top": 973,
 											"width": 239,
 											"height": 13,
-											"text": "+piatti: ArrayList<Piatti>",
+											"text": "-piatti: ArrayList<Piatti>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -25976,7 +26467,7 @@
 											"top": 988,
 											"width": 239,
 											"height": 13,
-											"text": "+qta: ArrayList<Integer>",
+											"text": "-qta: ArrayList<Integer>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -27577,6 +28068,7 @@
 								"$ref": "AAAAAAGGar/SZedyAR0="
 							},
 							"name": "idOrdine",
+							"visibility": "private",
 							"type": "int"
 						},
 						{
@@ -27586,6 +28078,7 @@
 								"$ref": "AAAAAAGGar/SZedyAR0="
 							},
 							"name": "piatti",
+							"visibility": "private",
 							"type": "ArrayList<Piatti>"
 						},
 						{
@@ -27595,6 +28088,7 @@
 								"$ref": "AAAAAAGGar/SZedyAR0="
 							},
 							"name": "qta",
+							"visibility": "private",
 							"type": "ArrayList<Integer>"
 						}
 					],
@@ -28947,7 +29441,7 @@
 											"top": 535,
 											"width": 295,
 											"height": 13,
-											"text": "ControllerMessaggi"
+											"text": "ControllerMessaggiSupervisore"
 										},
 										{
 											"_type": "LabelView",
@@ -29311,13 +29805,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFIL3q6r1Qc=",
+											"_parent": {
+												"$ref": "AAAAAAGGLKeDJ5rcVdg="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFBfA6vHuIg="
+											},
+											"font": "Arial;13;0",
+											"left": 325,
+											"top": 876,
+											"width": 294,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 320,
 									"top": 841,
 									"width": 304,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -29340,7 +29851,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 325,
-											"top": 884,
+											"top": 899,
 											"width": 294,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -29375,7 +29886,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 325,
-											"top": 899,
+											"top": 914,
 											"width": 294,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -29392,7 +29903,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 325,
-											"top": 914,
+											"top": 929,
 											"width": 294,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -29427,18 +29938,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 325,
-											"top": 929,
+											"top": 944,
 											"width": 294,
 											"height": 13,
 											"text": "+setRuolo(Ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFIL4K6uTE8=",
+											"_parent": {
+												"$ref": "AAAAAAGGLKeDJ5rg7E4="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDSsaxWL7U="
+											},
+											"font": "Arial;13;0",
+											"left": 325,
+											"top": 959,
+											"width": 294,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFIL4a6xxzU=",
+											"_parent": {
+												"$ref": "AAAAAAGGLKeDJ5rg7E4="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDuZKyJ4fQ="
+											},
+											"font": "Arial;13;0",
+											"left": 325,
+											"top": 974,
+											"width": 294,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 320,
-									"top": 879,
+									"top": 894,
 									"width": 304,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -29478,7 +30023,7 @@
 							"left": 320,
 							"top": 816,
 							"width": 304,
-							"height": 131,
+							"height": 176,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGLKeDJ5rXCaE="
 							},
@@ -31033,7 +31578,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGGLITzDpUuUKo="
 					},
-					"name": "ControllerMessaggi",
+					"name": "ControllerMessaggiSupervisore",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -32213,7 +32758,7 @@
 											"top": 567,
 											"width": 519,
 											"height": 13,
-											"text": "ControllerOrdine"
+											"text": "ControllerOrdineCameriere"
 										},
 										{
 											"_type": "LabelView",
@@ -32603,13 +33148,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFIXuq7wNUA=",
+											"_parent": {
+												"$ref": "AAAAAAGGLLT8mrP9H7k="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE4yYKjG+Gw="
+											},
+											"font": "Arial;13;0",
+											"left": 541,
+											"top": 886,
+											"width": 295,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 536,
 									"top": 849,
 									"width": 305,
-									"height": 40
+									"height": 55
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -32632,7 +33194,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 541,
-											"top": 894,
+											"top": 909,
 											"width": 295,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -32649,7 +33211,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 541,
-											"top": 909,
+											"top": 924,
 											"width": 295,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -32666,7 +33228,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 541,
-											"top": 924,
+											"top": 939,
 											"width": 295,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -32683,18 +33245,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 541,
-											"top": 939,
+											"top": 954,
 											"width": 295,
 											"height": 13,
 											"text": "+setRuolo(ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFIXu67zpYI=",
+											"_parent": {
+												"$ref": "AAAAAAGGLLT8mrQCekQ="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE7IramOd9A="
+											},
+											"font": "Arial;13;0",
+											"left": 541,
+											"top": 969,
+											"width": 295,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFIXvK725lg=",
+											"_parent": {
+												"$ref": "AAAAAAGGLLT8mrQCekQ="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE+QFKrFDOs="
+											},
+											"font": "Arial;13;0",
+											"left": 541,
+											"top": 984,
+											"width": 295,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 536,
-									"top": 889,
+									"top": 904,
 									"width": 305,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -32734,7 +33330,7 @@
 							"left": 536,
 							"top": 824,
 							"width": 305,
-							"height": 133,
+							"height": 178,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGLLT8mrP4aHM="
 							},
@@ -34759,7 +35355,7 @@
 											"top": 926,
 											"width": 239,
 											"height": 13,
-											"text": "+idOrdine: int",
+											"text": "-idOrdine: int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -34776,7 +35372,7 @@
 											"top": 941,
 											"width": 239,
 											"height": 13,
-											"text": "+piatti: ArrayList<Piatti>",
+											"text": "-piatti: ArrayList<Piatti>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -34793,7 +35389,7 @@
 											"top": 956,
 											"width": 239,
 											"height": 13,
-											"text": "+qta: ArrayList<Integer>",
+											"text": "-qta: ArrayList<Integer>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -36777,7 +37373,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGGLKyrJqRZ6Sg="
 					},
-					"name": "ControllerOrdine",
+					"name": "ControllerOrdineCameriere",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -37712,7 +38308,7 @@
 											"top": 519,
 											"width": 294,
 											"height": 13,
-											"text": "ControllerMessaggi"
+											"text": "ControllerMessaggiCameriere"
 										},
 										{
 											"_type": "LabelView",
@@ -38060,13 +38656,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFIjBq9xJ6Y=",
+											"_parent": {
+												"$ref": "AAAAAAGGLMdORO3b5D8="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE4yYKjG+Gw="
+											},
+											"font": "Arial;13;0",
+											"left": 285,
+											"top": 814,
+											"width": 295,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 280,
 									"top": 777,
 									"width": 305,
-									"height": 40
+									"height": 55
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -38089,7 +38702,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 285,
-											"top": 822,
+											"top": 837,
 											"width": 295,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -38106,7 +38719,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 285,
-											"top": 837,
+											"top": 852,
 											"width": 295,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -38123,7 +38736,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 285,
-											"top": 852,
+											"top": 867,
 											"width": 295,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -38140,18 +38753,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 285,
-											"top": 867,
+											"top": 882,
 											"width": 295,
 											"height": 13,
 											"text": "+setRuolo(ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFIjB690VjA=",
+											"_parent": {
+												"$ref": "AAAAAAGGLMdORO3g2HI="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE7IramOd9A="
+											},
+											"font": "Arial;13;0",
+											"left": 285,
+											"top": 897,
+											"width": 295,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFIjB693e7M=",
+											"_parent": {
+												"$ref": "AAAAAAGGLMdORO3g2HI="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE+QFKrFDOs="
+											},
+											"font": "Arial;13;0",
+											"left": 285,
+											"top": 912,
+											"width": 295,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 280,
-									"top": 817,
+									"top": 832,
 									"width": 305,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -38191,7 +38838,7 @@
 							"left": 280,
 							"top": 752,
 							"width": 305,
-							"height": 133,
+							"height": 178,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGLMdORO3Wsfk="
 							},
@@ -39250,7 +39897,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGGLMFy2ukE25A="
 					},
-					"name": "ControllerMessaggi",
+					"name": "ControllerMessaggiCameriere",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -39965,7 +40612,7 @@
 											"top": 455,
 											"width": 294,
 											"height": 13,
-											"text": "ControllerOrdini"
+											"text": "ControllerOrdineCuoco"
 										},
 										{
 											"_type": "LabelView",
@@ -40304,13 +40951,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFIv9K+V79E=",
+											"_parent": {
+												"$ref": "AAAAAAGGLMuQYvYI+b8="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE4yYKjG+Gw="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 870,
+											"width": 295,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 672,
 									"top": 833,
 									"width": 305,
-									"height": 40
+									"height": 55
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -40333,7 +40997,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 677,
-											"top": 878,
+											"top": 893,
 											"width": 295,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -40350,7 +41014,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 677,
-											"top": 893,
+											"top": 908,
 											"width": 295,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -40367,7 +41031,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 677,
-											"top": 908,
+											"top": 923,
 											"width": 295,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -40384,18 +41048,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 677,
-											"top": 923,
+											"top": 938,
 											"width": 295,
 											"height": 13,
 											"text": "+setRuolo(ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFIv9a+YNv0=",
+											"_parent": {
+												"$ref": "AAAAAAGGLMuQYvYNYZQ="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE7IramOd9A="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 953,
+											"width": 295,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFIv9q+bpkg=",
+											"_parent": {
+												"$ref": "AAAAAAGGLMuQYvYNYZQ="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE+QFKrFDOs="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 968,
+											"width": 295,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 672,
-									"top": 873,
+									"top": 888,
 									"width": 305,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -40435,7 +41133,7 @@
 							"left": 672,
 							"top": 808,
 							"width": 305,
-							"height": 133,
+							"height": 178,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGLMuQYvYDJKw="
 							},
@@ -41386,7 +42084,7 @@
 											"top": 798,
 											"width": 239,
 											"height": 13,
-											"text": "+idOrdine: int",
+											"text": "-idOrdine: int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -41403,7 +42101,7 @@
 											"top": 813,
 											"width": 239,
 											"height": 13,
-											"text": "+piatti: ArrayList<Piatti>",
+											"text": "-piatti: ArrayList<Piatti>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -41420,7 +42118,7 @@
 											"top": 828,
 											"width": 239,
 											"height": 13,
-											"text": "+qta: ArrayList<Integer>",
+											"text": "-qta: ArrayList<Integer>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -41488,7 +42186,7 @@
 											"top": 881,
 											"width": 239,
 											"height": 13,
-											"text": "+getPiatti(): ArrayList<Piatti>",
+											"text": "+getPiatti(): ArrayList<Piatto>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -41505,7 +42203,7 @@
 											"top": 896,
 											"width": 239,
 											"height": 13,
-											"text": "+setPiatti(piatti: ArrayList<Piatti>)",
+											"text": "+setPiatti(piatti: ArrayList<Piatto>)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -41541,13 +42239,30 @@
 											"height": 13,
 											"text": "+setQta(qta: ArrayList<Integer>)",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdEb4c6T77Ns=",
+											"_parent": {
+												"$ref": "AAAAAAGGavBNUvI/FMw="
+											},
+											"model": {
+												"$ref": "AAAAAAGGc8gX99ibBR4="
+											},
+											"font": "Arial;13;0",
+											"left": 1253,
+											"top": 941,
+											"width": 239,
+											"height": 13,
+											"text": "+creaPiatti(): ArrayList<Piatto>",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1248,
 									"top": 846,
 									"width": 249,
-									"height": 98
+									"height": 113
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -41587,7 +42302,7 @@
 							"left": 1248,
 							"top": 768,
 							"width": 249,
-							"height": 185,
+							"height": 191,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGavBNUvI2IN0="
 							},
@@ -41823,13 +42538,30 @@
 											"height": 13,
 											"text": "+setOrdine(ordine: Ordine)",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdEb4d6T+7Bw=",
+											"_parent": {
+												"$ref": "AAAAAAGGavBNUvJR2o0="
+											},
+											"model": {
+												"$ref": "AAAAAAGGc8BeWNZytFM="
+											},
+											"font": "Arial;13;0",
+											"left": 1029,
+											"top": 928,
+											"width": 182,
+											"height": 13,
+											"text": "+creaOrdine()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1024,
 									"top": 863,
 									"width": 192,
-									"height": 68
+									"height": 83
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -41869,7 +42601,7 @@
 							"left": 1024,
 							"top": 800,
 							"width": 192,
-							"height": 131,
+							"height": 146,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGavBNUvJJVY8="
 							},
@@ -43378,7 +44110,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGGLMf5WPHu5yU="
 					},
-					"name": "ControllerOrdini",
+					"name": "ControllerOrdineCuoco",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -44536,13 +45268,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFI3Oa/US/c=",
+											"_parent": {
+												"$ref": "AAAAAAGGWaOtf/K/gS0="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE4yYKjG+Gw="
+											},
+											"font": "Arial;13;0",
+											"left": 333,
+											"top": 870,
+											"width": 295,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 328,
 									"top": 833,
 									"width": 305,
-									"height": 40
+									"height": 55
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -44565,7 +45314,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 333,
-											"top": 878,
+											"top": 893,
 											"width": 295,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -44582,7 +45331,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 333,
-											"top": 893,
+											"top": 908,
 											"width": 295,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -44599,7 +45348,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 333,
-											"top": 908,
+											"top": 923,
 											"width": 295,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -44616,18 +45365,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 333,
-											"top": 923,
+											"top": 938,
 											"width": 295,
 											"height": 13,
 											"text": "+setRuolo(ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFI3O6/XQ3o=",
+											"_parent": {
+												"$ref": "AAAAAAGGWaOtf/LE4/U="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE7IramOd9A="
+											},
+											"font": "Arial;13;0",
+											"left": 333,
+											"top": 953,
+											"width": 295,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFI3PK/aKx4=",
+											"_parent": {
+												"$ref": "AAAAAAGGWaOtf/LE4/U="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE+QFKrFDOs="
+											},
+											"font": "Arial;13;0",
+											"left": 333,
+											"top": 968,
+											"width": 295,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 328,
-									"top": 873,
+									"top": 888,
 									"width": 305,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -44667,7 +45450,7 @@
 							"left": 328,
 							"top": 808,
 							"width": 305,
-							"height": 133,
+							"height": 178,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGWaOtf/K6+NY="
 							},
@@ -48130,13 +48913,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFJBSK/1W7Q=",
+											"_parent": {
+												"$ref": "AAAAAAGGWbLLe3UIoBE="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFBfA6vHuIg="
+											},
+											"font": "Arial;13;0",
+											"left": 285,
+											"top": 1164,
+											"width": 294,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 280,
 									"top": 1129,
 									"width": 304,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -48159,7 +48959,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 285,
-											"top": 1172,
+											"top": 1187,
 											"width": 294,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -48194,7 +48994,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 285,
-											"top": 1187,
+											"top": 1202,
 											"width": 294,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -48211,7 +49011,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 285,
-											"top": 1202,
+											"top": 1217,
 											"width": 294,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -48246,18 +49046,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 285,
-											"top": 1217,
+											"top": 1232,
 											"width": 294,
 											"height": 13,
 											"text": "+setRuolo(Ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFJBSa/4JY8=",
+											"_parent": {
+												"$ref": "AAAAAAGGWbLLe3UM5+o="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDSsaxWL7U="
+											},
+											"font": "Arial;13;0",
+											"left": 285,
+											"top": 1247,
+											"width": 294,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFJBSq/7nMA=",
+											"_parent": {
+												"$ref": "AAAAAAGGWbLLe3UM5+o="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdFDuZKyJ4fQ="
+											},
+											"font": "Arial;13;0",
+											"left": 285,
+											"top": 1262,
+											"width": 294,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 280,
-									"top": 1167,
+									"top": 1182,
 									"width": 304,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -48297,7 +49131,7 @@
 							"left": 280,
 							"top": 1104,
 							"width": 304,
-							"height": 131,
+							"height": 176,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGWbLLe3UDyao="
 							},
@@ -48357,7 +49191,7 @@
 											"top": 863,
 											"width": 302,
 											"height": 13,
-											"text": "ControllerModificaEliminaCibo"
+											"text": "ControllerModificaEliminaCiboSupervisore"
 										},
 										{
 											"_type": "LabelView",
@@ -51211,7 +52045,7 @@
 											"top": 458,
 											"width": 294,
 											"height": 13,
-											"text": "ControllerMessaggi"
+											"text": "ControllerMessaggiCameriere"
 										},
 										{
 											"_type": "LabelView",
@@ -51567,13 +52401,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFJMprAcB6Y=",
+											"_parent": {
+												"$ref": "AAAAAAGGWbiOCodftxk="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE4yYKjG+Gw="
+											},
+											"font": "Arial;13;0",
+											"left": 411,
+											"top": 753,
+											"width": 295,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 406,
 									"top": 716,
 									"width": 305,
-									"height": 40
+									"height": 55
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -51596,7 +52447,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 411,
-											"top": 761,
+											"top": 776,
 											"width": 295,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -51613,7 +52464,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 411,
-											"top": 776,
+											"top": 791,
 											"width": 295,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -51630,7 +52481,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 411,
-											"top": 791,
+											"top": 806,
 											"width": 295,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -51647,18 +52498,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 411,
-											"top": 806,
+											"top": 821,
 											"width": 295,
 											"height": 13,
 											"text": "+setRuolo(ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFJMp7AfILk=",
+											"_parent": {
+												"$ref": "AAAAAAGGWbiOCodkUNg="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE7IramOd9A="
+											},
+											"font": "Arial;13;0",
+											"left": 411,
+											"top": 836,
+											"width": 295,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFJMqLAiGOE=",
+											"_parent": {
+												"$ref": "AAAAAAGGWbiOCodkUNg="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE+QFKrFDOs="
+											},
+											"font": "Arial;13;0",
+											"left": 411,
+											"top": 851,
+											"width": 295,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 406,
-									"top": 756,
+									"top": 771,
 									"width": 305,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -51698,7 +52583,7 @@
 							"left": 406,
 							"top": 691,
 							"width": 305,
-							"height": 133,
+							"height": 178,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGWbiOCodaOC4="
 							},
@@ -53533,13 +54418,30 @@
 											"height": 13,
 											"text": "-ruolo: String",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGdFJWmbA3wfk=",
+											"_parent": {
+												"$ref": "AAAAAAGGbodSLbZgkFM="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE4yYKjG+Gw="
+											},
+											"font": "Arial;13;0",
+											"left": 533,
+											"top": 1262,
+											"width": 295,
+											"height": 13,
+											"text": "-password: String",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 528,
 									"top": 1225,
 									"width": 305,
-									"height": 40
+									"height": 55
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -53562,7 +54464,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 533,
-											"top": 1270,
+											"top": 1285,
 											"width": 295,
 											"height": 13,
 											"text": "+getUserName(): String",
@@ -53579,7 +54481,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 533,
-											"top": 1285,
+											"top": 1300,
 											"width": 295,
 											"height": 13,
 											"text": "+getRuolo(): String",
@@ -53596,7 +54498,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 533,
-											"top": 1300,
+											"top": 1315,
 											"width": 295,
 											"height": 13,
 											"text": "+setUserName(userName: String)",
@@ -53613,18 +54515,52 @@
 											},
 											"font": "Arial;13;0",
 											"left": 533,
-											"top": 1315,
+											"top": 1330,
 											"width": 295,
 											"height": 13,
 											"text": "+setRuolo(ruolo: String)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFJWmrA6UuI=",
+											"_parent": {
+												"$ref": "AAAAAAGGbodSLbZlbqA="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE7IramOd9A="
+											},
+											"font": "Arial;13;0",
+											"left": 533,
+											"top": 1345,
+											"width": 295,
+											"height": 13,
+											"text": "+getPassword(): String",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGdFJWm7A9U4g=",
+											"_parent": {
+												"$ref": "AAAAAAGGbodSLbZlbqA="
+											},
+											"model": {
+												"$ref": "AAAAAAGGdE+QFKrFDOs="
+											},
+											"font": "Arial;13;0",
+											"left": 533,
+											"top": 1360,
+											"width": 295,
+											"height": 13,
+											"text": "+setPassword(password: String)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 528,
-									"top": 1265,
+									"top": 1280,
 									"width": 305,
-									"height": 68
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -53664,7 +54600,7 @@
 							"left": 528,
 							"top": 1200,
 							"width": 305,
-							"height": 133,
+							"height": 178,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGbodSLLZbWA8="
 							},
