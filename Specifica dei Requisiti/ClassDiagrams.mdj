@@ -22772,7 +22772,7 @@
 											"top": 544,
 											"width": 519,
 											"height": 13,
-											"text": "+getTavoli(): String",
+											"text": "+getTavoli(): ArrayList<Tavolo>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -22789,7 +22789,7 @@
 											"top": 559,
 											"width": 519,
 											"height": 13,
-											"text": "+getConto(): String",
+											"text": "+getConto(idTavolo: int): Conto",
 											"horizontalAlignment": 0
 										},
 										{
@@ -22806,7 +22806,7 @@
 											"top": 574,
 											"width": 519,
 											"height": 13,
-											"text": "+scarica(idTavolo: int)",
+											"text": "+scarica()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -22823,7 +22823,7 @@
 											"top": 589,
 											"width": 519,
 											"height": 13,
-											"text": "+chiudi(idTavolo: int)",
+											"text": "+chiudi()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -22835,6 +22835,7 @@
 											"model": {
 												"$ref": "AAAAAAGGasFxqu+Lf+Y="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 949,
 											"top": 604,
@@ -22848,7 +22849,7 @@
 									"left": 944,
 									"top": 539,
 									"width": 529,
-									"height": 83
+									"height": 68
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -24381,13 +24382,30 @@
 											"height": 13,
 											"text": "+setTavolo(tavolo: Tavolo)",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGc7bIp9P/v5s=",
+											"_parent": {
+												"$ref": "AAAAAAGGWn92FNNBK9k="
+											},
+											"model": {
+												"$ref": "AAAAAAGGc7bIftPz4pE="
+											},
+											"font": "Arial;13;0",
+											"left": 1013,
+											"top": 1146,
+											"width": 270,
+											"height": 13,
+											"text": "+calcolaCosto(idTavolo: int)",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1008,
 									"top": 1021,
 									"width": 280,
-									"height": 128
+									"height": 143
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -24427,7 +24445,7 @@
 							"left": 1008,
 							"top": 928,
 							"width": 280,
-							"height": 221,
+							"height": 236,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGWn92FNM7GqQ="
 							},
@@ -25729,13 +25747,30 @@
 											"height": 13,
 											"text": "+setOrdine(ordine: Ordine)",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGc8BecNaEv5o=",
+											"_parent": {
+												"$ref": "AAAAAAGGarpO/ZAoJq0="
+											},
+											"model": {
+												"$ref": "AAAAAAGGc8BeWNZytFM="
+											},
+											"font": "Arial;13;0",
+											"left": 1333,
+											"top": 1064,
+											"width": 182,
+											"height": 13,
+											"text": "+creaOrdine()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1328,
 									"top": 999,
 									"width": 192,
-									"height": 68
+									"height": 83
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -25775,7 +25810,7 @@
 							"left": 1328,
 							"top": 936,
 							"width": 192,
-							"height": 131,
+							"height": 146,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGarpO/ZAiANc="
 							},
@@ -26009,7 +26044,7 @@
 											"top": 1041,
 											"width": 239,
 											"height": 13,
-											"text": "+getPiatti(): ArrayList<Piatti>",
+											"text": "+getPiatti(): ArrayList<Piatto>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -26026,7 +26061,7 @@
 											"top": 1056,
 											"width": 239,
 											"height": 13,
-											"text": "+setPiatti(piatti: ArrayList<Piatti>)",
+											"text": "+setPiatti(piatti: ArrayList<Piatto>)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -26062,13 +26097,30 @@
 											"height": 13,
 											"text": "+setQta(qta: ArrayList<Integer>)",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGc8gYD9itPrg=",
+											"_parent": {
+												"$ref": "AAAAAAGGar/SZed7AvI="
+											},
+											"model": {
+												"$ref": "AAAAAAGGc8gX99ibBR4="
+											},
+											"font": "Arial;13;0",
+											"left": 1605,
+											"top": 1101,
+											"width": 239,
+											"height": 13,
+											"text": "+creaPiatti(): ArrayList<Piatto>",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1600,
 									"top": 1006,
 									"width": 249,
-									"height": 98
+									"height": 113
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -26108,7 +26160,7 @@
 							"left": 1600,
 							"top": 928,
 							"width": 249,
-							"height": 185,
+							"height": 191,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGar/SZed1Jgk="
 							},
@@ -26959,7 +27011,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGGLHj3sIf9Pks="
 									},
-									"type": "String",
+									"type": "ArrayList<Tavolo>",
 									"direction": "return"
 								}
 							]
@@ -26978,8 +27030,19 @@
 									"_parent": {
 										"$ref": "AAAAAAGGLHlBRogG/h8="
 									},
-									"type": "String",
+									"type": {
+										"$ref": "AAAAAAGGWn92EtM4YTs="
+									},
 									"direction": "return"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGc9lhlOLKkEQ=",
+									"_parent": {
+										"$ref": "AAAAAAGGLHlBRogG/h8="
+									},
+									"name": "idTavolo",
+									"type": "int"
 								}
 							]
 						},
@@ -26989,18 +27052,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGGLHjk0IfT9+w="
 							},
-							"name": "scarica",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAGGLHoD8YgcD+s=",
-									"_parent": {
-										"$ref": "AAAAAAGGLHl8+ogPjDk="
-									},
-									"name": "idTavolo",
-									"type": "int"
-								}
-							]
+							"name": "scarica"
 						},
 						{
 							"_type": "UMLOperation",
@@ -27008,18 +27060,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGGLHjk0IfT9+w="
 							},
-							"name": "chiudi",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAGGLHolAogfHNo=",
-									"_parent": {
-										"$ref": "AAAAAAGGLHmYTYgVZCc="
-									},
-									"name": "idTavolo",
-									"type": "int"
-								}
-							]
+							"name": "chiudi"
 						},
 						{
 							"_type": "UMLOperation",
@@ -27298,6 +27339,25 @@
 									}
 								}
 							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGc7bIftPz4pE=",
+							"_parent": {
+								"$ref": "AAAAAAGGWn92EtM4YTs="
+							},
+							"name": "calcolaCosto",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGc7br5tRjVVo=",
+									"_parent": {
+										"$ref": "AAAAAAGGc7bIftPz4pE="
+									},
+									"name": "idTavolo",
+									"type": "int"
+								}
+							]
 						}
 					]
 				},
@@ -27462,6 +27522,14 @@
 									"type": "Ordine"
 								}
 							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGc8BeWNZytFM=",
+							"_parent": {
+								"$ref": "AAAAAAGGarpO/ZAf4PE="
+							},
+							"name": "creaOrdine"
 						}
 					]
 				},
@@ -27583,7 +27651,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGGasIN+PTvZLM="
 									},
-									"type": "ArrayList<Piatti>",
+									"type": "ArrayList<Piatto>",
 									"direction": "return"
 								}
 							]
@@ -27603,7 +27671,7 @@
 										"$ref": "AAAAAAGGasJBIPYkiNc="
 									},
 									"name": "piatti",
-									"type": "ArrayList<Piatti>"
+									"type": "ArrayList<Piatto>"
 								}
 							]
 						},
@@ -27642,6 +27710,25 @@
 									},
 									"name": "qta",
 									"type": "ArrayList<Integer>"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGc8gX99ibBR4=",
+							"_parent": {
+								"$ref": "AAAAAAGGar/SZedyAR0="
+							},
+							"name": "creaPiatti",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGGc8i5V9kLz6A=",
+									"_parent": {
+										"$ref": "AAAAAAGGc8gX99ibBR4="
+									},
+									"type": "ArrayList<Piatto>",
+									"direction": "return"
 								}
 							]
 						}
@@ -34477,13 +34564,30 @@
 											"height": 13,
 											"text": "+setOrdine(ordine: Ordine)",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGc9UdbNw8gmw=",
+											"_parent": {
+												"$ref": "AAAAAAGGauNwt2SrCEc="
+											},
+											"model": {
+												"$ref": "AAAAAAGGc8BeWNZytFM="
+											},
+											"font": "Arial;13;0",
+											"left": 941,
+											"top": 1040,
+											"width": 182,
+											"height": 13,
+											"text": "+creaOrdine()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 936,
 									"top": 975,
 									"width": 192,
-									"height": 68
+									"height": 83
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -34523,7 +34627,7 @@
 							"left": 936,
 							"top": 912,
 							"width": 192,
-							"height": 131,
+							"height": 146,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGauNwt2SjoEo="
 							},
@@ -34757,7 +34861,7 @@
 											"top": 1009,
 											"width": 239,
 											"height": 13,
-											"text": "+getPiatti(): ArrayList<Piatti>",
+											"text": "+getPiatti(): ArrayList<Piatto>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -34774,7 +34878,7 @@
 											"top": 1024,
 											"width": 239,
 											"height": 13,
-											"text": "+setPiatti(piatti: ArrayList<Piatti>)",
+											"text": "+setPiatti(piatti: ArrayList<Piatto>)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -34810,13 +34914,30 @@
 											"height": 13,
 											"text": "+setQta(qta: ArrayList<Integer>)",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGc9Udbdw/Jfg=",
+											"_parent": {
+												"$ref": "AAAAAAGGauNwt2S8lKY="
+											},
+											"model": {
+												"$ref": "AAAAAAGGc8gX99ibBR4="
+											},
+											"font": "Arial;13;0",
+											"left": 1229,
+											"top": 1069,
+											"width": 239,
+											"height": 13,
+											"text": "+creaPiatti(): ArrayList<Piatto>",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1224,
 									"top": 974,
 									"width": 249,
-									"height": 98
+									"height": 113
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -34856,7 +34977,7 @@
 							"left": 1224,
 							"top": 896,
 							"width": 249,
-							"height": 185,
+							"height": 191,
 							"nameCompartment": {
 								"$ref": "AAAAAAGGauNwt2Sz5r0="
 							},
