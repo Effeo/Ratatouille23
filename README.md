@@ -3,11 +3,8 @@
 ## COSE DA FARE
 - (M/F) Cambiare i collegamenti del logout dei mockupIII
 - Migliorare individuazione utente (Penso che sia risolto).
-- (M) Aggiustare gli statechart.
 - (M) Controlla se ti trovi con la versione finale dei class, leggi prima le slide per vedere se ti trovi con me
 - (M/F) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
-- (F) Sequence Diagram sul conto.
-- (M) Bozza del sequence diagram delle statistiche.
 
 ## Domande per Starace/SDM
 - L'amministratore deve poter visualizzare i messaggi che invia il supervisore?* 
@@ -29,7 +26,7 @@ Per le attività sopracitate, il Committente richiede i seguenti output:
     - -[ ] vi Glossario.
   - b Specifica dei Requisiti.
     - -[x] i Classi, oggetti e relazioni di analisi.
-    - -[ ] ii Diagrammi di sequenza di analisi per due casi d’uso significativi a scelta dei
+    - -[x] ii Diagrammi di sequenza di analisi per due casi d’uso significativi a scelta dei
       contraenti tra quelli assegnati.
     - -[x] iii Prototipazione funzionale via statechart dell’interfaccia grafica, relativamente ai casi
       d’uso individuati al punto 1.a.iii; (solo gruppi “Nuovo Ordinamento”)
@@ -38,8 +35,7 @@ Per le attività sopracitate, il Committente richiede i seguenti output:
   - -[ ] a Analisi dell’architettura con esplicita definizione dei criteri di design.
   - -[ ] b Descrizione/motivazione delle scelte tecnologiche adottate.
   - -[ ] c Diagramma delle classi di design.
-  - -[ ] d Diagrammi di stato di design, ove non banali (solo gruppi “Vecchio Ordinamento”).
-  - -[ ] e Diagrammi di sequenza di design per i casi d’uso identificati al punto 1.a.iii.
+  - -[ ] d Diagrammi di sequenza di design per i casi d’uso identificati al punto 1.a.iii.
 
 3. Codice Sorgente sviluppato, comprensivo di eventuale Dockerfile.
 
