@@ -1,6 +1,7 @@
 # Ratatouille23
 
 ## COSE DA FARE
+- (M/F) Cambiare i collegamenti del logout dei mockupIII
 - Migliorare individuazione utente (Penso che sia risolto).
 - (M) Aggiustare gli statechart.
 - (M) Controlla se ti trovi con la versione finale dei class, leggi prima le slide per vedere se ti trovi con me
