@@ -4,7 +4,6 @@
 - Migliorare individuazione utente (Penso che sia risolto).
 - (M) Aggiustare gli statechart.
 - (M) Controlla se ti trovi con la versione finale dei class, leggi prima le slide per vedere se ti trovi con me
-- (F) Vedere l'usabilità (Forse kekkino se lo controllerà come al solito, per il momento lo spunto).
 - (M/F) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
 - (F) Sequence Diagram sul conto.
 - (M) Bozza del sequence diagram delle statistiche.
