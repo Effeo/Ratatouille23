@@ -1,9 +1,13 @@
 # Ratatouille23
 
 ## COSE DA FARE
+- (M/F) Cambiare i collegamenti del logout dei mockupIII
 - Migliorare individuazione utente (Penso che sia risolto).
-- (M) Vedere l'usabilità.
-- (M) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
+- (M) Aggiustare gli statechart.
+- (M) Controlla se ti trovi con la versione finale dei class, leggi prima le slide per vedere se ti trovi con me
+- (M/F) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
+- (F) Sequence Diagram sul conto.
+- (M) Bozza del sequence diagram delle statistiche.
 
 ## Domande per Starace/SDM
 - L'amministratore deve poter visualizzare i messaggi che invia il supervisore?* 
@@ -21,7 +25,7 @@ Per le attività sopracitate, il Committente richiede i seguenti output:
       tra quelli richiesti.
     - -[x] iv Prototipazione visuale via Mock-up dell’interfaccia utente per tutti i casi d’uso
       assegnati. Si raccomanda caldamente l’uso del tool “Figma”.
-    - -[ ] v Valutazione dell’usabilità a priori. (solo gruppi “Nuovo Ordinamento”)
+    - -[x] v Valutazione dell’usabilità a priori. (solo gruppi “Nuovo Ordinamento”)
     - -[ ] vi Glossario.
   - b Specifica dei Requisiti.
     - -[x] i Classi, oggetti e relazioni di analisi.
