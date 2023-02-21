@@ -5,6 +5,7 @@
 - (F) Cambiare l'odine dei tasti in modifica/elimina menù sia in amministratore che in supervisore (solo in mockupIII).
 - Migliorare individuazione utente (Penso che sia risolto).
 - (M/F) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
+- (M/F) Leggere gli appunti
 
 ## Domande per Starace/SDM
 - L'amministratore deve poter visualizzare i messaggi che invia il supervisore?* 
