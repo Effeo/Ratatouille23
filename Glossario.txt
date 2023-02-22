@@ -9,6 +9,22 @@ Requisiti non funzionali - I requisiti non funzionali rappresentano i vincoli e 
 
 Usabilità - l’usabilità è il "grado in cui un prodotto può essere usato da particolari utenti per raggiungere certi obiettivi con efficacia, efficienza e soddisfazione in uno specifico contesto d’uso.
 
+Robustezza - La robustezza di un sistema è la misura in cui il sistema si comporta in modo ragionevole in situazioni impreviste, non contemplate dalle specifiche.
+
+Affidabilità - Un sistema è tanto più affidabile quanto più raramente, durante l'uso del sistema, si manifestano malfunzionamenti.
+
+Sicurezza - Il sistema deve essere protetto da accessi non autorizzati.
+
+Performance - Il sistema deve essere in grado di gestire il numero richiesto di utenti senza alcun degrado delle prestazioni.
+
+Scalabilità - Il sistema deve essere in grado di aumentare o diminuire in base alle esigenze.
+
+Disponibilità - Il sistema deve essere disponibile quando necessario.
+
+Manutenzione - Il sistema deve essere di facile manutenzione e aggiornamento.
+
+Portabilità - Il sistema deve essere in grado di funzionare su piattaforme diverse con modifiche minime.
+
 Design Pattern - è una soluzione progettuale generale ad un problema ricorrente.
 
 Use Case Diagram - rappresenta una funzione o servizio offerto dal sistema a uno o più attori.
