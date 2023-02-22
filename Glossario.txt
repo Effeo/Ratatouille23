@@ -1,11 +1,13 @@
 Glossario:
 
 
-*Termini ambito Informatico*
+*Dominio Informatico*
 
 Requisiti funzionali - elenchi di funzionalità o servizi che il sistema deve fornire.
 
 Requisiti non funzionali - I requisiti non funzionali rappresentano i vincoli e le proprietà/caratteristiche relative al sistema.
+
+Ergonomia - la scienza che studia l'usabilità
 
 Usabilità - l’usabilità è il "grado in cui un prodotto può essere usato da particolari utenti per raggiungere certi obiettivi con efficacia, efficienza e soddisfazione in uno specifico contesto d’uso.
 
@@ -35,24 +37,24 @@ Mock-up - Una rappresentazione iniziale e teorica che illustrano una rappresenta
 
 Class Diagram - diagrammi previsti in un modello UML che consentono di descrivere tipi di entità, con le loro caratteristiche e le eventuali relazioni.
 
-Sequence Diagram - diagramma previsto dall’UML utilizzato per descrivere una determinata sequenza di azioni.
+Sequence Diagram - diagramma previsto dall’UML utilizzato per descrivere una determinata sequenza di azioni.
 
 StateChart - descrive il comportamento di sistemi reattivi. Le transizioni descrivono come l’entità modellata reagisce a eventi (generati dall’esterno o da se stesso).
 
 Android - sistema operativo mobile.
 
-Front end -  parte visibile all'utente di un programma e con cui egli può interagire.
+Front-end -  parte visibile all'utente di un programma e con cui egli può interagire.
 
 Back-end - parte di sviluppo che non opera sul client e che fornisce un servizio.
 
-Server - macchina che ha il compito di offrire servizi ai client che li richiedono.
+Server - macchina che ha il compito di offrire servizi ai client che li richiedono.
 
 White Box - Modalità di testing in cui un metodo viene testato in base al codice che contiene, alla struttura dell’applicazion.
 
 Black Box - Modalità di testing in cui un’unità viene testata in base ai requisiti di quest’ultima.
 
 
-*Termini ambito Ristoro*
+*Dominio Ristorazione*
 
 Amministratore - Colui che crea utenti, pesonalizza il menù, invia e visualizza gli avvisi, visualizza statistiche sugli introiti dell’attività di ristorazione, dato un certo intervallo di tempo personalizzabile.
 
