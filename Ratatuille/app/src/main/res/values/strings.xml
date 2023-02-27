@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Ratatuille</string>
+
+    <string name="welcome">
+    WELCOME
+    </string>
+
+    <string name="amministratore">
+    AMMINISTRATORE
+    </string>
+
+    <string name="supervisore">
+    SUPERVISORE
+    </string>
+
+    <string name="cameriere">
+    CAMERIERE
+    </string>
+
+    <string name="cuoco">
+    CUOCO
+    </string>
+
+    <string name="login">
+    LOGIN
+    </string>
+
+    <string name="torna_indietro">
+    TORNA INDIETRO
+    </string>
+
+    <string name="cambio_password">
+    CAMBIO PASSWORD
+    </string>
+
+    <string name="continua">
+    CONTINUA
+    </string>
+
+    <string name="ordinazioni">
+    ORDINAZIONI
+    </string>
+
+</resources>
