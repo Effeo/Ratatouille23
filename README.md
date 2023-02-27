@@ -1,6 +1,7 @@
 # Ratatouille23
 
 ## COSE DA FARE
+- Scrivere ec2
 - (M/F) Cambiare i collegamenti del logout dei mockupIII
 - (F) Cambiare l'odine dei tasti in modifica/elimina menù sia in amministratore che in supervisore (solo in mockupIII).
 - Migliorare individuazione utente (Penso che sia risolto).
