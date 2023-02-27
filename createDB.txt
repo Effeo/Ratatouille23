@@ -1,0 +1,63 @@
+CREATE TABLE utente (
+	user_name varchar(254) NOT NULL,
+	password varchar(254) NOT NULL,
+	ruolo varchar(254) NOT NULL,
+	check_change_password int NOT NULL,
+
+	PRIMARY KEY (user_name)
+);
+
+CREATE TABLE piatto (
+	id_piatto int NOT NULL AUTO_INCREMENT,
+	nome varchar(254) NOT NULL,
+	descrizione varchar(1024) NOT NULL,
+	costo float NOT NULL,
+	posto int NOT NULL,
+	allergeni varchar(1024) NOT NULL,
+	categoria varchar(254) NOT NULL,
+	
+	PRIMARY KEY(id_piatto)
+);
+
+CREATE TABLE tavolo(
+	id_tavolo int NOT NULL AUTO_INCREMENT,
+	
+	PRIMARY KEY(id_tavolo)
+);
+
+CREATE TABLE ordine(
+	id_ordine int NOT NULL AUTO_INCREMENT,
+	id_tavolo int NOT NULL,
+
+	PRIMARY KEY(id_ordine),
+	FOREIGN KEY(id_tavolo) REFERENCES tavolo(id_tavolo)
+		ON DELETE CASCADE
+);
+
+CREATE TABLE ordine_piatto(
+	id_ordine_piatto int NOT NULL AUTO_INCREMENT,
+	qta int NOT NULL,
+	id_piatto int NOT NULL,
+	id_ordine int NOT NULL,
+	
+	PRIMARY KEY(id_ordine_piatto),
+	UNIQUE(id_piatto, id_ordine),
+	FOREIGN KEY(id_piatto) REFERENCES piatto(id_piatto)
+		ON DELETE CASCADE,
+	FOREIGN KEY(id_ordine) REFERENCES ordine(id_ordine)
+		ON DELETE CASCADE
+);
+
+CREATE TABLE conto(
+	id_conto int NOT NULL AUTO_INCREMENT,
+	costo float,
+	data DATE,
+	id_tavolo int NOT NULL,
+
+	PRIMARY KEY(id_conto),
+	FOREIGN KEY(id_tavolo) REFERENCES tavolo(id_tavolo)
+		ON DELETE CASCADE
+	
+);
+
+
