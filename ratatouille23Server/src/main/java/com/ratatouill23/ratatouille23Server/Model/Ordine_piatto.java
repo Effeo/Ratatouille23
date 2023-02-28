@@ -1,12 +1,9 @@
-package Model;
+package com.ratatouill23.ratatouille23Server.Model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import Model.Piatto;
-import Model.Ordine;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.springframework.web.bind.annotation.CookieValue;
 
 @Entity
 @Table(name = "ordine_piatto")

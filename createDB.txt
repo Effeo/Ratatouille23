@@ -60,4 +60,65 @@ CREATE TABLE conto(
 	
 );
 
+CREATE TABLE messaggio(
+	id_messaggio int NOT NULL AUTO_INCREMENT,
+	corpo varchar(1024) NOT NULL,
 
+	PRIMARY KEY(id_messaggio)
+);
+
+
+CREATE TABLE messaggio_utente(
+	id_messaggio_utente int NOT NULL AUTO_INCREMENT,
+	letto BOOLEAN NOT NULL,
+	user_name varchar(254) NOT NULL,
+	id_messaggio int NOT NULL,
+
+	PRIMARY KEY(id_messaggio_utente),
+	FOREIGN KEY(user_name) REFERENCES utente(user_name)
+		ON DELETE CASCADE,
+	FOREIGN KEY(id_messaggio) REFERENCES messaggio(id_messaggio)
+		ON DELETE CASCADE
+	
+);
+
+INSERT INTO utente(user_name, password, ruolo, check_change_password)
+VALUES ('francesco', '1234', 'admin', 1);
+
+INSERT INTO utente(user_name, password, ruolo, check_change_password)
+VALUES ('marco', '1234', 'supervisore', 0);
+
+INSERT INTO utente(user_name, password, ruolo, check_change_password)
+VALUES ('matteo', '1234', 'cameriere', 0);
+
+INSERT INTO utente(user_name, password, ruolo, check_change_password)
+VALUES ('luigi', '1234', 'cuoco', 0);
+
+INSERT INTO tavolo() VALUES();
+INSERT INTO tavolo() VALUES();
+INSERT INTO tavolo() VALUES();
+INSERT INTO tavolo() VALUES();
+
+INSERT INTO piatto(nome, descrizione, costo, posto, allergeni, categoria)
+VALUES ('pasta al forno', 'pasta al forno', 10, 1, 'da vedere', 'primi');
+
+INSERT INTO piatto(nome, descrizione, costo, posto, allergeni, categoria)
+VALUES ('filetto', 'filetto', 15, 1, 'da vedere', 'secondi');
+
+INSERT INTO piatto(nome, descrizione, costo, posto, allergeni, categoria)
+VALUES ('patate', 'patate', 5, 1, 'da vedere', 'contorni');
+
+INSERT INTO piatto(nome, descrizione, costo, posto, allergeni, categoria)
+VALUES ('caprese', 'caprese', 7, 1, 'da vedere', 'dolci');
+
+INSERT INTO conto(costo, data, id_tavolo)
+VALUES (25, '2023-02-28', 1);
+
+INSERT INTO ordine(id_tavolo)
+VALUES (1);
+
+INSERT INTO ordine_piatto(qta, id_piatto, id_ordine)
+VALUES (1, 1, 1);
+
+INSERT INTO ordine_piatto(qta, id_piatto, id_ordine)
+VALUES (1, 2, 1);

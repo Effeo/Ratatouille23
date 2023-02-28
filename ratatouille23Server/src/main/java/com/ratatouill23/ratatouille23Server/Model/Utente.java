@@ -1,9 +1,9 @@
-package Model;
+package com.ratatouill23.ratatouille23Server.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "utente")
@@ -18,14 +18,27 @@ public class Utente {
     @Column(name = "check_change_password")
     private int check_change_password;
 
+    @OneToMany(mappedBy = "utente", fetch = FetchType.LAZY)
+    @JsonBackReference
+    private ArrayList<Messaggio_ordine> messaggi_ordini;
+
     public Utente() {
     }
 
-    public Utente(String user_name, String password, String ruolo, int check_change_password) {
+    public Utente(String user_name, String password, String ruolo, int check_change_password, ArrayList<Messaggio_ordine> messaggi_ordini) {
         this.user_name = user_name;
         this.password = password;
         this.ruolo = ruolo;
         this.check_change_password = check_change_password;
+        this.messaggi_ordini = messaggi_ordini;
+    }
+
+    public void setMessaggi_ordini(ArrayList<Messaggio_ordine> messaggi_ordini) {
+        this.messaggi_ordini = messaggi_ordini;
+    }
+
+    public ArrayList<Messaggio_ordine> getMessaggi_ordini() {
+        return messaggi_ordini;
     }
 
     public String getUser_name() {

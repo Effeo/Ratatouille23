@@ -1,11 +1,8 @@
-package Model;
+package com.ratatouill23.ratatouille23Server.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import Model.Conto;
-import Model.Ordine;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @Entity
@@ -22,6 +19,7 @@ public class Tavolo {
     @OneToMany(mappedBy = "tavolo", fetch = FetchType.LAZY)
     @JsonBackReference
     private ArrayList<Ordine> ordini;
+
     public Tavolo() {
     }
 

@@ -1,8 +1,8 @@
-package Model;
+package com.ratatouill23.ratatouille23Server.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import Model.Tavolo;
+
 import java.util.Date;
 @Entity
 @Table(name = "conto")
@@ -11,7 +11,7 @@ public class Conto {
     @Column(name = "id_conto")
     private int id_conto;
     @Column(name = "costo")
-    private float costo;
+    private Float costo;
     @Column(name = "data")
     private Date data;
 
@@ -23,7 +23,7 @@ public class Conto {
     public Conto() {
     }
 
-    public Conto(int id_conto, float costo, Date data, Tavolo tavolo) {
+    public Conto(int id_conto, Float costo, Date data, Tavolo tavolo) {
         this.id_conto = id_conto;
         this.costo = costo;
         this.data = data;
@@ -34,7 +34,7 @@ public class Conto {
         return id_conto;
     }
 
-    public float getCosto() {
+    public Float getCosto() {
         return costo;
     }
 
@@ -50,7 +50,7 @@ public class Conto {
         this.id_conto = id_conto;
     }
 
-    public void setCosto(float costo) {
+    public void setCosto(Float costo) {
         this.costo = costo;
     }
 
