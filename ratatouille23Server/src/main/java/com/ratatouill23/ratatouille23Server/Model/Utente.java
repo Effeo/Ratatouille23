@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "utente")
@@ -20,7 +21,7 @@ public class Utente {
 
     @OneToMany(mappedBy = "utente", fetch = FetchType.LAZY)
     @JsonBackReference
-    private ArrayList<Messaggio_ordine> messaggi_ordini;
+    private List<Messaggio_ordine> messaggi_ordini = new ArrayList<>();
 
     public Utente() {
     }
@@ -33,11 +34,11 @@ public class Utente {
         this.messaggi_ordini = messaggi_ordini;
     }
 
-    public void setMessaggi_ordini(ArrayList<Messaggio_ordine> messaggi_ordini) {
+    public void setMessaggi_ordini(List<Messaggio_ordine> messaggi_ordini) {
         this.messaggi_ordini = messaggi_ordini;
     }
 
-    public ArrayList<Messaggio_ordine> getMessaggi_ordini() {
+    public List<Messaggio_ordine> getMessaggi_ordini() {
         return messaggi_ordini;
     }
 

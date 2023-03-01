@@ -7,6 +7,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "ordine")
@@ -23,7 +24,7 @@ public class Ordine {
 
     @OneToMany(mappedBy = "ordine", fetch = FetchType.LAZY)
     @JsonBackReference
-    private ArrayList<Ordine_piatto> ordini_piatti;
+    private List<Ordine_piatto> ordini_piatti = new ArrayList<>();
 
     public Ordine(int id_ordine, Tavolo tavolo, ArrayList<Ordine_piatto> ordini_piatti) {
         this.id_ordine = id_ordine;
@@ -31,11 +32,11 @@ public class Ordine {
         this.ordini_piatti = ordini_piatti;
     }
 
-    public ArrayList<Ordine_piatto> getOrdini_piatti() {
+    public List<Ordine_piatto> getOrdini_piatti() {
         return ordini_piatti;
     }
 
-    public void setOrdini_piatti(ArrayList<Ordine_piatto> ordini_piatti) {
+    public void setOrdini_piatti(List<Ordine_piatto> ordini_piatti) {
         this.ordini_piatti = ordini_piatti;
     }
 
