@@ -1,9 +1,11 @@
-package com.example.ratatuille;
+package com.example.ratatuille.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.ratatuille.R;
 
 public class CambioPasswordActivity extends AppCompatActivity {
 

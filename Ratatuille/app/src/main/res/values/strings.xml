@@ -41,4 +41,12 @@
     ORDINAZIONI
     </string>
 
+    <string name="messaggi">
+    MESSAGGI
+    </string>
+
+    <string name="visualizza">
+    VISUALIZZA
+    </string>
+
 </resources>

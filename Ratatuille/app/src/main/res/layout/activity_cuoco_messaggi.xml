@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.CuocoOrdinazioniActivity">
+    tools:context=".View.CuocoMessaggiActivity">
 
     <View
         android:id="@+id/vector_1"
@@ -31,15 +31,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/vector_1" >
 
-        <TextView
-            android:id="@+id/ordinazioni"
-            android:layout_width="match_parent"
-            android:layout_height="95dp"
-            android:text="@string/ordinazioni"
-            android:textSize="40dp"
-            android:textColor="@color/black"
-            android:gravity="center"/>
-
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="100dp"
@@ -56,8 +47,8 @@
                 <ImageButton
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:id="@+id/cuoco_logout"
                     android:backgroundTint="@color/black"
+                    android:id="@+id/cuoco_logout"
                     android:src="@drawable/__icon__logout_"/>
             </com.google.android.material.card.MaterialCardView>
 
@@ -90,24 +81,51 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="170dp"
             android:layout_marginRight="200dp"
             android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="400dp"
-            android:layout_height="354dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="right"
-            android:layout_marginTop="170dp"
-            android:layout_marginRight="100dp"
-            android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
 
+
+
+
+
+        <TextView
+            android:id="@+id/messaggi"
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:text="@string/messaggi"
+            android:textSize="40dp"
+            android:textColor="@color/black"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/button_1"
+            android:layout_width="358dp"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="330dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="460dp"
+            android:backgroundTint="@color/black"
+            android:clipToOutline="true"
+            android:text="@string/visualizza"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="518dp"
+            android:layout_height="283dp"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="160dp"
+            android:textColor="@color/black" />
 
     </androidx.cardview.widget.CardView>
 
