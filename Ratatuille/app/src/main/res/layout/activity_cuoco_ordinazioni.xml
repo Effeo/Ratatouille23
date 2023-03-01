@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="95dp"
             android:text="@string/ordinazioni"
-            android:textSize="40dp"
+            android:textSize="64sp"
             android:textColor="@color/black"
             android:gravity="center"/>
 

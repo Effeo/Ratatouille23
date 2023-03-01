@@ -80,26 +80,23 @@
 
         </LinearLayout>
 
+
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="184dp"
-            android:layout_height="wrap_content"
+            android:layout_width="214dp"
+            android:layout_height="283dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="170dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="160dp"
             android:layout_marginRight="200dp"
             android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
-
-
-
-
-
 
         <TextView
             android:id="@+id/messaggi"
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="95sp"
             android:text="@string/messaggi"
-            android:textSize="40dp"
+            android:textSize="64sp"
             android:textColor="@color/black"
             android:gravity="center"/>
 
@@ -117,7 +114,7 @@
             android:clipToOutline="true"
             android:text="@string/visualizza"
             android:textColor="@color/white"
-            android:textSize="25dp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/textView"

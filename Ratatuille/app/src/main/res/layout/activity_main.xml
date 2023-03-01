@@ -41,13 +41,11 @@
             android:layout_marginStart="50dp"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="210dp"
+            android:backgroundTint="@color/black"
             android:clipToOutline="true"
             android:text="@string/amministratore"
-            android:backgroundTint="@color/black"
-            android:textSize="25dp"
-            android:textColor="@color/white"/>
-
-
+            android:textColor="@color/white"
+            android:textSize="25dp" />
 
 
         <Button
