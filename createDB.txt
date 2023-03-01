@@ -122,3 +122,9 @@ VALUES (1, 1, 1);
 
 INSERT INTO ordine_piatto(qta, id_piatto, id_ordine)
 VALUES (1, 2, 1);
+
+INSERT INTO messaggio(corpo)
+VALUES('messaggio');
+
+INSERT INTO messaggio_utente(letto, user_name, id_messaggio)
+VALUES(0, 'marco', 1);

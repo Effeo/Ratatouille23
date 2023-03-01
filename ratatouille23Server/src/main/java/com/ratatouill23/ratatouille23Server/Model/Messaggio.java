@@ -18,20 +18,20 @@ public class Messaggio {
 
     @OneToMany(mappedBy = "messaggio", fetch = FetchType.LAZY)
     @JsonBackReference
-    private List<Messaggio_ordine> messaggi_ordini = new ArrayList<>();
+    private List<Messaggio_utente> messaggi_utenti = new ArrayList<>();
 
-    public Messaggio(int id_messaggio, String corpo, ArrayList<Messaggio_ordine> messaggi_ordini) {
+    public Messaggio(int id_messaggio, String corpo, ArrayList<Messaggio_utente> id_messaggio_utente) {
         this.id_messaggio = id_messaggio;
         this.corpo = corpo;
-        this.messaggi_ordini = messaggi_ordini;
+        this.messaggi_utenti = id_messaggio_utente;
     }
 
-    public List<Messaggio_ordine> getMessaggi_ordini() {
-        return messaggi_ordini;
+    public List<Messaggio_utente> getMessaggi_utenti() {
+        return messaggi_utenti;
     }
 
-    public void setMessaggi_ordini(List<Messaggio_ordine> messaggi_ordini) {
-        this.messaggi_ordini = messaggi_ordini;
+    public void setMessaggi_utenti(List<Messaggio_utente> messaggi_utenti) {
+        this.messaggi_utenti = messaggi_utenti;
     }
 
     public Messaggio() {

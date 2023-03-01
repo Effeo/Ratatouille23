@@ -21,25 +21,25 @@ public class Utente {
 
     @OneToMany(mappedBy = "utente", fetch = FetchType.LAZY)
     @JsonBackReference
-    private List<Messaggio_ordine> messaggi_ordini = new ArrayList<>();
+    private List<Messaggio_utente> messaggi_utenti = new ArrayList<>();
 
     public Utente() {
     }
 
-    public Utente(String user_name, String password, String ruolo, int check_change_password, ArrayList<Messaggio_ordine> messaggi_ordini) {
+    public Utente(String user_name, String password, String ruolo, int check_change_password, ArrayList<Messaggio_utente> messaggi_utenti) {
         this.user_name = user_name;
         this.password = password;
         this.ruolo = ruolo;
         this.check_change_password = check_change_password;
-        this.messaggi_ordini = messaggi_ordini;
+        this.messaggi_utenti = messaggi_utenti;
     }
 
-    public void setMessaggi_ordini(List<Messaggio_ordine> messaggi_ordini) {
-        this.messaggi_ordini = messaggi_ordini;
+    public void setMessaggi_utenti(List<Messaggio_utente> messaggi_utenti) {
+        this.messaggi_utenti = messaggi_utenti;
     }
 
-    public List<Messaggio_ordine> getMessaggi_ordini() {
-        return messaggi_ordini;
+    public List<Messaggio_utente> getMessaggi_utenti() {
+        return messaggi_utenti;
     }
 
     public String getUser_name() {

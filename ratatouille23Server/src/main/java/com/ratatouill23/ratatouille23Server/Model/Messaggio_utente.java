@@ -6,12 +6,12 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
-@Table(name = "messaggio_ordine")
-public class Messaggio_ordine {
+@Table(name = "messaggio_utente")
+public class Messaggio_utente {
 
     @Id
-    @Column(name = "id_messaggio_ordine")
-    private int id_messaggio_ordine;
+    @Column(name = "id_messaggio_utente")
+    private int id_messaggio_utente;
 
     @Column(name = "letto")
     private boolean letto;
@@ -28,18 +28,18 @@ public class Messaggio_ordine {
     @JsonManagedReference
     private Messaggio messaggio;
 
-    public Messaggio_ordine(int id_messaggio_ordine, boolean letto, Utente utente, Messaggio messaggio) {
-        this.id_messaggio_ordine = id_messaggio_ordine;
+    public Messaggio_utente(int id_messaggio_utente, boolean letto, Utente utente, Messaggio messaggio) {
+        this.id_messaggio_utente = id_messaggio_utente;
         this.letto = letto;
         this.utente = utente;
         this.messaggio = messaggio;
     }
 
-    public Messaggio_ordine() {
+    public Messaggio_utente() {
     }
 
-    public int getId_messaggio_ordine() {
-        return id_messaggio_ordine;
+    public int getId_messaggio_utente() {
+        return id_messaggio_utente;
     }
 
     public boolean isLetto() {
@@ -54,8 +54,8 @@ public class Messaggio_ordine {
         return messaggio;
     }
 
-    public void setId_messaggio_ordine(int id_messaggio_ordine) {
-        this.id_messaggio_ordine = id_messaggio_ordine;
+    public void setId_messaggio_utente(int id_messaggio_utente) {
+        this.id_messaggio_utente = id_messaggio_utente;
     }
 
     public void setLetto(boolean letto) {
