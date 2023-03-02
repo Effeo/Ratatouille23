@@ -1,4 +1,6 @@
 package com.ratatouill23.ratatouille23Server.Controller;
+
+import com.ratatouill23.ratatouille23Server.Dto.UtenteDto;
 import com.ratatouill23.ratatouille23Server.Model.Utente;
 import com.ratatouill23.ratatouille23Server.Services.Interfaces.IUtenteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +32,15 @@ public class UtenteController {
     public void updatePasswordUtente(@RequestBody Utente utente){
         utenteService.update(utente);
     }
+
+    /*private UtenteDto convertDTO(Utente utente) {
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        UtenteDto utenteDto = new UtenteDto();
+        utenteDto = modelMapper.map(utente, UtenteDto.class);
+
+        //String restaurant_name = utente.getRestaurant().getName();
+        //utenteDto.setRestaurantName(restaurant_name);
+        return utente;
+    }*/
 }
