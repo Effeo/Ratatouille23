@@ -11,6 +11,7 @@ import com.example.ratatuille.Service.Interface.IUtenteService;
 import com.example.ratatuille.Service.Callback;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.CompletableObserver;
 import io.reactivex.rxjava3.core.SingleObserver;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -35,6 +36,28 @@ public class ImplUtenteService implements IUtenteService {
                     @Override
                     public void onSuccess(@NonNull Utente user) {
                         callback.returnResult(user);
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        System.out.println(e);
+                        callback.returnResult(null);
+                    }
+                });
+    }
+
+    @Override
+    public void update(Callback callback, Utente utente) {
+        untenteApi.update(utente)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new CompletableObserver() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {}
+
+                    @Override
+                    public void onComplete() {
+                        callback.returnResult(true);
                     }
 
                     @Override

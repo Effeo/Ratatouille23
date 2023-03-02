@@ -13,7 +13,6 @@ import com.example.ratatuille.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    //ci dovrebbe essere momentaneamente un flag che mi dice in base al risultato, il ruolo che mi manda nelle varie schermate
     private UtentePresenter utentePresenter;
     private EditText edit_username;
     private EditText edit_password;
@@ -29,7 +28,8 @@ public class LoginActivity extends AppCompatActivity {
         Button login_b = (Button) findViewById(R.id.button_1);
         Button torna_indietro_b = (Button) findViewById(R.id.button_2);
 
-        utentePresenter = new UtentePresenter(this);
+        utentePresenter = UtentePresenter.getInstance();
+        utentePresenter.setLoginActivity(this);
         //L'amministratore va direttamente sulla sua schermata principale
 
 

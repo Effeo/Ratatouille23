@@ -13,7 +13,6 @@ import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class MainActivity extends AppCompatActivity {
-    private MainActivity mainActivity;
     private UtentePresenter utentePresenter;
 
     @Override
@@ -26,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
         Button cameriere_b = (Button) findViewById(R.id.button_3);
         Button cuoco_b = (Button) findViewById(R.id.button_4);
 
-        utentePresenter = new UtentePresenter(this);
+        utentePresenter = UtentePresenter.getInstance();
+        utentePresenter.setMainActivity(this);
 
         amministratore_b.setOnClickListener(new View.OnClickListener(){
             @Override
