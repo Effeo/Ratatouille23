@@ -44,12 +44,12 @@
                 android:layout_height="wrap_content"
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
+
                 <ImageButton
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:backgroundTint="@color/black"
                     android:id="@+id/cameriere_logout"
-                    android:src="@drawable/__icon__logout_"/>
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="@color/black"/>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -57,12 +57,12 @@
                 android:layout_height="wrap_content"
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
+
                 <ImageButton
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:backgroundTint="@color/black"
                     android:id="@+id/cameriere_messaggi"
-                    android:src="@drawable/__icon__email_message_inbox_"/>
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="@color/black"/>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -70,12 +70,12 @@
                 android:layout_height="wrap_content"
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
+
                 <ImageButton
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:backgroundTint="@color/black"
                     android:id="@+id/cameriere_ordinazioni"
-                    android:src="@drawable/__icon__list_alt_"/>
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="@color/black" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -85,12 +85,12 @@
                 android:layout_height="wrap_content"
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
+
                 <ImageButton
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
                     android:id="@+id/cameriere_aggiungi_tavolo"
-                    android:backgroundTint="@color/black"
-                    android:src=""/>
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="@color/black" />
 
 
             </com.google.android.material.card.MaterialCardView>
@@ -100,12 +100,12 @@
                 android:layout_height="wrap_content"
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
+
                 <ImageButton
+                    android:id="@+id/cameriere_aggiungi_ordine"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:id="@+id/cameriere_aggiungi_ordine"
-                    android:backgroundTint="@color/black"
-                    android:src=""/>
+                    android:backgroundTint="@color/black"/>
 
 
             </com.google.android.material.card.MaterialCardView>

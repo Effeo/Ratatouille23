@@ -1,6 +1,7 @@
 package com.ratatouill23.ratatouille23Server.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class Messaggio {
     private String corpo;
 
     @OneToMany(mappedBy = "messaggio", fetch = FetchType.LAZY)
-    @JsonBackReference
+    @JsonManagedReference
     private List<Messaggio_utente> messaggi_utenti = new ArrayList<>();
 
     public Messaggio(int id_messaggio, String corpo, ArrayList<Messaggio_utente> id_messaggio_utente) {

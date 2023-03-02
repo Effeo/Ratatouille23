@@ -1,5 +1,6 @@
 package com.ratatouill23.ratatouille23Server.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
@@ -19,13 +20,13 @@ public class Messaggio_utente {
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "user_name", referencedColumnName = "user_name")
-    @JsonManagedReference
+    @JsonBackReference
     private Utente utente;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "id_messaggio", referencedColumnName = "id_messaggio")
-    @JsonManagedReference
+    @JsonBackReference
     private Messaggio messaggio;
 
     public Messaggio_utente(int id_messaggio_utente, boolean letto, Utente utente, Messaggio messaggio) {
