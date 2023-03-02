@@ -1,6 +1,7 @@
 package com.ratatouill23.ratatouille23Server.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class Utente {
     private int check_change_password;
 
     @OneToMany(mappedBy = "utente", fetch = FetchType.LAZY)
-    @JsonBackReference
+    @JsonManagedReference
     private List<Messaggio_utente> messaggi_utenti = new ArrayList<>();
 
     public Utente() {
