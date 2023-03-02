@@ -129,7 +129,7 @@
             android:id="@+id/messaggi"
             android:layout_width="match_parent"
             android:layout_height="95sp"
-            android:text="@string/messaggi"
+            android:text="@string/ordinazioni"
             android:textSize="64sp"
             android:textColor="@color/black"
             android:gravity="center"/>
