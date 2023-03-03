@@ -62,8 +62,8 @@
                     android:layout_width="160dp"
                     android:layout_height="100dp"
                     android:id="@+id/supervisore_aggiungi_ordine"
-                    android:backgroundTint="@color/black"
-                    android:src=""/>
+                    android:backgroundTint="@color/black"/>
+                    <!--android:src=""-->
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
