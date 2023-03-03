@@ -23,6 +23,7 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //la gestione del bottone va fatto in un presenter
                 Intent finestraCuocoLogout = new Intent(view.getContext(), MainActivity.class);
                 startActivity(finestraCuocoLogout);
             }
@@ -31,6 +32,7 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         messaggi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //la gestione del bottone va fatto in un presenter
                 Intent finestraCuocoMessaggi = new Intent(view.getContext(), CuocoMessaggiActivity.class);
                 startActivity(finestraCuocoMessaggi);
             }
@@ -41,6 +43,7 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         ordinazioni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //la gestione del bottone va fatto in un presenter
                 Intent finestraCuocoOrdinazioni = new Intent(view.getContext(), CuocoOrdinazioniActivity.class);
                 startActivity(finestraCuocoOrdinazioni);
             }

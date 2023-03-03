@@ -19,10 +19,12 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
         ImageButton logout = (ImageButton) findViewById(R.id.cuoco_logout);
         ImageButton messaggi = (ImageButton) findViewById(R.id.cuoco_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cuoco_ordinazioni);
+        //manca il bottone visualizza, ma stai soft perchè deve solo mandare cose al db
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //la gestione del bottone va fatto in un presenter
                 Intent finestraCuocoLogout = new Intent(view.getContext(), MainActivity.class);
                 startActivity(finestraCuocoLogout);
             }
@@ -31,6 +33,7 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
         messaggi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //la gestione del bottone va fatto in un presenter
                 Intent finestraCuocoMessaggi = new Intent(view.getContext(), CuocoMessaggiActivity.class);
                 startActivity(finestraCuocoMessaggi);
             }
@@ -41,6 +44,7 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
         ordinazioni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //la gestione del bottone va fatto in un presenter
                 Intent finestraCuocoOrdinazioni = new Intent(view.getContext(), CuocoOrdinazioniActivity.class);
                 startActivity(finestraCuocoOrdinazioni);
             }
