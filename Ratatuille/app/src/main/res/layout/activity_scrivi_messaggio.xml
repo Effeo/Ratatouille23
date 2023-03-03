@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.SupervisoreLeggeMessaggiActivity">
+    tools:context=".View.ScriviMessaggioActivity">
 
     <View
         android:id="@+id/vector_1"
@@ -156,7 +156,7 @@
             android:layout_marginTop="460dp"
             android:backgroundTint="@color/black"
             android:clipToOutline="true"
-            android:text="@string/visualizza"
+            android:text="@string/invia"
             android:textColor="@color/white"
             android:textSize="25sp" />
 
@@ -166,11 +166,13 @@
             android:layout_marginLeft="250dp"
             android:layout_marginTop="160dp"
             android:stroke="@color/grigio_scuro">
-            <TextView
+            <EditText
                 android:id="@+id/textView"
                 android:layout_width="518dp"
-                android:layout_height="283dp"
-                android:textColor="@color/black"/>
+                android:layout_height="70dp"
+                android:textColor="@color/black"
+                android:hint="@string/scrivi_messaggio"
+                android:background="@color/white"/>
         </com.google.android.material.card.MaterialCardView>
 
     </androidx.cardview.widget.CardView>

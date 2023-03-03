@@ -148,13 +148,18 @@
             android:textColor="@color/white"
             android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/textView"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="518dp"
             android:layout_height="283dp"
             android:layout_marginLeft="250dp"
             android:layout_marginTop="160dp"
-            android:textColor="@color/black" />
+            android:stroke="@color/grigio_scuro">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="518dp"
+                android:layout_height="283dp"
+                android:textColor="@color/black"/>
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.cardview.widget.CardView>
 

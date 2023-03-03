@@ -61,4 +61,16 @@
     COMANDA
     </string>
 
+    <string name="scrivi">
+    SCRIVI
+    </string>
+
+    <string name="invia">
+    INVIA
+    </string>
+
+    <string name="scrivi_messaggio">
+    scrivi messaggio
+    </string>
+
 </resources>
