@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
 import com.example.ratatuille.R;
 
 public class CuocoOrdinazioniActivity extends AppCompatActivity {
+    private Ordine_piattoPresenter ordine_piattoPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,9 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         ImageButton logout = (ImageButton) findViewById(R.id.cuoco_logout);
         ImageButton messaggi = (ImageButton) findViewById(R.id.cuoco_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cuoco_ordinazioni);
+
+        ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
+        ordine_piattoPresenter.getOrdiniPiatti();
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
