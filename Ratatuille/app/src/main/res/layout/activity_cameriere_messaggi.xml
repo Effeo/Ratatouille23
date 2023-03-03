@@ -47,7 +47,9 @@
                 <ImageButton
                     android:layout_width="160dp"
                     android:layout_height="100dp"
-                    android:backgroundTint="@color/black"/>
+                    android:id="@+id/cameriere_logout"
+                    android:backgroundTint="@color/black"
+                    android:src="@drawable/__icon__logout_"/>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -72,7 +74,9 @@
                 <ImageButton
                     android:layout_width="160dp"
                     android:layout_height="100dp"
-                    android:backgroundTint="@color/black" />
+                    android:id="@+id/cameriere_visualizza_comanda"
+                    android:backgroundTint="@color/black"
+                    android:src="@drawable/__icon__list_alt_"/>
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -100,7 +104,7 @@
                 <ImageButton
                     android:layout_width="160dp"
                     android:layout_height="100dp"
-                    android:id="@+id/cameriere_aggiungi_ordine"
+                    android:id="@+id/cameriere_ordinazioni"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/__icon__menu_book_"/>
             </com.google.android.material.card.MaterialCardView>

@@ -49,4 +49,16 @@
     VISUALIZZA
     </string>
 
+    <string name="conferma">
+    CONFERMA
+    </string>
+
+    <string name="tavolo">
+    TAVOLO
+    </string>
+
+    <string name="comanda">
+    COMANDA
+    </string>
+
 </resources>
