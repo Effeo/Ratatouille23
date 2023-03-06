@@ -8,10 +8,13 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
+import com.example.ratatuille.Presenter.PiattoPresenter;
+import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class CuocoOrdinazioniActivity extends AppCompatActivity {
     private Ordine_piattoPresenter ordine_piattoPresenter;
+    private PiattoPresenter piattoPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,10 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
 
         ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
         ordine_piattoPresenter.getOrdiniPiatti();
+        /*piattoPresenter = PiattoPresenter.getInstance();
+        piattoPresenter.initializePiattiFromOridniPiatti(ordine_piattoPresenter.getOrdini_piatti());*/
+
+        System.out.println(ordine_piattoPresenter.getOrdini_piatti().get(0).getId_ordine_piatto());
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

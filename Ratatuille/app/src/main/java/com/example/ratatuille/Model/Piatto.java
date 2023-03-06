@@ -22,7 +22,7 @@ public class Piatto {
     private float costo;
 
     @Expose
-    @SerializedName("costo")
+    @SerializedName("posto")
     private int posto;
 
     @Expose

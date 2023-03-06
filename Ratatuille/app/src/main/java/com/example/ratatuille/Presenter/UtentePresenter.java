@@ -87,7 +87,9 @@ public class UtentePresenter {
 
     }
 
-
+    public Utente getUtente() {
+        return utente;
+    }
 
     public void setMainActivity(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
