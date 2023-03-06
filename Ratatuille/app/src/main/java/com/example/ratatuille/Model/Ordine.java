@@ -11,14 +11,14 @@ public class Ordine {
 
     @Expose
     @SerializedName("tavolo")
-    private Tavolo tavolo;
+    private int id_tavolo;
 
     public Ordine() {
     }
 
-    public Ordine(int id_ordine, Tavolo tavolo) {
+    public Ordine(int id_ordine, int id_tavolo) {
         this.id_ordine = id_ordine;
-        this.tavolo = tavolo;
+        this.id_tavolo = id_tavolo;
     }
 
     public int getId_ordine() {
@@ -29,11 +29,11 @@ public class Ordine {
         this.id_ordine = id_ordine;
     }
 
-    public Tavolo getTavolo() {
-        return tavolo;
+    public int getIdTavolo() {
+        return id_tavolo;
     }
 
-    public void setTavolo(Tavolo tavolo) {
-        this.tavolo = tavolo;
+    public void setId_Tavolo(int id_tavolo) {
+        this.id_tavolo = id_tavolo;
     }
 }
