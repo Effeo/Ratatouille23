@@ -12,13 +12,12 @@ import java.util.List;
 public class Ordine_piattoPresenter {
     private static Ordine_piattoPresenter ordine_piattoPresenter = null;
     private ImplOrdine_piattoService implOrdine_piattoService;
-    private ImplPiattoService implPiattoService;
+    private PiattoPresenter piattoPresenter;
     private List<Ordine_piatto> ordini_piatti;
     private List<List<Piatto>> piatti;
 
     private Ordine_piattoPresenter(){
         implOrdine_piattoService = new ImplOrdine_piattoService();
-        implPiattoService = new ImplPiattoService();
     }
 
     public static Ordine_piattoPresenter getInstance(){
@@ -33,7 +32,26 @@ public class Ordine_piattoPresenter {
             public void returnResult(Object o) {
                 ordini_piatti = (List<Ordine_piatto>) o;
                 piatti = new ArrayList<>();
+                piattoPresenter = PiattoPresenter.getInstance();
+                int j = 0;
+                int id_ordine = ordini_piatti.get(0).getId_ordine();
 
+                for(int i = 0; i < ordini_piatti.size(); i++){
+                    if(ordini_piatti.get(i).getId_ordine() != id_ordine){
+                        j++;
+                        id_ordine = ordini_piatti.get(i).getId_ordine();
+                        piatti.add(new ArrayList<>());
+                    }
+
+                    piattoPresenter.findPiattoById(ordini_piatti.get(i).getId_piatto());
+                    piatti.get(j).add(piattoPresenter.getPiatto());
+                }
+
+                for(int i = 0; i < piatti.size(); i++){
+                    for(j = 0; j < piatti.get(i).size(); j++){
+                        System.out.println(piatti.get(i).get(j).getNome());
+                    }
+                }
 
             }
 
@@ -42,5 +60,13 @@ public class Ordine_piattoPresenter {
                 System.out.println(e);
             }
         });
+    }
+
+    public List<Ordine_piatto> getOrdini_piatti() {
+        return ordini_piatti;
+    }
+
+    public List<List<Piatto>> getPiatti() {
+        return piatti;
     }
 }
