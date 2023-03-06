@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.SupervisoreLeggeMessaggiActivity">
+    tools:context=".View.SupervisoreModificaMenuActivity">
+
 
     <View
         android:id="@+id/vector_1"
@@ -63,6 +64,7 @@
                     android:id="@+id/supervisore_aggiungi_ordine"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/adding_1"/>
+
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -76,6 +78,7 @@
                     android:id="@+id/supervisore_ordinazioni"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/__icon__menu_book_"/>
+
             </com.google.android.material.card.MaterialCardView>
 
 
@@ -90,6 +93,8 @@
                     android:id="@+id/supervisore_conto"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/__icon__list_alt_"/>
+
+
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -103,75 +108,47 @@
                     android:backgroundTint="@color/black"
                     android:id="@+id/supervisore_messaggi"
                     android:src="@drawable/__icon__email_message_inbox_"/>
+
+
             </com.google.android.material.card.MaterialCardView>
 
 
         </LinearLayout>
 
 
-        <Button
-            android:id="@+id/button_scrivi"
-            android:layout_width="214dp"
-            android:layout_height="56dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="160dp"
-            android:backgroundTint="@color/black"
-            android:clipToOutline="true"
-            android:text="@string/scrivi"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="214dp"
-            android:layout_height="220dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="223dp"
-            android:layout_marginRight="200dp"
-            android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="214dp"
+        android:layout_height="283dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginRight="200dp"
+        android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
 
-        <TextView
-            android:id="@+id/messaggi"
-            android:layout_width="match_parent"
-            android:layout_height="95sp"
-            android:text="@string/messaggi"
-            android:textSize="64sp"
-            android:textColor="@color/black"
-            android:gravity="center"/>
+    <TextView
+        android:id="@+id/modifica_menu"
+        android:layout_width="match_parent"
+        android:layout_height="95sp"
+        android:text="@string/modifica_menu"
+        android:textSize="64sp"
+        android:textColor="@color/black"
+        android:gravity="center"/>
 
-        <Button
-            android:id="@+id/button_1"
-            android:layout_width="358dp"
-            android:layout_height="56dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="330dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="460dp"
-            android:backgroundTint="@color/black"
-            android:clipToOutline="true"
-            android:text="@string/visualizza"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="318dp"
+        android:layout_height="283dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginRight="200dp"
+        android:orientation="vertical"
+        ></androidx.recyclerview.widget.RecyclerView>
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="518dp"
-            android:layout_height="283dp"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="160dp"
-            android:stroke="@color/grigio_scuro">
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="518dp"
-                android:layout_height="283dp"
-                android:textColor="@color/black"/>
-        </com.google.android.material.card.MaterialCardView>
 
-    </androidx.cardview.widget.CardView>
+
+</androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

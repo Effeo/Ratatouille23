@@ -73,4 +73,20 @@
     scrivi messaggio
     </string>
 
+    <string name="conto">
+    CONTO
+    </string>
+
+    <string name="scarica">
+    SCARICA
+    </string>
+
+    <string name="chiudi">
+    CHIUDI
+    </string>
+
+    <string name="modifica_menu">
+    MODIFICA MENU'
+    </string>
+
 </resources>
