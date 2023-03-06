@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.SupervisoreModificaEliminaMenuActivity">
+    tools:context=".View.SupervisoreAggiungiPiattoActivity">
 
     <View
         android:id="@+id/vector_1"
@@ -115,10 +115,10 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/modifica_menu"
+            android:id="@+id/aggiungi_piatto"
             android:layout_width="match_parent"
             android:layout_height="95sp"
-            android:text="@string/modifica_menu"
+            android:text="@string/aggiungi_piatto"
             android:textSize="64sp"
             android:textColor="@color/black"
             android:gravity="center"/>
@@ -214,44 +214,12 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="450dp"
-            android:backgroundTint="@color/black"
-            android:clipToOutline="true"
-            android:text="@string/modifica"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/button_2"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="510dp"
-            android:backgroundTint="@color/black"
-            android:clipToOutline="true"
-            android:text="@string/torna_indietro"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/button_3"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:layout_marginStart="470dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="470dp"
             android:backgroundTint="@color/black"
             android:clipToOutline="true"
-            android:text="@string/elimina"
+            android:text="@string/aggiungi"
             android:textColor="@color/white"
             android:textSize="25sp" />
 

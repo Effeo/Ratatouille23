@@ -89,4 +89,20 @@
     MODIFICA MENU'
     </string>
 
+    <string name="modifica">
+    MODIFICA
+    </string>
+
+    <string name="elimina">
+    ELIMINA
+    </string>
+
+    <string name="aggiungi">
+    AGGIUNGI
+    </string>
+
+    <string name="aggiungi_piatto">
+    AGGIUNGI PIATTO
+    </string>
+
 </resources>
