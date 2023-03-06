@@ -2,18 +2,14 @@ package com.ratatouill23.ratatouille23Server.Controller;
 
 import com.ratatouill23.ratatouille23Server.Dto.Ordine_Piatto_Dto;
 import com.ratatouill23.ratatouille23Server.Model.Ordine_piatto;
-import com.ratatouill23.ratatouille23Server.Model.Tavolo;
-import com.ratatouill23.ratatouille23Server.Services.Interfaces.IOrdine_piatto;
-import com.ratatouill23.ratatouille23Server.Services.Interfaces.ITavoloService;
+import com.ratatouill23.ratatouille23Server.Services.Interfaces.IOrdine_piattoService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +19,7 @@ import java.util.List;
 public class Ordine_piattoController {
     @Autowired
     @Qualifier("ImplOrdine_piatto")
-    private IOrdine_piatto iOrdine_piatto;
+    private IOrdine_piattoService iOrdine_piatto;
 
     @Autowired
     private ModelMapper modelMapper;

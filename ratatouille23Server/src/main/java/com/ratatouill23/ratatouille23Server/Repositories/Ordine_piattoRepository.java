@@ -1,7 +1,6 @@
 package com.ratatouill23.ratatouille23Server.Repositories;
 
 import com.ratatouill23.ratatouille23Server.Model.Ordine_piatto;
-import com.ratatouill23.ratatouille23Server.Model.Tavolo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
