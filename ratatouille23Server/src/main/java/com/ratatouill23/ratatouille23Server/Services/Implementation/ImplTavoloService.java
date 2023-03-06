@@ -20,4 +20,5 @@ public class ImplTavoloService implements ITavoloService {
     public List<Tavolo> getTavoli() {
         return tavoloRepository.findAll();
     }
+
 }
