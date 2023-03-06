@@ -30,7 +30,7 @@ public class OrdineController {
     @GetMapping("/get/{id_ordine}")
     public OrdineDto findOrdineById(@PathVariable Integer id_ordine){
         Optional<Ordine> ordine = iOrdineService.findOrdineById(id_ordine);
-        
+
         if(ordine.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
         OrdineDto ordineDto = convertDto(ordine.get());
