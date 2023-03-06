@@ -126,7 +126,7 @@
             android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
 
         <TextView
-            android:id="@+id/messaggi"
+            android:id="@+id/ordinazioni"
             android:layout_width="match_parent"
             android:layout_height="95sp"
             android:text="@string/ordinazioni"
