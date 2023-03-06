@@ -128,8 +128,7 @@
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="115dp"
-            android:stroke="@color/grigio_scuro">
+            android:layout_marginTop="115dp">
             <EditText
                 android:id="@+id/textView_nome"
                 android:layout_width="300dp"
@@ -144,8 +143,7 @@
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_marginLeft="470dp"
-            android:layout_marginTop="115dp"
-            android:stroke="@color/grigio_scuro">
+            android:layout_marginTop="115dp">
             <EditText
                 android:id="@+id/textView_costo"
                 android:layout_width="300dp"
@@ -159,8 +157,7 @@
             android:layout_width="300dp"
             android:layout_height="130dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="215dp"
-            android:stroke="@color/grigio_scuro">
+            android:layout_marginTop="215dp">
             <EditText
                 android:id="@+id/textView_descrizione"
                 android:layout_width="300dp"
@@ -174,8 +171,7 @@
             android:layout_width="300dp"
             android:layout_height="130dp"
             android:layout_marginLeft="470dp"
-            android:layout_marginTop="215dp"
-            android:stroke="@color/grigio_scuro">
+            android:layout_marginTop="215dp">
             <EditText
                 android:id="@+id/textView_allergeni"
                 android:layout_width="300dp"
@@ -196,8 +192,7 @@
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_marginLeft="470dp"
-            android:layout_marginTop="360dp"
-            android:stroke="@color/grigio_scuro">
+            android:layout_marginTop="360dp">
             <EditText
                 android:id="@+id/textView_posizione"
                 android:layout_width="300dp"
