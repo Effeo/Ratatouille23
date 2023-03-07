@@ -40,7 +40,7 @@ public class UtenteController {
         utenteService.update(utente);
     }
 
-    private UtenteDto convertDTO(Utente utente) {
+    private UtenteDto convertDto(Utente utente) {
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.LOOSE);
         UtenteDto utenteDto = new UtenteDto();

@@ -1,7 +1,11 @@
 package com.ratatouill23.ratatouille23Server.Controller;
 
+import com.ratatouill23.ratatouille23Server.Dto.OrdineDto;
 import com.ratatouill23.ratatouille23Server.Dto.Ordine_Piatto_Dto;
+import com.ratatouill23.ratatouille23Server.Dto.PiattoDto;
+import com.ratatouill23.ratatouille23Server.Model.Ordine;
 import com.ratatouill23.ratatouille23Server.Model.Ordine_piatto;
+import com.ratatouill23.ratatouille23Server.Model.Piatto;
 import com.ratatouill23.ratatouille23Server.Services.Interfaces.IOrdine_piattoService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
@@ -30,19 +34,39 @@ public class Ordine_piattoController {
         List<Ordine_Piatto_Dto> ordini_piatti_dto = new ArrayList<>();
 
         for(Ordine_piatto ordine_piatto : ordini_piatti)
-            ordini_piatti_dto.add(convertDTO(ordine_piatto));
+            ordini_piatti_dto.add(convertDto(ordine_piatto));
 
         return ordini_piatti_dto;
     }
 
-    private Ordine_Piatto_Dto convertDTO(Ordine_piatto element) {
+    private Ordine_Piatto_Dto convertDto(Ordine_piatto element) {
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.LOOSE);
         Ordine_Piatto_Dto ordine_piatto_dto = new Ordine_Piatto_Dto();
         ordine_piatto_dto = modelMapper.map(element, Ordine_Piatto_Dto.class);
 
+        ordine_piatto_dto.setOrdine(convertDto(element.getOrdine()));
+        ordine_piatto_dto.setPiatto(convertDto(element.getPiatto()));
 
         return ordine_piatto_dto;
     }
 
+    private PiattoDto convertDto(Piatto piatto){
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        PiattoDto piattoDto = new PiattoDto();
+        piattoDto = modelMapper.map(piatto, PiattoDto.class);
+
+        return piattoDto;
+    }
+
+    private OrdineDto convertDto(Ordine ordine){
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        OrdineDto ordineDto = new OrdineDto();
+        ordineDto = modelMapper.map(ordine, OrdineDto.class);
+
+        ordineDto.setId_tavolo(ordine.getTavolo().getId_tavolo());
+        return ordineDto;
+    }
 }

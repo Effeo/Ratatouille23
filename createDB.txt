@@ -128,3 +128,12 @@ VALUES('messaggio');
 
 INSERT INTO messaggio_utente(letto, user_name, id_messaggio)
 VALUES(0, 'marco', 1);
+
+insert into ordine(id_tavolo)
+values(2);
+
+insert into ordine_piatto(qta, id_piatto, id_ordine)
+values(2, 2, 2);
+
+insert into messaggio_utente(letto, user_name, id_messaggio)
+values(false, 'luigi', 1);

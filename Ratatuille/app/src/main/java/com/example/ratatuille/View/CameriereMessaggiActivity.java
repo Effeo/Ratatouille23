@@ -7,9 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Model.Utente;
+import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
+import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class CameriereMessaggiActivity extends AppCompatActivity {
+    private Messaggio_utentePresenter messaggio_utentePresenter;
+    private UtentePresenter utentePresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,10 +73,16 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
             }
         });
 
+        messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
+        utentePresenter = UtentePresenter.getInstance();
 
+        messaggio_utentePresenter.setCameriereMessaggiActivity(this);
+        messaggio_utentePresenter.getAllMessaggioUtente(utentePresenter.getUtente().getRuolo(), utentePresenter.getUtente().getUser_name());
+    }
 
-
-
-
+    public void stampaMessaggi(){
+        for(int i = 0; i < messaggio_utentePresenter.getMessaggi_utenti().size(); i++){
+            System.out.println(messaggio_utentePresenter.getMessaggi_utenti().get(i).getMessaggio().getId_messaggio());
+        }
     }
 }

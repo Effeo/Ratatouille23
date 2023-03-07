@@ -7,9 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
+import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class CuocoMessaggiActivity extends AppCompatActivity {
+    private UtentePresenter utentePresenter;
+    private Messaggio_utentePresenter messaggio_utentePresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,12 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
             }
         });
 
+        messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
+        utentePresenter = UtentePresenter.getInstance();
+
+        messaggio_utentePresenter.setCuocoMessaggiActivity(this);
+        messaggio_utentePresenter.getAllMessaggioUtente(utentePresenter.getUtente().getRuolo(), utentePresenter.getUtente().getUser_name());
+
     }
 
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -64,6 +74,12 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
+
+    public void stampaMessaggi(){
+        for(int i = 0; i < messaggio_utentePresenter.getMessaggi_utenti().size(); i++){
+            System.out.println(messaggio_utentePresenter.getMessaggi_utenti().get(i).getMessaggio().getCorpo());
         }
     }
 }

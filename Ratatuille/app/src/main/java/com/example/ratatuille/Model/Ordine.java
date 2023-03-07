@@ -10,7 +10,7 @@ public class Ordine {
     private int id_ordine;
 
     @Expose
-    @SerializedName("tavolo")
+    @SerializedName("id_tavolo")
     private int id_tavolo;
 
     public Ordine() {

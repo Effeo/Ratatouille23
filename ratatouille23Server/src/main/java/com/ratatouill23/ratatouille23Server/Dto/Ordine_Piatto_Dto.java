@@ -1,13 +1,15 @@
 package com.ratatouill23.ratatouille23Server.Dto;
 
+import com.ratatouill23.ratatouille23Server.Model.Piatto;
+
 public class Ordine_Piatto_Dto {
     private int id_ordine_piatto;
 
     private int qta;
 
-    private int id_ordine;
+    private OrdineDto ordine;
 
-    private int id_piatto;
+    private PiattoDto piatto;
 
     public void setId_ordine_piatto(int id_ordine_piatto) {
         this.id_ordine_piatto = id_ordine_piatto;
@@ -17,12 +19,12 @@ public class Ordine_Piatto_Dto {
         this.qta = qta;
     }
 
-    public void setId_ordine(int id_ordine) {
-        this.id_ordine = id_ordine;
+    public void setOrdine(OrdineDto ordine) {
+        this.ordine = ordine;
     }
 
-    public void setId_piatto(int id_piatto) {
-        this.id_piatto = id_piatto;
+    public void setPiatto(PiattoDto piatto) {
+        this.piatto = piatto;
     }
 
     public Ordine_Piatto_Dto() {
@@ -36,18 +38,18 @@ public class Ordine_Piatto_Dto {
         return qta;
     }
 
-    public int getId_ordine() {
-        return id_ordine;
+    public OrdineDto getOrdine() {
+        return ordine;
     }
 
-    public int getId_piatto() {
-        return id_piatto;
+    public PiattoDto getPiatto() {
+        return piatto;
     }
 
-    public Ordine_Piatto_Dto(int id_ordine_piatto, int qta, int id_ordine, int id_piatto) {
+    public Ordine_Piatto_Dto(int id_ordine_piatto, int qta, OrdineDto ordine, PiattoDto piatto) {
         this.id_ordine_piatto = id_ordine_piatto;
         this.qta = qta;
-        this.id_ordine = id_ordine;
-        this.id_piatto = id_piatto;
+        this.ordine = ordine;
+        this.piatto = piatto;
     }
 }

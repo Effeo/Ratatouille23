@@ -13,4 +13,6 @@ public class SupervisoreLeggeMessaggiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supervisore_legge_messaggi);
     }
+
+    public void stampaMessaggi(){}
 }

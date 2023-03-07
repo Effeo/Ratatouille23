@@ -14,21 +14,21 @@ public class Ordine_piatto {
     private int qta;
 
     @Expose
-    @SerializedName("id_ordine")
-    private int id_ordine;
+    @SerializedName("ordine")
+    private Ordine ordine;
 
     @Expose
-    @SerializedName("id_piatto")
-    private int id_piatto;
+    @SerializedName("piatto")
+    private Piatto piatto;
 
     public Ordine_piatto() {
     }
 
-    public Ordine_piatto(int id_ordine_piatto, int qta, int id_ordine, int id_piatto) {
+    public Ordine_piatto(int id_ordine_piatto, int qta, Ordine ordine, Piatto piatto) {
         this.id_ordine_piatto = id_ordine_piatto;
         this.qta = qta;
-        this.id_ordine = id_ordine;
-        this.id_piatto = id_piatto;
+        this.ordine = ordine;
+        this.piatto = piatto;
     }
 
     public int getId_ordine_piatto() {
@@ -47,19 +47,19 @@ public class Ordine_piatto {
         this.qta = qta;
     }
 
-    public int getId_ordine() {
-        return id_ordine;
+    public Ordine getOrdine() {
+        return ordine;
     }
 
-    public void setId_ordine(int id_ordine) {
-        this.id_ordine = id_ordine;
+    public void setOrdine(Ordine ordine) {
+        this.ordine = ordine;
     }
 
-    public int getId_piatto() {
-        return id_piatto;
+    public Piatto getPiatto() {
+        return piatto;
     }
 
-    public void setId_piatto(int id_piatto) {
-        this.id_piatto = id_piatto;
+    public void setPiatto(Piatto piatto) {
+        this.piatto = piatto;
     }
 }

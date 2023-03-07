@@ -1,19 +1,7 @@
-package com.example.ratatuille.Model;
+package com.ratatouill23.ratatouille23Server.Dto;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class Messaggio {
-
-    @Expose
-    @SerializedName("id_messaggio")
+public class MessaggioDto {
     private int id_messaggio;
-
-    @Expose
-    @SerializedName("corpo")
     private String corpo;
 
     public void setId_messaggio(int id_messaggio) {
@@ -32,11 +20,11 @@ public class Messaggio {
         return corpo;
     }
 
-    public Messaggio(int id_messaggio, String corpo) {
+    public MessaggioDto(int id_messaggio, String corpo) {
         this.id_messaggio = id_messaggio;
         this.corpo = corpo;
     }
 
-    public Messaggio() {
+    public MessaggioDto() {
     }
 }

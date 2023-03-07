@@ -14,7 +14,6 @@ import com.example.ratatuille.R;
 
 public class CuocoOrdinazioniActivity extends AppCompatActivity {
     private Ordine_piattoPresenter ordine_piattoPresenter;
-    private PiattoPresenter piattoPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +23,6 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         ImageButton logout = (ImageButton) findViewById(R.id.cuoco_logout);
         ImageButton messaggi = (ImageButton) findViewById(R.id.cuoco_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cuoco_ordinazioni);
-
-        ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
-        ordine_piattoPresenter.getOrdiniPiatti();
-        /*piattoPresenter = PiattoPresenter.getInstance();
-        piattoPresenter.initializePiattiFromOridniPiatti(ordine_piattoPresenter.getOrdini_piatti());*/
-
-        System.out.println(ordine_piattoPresenter.getOrdini_piatti().get(0).getId_ordine_piatto());
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +52,11 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
                 startActivity(finestraCuocoOrdinazioni);
             }
         });
+
+        ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
+        ordine_piattoPresenter.setCuocoOrdinazioniActivity(this);
+
+        ordine_piattoPresenter.findAllOrdiniPiatti();
     }
 
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -74,6 +71,14 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
+
+
+    public void stampaOrdiniPiatti(){
+        for(int i = 0; i < ordine_piattoPresenter.getOrdini_piatti().size(); i++){
+            System.out.println("tavolo: " + ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo());
+            System.out.println(ordine_piattoPresenter.getOrdini_piatti().get(i).getPiatto().getNome());
         }
     }
 }
