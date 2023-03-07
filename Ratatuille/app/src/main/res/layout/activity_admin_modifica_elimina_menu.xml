@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.SupervisoreAggiungiPiattoActivity">
+    tools:context=".View.AdminModificaEliminaMenuActivity">
 
     <View
         android:id="@+id/vector_1"
@@ -19,7 +19,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/frame_1"
-        android:layout_width="800dp"
+        android:layout_width="804dp"
         android:layout_height="670dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -45,9 +45,9 @@
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
                 <ImageButton
-                    android:layout_width="160dp"
+                    android:layout_width="134dp"
                     android:layout_height="100dp"
-                    android:id="@+id/supervisore_logout"
+                    android:id="@+id/admin_logout"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/__icon__logout_"/>
             </com.google.android.material.card.MaterialCardView>
@@ -58,9 +58,9 @@
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
                 <ImageButton
-                    android:layout_width="160dp"
+                    android:layout_width="134dp"
                     android:layout_height="100dp"
-                    android:id="@+id/supervisore_aggiungi_ordine"
+                    android:id="@+id/admin_aggiungi_ordine"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/adding_1"/>
 
@@ -72,41 +72,57 @@
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
                 <ImageButton
-                    android:layout_width="160dp"
+                    android:layout_width="134dp"
                     android:layout_height="100dp"
-                    android:id="@+id/supervisore_ordinazioni"
+                    android:id="@+id/admin_ordinazioni"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/__icon__menu_book_"/>
 
             </com.google.android.material.card.MaterialCardView>
 
-
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
                 <ImageButton
-                    android:layout_width="160dp"
+                    android:layout_width="134dp"
                     android:layout_height="100dp"
-                    android:id="@+id/supervisore_conto"
                     android:backgroundTint="@color/black"
-                    android:src="@drawable/__icon__list_alt_"/>
+                    android:id="@+id/admin_messaggi"
+                    android:src="@drawable/__icon__email_message_inbox_"/>
 
 
             </com.google.android.material.card.MaterialCardView>
 
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
                 <ImageButton
-                    android:layout_width="160dp"
+                    android:layout_width="134dp"
                     android:layout_height="100dp"
                     android:backgroundTint="@color/black"
-                    android:id="@+id/supervisore_messaggi"
-                    android:src="@drawable/__icon__email_message_inbox_"/>
+                    android:id="@+id/admin_statistiche"
+                    android:src="@drawable/monitoring_fill0_wght400_grad0_opsz48_1"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/purple_500">
+                <ImageButton
+                    android:layout_width="134dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="@color/black"
+                    android:id="@+id/admin_add_utente"
+                    android:src="@drawable/vector"/>
 
 
             </com.google.android.material.card.MaterialCardView>
@@ -115,10 +131,10 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/aggiungi_piatto"
+            android:id="@+id/modifica_menu"
             android:layout_width="match_parent"
             android:layout_height="95sp"
-            android:text="@string/aggiungi_piatto"
+            android:text="@string/modifica_menu"
             android:textSize="64sp"
             android:textColor="@color/black"
             android:gravity="center"/>
@@ -128,9 +144,7 @@
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="115dp"
-            app:strokeColor="@color/grigio_scuro"
-            app:strokeWidth="1dp">
+            android:layout_marginTop="115dp">
             <EditText
                 android:id="@+id/textView_nome"
                 android:layout_width="300dp"
@@ -145,9 +159,7 @@
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_marginLeft="470dp"
-            android:layout_marginTop="115dp"
-            app:strokeColor="@color/grigio_scuro"
-            app:strokeWidth="1dp">
+            android:layout_marginTop="115dp">
             <EditText
                 android:id="@+id/textView_costo"
                 android:layout_width="300dp"
@@ -161,9 +173,7 @@
             android:layout_width="300dp"
             android:layout_height="130dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="215dp"
-            app:strokeColor="@color/grigio_scuro"
-            app:strokeWidth="1dp">
+            android:layout_marginTop="215dp">
             <EditText
                 android:id="@+id/textView_descrizione"
                 android:layout_width="300dp"
@@ -177,9 +187,7 @@
             android:layout_width="300dp"
             android:layout_height="130dp"
             android:layout_marginLeft="470dp"
-            android:layout_marginTop="215dp"
-            app:strokeColor="@color/grigio_scuro"
-            app:strokeWidth="1dp">
+            android:layout_marginTop="215dp">
             <EditText
                 android:id="@+id/textView_allergeni"
                 android:layout_width="300dp"
@@ -190,7 +198,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <Spinner
-            android:id="@+id/spinner_supervisore_aggiungi"
+            android:id="@+id/spinner_admin_modifica"
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_marginLeft="50dp"
@@ -201,9 +209,7 @@
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_marginLeft="470dp"
-            android:layout_marginTop="360dp"
-            app:strokeColor="@color/grigio_scuro"
-            app:strokeWidth="1dp">
+            android:layout_marginTop="360dp">
             <EditText
                 android:id="@+id/textView_posizione"
                 android:layout_width="300dp"
@@ -220,16 +226,46 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="470dp"
+            android:layout_marginStart="50dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="470dp"
+            android:layout_marginTop="450dp"
             android:backgroundTint="@color/black"
             android:clipToOutline="true"
-            android:text="@string/aggiungi"
+            android:text="@string/modifica"
             android:textColor="@color/white"
             android:textSize="25sp" />
 
+        <Button
+            android:id="@+id/button_2"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="510dp"
+            android:backgroundTint="@color/black"
+            android:clipToOutline="true"
+            android:text="@string/torna_indietro"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
 
+        <Button
+            android:id="@+id/button_3"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="470dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="450dp"
+            android:backgroundTint="@color/black"
+            android:clipToOutline="true"
+            android:text="@string/elimina"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
 
     </androidx.cardview.widget.CardView>
 
