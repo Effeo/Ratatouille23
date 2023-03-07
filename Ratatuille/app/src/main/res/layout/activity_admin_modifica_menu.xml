@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.CuocoMessaggiActivity">
+    tools:context=".View.AdminModificaMenuActivity">
 
     <View
         android:id="@+id/vector_1"
@@ -19,8 +19,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/frame_1"
-        android:layout_width="800dp"
-        android:layout_height="657dp"
+        android:layout_width="804dp"
+        android:layout_height="670dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:background="@color/white"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="@+id/vector_1" >
 
         <LinearLayout
-            android:layout_width="480dp"
+            android:layout_width="800dp"
             android:layout_height="100dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
@@ -45,10 +45,10 @@
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
                 <ImageButton
-                    android:layout_width="160dp"
+                    android:layout_width="134dp"
                     android:layout_height="100dp"
+                    android:id="@+id/admin_logout"
                     android:backgroundTint="@color/black"
-                    android:id="@+id/cuoco_logout"
                     android:src="@drawable/__icon__logout_"/>
             </com.google.android.material.card.MaterialCardView>
 
@@ -58,11 +58,12 @@
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
                 <ImageButton
-                    android:layout_width="160dp"
+                    android:layout_width="134dp"
                     android:layout_height="100dp"
+                    android:id="@+id/admin_aggiungi_ordine"
                     android:backgroundTint="@color/black"
-                    android:id="@+id/cuoco_messaggi"
-                    android:src="@drawable/__icon__email_message_inbox_"/>
+                    android:src="@drawable/adding_1"/>
+
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -71,11 +72,59 @@
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
                 <ImageButton
-                    android:layout_width="160dp"
+                    android:layout_width="134dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/admin_ordinazioni"
+                    android:backgroundTint="@color/black"
+                    android:src="@drawable/__icon__menu_book_"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/purple_500">
+                <ImageButton
+                    android:layout_width="134dp"
                     android:layout_height="100dp"
                     android:backgroundTint="@color/black"
-                    android:id="@+id/cuoco_ordinazioni"
-                    android:src="@drawable/__icon__list_alt_"/>
+                    android:id="@+id/admin_messaggi"
+                    android:src="@drawable/__icon__email_message_inbox_"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/purple_500">
+                <ImageButton
+                    android:layout_width="134dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="@color/black"
+                    android:id="@+id/admin_statistiche"
+                    android:src="@drawable/monitoring_fill0_wght400_grad0_opsz48_1"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/purple_500">
+                <ImageButton
+                    android:layout_width="134dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="@color/black"
+                    android:id="@+id/admin_add_utente"
+                    android:src="@drawable/vector"/>
+
+
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
@@ -90,49 +139,29 @@
             android:layout_marginRight="200dp"
             android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
 
-
-
-
-
         <TextView
-            android:id="@+id/messaggi"
+            android:id="@+id/modifica_menu"
             android:layout_width="match_parent"
-            android:layout_height="95dp"
-            android:text="@string/messaggi"
+            android:layout_height="95sp"
+            android:text="@string/modifica_menu"
             android:textSize="64sp"
             android:textColor="@color/black"
             android:gravity="center"/>
 
-        <Button
-            android:id="@+id/button_1"
-            android:layout_width="358dp"
-            android:layout_height="56dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="330dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="460dp"
-            android:backgroundTint="@color/black"
-            android:clipToOutline="true"
-            android:text="@string/visualizza"
-            android:textColor="@color/white"
-            android:textSize="25dp" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="518dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="318dp"
             android:layout_height="283dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginLeft="250dp"
             android:layout_marginTop="160dp"
-            app:strokeColor="@color/grigio_scuro"
-            app:strokeWidth="1dp">
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="518dp"
-                android:layout_height="283dp"
-                android:textColor="@color/black"/>
-        </com.google.android.material.card.MaterialCardView>
+            android:layout_marginRight="200dp"
+            android:orientation="vertical"
+            ></androidx.recyclerview.widget.RecyclerView>
 
     </androidx.cardview.widget.CardView>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

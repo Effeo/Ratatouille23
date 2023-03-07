@@ -182,6 +182,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <Spinner
+            android:id="@+id/spinner_supervisore_modifica"
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_marginLeft="50dp"
