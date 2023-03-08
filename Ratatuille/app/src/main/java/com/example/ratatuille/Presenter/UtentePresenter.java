@@ -8,6 +8,7 @@ import com.example.ratatuille.Model.Utente;
 import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplUtenteService;
 import com.example.ratatuille.Service.Interface.IUtenteService;
+import com.example.ratatuille.View.AdminAggiungiPiattoActivity;
 import com.example.ratatuille.View.CambioPasswordActivity;
 import com.example.ratatuille.View.CameriereAggiungiTavoloActivity;
 import com.example.ratatuille.View.CameriereComandaActivity;
@@ -17,6 +18,7 @@ import com.example.ratatuille.View.CuocoMessaggiActivity;
 import com.example.ratatuille.View.CuocoOrdinazioniActivity;
 import com.example.ratatuille.View.LoginActivity;
 import com.example.ratatuille.View.MainActivity;
+import com.example.ratatuille.View.SupervisoreAggiungiPiattoActivity;
 
 public class UtentePresenter {
     private Utente utente;
@@ -86,14 +88,16 @@ public class UtentePresenter {
                 if(utente != null){
                     System.out.println(utente.getUser_name());
                     if(utente.getRuolo().equals("admin")){
-                        //non ho ancora la schermata
+                        Intent finestraAdminAggiungiPiatto = new Intent(loginActivity.getApplicationContext(), AdminAggiungiPiattoActivity.class);
+                        loginActivity.startActivity(finestraAdminAggiungiPiatto);
 
                     }else if(utente.getRuolo().equals("supervisore")){
                         if(utente.getCheck_change_password() == 0){
                             Intent finestraCambioPassword = new Intent(loginActivity.getApplicationContext(), CambioPasswordActivity.class);
                             loginActivity.startActivity(finestraCambioPassword);
                         }else{
-                            //non ho ancora la schermata
+                            Intent finestraSupervisoreAggiungiPiatto = new Intent(loginActivity.getApplicationContext(), SupervisoreAggiungiPiattoActivity.class);
+                            loginActivity.startActivity(finestraSupervisoreAggiungiPiatto);
                         }
 
                     }else if(utente.getRuolo().equals("cameriere")){
@@ -101,7 +105,8 @@ public class UtentePresenter {
                             Intent finestraCambioPassword = new Intent(loginActivity.getApplicationContext(), CambioPasswordActivity.class);
                             loginActivity.startActivity(finestraCambioPassword);
                         }else{
-                            //non ho ancora la schermata
+                            Intent finestraCameriereOrdinazioni = new Intent(loginActivity.getApplicationContext(), CameriereOrdinazioniActivity.class);
+                            loginActivity.startActivity(finestraCameriereOrdinazioni);
                         }
 
                     }else if(utente.getRuolo().equals("cuoco")){
@@ -149,10 +154,12 @@ public class UtentePresenter {
             public void returnResult(Object o) {
                 System.out.println("password cambiata");
                 if(utente.getRuolo().equals("supervisore")){
-                    //non ho ancora la schermata
+                    Intent finestraSupervisoreAggiungiPiatto = new Intent(cambioPasswordActivity.getApplicationContext(), SupervisoreAggiungiPiattoActivity.class);
+                    cambioPasswordActivity.startActivity(finestraSupervisoreAggiungiPiatto);
 
-                }else if(utente.getRuolo().equals("cameriere")){
-                    //non ho ancora la schermata
+                }else if(utente.getRuolo().equals("cameriere")) {
+                    Intent finestraCameriereOrdinazioni = new Intent(cambioPasswordActivity.getApplicationContext(), CameriereOrdinazioniActivity.class);
+                    cambioPasswordActivity.startActivity(finestraCameriereOrdinazioni);
 
                 }else if(utente.getRuolo().equals("cuoco")){
                     Intent finestraCuocoOrdinazioni = new Intent(cambioPasswordActivity.getApplicationContext(), CuocoOrdinazioniActivity.class);

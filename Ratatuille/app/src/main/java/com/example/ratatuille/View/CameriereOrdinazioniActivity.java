@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class CameriereOrdinazioniActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
+    private PiattoPresenter piattoPresenter;
     private CameriereOrdinazioniActivity cameriereOrdinazioniActivity;
 
     @Override
@@ -26,6 +28,10 @@ public class CameriereOrdinazioniActivity extends AppCompatActivity {
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cameriere_ordinazioni);
 
         utentePresenter = UtentePresenter.getInstance();
+        piattoPresenter = PiattoPresenter.getInstance();
+
+        piattoPresenter.setCameriereOrdinazioniActivity(this);
+        piattoPresenter.getAllPiatti();
 
         cameriereOrdinazioniActivity = this;
 
@@ -63,5 +69,11 @@ public class CameriereOrdinazioniActivity extends AppCompatActivity {
                 utentePresenter.goCameriereOrdinazioni(cameriereOrdinazioniActivity);
             }
         });
+    }
+
+    public void stampaPiatti(){
+        for(int i = 0; i < piattoPresenter.getPiatti().size(); i++){
+            System.out.println(piattoPresenter.getPiatti().get(i).getNome());
+        }
     }
 }

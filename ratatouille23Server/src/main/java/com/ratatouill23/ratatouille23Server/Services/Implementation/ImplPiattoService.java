@@ -6,6 +6,7 @@ import com.ratatouill23.ratatouille23Server.Services.Interfaces.IPiattoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service("ImplPiattoService")
@@ -16,4 +17,7 @@ public class ImplPiattoService implements IPiattoService {
     public Optional<Piatto> findPiattoById(Integer id_piatto) {
         return piattoRepository.findPiattoByID(id_piatto);
     }
+
+    @Override
+    public List<Piatto> findAll(){return piattoRepository.findAll();}
 }

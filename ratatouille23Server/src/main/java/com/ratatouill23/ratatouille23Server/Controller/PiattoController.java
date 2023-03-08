@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -34,6 +36,17 @@ public class PiattoController {
 
         PiattoDto piattoDto = convertDto(piatto.get());
         return piattoDto;
+    }
+
+    @GetMapping("get/getAll")
+    public List<PiattoDto> findAll(){
+        List<Piatto> piatti = iPiattoService.findAll();
+        List<PiattoDto> piattiDto = new ArrayList<>();
+
+        for(Piatto piatto : piatti)
+            piattiDto.add(convertDto(piatto));
+
+        return piattiDto;
     }
 
     public PiattoDto convertDto(Piatto piatto){
