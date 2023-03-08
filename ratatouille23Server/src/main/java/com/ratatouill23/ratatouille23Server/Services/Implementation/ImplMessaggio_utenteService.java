@@ -18,4 +18,8 @@ public class ImplMessaggio_utenteService implements IMessaggio_utenteService {
     public List<Messaggio_utente> getAllMessaggioUtente(String user_name) {
         return messaggioUtenteRepository.getAllMessaggioUtente(user_name);
     }
+
+    public void update(Messaggio_utente messaggio_utente){
+        messaggioUtenteRepository.save(messaggio_utente);
+    }
 }

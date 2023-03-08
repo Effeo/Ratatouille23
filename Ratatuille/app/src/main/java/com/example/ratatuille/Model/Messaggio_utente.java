@@ -6,8 +6,8 @@ import com.google.gson.annotations.SerializedName;
 public class Messaggio_utente {
 
     @Expose
-    @SerializedName("id_messaggio_ordine")
-    private int id_messaggio_ordine;
+    @SerializedName("id_messaggio_utente")
+    private int id_messaggio_utente;
 
     @Expose
     @SerializedName("letto")
@@ -21,8 +21,8 @@ public class Messaggio_utente {
     @SerializedName("messaggio")
     private Messaggio messaggio;
 
-    public void setId_messaggio_ordine(int id_messaggio_ordine) {
-        this.id_messaggio_ordine = id_messaggio_ordine;
+    public void setId_messaggio_utente(int id_messaggio_utente) {
+        this.id_messaggio_utente = id_messaggio_utente;
     }
 
     public void setLetto(boolean letto) {
@@ -37,8 +37,8 @@ public class Messaggio_utente {
         this.messaggio = messaggio;
     }
 
-    public int getId_messaggio_ordine() {
-        return id_messaggio_ordine;
+    public int getId_messaggio_utente() {
+        return id_messaggio_utente;
     }
 
     public boolean isLetto() {
@@ -53,8 +53,8 @@ public class Messaggio_utente {
         return messaggio;
     }
 
-    public Messaggio_utente(int id_messaggio_ordine, boolean letto, Utente utente, Messaggio messaggio) {
-        this.id_messaggio_ordine = id_messaggio_ordine;
+    public Messaggio_utente(int id_messaggio_utente, boolean letto, Utente utente, Messaggio messaggio) {
+        this.id_messaggio_utente = id_messaggio_utente;
         this.letto = letto;
         this.utente = utente;
         this.messaggio = messaggio;

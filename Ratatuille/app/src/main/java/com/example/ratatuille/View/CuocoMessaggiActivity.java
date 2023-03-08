@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
@@ -23,7 +24,13 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
         ImageButton logout = (ImageButton) findViewById(R.id.cuoco_logout);
         ImageButton messaggi = (ImageButton) findViewById(R.id.cuoco_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cuoco_ordinazioni);
-        //manca il bottone visualizza, ma stai soft perchè deve solo mandare cose al db
+        Button btn_visualizza = (Button) findViewById(R.id.btn_visualizza);
+
+        messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
+        utentePresenter = UtentePresenter.getInstance();
+
+        messaggio_utentePresenter.setCuocoMessaggiActivity(this);
+        messaggio_utentePresenter.getAllMessaggioUtente(utentePresenter.getUtente().getRuolo(), utentePresenter.getUtente().getUser_name());
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +50,6 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
             }
         });
 
-
         //cambiare tutto per adattarlo agli ordini
         ordinazioni.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,11 +60,13 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
             }
         });
 
-        messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
-        utentePresenter = UtentePresenter.getInstance();
+        btn_visualizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                messaggio_utentePresenter.setLetto(0);
+            }
+        });
 
-        messaggio_utentePresenter.setCuocoMessaggiActivity(this);
-        messaggio_utentePresenter.getAllMessaggioUtente(utentePresenter.getUtente().getRuolo(), utentePresenter.getUtente().getUser_name());
 
     }
 

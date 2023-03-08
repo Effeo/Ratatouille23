@@ -9,4 +9,6 @@ import java.util.Optional;
 public interface IMessaggio_utenteService {
 
     public List<Messaggio_utente> getAllMessaggioUtente(String user_name);
+
+    public void update(Messaggio_utente messaggio_utente);
 }

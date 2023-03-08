@@ -60,4 +60,25 @@ public class Messaggio_utentePresenter {
     public List<Messaggio_utente> getMessaggi_utenti() {
         return messaggi_utenti;
     }
+
+    private void update(Messaggio_utente messaggio_utente){
+        implMessaggio_utenteService.update(new Callback() {
+            @Override
+            public void returnResult(Object o) {
+                System.out.println("Messaggio letto");
+                //ricaricare la pagina
+            }
+
+            @Override
+            public void returnError(Throwable e) {
+                System.out.println(e);
+            }
+        }, messaggio_utente);
+    }
+
+    public void setLetto(int id_messaggio_utente){
+        //prendere il messaggio giusto con l'id (vedere come organizzarlo)
+        messaggi_utenti.get(0).setLetto(true);
+        update(messaggi_utenti.get(0));
+    }
 }

@@ -12,10 +12,7 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +50,21 @@ public class Messaggio_utenteController {
         messaggio_utenteDto.setUtente(convertDto(messaggio_utente.getUtente()));
 
         return messaggio_utenteDto;
+    }
+
+    @PutMapping("/update")
+    public void updateLetto(@RequestBody Messaggio_utenteDto messaggio_utenteDto){
+        Messaggio_utente messaggio_utente = convertEntity(messaggio_utenteDto);
+        iMessaggioUtenteService.update(messaggio_utente);
+    }
+
+    private Messaggio_utente convertEntity(Messaggio_utenteDto messaggio_utenteDto){
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        Messaggio_utente messaggio_utente = new Messaggio_utente();
+        messaggio_utente = modelMapper.map(messaggio_utenteDto, Messaggio_utente.class);
+
+        return messaggio_utente;
     }
 
     private UtenteDto convertDto(Utente utente) {

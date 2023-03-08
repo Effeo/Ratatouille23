@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private EditText edit_username;
     private EditText edit_password;
+    private LoginActivity loginActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         utentePresenter.setLoginActivity(this);
         //L'amministratore va direttamente sulla sua schermata principale
 
+        loginActivity = this;
 
         login_b.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -41,14 +43,11 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         torna_indietro_b.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View view){
-                Intent finestraWelcome = new Intent(view.getContext(), MainActivity.class);
-                startActivity(finestraWelcome);
+                utentePresenter.logOut(loginActivity);
             }
         });
-
 
     }
 
@@ -66,6 +65,4 @@ public class LoginActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
     }
-
-
 }

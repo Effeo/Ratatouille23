@@ -11,6 +11,7 @@ import com.example.ratatuille.Service.Interface.IMessaggio_utenteService;
 import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.CompletableObserver;
 import io.reactivex.rxjava3.core.SingleObserver;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -34,6 +35,28 @@ public class ImplMessaggio_utenteService implements IMessaggio_utenteService {
                     @Override
                     public void onSuccess(@NonNull List<Messaggio_utente> messaggi_utenti) {
                         callback.returnResult(messaggi_utenti);
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        System.out.println(e);
+                        callback.returnResult(null);
+                    }
+                });
+    }
+
+    @Override
+    public void update(Callback callback, Messaggio_utente messaggio_utente) {
+        messaggio_utenteApi.update(messaggio_utente)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new CompletableObserver() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {}
+
+                    @Override
+                    public void onComplete() {
+                        callback.returnResult(true);
                     }
 
                     @Override

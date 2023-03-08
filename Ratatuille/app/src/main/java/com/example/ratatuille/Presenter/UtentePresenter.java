@@ -32,6 +32,11 @@ public class UtentePresenter {
         implUtenteService = new ImplUtenteService();
     }
 
+    public void logOut(Activity activity){
+        Intent finestraWelcome = new Intent(activity.getApplicationContext(), MainActivity.class);
+        activity.startActivity(finestraWelcome);
+    }
+
     public void goLogin(){
         Intent finestraLogin = new Intent(mainActivity.getApplicationContext(), LoginActivity.class);
         mainActivity.startActivity(finestraLogin);
