@@ -14,6 +14,8 @@ import com.example.ratatuille.R;
 
 public class CuocoOrdinazioniActivity extends AppCompatActivity {
     private Ordine_piattoPresenter ordine_piattoPresenter;
+    private CuocoOrdinazioniActivity cuocoOrdinazioniActivity;
+    private UtentePresenter utentePresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,21 +26,26 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         ImageButton messaggi = (ImageButton) findViewById(R.id.cuoco_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cuoco_ordinazioni);
 
+        utentePresenter = UtentePresenter.getInstance();
+
+        ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
+        ordine_piattoPresenter.setCuocoOrdinazioniActivity(this);
+
+        ordine_piattoPresenter.findAllOrdiniPiatti();
+
+        cuocoOrdinazioniActivity = this;
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraCuocoLogout = new Intent(view.getContext(), MainActivity.class);
-                startActivity(finestraCuocoLogout);
+                utentePresenter.logOut(cuocoOrdinazioniActivity);
             }
         });
 
         messaggi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraCuocoMessaggi = new Intent(view.getContext(), CuocoMessaggiActivity.class);
-                startActivity(finestraCuocoMessaggi);
+                utentePresenter.goMessaggiCuoco(cuocoOrdinazioniActivity);
             }
         });
 
@@ -47,16 +54,9 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         ordinazioni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraCuocoOrdinazioni = new Intent(view.getContext(), CuocoOrdinazioniActivity.class);
-                startActivity(finestraCuocoOrdinazioni);
+                utentePresenter.goOrdinazioniCuoco(cuocoOrdinazioniActivity);
             }
         });
-
-        ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
-        ordine_piattoPresenter.setCuocoOrdinazioniActivity(this);
-
-        ordine_piattoPresenter.findAllOrdiniPiatti();
     }
 
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -73,7 +73,6 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
     }
-
 
     public void stampaOrdiniPiatti(){
         for(int i = 0; i < ordine_piattoPresenter.getOrdini_piatti().size(); i++){

@@ -32,7 +32,6 @@ public class CambioPasswordActivity extends AppCompatActivity {
             public void onClick(View view){
                 if(edit_nuova_password.getText().toString().equals(edit_conferma_password.getText().toString())){
                     utentePresenter.cambiaPassword(edit_nuova_password.getText().toString());
-
                 }
                 else {
                     //aggiungere pop up message
@@ -40,10 +39,7 @@ public class CambioPasswordActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
-
-
 
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);

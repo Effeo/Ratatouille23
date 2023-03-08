@@ -20,7 +20,6 @@ public class CameriereAggiungiTavoloActivity extends AppCompatActivity {
         Button conferma = (Button) findViewById(R.id.button_conferma);
         Button torna_indietro = (Button) findViewById(R.id.button_2);
 
-
         conferma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

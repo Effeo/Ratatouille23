@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class CameriereOrdinazioniActivity extends AppCompatActivity {
+    private UtentePresenter utentePresenter;
+    private CameriereOrdinazioniActivity cameriereOrdinazioniActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,48 +25,42 @@ public class CameriereOrdinazioniActivity extends AppCompatActivity {
         ImageButton messaggi = (ImageButton) findViewById(R.id.cameriere_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cameriere_ordinazioni);
 
+        utentePresenter = UtentePresenter.getInstance();
+
+        cameriereOrdinazioniActivity = this;
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraWelcome = new Intent(view.getContext(), MainActivity.class);
-                startActivity(finestraWelcome);
+                utentePresenter.logOut(cameriereOrdinazioniActivity);
             }
         });
 
         aggiungi_tavolo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraAggiungiTavolo = new Intent(view.getContext(), CameriereAggiungiTavoloActivity.class);
-                startActivity(finestraAggiungiTavolo);
+                utentePresenter.goCameriereAggiungiTavolo(cameriereOrdinazioniActivity);
             }
         });
 
         visualizza_comanda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraVisualizzaComanda = new Intent(view.getContext(), CameriereComandaActivity.class);
-                startActivity(finestraVisualizzaComanda);
+                utentePresenter.goCameriereComanda(cameriereOrdinazioniActivity);
             }
         });
 
         messaggi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraMessaggi = new Intent(view.getContext(), CameriereMessaggiActivity.class);
-                startActivity(finestraMessaggi);
+                utentePresenter.goCameriereMessaggi(cameriereOrdinazioniActivity);
             }
         });
 
         ordinazioni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraOrdinazioni = new Intent(view.getContext(), CameriereOrdinazioniActivity.class);
-                startActivity(finestraOrdinazioni);
+                utentePresenter.goCameriereOrdinazioni(cameriereOrdinazioniActivity);
             }
         });
     }

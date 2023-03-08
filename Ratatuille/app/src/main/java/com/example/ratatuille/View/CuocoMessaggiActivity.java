@@ -15,6 +15,7 @@ import com.example.ratatuille.R;
 public class CuocoMessaggiActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private Messaggio_utentePresenter messaggio_utentePresenter;
+    private CuocoMessaggiActivity cuocoMessaggiActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,21 +33,19 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
         messaggio_utentePresenter.setCuocoMessaggiActivity(this);
         messaggio_utentePresenter.getAllMessaggioUtente(utentePresenter.getUtente().getRuolo(), utentePresenter.getUtente().getUser_name());
 
+        cuocoMessaggiActivity = this;
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraCuocoLogout = new Intent(view.getContext(), MainActivity.class);
-                startActivity(finestraCuocoLogout);
+                utentePresenter.logOut(cuocoMessaggiActivity);
             }
         });
 
         messaggi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraCuocoMessaggi = new Intent(view.getContext(), CuocoMessaggiActivity.class);
-                startActivity(finestraCuocoMessaggi);
+                utentePresenter.goMessaggiCuoco(cuocoMessaggiActivity);
             }
         });
 
@@ -54,9 +53,7 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
         ordinazioni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraCuocoOrdinazioni = new Intent(view.getContext(), CuocoOrdinazioniActivity.class);
-                startActivity(finestraCuocoOrdinazioni);
+                utentePresenter.goOrdinazioniCuoco(cuocoMessaggiActivity);
             }
         });
 
@@ -66,8 +63,6 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
                 messaggio_utentePresenter.setLetto(0);
             }
         });
-
-
     }
 
     public void onWindowFocusChanged(boolean hasFocus) {

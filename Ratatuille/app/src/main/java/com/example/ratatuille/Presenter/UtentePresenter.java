@@ -9,6 +9,11 @@ import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplUtenteService;
 import com.example.ratatuille.Service.Interface.IUtenteService;
 import com.example.ratatuille.View.CambioPasswordActivity;
+import com.example.ratatuille.View.CameriereAggiungiTavoloActivity;
+import com.example.ratatuille.View.CameriereComandaActivity;
+import com.example.ratatuille.View.CameriereMessaggiActivity;
+import com.example.ratatuille.View.CameriereOrdinazioniActivity;
+import com.example.ratatuille.View.CuocoMessaggiActivity;
 import com.example.ratatuille.View.CuocoOrdinazioniActivity;
 import com.example.ratatuille.View.LoginActivity;
 import com.example.ratatuille.View.MainActivity;
@@ -40,6 +45,36 @@ public class UtentePresenter {
     public void goLogin(){
         Intent finestraLogin = new Intent(mainActivity.getApplicationContext(), LoginActivity.class);
         mainActivity.startActivity(finestraLogin);
+    }
+
+    public void goOrdinazioniCuoco(Activity activity){
+        Intent finestraOrdinazioniCuoco = new Intent(activity.getApplicationContext(), CuocoOrdinazioniActivity.class);
+        activity.startActivity(finestraOrdinazioniCuoco);
+    }
+
+    public void goMessaggiCuoco(Activity activity){
+        Intent finestraMessaggiCuoco = new Intent(activity.getApplicationContext(), CuocoMessaggiActivity.class);
+        activity.startActivity(finestraMessaggiCuoco);
+    }
+
+    public void goCameriereAggiungiTavolo(Activity activity){
+        Intent finestraCameriereAggiungiTavolo = new Intent(activity.getApplicationContext(), CameriereAggiungiTavoloActivity.class);
+        activity.startActivity(finestraCameriereAggiungiTavolo);
+    }
+
+    public void goCameriereComanda(Activity activity){
+        Intent finestraCameriereComanda = new Intent(activity.getApplicationContext(), CameriereComandaActivity.class);
+        activity.startActivity(finestraCameriereComanda);
+    }
+
+    public void goCameriereMessaggi(Activity activity){
+        Intent finestraCameriereMessaggi = new Intent(activity.getApplicationContext(), CameriereMessaggiActivity.class);
+        activity.startActivity(finestraCameriereMessaggi);
+    }
+
+    public void goCameriereOrdinazioni(Activity activity){
+        Intent finestraCameriereOrdinazioni = new Intent(activity.getApplicationContext(), CameriereOrdinazioniActivity.class);
+        activity.startActivity(finestraCameriereOrdinazioni);
     }
 
     public void login(String userName, String password){
