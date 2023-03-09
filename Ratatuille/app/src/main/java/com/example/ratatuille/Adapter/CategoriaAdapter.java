@@ -15,8 +15,7 @@ import com.example.ratatuille.R;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class CategoriaAdapter  extends RecyclerView.Adapter<CategoriaAdapter.CategoriaHolder> {
-
+public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.CategoriaHolder> {
 
     private ArrayList<String> categorie;
     private Context context;

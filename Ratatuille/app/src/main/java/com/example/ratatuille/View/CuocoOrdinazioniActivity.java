@@ -11,6 +11,9 @@ import android.widget.Adapter;
 import android.widget.ImageButton;
 
 import com.example.ratatuille.Adapter.CategoriaAdapter;
+import com.example.ratatuille.Adapter.ListaOrdiniAdapter;
+import com.example.ratatuille.Model.Ordine;
+import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
 import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
@@ -33,7 +36,7 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         ImageButton messaggi = (ImageButton) findViewById(R.id.cuoco_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cuoco_ordinazioni);
 
-        recyclerView = findViewById(R.id.lista_categorie);
+        recyclerView = findViewById(R.id.lista_tavoli_ordinazioni);
 
         utentePresenter = UtentePresenter.getInstance();
 
@@ -44,28 +47,15 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
 
         cuocoOrdinazioniActivity = this;
 
-        ArrayList<String> categorie = new ArrayList<>();
-        categorie.add(new String("Antipasti"));
-        categorie.add(new String("Primi"));
-        categorie.add(new String("Secondi"));
-        categorie.add(new String("Contorni"));
-        categorie.add(new String("Dolci"));
-        categorie.add(new String("Bevande"));
-        categorie.add(new String("Frutta"));
-        categorie.add(new String("Varie"));
+        //il problema della i
+        ArrayList<Ordine_piatto> ordine_piatti = (ArrayList<Ordine_piatto>) ordine_piattoPresenter.getOrdini_piatti();
 
-        CategoriaAdapter categoriaAdapter = new CategoriaAdapter(this, categorie);
+        ListaOrdiniAdapter listaOrdiniAdapter = new ListaOrdiniAdapter(this, ordine_piatti);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(categoriaAdapter);
-
-
-
-
-
-
+        recyclerView.setAdapter(listaOrdiniAdapter);
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
