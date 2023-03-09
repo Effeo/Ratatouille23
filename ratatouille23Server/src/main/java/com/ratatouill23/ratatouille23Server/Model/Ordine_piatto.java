@@ -10,6 +10,7 @@ import org.hibernate.annotations.OnDeleteAction;
 public class Ordine_piatto {
     @Id
     @Column(name = "id_ordine_piatto")
+    @GeneratedValue
     private int id_ordine_piatto;
 
     @Column(name = "qta")

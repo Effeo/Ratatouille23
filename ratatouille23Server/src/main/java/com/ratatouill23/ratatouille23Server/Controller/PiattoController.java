@@ -8,10 +8,7 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
@@ -57,4 +54,22 @@ public class PiattoController {
 
         return piattoDto;
     }
+
+    private Piatto convertEntity(PiattoDto piattoDto){
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        Piatto piatto = new Piatto();
+        piatto = modelMapper.map(piattoDto, Piatto.class);
+
+        return piatto;
+    }
+
+    @PostMapping("/create")
+    public void create(@RequestBody PiattoDto piattoDto){
+        Piatto piatto = convertEntity(piattoDto);
+
+        iPiattoService.create(piatto);
+    }
+
+
 }
