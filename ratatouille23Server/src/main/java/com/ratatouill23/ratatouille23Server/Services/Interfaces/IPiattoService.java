@@ -10,4 +10,6 @@ public interface IPiattoService {
     public Optional<Piatto> findPiattoById(Integer id_piatto);
 
     public List<Piatto> findAll();
+
+    public void create(Piatto piatto);
 }

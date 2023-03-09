@@ -3,7 +3,7 @@ package com.ratatouill23.ratatouille23Server.Dto;
 import jakarta.persistence.Column;
 
 public class PiattoDto {
-    private int idPiatto;
+    private int id_piatto;
 
     private String nome;
 
@@ -17,8 +17,8 @@ public class PiattoDto {
 
     private String categoria;
 
-    public void setIdPiatto(int idPiatto) {
-        this.idPiatto = idPiatto;
+    public void setId_piatto(int id_piatto) {
+        this.id_piatto = id_piatto;
     }
 
     public void setNome(String nome) {
@@ -45,8 +45,8 @@ public class PiattoDto {
         this.categoria = categoria;
     }
 
-    public int getIdPiatto() {
-        return idPiatto;
+    public int getId_piatto() {
+        return id_piatto;
     }
 
     public String getNome() {
@@ -73,8 +73,8 @@ public class PiattoDto {
         return categoria;
     }
 
-    public PiattoDto(int idPiatto, String nome, String descrizione, float costo, int posto, String allergeni, String categoria) {
-        this.idPiatto = idPiatto;
+    public PiattoDto(int id_piatto, String nome, String descrizione, float costo, int posto, String allergeni, String categoria) {
+        this.id_piatto = id_piatto;
         this.nome = nome;
         this.descrizione = descrizione;
         this.costo = costo;

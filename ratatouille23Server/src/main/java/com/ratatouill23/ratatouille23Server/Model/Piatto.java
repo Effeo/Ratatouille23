@@ -11,6 +11,7 @@ import java.util.List;
 public class Piatto {
     @Id
     @Column(name = "id_piatto")
+    @GeneratedValue
     private int idPiatto;
     @Column(name = "nome")
     private String nome;

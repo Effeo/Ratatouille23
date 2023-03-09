@@ -20,4 +20,7 @@ public class ImplPiattoService implements IPiattoService {
 
     @Override
     public List<Piatto> findAll(){return piattoRepository.findAll();}
+
+    @Override
+    public void create(Piatto piatto){piattoRepository.save(piatto);}
 }
