@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.ratatuille.Model.Utente;
@@ -27,7 +28,7 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
         ImageButton visualizza_comanda = (ImageButton) findViewById(R.id.cameriere_visualizza_comanda);
         ImageButton messaggi = (ImageButton) findViewById(R.id.cameriere_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cameriere_ordinazioni);
-        //manca il bottone visualizza, ma stai soft perchè deve solo mandare cose al db
+        Button btn_visualizza = (Button) findViewById(R.id.btn_visualizza);
 
         messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
         utentePresenter = UtentePresenter.getInstance();
@@ -69,6 +70,14 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 utentePresenter.goCameriereOrdinazioni(cameriereMessaggiActivity);
+            }
+        });
+
+        btn_visualizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //da cambiare mettendo l'id giusto
+                messaggio_utentePresenter.setLetto(0);
             }
         });
     }

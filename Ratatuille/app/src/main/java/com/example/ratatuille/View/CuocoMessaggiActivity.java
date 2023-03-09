@@ -60,6 +60,7 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
         btn_visualizza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //da cambiare mettendo il messaggio giusto
                 messaggio_utentePresenter.setLetto(0);
             }
         });
