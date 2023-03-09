@@ -1,5 +1,7 @@
 package com.example.ratatuille.Adapter;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -11,22 +13,37 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.ratatuille.R;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CategoriaAdapter  extends RecyclerView.Adapter<CategoriaAdapter.CategoriaHolder> {
 
 
     private ArrayList<String> categorie;
+    private Context context;
 
+    public CategoriaAdapter(Context context, ArrayList<String> categorie){
+        this.context = context;
+        this.categorie = categorie;
+    }
 
     @NonNull
     @Override
     public CategoriaAdapter.CategoriaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+
+        View view = LayoutInflater.from(context).inflate(R.layout.riga_cliccabile, parent, false);
+        return new CategoriaHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CategoriaAdapter.CategoriaHolder holder, int position) {
+        holder.nomeCategoria.setText(categorie.get(position).toUpperCase());
 
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //faccio dopo
+            }
+        });
     }
 
     @Override
