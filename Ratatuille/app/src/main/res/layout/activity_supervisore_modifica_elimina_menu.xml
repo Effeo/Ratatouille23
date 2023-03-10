@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.SupervisoreModificaEliminaMenuActivity">
+
+    <View
+        android:id="@+id/vector_1"
+        android:layout_width="1335dp"
+        android:layout_height="800dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/sfondo"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/frame_1"
+        android:layout_width="800dp"
+        android:layout_height="670dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:clipToOutline="true"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/vector_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/vector_1" >
+
+        <LinearLayout
+            android:layout_width="800dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="0dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/purple_500">
+                <ImageButton
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/supervisore_logout"
+                    android:backgroundTint="@color/black"
+                    android:src="@drawable/__icon__logout_"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/purple_500">
+                <ImageButton
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/supervisore_aggiungi_piatto"
+                    android:backgroundTint="@color/black"
+                    android:src="@drawable/adding_1"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/purple_500">
+                <ImageButton
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/supervisore_modifica_menu"
+                    android:backgroundTint="@color/black"
+                    android:src="@drawable/__icon__menu_book_"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/purple_500">
+                <ImageButton
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/supervisore_conto"
+                    android:backgroundTint="@color/black"
+                    android:src="@drawable/__icon__list_alt_"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/purple_500">
+                <ImageButton
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="@color/black"
+                    android:id="@+id/supervisore_messaggi"
+                    android:src="@drawable/__icon__email_message_inbox_"/>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/modifica_menu"
+            android:layout_width="match_parent"
+            android:layout_height="95sp"
+            android:text="@string/modifica_menu"
+            android:textSize="64sp"
+            android:textColor="@color/black"
+            android:gravity="center"/>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="115dp">
+            <EditText
+                android:id="@+id/textView_nome"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:background="@color/white"
+                android:hint="Nome"
+                android:textColor="@color/black" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="470dp"
+            android:layout_marginTop="115dp">
+            <EditText
+                android:id="@+id/textView_costo"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:background="@color/white"
+                android:hint="Costo"
+                android:textColor="@color/black" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="300dp"
+            android:layout_height="130dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="215dp">
+            <EditText
+                android:id="@+id/textView_descrizione"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:background="@color/white"
+                android:hint="Descrizione"
+                android:textColor="@color/black" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="300dp"
+            android:layout_height="130dp"
+            android:layout_marginLeft="470dp"
+            android:layout_marginTop="215dp">
+            <EditText
+                android:id="@+id/textView_allergeni"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:background="@color/white"
+                android:hint="Allergeni"
+                android:textColor="@color/black" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <Spinner
+            android:id="@+id/spinner_supervisore_modifica"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="360dp">
+        </Spinner>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="470dp"
+            android:layout_marginTop="360dp">
+            <EditText
+                android:id="@+id/textView_posizione"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:background="@color/white"
+                android:hint="Posizione"
+                android:textColor="@color/black" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/btn_modifica"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="450dp"
+            android:backgroundTint="@color/black"
+            android:clipToOutline="true"
+            android:text="@string/modifica"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btn_torna_indietro"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="510dp"
+            android:backgroundTint="@color/black"
+            android:clipToOutline="true"
+            android:text="@string/torna_indietro"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btn_elimina"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="470dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="450dp"
+            android:backgroundTint="@color/black"
+            android:clipToOutline="true"
+            android:text="@string/elimina"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

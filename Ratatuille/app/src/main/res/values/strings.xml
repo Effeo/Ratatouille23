@@ -1,0 +1,133 @@
+<resources>
+    <string name="app_name">Ratatuille</string>
+
+    <string name="welcome">
+    WELCOME
+    </string>
+
+    <string name="amministratore">
+    AMMINISTRATORE
+    </string>
+
+    <string name="supervisore">
+    SUPERVISORE
+    </string>
+
+    <string name="cameriere">
+    CAMERIERE
+    </string>
+
+    <string name="cuoco">
+    CUOCO
+    </string>
+
+    <string name="login">
+    LOGIN
+    </string>
+
+    <string name="torna_indietro">
+    TORNA INDIETRO
+    </string>
+
+    <string name="cambio_password">
+    CAMBIO PASSWORD
+    </string>
+
+    <string name="continua">
+    CONTINUA
+    </string>
+
+    <string name="ordinazioni">
+    ORDINAZIONI
+    </string>
+
+    <string name="messaggi">
+    MESSAGGI
+    </string>
+
+    <string name="visualizza">
+    VISUALIZZA
+    </string>
+
+    <string name="conferma">
+    CONFERMA
+    </string>
+
+    <string name="tavolo">
+    TAVOLO
+    </string>
+
+    <string name="comanda">
+    COMANDA
+    </string>
+
+    <string name="scrivi">
+    SCRIVI
+    </string>
+
+    <string name="invia">
+    INVIA
+    </string>
+
+    <string name="scrivi_messaggio">
+    scrivi messaggio
+    </string>
+
+    <string name="conto">
+    CONTO
+    </string>
+
+    <string name="scarica">
+    SCARICA
+    </string>
+
+    <string name="chiudi">
+    CHIUDI
+    </string>
+
+    <string name="modifica_menu">
+    MODIFICA MENU
+    </string>
+
+    <string name="modifica">
+    MODIFICA
+    </string>
+
+    <string name="elimina">
+    ELIMINA
+    </string>
+
+    <string name="aggiungi">
+    AGGIUNGI
+    </string>
+
+    <string name="aggiungi_piatto">
+    AGGIUNGI PIATTO
+    </string>
+
+    <string name="statistiche">
+    STATISTICHE
+    </string>
+
+    <string name="calcola">
+    CALCOLA
+    </string>
+
+    <string name="crea_utente">
+    CREA UTENTE
+    </string>
+
+    <string name="cambia_password_utente">
+    CAMBIA PASSWORD UTENTE
+    </string>
+
+    <string name="cambia_password">
+    CAMBIA PASSWORD
+    </string>
+
+    <string name="conferma_cambio_password">
+    CONFERMA CAMBIO PASSWORD
+    </string>
+
+
+</resources>
