@@ -60,7 +60,7 @@
                 <ImageButton
                     android:layout_width="134dp"
                     android:layout_height="100dp"
-                    android:id="@+id/admin_aggiungi_ordine"
+                    android:id="@+id/admin_aggiungi_piatto"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/adding_1"/>
 
@@ -74,7 +74,7 @@
                 <ImageButton
                     android:layout_width="134dp"
                     android:layout_height="100dp"
-                    android:id="@+id/admin_ordinazioni"
+                    android:id="@+id/admin_modifica_menu"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/__icon__menu_book_"/>
 

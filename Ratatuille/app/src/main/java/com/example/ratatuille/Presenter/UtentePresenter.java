@@ -9,6 +9,10 @@ import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplUtenteService;
 import com.example.ratatuille.Service.Interface.IUtenteService;
 import com.example.ratatuille.View.AdminAggiungiPiattoActivity;
+import com.example.ratatuille.View.AdminCreaUtenteActivity;
+import com.example.ratatuille.View.AdminModificaMenuActivity;
+import com.example.ratatuille.View.AdminScriviMessaggioActivity;
+import com.example.ratatuille.View.AdminStatisticheActivity;
 import com.example.ratatuille.View.CambioPasswordActivity;
 import com.example.ratatuille.View.CameriereAggiungiTavoloActivity;
 import com.example.ratatuille.View.CameriereComandaActivity;
@@ -102,6 +106,31 @@ public class UtentePresenter {
     public void goSupervisoreAggiungiPiatto(Activity activity){
         Intent finestraSupervisoreAggiungiPiatto = new Intent(activity.getApplicationContext(), SupervisoreAggiungiPiattoActivity.class);
         activity.startActivity(finestraSupervisoreAggiungiPiatto);
+    }
+
+    public void goAdminStatistiche(Activity activity){
+        Intent finestraAdminStatistiche = new Intent(activity.getApplicationContext(), AdminStatisticheActivity.class);
+        activity.startActivity(finestraAdminStatistiche);
+    }
+
+    public void goAdminAddUtente(Activity activity){
+        Intent finestraAdminAddUtente = new Intent(activity.getApplicationContext(), AdminCreaUtenteActivity.class);
+        activity.startActivity(finestraAdminAddUtente);
+    }
+
+    public void goAdminAggiungiPiatto(Activity activity){
+        Intent finestraAdminAggiungiPiatto = new Intent(activity.getApplicationContext(), AdminAggiungiPiattoActivity.class);
+        activity.startActivity(finestraAdminAggiungiPiatto);
+    }
+
+    public void goAdminModificaMenu(Activity activity){
+        Intent finestraAdminModificaMenu = new Intent(activity.getApplicationContext(), AdminModificaMenuActivity.class);
+        activity.startActivity(finestraAdminModificaMenu);
+    }
+
+    public void goAdminMessaggi(Activity activity){
+        Intent finestraAdminMessaggi = new Intent(activity.getApplicationContext(), AdminScriviMessaggioActivity.class);
+        activity.startActivity(finestraAdminMessaggi);
     }
 
     public void login(String userName, String password){

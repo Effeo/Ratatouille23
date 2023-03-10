@@ -2,7 +2,6 @@ package com.example.ratatuille.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,8 +25,8 @@ public class LoginActivity extends AppCompatActivity {
         edit_username = (EditText) findViewById(R.id.edit_username);
         edit_password = (EditText) findViewById(R.id.edit_password);
 
-        Button login_b = (Button) findViewById(R.id.button_1);
-        Button torna_indietro_b = (Button) findViewById(R.id.button_2);
+        Button login_b = (Button) findViewById(R.id.btn_scarica);
+        Button torna_indietro_b = (Button) findViewById(R.id.btn_chiudi);
 
         utentePresenter = UtentePresenter.getInstance();
         utentePresenter.setLoginActivity(this);

@@ -60,7 +60,7 @@
                 <ImageButton
                     android:layout_width="134dp"
                     android:layout_height="100dp"
-                    android:id="@+id/admin_aggiungi_ordine"
+                    android:id="@+id/admin_aggiungi_piatto"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/adding_1"/>
 
@@ -74,7 +74,7 @@
                 <ImageButton
                     android:layout_width="134dp"
                     android:layout_height="100dp"
-                    android:id="@+id/admin_ordinazioni"
+                    android:id="@+id/admin_modifica_menu"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/__icon__menu_book_"/>
 
@@ -220,7 +220,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <Button
-            android:id="@+id/button_1"
+            android:id="@+id/btn_scarica"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
@@ -236,7 +236,7 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/button_2"
+            android:id="@+id/btn_chiudi"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"

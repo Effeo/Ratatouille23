@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import com.example.ratatuille.R;
 
@@ -18,7 +17,7 @@ public class CameriereAggiungiTavoloActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cameriere_aggiungi_tavolo);
 
         Button conferma = (Button) findViewById(R.id.button_conferma);
-        Button torna_indietro = (Button) findViewById(R.id.button_2);
+        Button torna_indietro = (Button) findViewById(R.id.btn_torna_indietro);
 
         conferma.setOnClickListener(new View.OnClickListener() {
             @Override

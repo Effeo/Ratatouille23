@@ -2,13 +2,10 @@ package com.example.ratatuille.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.ratatuille.Model.Utente;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
@@ -20,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button amministratore_b = (Button) findViewById(R.id.button_1);
-        Button supervisore_b = (Button) findViewById(R.id.button_2);
+        Button amministratore_b = (Button) findViewById(R.id.btn_scarica);
+        Button supervisore_b = (Button) findViewById(R.id.btn_chiudi);
         Button cameriere_b = (Button) findViewById(R.id.button_3);
         Button cuoco_b = (Button) findViewById(R.id.button_4);
 

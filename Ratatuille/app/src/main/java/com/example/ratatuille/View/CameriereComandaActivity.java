@@ -16,7 +16,7 @@ public class CameriereComandaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cameriere_comanda);
 
-        Button torna_indietro = (Button) findViewById(R.id.button_2);
+        Button torna_indietro = (Button) findViewById(R.id.btn_torna_indietro);
 
         torna_indietro.setOnClickListener(new View.OnClickListener() {
             @Override
