@@ -61,7 +61,7 @@
                 <ImageButton
                     android:layout_width="160dp"
                     android:layout_height="100dp"
-                    android:id="@+id/supervisore_aggiungi_ordine"
+                    android:id="@+id/supervisore_aggiungi_piatto"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/adding_1"/>
             </com.google.android.material.card.MaterialCardView>
@@ -74,7 +74,7 @@
                 <ImageButton
                     android:layout_width="160dp"
                     android:layout_height="100dp"
-                    android:id="@+id/supervisore_ordinazioni"
+                    android:id="@+id/supervisore_modifica_menu"
                     android:backgroundTint="@color/black"
                     android:src="@drawable/__icon__menu_book_"/>
             </com.google.android.material.card.MaterialCardView>
