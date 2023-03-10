@@ -19,10 +19,15 @@ import com.example.ratatuille.View.CuocoOrdinazioniActivity;
 import com.example.ratatuille.View.LoginActivity;
 import com.example.ratatuille.View.MainActivity;
 import com.example.ratatuille.View.SupervisoreAggiungiPiattoActivity;
+import com.example.ratatuille.View.SupervisoreContoActivity;
+import com.example.ratatuille.View.SupervisoreLeggeMessaggiActivity;
+import com.example.ratatuille.View.SupervisoreModificaMenuActivity;
+import com.example.ratatuille.View.SupervisoreScriviMessaggioActivity;
 
 public class UtentePresenter {
     private Utente utente;
     private static UtentePresenter utentePresenter = null;
+
     private MainActivity mainActivity;
     private LoginActivity loginActivity;
     private CambioPasswordActivity cambioPasswordActivity;
@@ -77,6 +82,26 @@ public class UtentePresenter {
     public void goCameriereOrdinazioni(Activity activity){
         Intent finestraCameriereOrdinazioni = new Intent(activity.getApplicationContext(), CameriereOrdinazioniActivity.class);
         activity.startActivity(finestraCameriereOrdinazioni);
+    }
+
+    public void goSupervisoreModificaMenu(Activity activity){
+        Intent finestraSupervisoreOrdinazioni = new Intent(activity.getApplicationContext(), SupervisoreModificaMenuActivity.class);
+        activity.startActivity(finestraSupervisoreOrdinazioni);
+    }
+
+    public void goSupervisoreConto(Activity activity){
+        Intent finestraSupervisoreConto = new Intent(activity.getApplicationContext(), SupervisoreContoActivity.class);
+        activity.startActivity(finestraSupervisoreConto);
+    }
+
+    public void goSupervisoreMessaggi(Activity activity){
+        Intent finestraSupervisoreMessaggi = new Intent(activity.getApplicationContext(), SupervisoreScriviMessaggioActivity.class);
+        activity.startActivity(finestraSupervisoreMessaggi);
+    }
+
+    public void goSupervisoreAggiungiPiatto(Activity activity){
+        Intent finestraSupervisoreAggiungiPiatto = new Intent(activity.getApplicationContext(), SupervisoreAggiungiPiattoActivity.class);
+        activity.startActivity(finestraSupervisoreAggiungiPiatto);
     }
 
     public void login(String userName, String password){
@@ -179,6 +204,4 @@ public class UtentePresenter {
         utente.setCheck_change_password(1);
         update(utente);
     }
-
-
 }
