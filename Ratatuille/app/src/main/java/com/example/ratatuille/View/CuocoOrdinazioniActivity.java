@@ -20,6 +20,7 @@ import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CuocoOrdinazioniActivity extends AppCompatActivity {
     private Ordine_piattoPresenter ordine_piattoPresenter;
@@ -48,14 +49,7 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         cuocoOrdinazioniActivity = this;
 
         //il problema della i
-        ArrayList<Ordine_piatto> ordine_piatti = (ArrayList<Ordine_piatto>) ordine_piattoPresenter.getOrdini_piatti();
 
-        ListaOrdiniAdapter listaOrdiniAdapter = new ListaOrdiniAdapter(this, ordine_piatti);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(listaOrdiniAdapter);
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,9 +91,14 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
     }
 
     public void stampaOrdiniPiatti(){
-        for(int i = 0; i < ordine_piattoPresenter.getOrdini_piatti().size(); i++){
-            System.out.println("tavolo: " + ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo());
-            System.out.println(ordine_piattoPresenter.getOrdini_piatti().get(i).getPiatto().getNome());
-        }
+        List<Ordine_piatto> ordine_piatti = ordine_piattoPresenter.getOrdini_piatti();
+
+        ListaOrdiniAdapter listaOrdiniAdapter = new ListaOrdiniAdapter(cuocoOrdinazioniActivity.getApplicationContext(), ordine_piatti);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(listaOrdiniAdapter);
+
     }
 }
