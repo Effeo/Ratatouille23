@@ -1,20 +1,26 @@
 package com.example.ratatuille.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Adapter.CategoriaAdapter;
 import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+
+import java.util.ArrayList;
 
 public class CameriereOrdinazioniActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private PiattoPresenter piattoPresenter;
     private CameriereOrdinazioniActivity cameriereOrdinazioniActivity;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,8 @@ public class CameriereOrdinazioniActivity extends AppCompatActivity {
         ImageButton messaggi = (ImageButton) findViewById(R.id.cameriere_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cameriere_ordinazioni);
 
+        recyclerView = findViewById(R.id.lista_categorie);
+
         utentePresenter = UtentePresenter.getInstance();
         piattoPresenter = PiattoPresenter.getInstance();
 
@@ -34,6 +42,24 @@ public class CameriereOrdinazioniActivity extends AppCompatActivity {
         piattoPresenter.getAllPiatti();
 
         cameriereOrdinazioniActivity = this;
+
+        ArrayList<String> categorie = new ArrayList<>();
+        categorie.add("Antipasti");
+        categorie.add("Primi");
+        categorie.add("Secondi");
+        categorie.add("Contorni");
+        categorie.add("Dolci");
+        categorie.add("Bevande");
+        categorie.add("Frutta");
+        categorie.add("Varie");
+
+        CategoriaAdapter categoriaAdapter = new CategoriaAdapter(this, categorie);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(categoriaAdapter);
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

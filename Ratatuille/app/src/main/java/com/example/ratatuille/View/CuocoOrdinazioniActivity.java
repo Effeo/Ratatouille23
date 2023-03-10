@@ -1,21 +1,31 @@
 package com.example.ratatuille.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Adapter.CategoriaAdapter;
+import com.example.ratatuille.Adapter.ListaOrdiniAdapter;
+import com.example.ratatuille.Model.Ordine;
+import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
 import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
+import java.util.ArrayList;
+
 public class CuocoOrdinazioniActivity extends AppCompatActivity {
     private Ordine_piattoPresenter ordine_piattoPresenter;
     private CuocoOrdinazioniActivity cuocoOrdinazioniActivity;
     private UtentePresenter utentePresenter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +36,8 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         ImageButton messaggi = (ImageButton) findViewById(R.id.cuoco_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cuoco_ordinazioni);
 
+        recyclerView = findViewById(R.id.lista_tavoli_ordinazioni);
+
         utentePresenter = UtentePresenter.getInstance();
 
         ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
@@ -34,6 +46,16 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         ordine_piattoPresenter.findAllOrdiniPiatti();
 
         cuocoOrdinazioniActivity = this;
+
+        //il problema della i
+        ArrayList<Ordine_piatto> ordine_piatti = (ArrayList<Ordine_piatto>) ordine_piattoPresenter.getOrdini_piatti();
+
+        ListaOrdiniAdapter listaOrdiniAdapter = new ListaOrdiniAdapter(this, ordine_piatti);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(listaOrdiniAdapter);
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
