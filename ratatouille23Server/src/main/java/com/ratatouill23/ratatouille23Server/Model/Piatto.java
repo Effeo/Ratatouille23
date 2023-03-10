@@ -1,6 +1,8 @@
 package com.ratatouill23.ratatouille23Server.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -8,10 +10,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "piatto")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idPiatto", scope = Long.class)
 public class Piatto {
     @Id
     @Column(name = "id_piatto")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPiatto;
     @Column(name = "nome")
     private String nome;

@@ -14,7 +14,7 @@ public class Piatto {
     private String nome;
 
     @Expose
-    @SerializedName("descizione")
+    @SerializedName("descrizione")
     private String descrizione;
 
     @Expose

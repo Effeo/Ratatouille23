@@ -129,5 +129,19 @@
     CONFERMA CAMBIO PASSWORD
     </string>
 
+    <string name="Categoria">
+    Categoria
+    </string>
+
+    <string-array name="categorie">
+        <item>Antipasti</item>
+        <item>Primi</item>
+        <item>Secondi</item>
+        <item>Contorni</item>
+        <item>Dolci</item>
+        <item>Bevande</item>
+        <item>Frutta</item>
+        <item>Varie</item>
+    </string-array>
 
 </resources>

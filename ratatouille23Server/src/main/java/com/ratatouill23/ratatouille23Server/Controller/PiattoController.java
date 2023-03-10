@@ -67,7 +67,6 @@ public class PiattoController {
     @PostMapping("/create")
     public void create(@RequestBody PiattoDto piattoDto){
         Piatto piatto = convertEntity(piattoDto);
-
         iPiattoService.create(piatto);
     }
 

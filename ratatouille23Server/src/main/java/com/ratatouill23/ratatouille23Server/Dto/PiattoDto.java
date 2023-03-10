@@ -1,7 +1,5 @@
 package com.ratatouill23.ratatouille23Server.Dto;
 
-import jakarta.persistence.Column;
-
 public class PiattoDto {
     private int id_piatto;
 

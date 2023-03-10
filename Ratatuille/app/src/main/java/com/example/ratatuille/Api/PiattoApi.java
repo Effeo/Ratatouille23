@@ -4,8 +4,11 @@ import com.example.ratatuille.Model.Piatto;
 
 import java.util.List;
 
+import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Single;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface PiattoApi {
@@ -15,4 +18,7 @@ public interface PiattoApi {
 
     @GET("piatto/get/getAll")
     Single<List<Piatto>> getAllPiatti();
+
+    @POST("piatto/create")
+    Completable create(@Body Piatto piatto);
 }

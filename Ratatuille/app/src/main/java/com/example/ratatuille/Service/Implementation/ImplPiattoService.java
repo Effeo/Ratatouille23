@@ -12,6 +12,7 @@ import com.example.ratatuille.Service.Interface.IPiattoService;
 import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.CompletableObserver;
 import io.reactivex.rxjava3.core.SingleObserver;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -58,6 +59,28 @@ public class ImplPiattoService implements IPiattoService {
                     @Override
                     public void onSuccess(@NonNull List<Piatto> piatti) {
                         callback.returnResult(piatti);
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        System.out.println(e);
+                        callback.returnResult(null);
+                    }
+                });
+    }
+
+    @Override
+    public void create(Callback callback, Piatto piatto) {
+        piattoApi.create(piatto)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new CompletableObserver() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {}
+
+                    @Override
+                    public void onComplete() {
+                        callback.returnResult(true);
                     }
 
                     @Override
