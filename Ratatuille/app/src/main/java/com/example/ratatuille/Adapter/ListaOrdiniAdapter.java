@@ -16,13 +16,14 @@ import com.example.ratatuille.Model.Tavolo;
 import com.example.ratatuille.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.ListaOrdiniHolder>{
 
-    private ArrayList<Ordine_piatto> ordine_piatti;
+    private List<Ordine_piatto> ordine_piatti;
     private Context context;
 
-    public ListaOrdiniAdapter(Context context, ArrayList<Ordine_piatto> ordine_piatti){
+    public ListaOrdiniAdapter(Context context, List<Ordine_piatto> ordine_piatti){
         this.context = context;
         this.ordine_piatti = ordine_piatti;
     }
@@ -36,7 +37,8 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ListaOrdiniHolder holder, int position) {
-        holder.id_del_tavolo.setText(ordine_piatti.get(position).getOrdine().getId_ordine());
+
+        holder.id_del_tavolo.setText(String.valueOf(ordine_piatti.get(position).getOrdine().getIdTavolo()));
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,8 +60,8 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
 
         public ListaOrdiniHolder(@NonNull View itemView) {
             super(itemView);
-            cardView = itemView.findViewById(R.id.riga_cliccabile);
-            id_del_tavolo = itemView.findViewById(R.id.text_cardview);
+            cardView = itemView.findViewById(R.id.riga_cliccabile_tavolo);
+            id_del_tavolo = itemView.findViewById(R.id.text_cardview_1);
         }
     }
 
