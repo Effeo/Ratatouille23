@@ -5,6 +5,8 @@
 - Migliorare individuazione utente (Penso che sia risolto).
 - (M/F) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
 - Aggiungere i Toast
+- Pensare come migliorare (e se farlo) la posizione dei piatti
+- Vedere come integrare open food facts
 
 ## Domande per Starace/SDM
 - L'amministratore deve poter visualizzare i messaggi che invia il supervisore?* 
