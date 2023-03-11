@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class CambioPasswordActivity extends AppCompatActivity {
-
     private UtentePresenter utentePresenter;
+    private CambioPasswordActivity cambioPasswordActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,8 @@ public class CambioPasswordActivity extends AppCompatActivity {
         utentePresenter = UtentePresenter.getInstance();
         utentePresenter.setCambioPasswordActivity(this);
 
+        cambioPasswordActivity = this;
+
         continua.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -34,8 +37,7 @@ public class CambioPasswordActivity extends AppCompatActivity {
                     utentePresenter.cambiaPassword(edit_nuova_password.getText().toString());
                 }
                 else {
-                    //aggiungere pop up message
-                    System.out.println("Password diverse");
+                    Toast.makeText(cambioPasswordActivity.getApplicationContext(), "Le password non corrispondono", Toast.LENGTH_SHORT).show();
                 }
             }
         });

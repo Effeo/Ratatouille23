@@ -2,6 +2,7 @@ package com.example.ratatuille.Presenter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.widget.Toast;
 
 import com.example.ratatuille.Api.UtenteApi;
 import com.example.ratatuille.Model.Utente;
@@ -174,7 +175,7 @@ public class UtentePresenter {
                     }
                 }
                 else{
-                    System.out.println("Errore");
+                    Toast.makeText(loginActivity.getApplicationContext(), "User name o password errata", Toast.LENGTH_SHORT).show();
                 }
             }
 
