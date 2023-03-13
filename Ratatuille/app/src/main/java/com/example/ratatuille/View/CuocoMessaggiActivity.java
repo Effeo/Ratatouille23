@@ -38,6 +38,8 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cuoco_ordinazioni);
         Button btn_visualizza = (Button) findViewById(R.id.btn_visualizza);
 
+        recyclerView = findViewById(R.id.cuoco_lista_messaggi);
+
         messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
         utentePresenter = UtentePresenter.getInstance();
 

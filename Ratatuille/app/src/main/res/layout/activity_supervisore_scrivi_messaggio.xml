@@ -126,6 +126,7 @@
             android:textSize="25sp" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/supervisore_lista_messaggi_1"
             android:layout_width="214dp"
             android:layout_height="220dp"
             android:layout_alignParentEnd="true"

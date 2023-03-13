@@ -37,6 +37,8 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cameriere_ordinazioni);
         Button btn_visualizza = (Button) findViewById(R.id.btn_visualizza);
 
+        recyclerView = findViewById(R.id.cameriere_lista_messaggi);
+
         messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
         utentePresenter = UtentePresenter.getInstance();
 

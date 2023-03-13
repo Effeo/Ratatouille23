@@ -37,7 +37,7 @@ public class MessaggiAdapter extends RecyclerView.Adapter<MessaggiAdapter.Messag
 
     @Override
     public void onBindViewHolder(@NonNull MessaggiAdapter.MessaggiHolder holder, int position) {
-        holder.id_messaggio.setText(String.valueOf(messaggi.get(position).getId_messaggio_utente()));
+        holder.id_messaggio.setText(String.valueOf(messaggi.get(position).getMessaggio().getId_messaggio()));
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

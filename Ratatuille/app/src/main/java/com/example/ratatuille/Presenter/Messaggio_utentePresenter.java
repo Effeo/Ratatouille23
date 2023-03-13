@@ -7,6 +7,7 @@ import com.example.ratatuille.Service.Implementation.ImplMessaggio_utenteService
 import com.example.ratatuille.View.CameriereMessaggiActivity;
 import com.example.ratatuille.View.CuocoMessaggiActivity;
 import com.example.ratatuille.View.SupervisoreLeggeMessaggiActivity;
+import com.example.ratatuille.View.SupervisoreScriviMessaggioActivity;
 
 import java.util.List;
 
@@ -18,6 +19,16 @@ public class Messaggio_utentePresenter {
     private CuocoMessaggiActivity cuocoMessaggiActivity;
     private CameriereMessaggiActivity cameriereMessaggiActivity;
     private SupervisoreLeggeMessaggiActivity supervisoreLeggeMessaggiActivity;
+
+    public SupervisoreScriviMessaggioActivity getSupervisoreScriviMessaggioActivity() {
+        return supervisoreScriviMessaggioActivity;
+    }
+
+    public void setSupervisoreScriviMessaggioActivity(SupervisoreScriviMessaggioActivity supervisoreScriviMessaggioActivity) {
+        this.supervisoreScriviMessaggioActivity = supervisoreScriviMessaggioActivity;
+    }
+
+    private SupervisoreScriviMessaggioActivity supervisoreScriviMessaggioActivity;
 
     public void setCuocoMessaggiActivity(CuocoMessaggiActivity cuocoMessaggiActivity) {
         this.cuocoMessaggiActivity = cuocoMessaggiActivity;
@@ -46,7 +57,7 @@ public class Messaggio_utentePresenter {
                 messaggi_utenti = (List<Messaggio_utente>) o;
 
                 if(ruolo.equals("cuoco")) cuocoMessaggiActivity.stampaMessaggi();
-                else if(ruolo.equals("supervisore")) supervisoreLeggeMessaggiActivity.stampaMessaggi();
+                else if(ruolo.equals("supervisore")) supervisoreScriviMessaggioActivity.stampaMessaggi();
                 else if(ruolo.equals("cameriere")) cameriereMessaggiActivity.stampaMessaggi();
             }
 

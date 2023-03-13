@@ -114,6 +114,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cameriere_lista_messaggi"
             android:layout_width="214dp"
             android:layout_height="283dp"
             android:layout_alignParentEnd="true"

@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class Messaggio_utente {
 
     @Expose
-    @SerializedName("id_messaggio_utente")
+    @SerializedName("id_messaggi_utente")
     private int id_messaggio_utente;
 
     @Expose

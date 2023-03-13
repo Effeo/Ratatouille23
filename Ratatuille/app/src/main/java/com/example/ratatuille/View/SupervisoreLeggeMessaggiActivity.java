@@ -1,22 +1,34 @@
 package com.example.ratatuille.View;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static com.example.ratatuille.Presenter.Messaggio_utentePresenter.messaggio_utentePresenter;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Adapter.MessaggiAdapter;
+import com.example.ratatuille.Model.Messaggio_utente;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+
+import java.util.List;
 
 public class SupervisoreLeggeMessaggiActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private SupervisoreLeggeMessaggiActivity supervisoreLeggeMessaggiActivity;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supervisore_legge_messaggi);
+
+        recyclerView = findViewById(R.id.supervisore_lista_messaggi);
 
         utentePresenter = UtentePresenter.getInstance();
 
@@ -79,5 +91,15 @@ public class SupervisoreLeggeMessaggiActivity extends AppCompatActivity {
         }
     }
 
-    public void stampaMessaggi(){}
+    public void stampaMessaggi(){
+        List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
+
+        MessaggiAdapter messaggiAdapter = new MessaggiAdapter(supervisoreLeggeMessaggiActivity.getApplicationContext(), messaggi);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(messaggiAdapter);
+    }
+
 }
