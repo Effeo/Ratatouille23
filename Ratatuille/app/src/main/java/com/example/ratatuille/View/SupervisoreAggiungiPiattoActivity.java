@@ -42,7 +42,7 @@ public class SupervisoreAggiungiPiattoActivity extends AppCompatActivity {
         ImageButton btnAgginugiPiatto = (ImageButton) findViewById(R.id.supervisore_aggiungi_piatto);
         ImageButton btnModificaMenu = (ImageButton) findViewById(R.id.supervisore_modifica_menu);
         ImageButton btnConto = (ImageButton) findViewById(R.id.supervisore_conto);
-        ImageButton btnMessaggi = (ImageButton) findViewById(R.id.supervisore_conto);
+        ImageButton btnMessaggi = (ImageButton) findViewById(R.id.supervisore_messaggi);
 
         Button btnAggiungi = (Button) findViewById(R.id.btn_aggiungi);
 

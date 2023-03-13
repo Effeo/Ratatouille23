@@ -1,6 +1,8 @@
 package com.example.ratatuille.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,15 +10,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Adapter.MessaggiAdapter;
+import com.example.ratatuille.Model.Messaggio_utente;
 import com.example.ratatuille.Model.Utente;
 import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
+import java.util.List;
+
 public class CameriereMessaggiActivity extends AppCompatActivity {
     private Messaggio_utentePresenter messaggio_utentePresenter;
     private UtentePresenter utentePresenter;
     private CameriereMessaggiActivity cameriereMessaggiActivity;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +36,8 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
         ImageButton messaggi = (ImageButton) findViewById(R.id.cameriere_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cameriere_ordinazioni);
         Button btn_visualizza = (Button) findViewById(R.id.btn_visualizza);
+
+        recyclerView = findViewById(R.id.cameriere_lista_messaggi);
 
         messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
         utentePresenter = UtentePresenter.getInstance();
@@ -83,9 +92,14 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
     }
 
     public void stampaMessaggi(){
-        for(int i = 0; i < messaggio_utentePresenter.getMessaggi_utenti().size(); i++){
-            System.out.println(messaggio_utentePresenter.getMessaggi_utenti().get(i).getMessaggio().getId_messaggio());
-        }
+        List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
+
+        MessaggiAdapter messaggiAdapter = new MessaggiAdapter(cameriereMessaggiActivity.getApplicationContext(), messaggi);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(messaggiAdapter);
     }
 
     public void onWindowFocusChanged(boolean hasFocus) {

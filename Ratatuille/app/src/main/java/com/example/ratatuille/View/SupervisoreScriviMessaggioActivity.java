@@ -1,18 +1,28 @@
 package com.example.ratatuille.View;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static com.example.ratatuille.Presenter.Messaggio_utentePresenter.messaggio_utentePresenter;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Adapter.MessaggiAdapter;
+import com.example.ratatuille.Model.Messaggio_utente;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+
+import java.util.List;
 
 public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private SupervisoreScriviMessaggioActivity supervisoreScriviMessaggioActivity;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +30,8 @@ public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_supervisore_scrivi_messaggio);
 
         utentePresenter = UtentePresenter.getInstance();
+
+        recyclerView = findViewById(R.id.supervisore_lista_messaggi_1);
 
         Button btn_scrivi = (Button) findViewById(R.id.btn_scrivi);
 
@@ -81,4 +93,16 @@ public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
     }
+
+    public void stampaMessaggi(){
+        List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
+
+        MessaggiAdapter messaggiAdapter = new MessaggiAdapter(supervisoreScriviMessaggioActivity.getApplicationContext(), messaggi);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(messaggiAdapter);
+    }
+
 }
