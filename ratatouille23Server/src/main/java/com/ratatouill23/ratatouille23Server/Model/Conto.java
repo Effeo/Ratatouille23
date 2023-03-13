@@ -15,6 +15,9 @@ public class Conto {
     @Column(name = "data")
     private Date data;
 
+    @Column(name = "chiuso")
+    private int chiuso;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JsonBackReference
     @JoinColumn(name = "id_tavolo", referencedColumnName = "id_tavolo")
@@ -23,11 +26,20 @@ public class Conto {
     public Conto() {
     }
 
-    public Conto(int id_conto, Float costo, Date data, Tavolo tavolo) {
+    public Conto(int id_conto, Float costo, Date data, int chiuso, Tavolo tavolo) {
         this.id_conto = id_conto;
         this.costo = costo;
         this.data = data;
+        this.chiuso = chiuso;
         this.tavolo = tavolo;
+    }
+
+    public int getChiuso() {
+        return chiuso;
+    }
+
+    public void setChiuso(int chiuso) {
+        this.chiuso = chiuso;
     }
 
     public int getId_conto() {

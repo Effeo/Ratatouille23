@@ -20,16 +20,29 @@ public class Conto {
     private Date data;
 
     @Expose
+    @SerializedName("chiuso")
+    private int chiuso;
+
+    @Expose
     @SerializedName("tavolo")
     private Tavolo tavolo;
+
+    public int getChiuso() {
+        return chiuso;
+    }
+
+    public void setChiuso(int chiuso) {
+        this.chiuso = chiuso;
+    }
 
     public Conto() {
     }
 
-    public Conto(int id_conto, Float costo, Date data, Tavolo tavolo) {
+    public Conto(int id_conto, Float costo, Date data, int chiuso, Tavolo tavolo) {
         this.id_conto = id_conto;
         this.costo = costo;
         this.data = data;
+        this.chiuso = chiuso;
         this.tavolo = tavolo;
     }
 

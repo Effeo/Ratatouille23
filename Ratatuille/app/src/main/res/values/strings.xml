@@ -134,14 +134,14 @@
     </string>
 
     <string-array name="categorie">
-        <item>Antipasti</item>
-        <item>Primi</item>
-        <item>Secondi</item>
-        <item>Contorni</item>
-        <item>Dolci</item>
-        <item>Bevande</item>
-        <item>Frutta</item>
-        <item>Varie</item>
+        <item>antipasti</item>
+        <item>primi</item>
+        <item>secondi</item>
+        <item>contorni</item>
+        <item>dolci</item>
+        <item>bevande</item>
+        <item>frutta</item>
+        <item>varie</item>
     </string-array>
 
 </resources>
