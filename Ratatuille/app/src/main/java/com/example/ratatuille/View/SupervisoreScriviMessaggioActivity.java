@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 
 import com.example.ratatuille.Adapter.MessaggiAdapter;
 import com.example.ratatuille.Model.Messaggio_utente;
+import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
@@ -22,6 +23,7 @@ import java.util.List;
 public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private SupervisoreScriviMessaggioActivity supervisoreScriviMessaggioActivity;
+    private Messaggio_utentePresenter messaggio_utentePresenter;
     private RecyclerView recyclerView;
 
     @Override
@@ -30,6 +32,10 @@ public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_supervisore_scrivi_messaggio);
 
         utentePresenter = UtentePresenter.getInstance();
+        messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
+
+        messaggio_utentePresenter.getAllMessaggioUtente(utentePresenter.getUtente().getRuolo(), utentePresenter.getUtente().getUser_name());
+        messaggio_utentePresenter.setSupervisoreScriviMessaggioActivity(this);
 
         recyclerView = findViewById(R.id.supervisore_lista_messaggi_1);
 
@@ -98,6 +104,7 @@ public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
         List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
 
         MessaggiAdapter messaggiAdapter = new MessaggiAdapter(supervisoreScriviMessaggioActivity.getApplicationContext(), messaggi);
+
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
