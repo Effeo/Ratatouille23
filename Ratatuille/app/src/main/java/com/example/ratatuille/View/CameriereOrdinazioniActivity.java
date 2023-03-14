@@ -21,6 +21,7 @@ public class CameriereOrdinazioniActivity extends AppCompatActivity {
     private PiattoPresenter piattoPresenter;
     private CameriereOrdinazioniActivity cameriereOrdinazioniActivity;
     private RecyclerView recyclerView;
+    private RecyclerView recyclerView_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class CameriereOrdinazioniActivity extends AppCompatActivity {
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cameriere_ordinazioni);
 
         recyclerView = findViewById(R.id.lista_categorie);
+        recyclerView_1 = findViewById(R.id.piatti_da_poter_ordinare);
 
         utentePresenter = UtentePresenter.getInstance();
         piattoPresenter = PiattoPresenter.getInstance();
@@ -44,16 +46,16 @@ public class CameriereOrdinazioniActivity extends AppCompatActivity {
         cameriereOrdinazioniActivity = this;
 
         ArrayList<String> categorie = new ArrayList<>();
-        categorie.add("Antipasti");
-        categorie.add("Primi");
-        categorie.add("Secondi");
-        categorie.add("Contorni");
-        categorie.add("Dolci");
-        categorie.add("Bevande");
-        categorie.add("Frutta");
-        categorie.add("Varie");
+        categorie.add("antipasti");
+        categorie.add("primi");
+        categorie.add("secondi");
+        categorie.add("contorni");
+        categorie.add("dolci");
+        categorie.add("bevande");
+        categorie.add("frutta");
+        categorie.add("varie");
 
-        CategoriaAdapter categoriaAdapter = new CategoriaAdapter(this, categorie);
+        CategoriaAdapter categoriaAdapter = new CategoriaAdapter(this, categorie, recyclerView_1);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
