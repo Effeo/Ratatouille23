@@ -48,7 +48,6 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
 
         cuocoOrdinazioniActivity = this;
 
-        //il problema della i
 
 
         logout.setOnClickListener(new View.OnClickListener() {
