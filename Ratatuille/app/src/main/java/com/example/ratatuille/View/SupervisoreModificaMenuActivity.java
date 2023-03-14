@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class SupervisoreModificaMenuActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private SupervisoreModificaMenuActivity supervisoreModificaMenuActivity;
+    private PiattoPresenter piattoPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,7 @@ public class SupervisoreModificaMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_supervisore_modifica_menu);
 
         utentePresenter = UtentePresenter.getInstance();
+        piattoPresenter = PiattoPresenter.getInstance();
 
         ImageButton btn_supervisore_logout = (ImageButton)  findViewById(R.id.supervisore_logout);
         ImageButton btn_supervisore_aggiungi_piatto = (ImageButton) findViewById(R.id.supervisore_aggiungi_piatto);
@@ -27,6 +30,9 @@ public class SupervisoreModificaMenuActivity extends AppCompatActivity {
         ImageButton btn_supervisore_messaggi = (ImageButton) findViewById(R.id.supervisore_messaggi);
 
         supervisoreModificaMenuActivity = this;
+
+        piattoPresenter.setSupervisoreModificaMenuActivity(this);
+        piattoPresenter.getAllPiatti(utentePresenter.getUtente().getRuolo());
 
         btn_supervisore_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +82,12 @@ public class SupervisoreModificaMenuActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
+
+    public void stampaPiatti(){
+        for(int i = 0; i < piattoPresenter.getPiatti().size(); i++){
+            System.out.println(piattoPresenter.getPiatti().get(i).getNome());
         }
     }
 }

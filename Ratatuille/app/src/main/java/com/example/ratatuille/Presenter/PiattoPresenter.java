@@ -1,15 +1,19 @@
 package com.example.ratatuille.Presenter;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.health.SystemHealthManager;
+import android.widget.Toast;
 
 import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Model.Piatto;
 import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplPiattoService;
+import com.example.ratatuille.View.AdminAggiungiPiattoActivity;
 import com.example.ratatuille.View.CameriereOrdinazioniActivity;
 import com.example.ratatuille.View.CuocoOrdinazioniActivity;
 import com.example.ratatuille.View.SupervisoreAggiungiPiattoActivity;
+import com.example.ratatuille.View.SupervisoreModificaMenuActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +25,7 @@ public class PiattoPresenter {
     private List<Piatto> piatti;
     private CuocoOrdinazioniActivity cuocoOrdinazioniActivity;
     private CameriereOrdinazioniActivity cameriereOrdinazioniActivity;
+    private SupervisoreModificaMenuActivity supervisoreModificaMenuActivity;
 
     public void setCameriereOrdinazioniActivity(CameriereOrdinazioniActivity cameriereOrdinazioniActivity) {
         this.cameriereOrdinazioniActivity = cameriereOrdinazioniActivity;
@@ -28,6 +33,10 @@ public class PiattoPresenter {
 
     public void setCuocoOrdinazioniActivity(CuocoOrdinazioniActivity cuocoOrdinazioniActivity) {
         this.cuocoOrdinazioniActivity = cuocoOrdinazioniActivity;
+    }
+
+    public void setSupervisoreModificaMenuActivity(SupervisoreModificaMenuActivity supervisoreModificaMenuActivity){
+        this.supervisoreModificaMenuActivity = supervisoreModificaMenuActivity;
     }
 
     private PiattoPresenter(){
@@ -58,12 +67,13 @@ public class PiattoPresenter {
         }, id_piatto);
     }
 
-    public void getAllPiatti(){
+    public void getAllPiatti(String ruolo){
         implPiattoService.getAllPiatti(new Callback() {
             @Override
             public void returnResult(Object o) {
                 piatti = (List<Piatto>) o;
-                cameriereOrdinazioniActivity.stampaPiatti();
+                if(ruolo.equals("cameriere")) cameriereOrdinazioniActivity.stampaPiatti();
+                else if(ruolo.equals("supervisore")) supervisoreModificaMenuActivity.stampaPiatti();
             }
 
             @Override
@@ -73,36 +83,61 @@ public class PiattoPresenter {
         });
     }
 
-    public void create(SupervisoreAggiungiPiattoActivity activity){
-        String nome = activity.editNome.getText().toString();
-        String descrizione = activity.editDescrizione.getText().toString();
-        String allergeni = activity.editAllergeni.getText().toString();
-        String categoria = activity.spinnerCategoria.getSelectedItem().toString();
-        Float costo = Float.parseFloat(activity.editCosto.getText().toString());
-        Integer posizione = Integer.parseInt(activity.editPosizione.getText().toString());
+    public void create(Activity activity, String ruolo) {
+        SupervisoreAggiungiPiattoActivity activitySup = null;
+        AdminAggiungiPiattoActivity activityAdmin = null;
 
-        if(nome.equals("") || descrizione.equals("") || allergeni.equals("") || posizione < 1 || costo < 0) return;
+        String nome = null;
+        String descrizione = null;
+        String allergeni = null;
+        Integer posizione = -1;
+        Float costo = Float.valueOf(-1);
+        String categoria = null;
 
-        Piatto piatto = new Piatto();
+        if (ruolo.equals("supervisore")) {
+            activitySup = (SupervisoreAggiungiPiattoActivity) activity;
 
-        piatto.setNome(nome);
-        piatto.setDescrizione(descrizione);
-        piatto.setCosto(costo);
-        piatto.setAllergeni(allergeni);
-        piatto.setCategoria(categoria);
-        piatto.setPosto(posizione);
+            nome = activitySup.editNome.getText().toString();
+            descrizione = activitySup.editDescrizione.getText().toString();
+            allergeni = activitySup.editAllergeni.getText().toString();
+            categoria = activitySup.spinnerCategoria.getSelectedItem().toString();
+            if(!activitySup.editCosto.getText().toString().equals("")) costo = Float.parseFloat(activitySup.editCosto.getText().toString());
+            if(!activitySup.editPosizione.getText().toString().equals("")) posizione = Integer.parseInt(activitySup.editPosizione.getText().toString());
+        }else{
+            /*activityAdmin = (AdminAggiungiPiattoActivity) activity;
 
-        implPiattoService.create(new Callback() {
-            @Override
-            public void returnResult(Object o) {
-                System.out.println("piatto aggiunto");
-            }
+            nome = activityAdmin.editNome.getText().toString();
+            descrizione = activityAdmin.editDescrizione.getText().toString();
+            allergeni = activityAdmin.editAllergeni.getText().toString();
+            String categoria = activityAdmin.spinnerCategoria.getSelectedItem().toString();
+            costo = Float.parseFloat(activityAdmin.editCosto.getText().toString());
+            posizione = Integer.parseInt(activityAdmin.editPosizione.getText().toString());*/
+        }
 
-            @Override
-            public void returnError(Throwable e) {
-                System.out.println(e);
-            }
-        },piatto);
+
+        if (!nome.equals("") || !descrizione.equals("") || !allergeni.equals("") || posizione >= 1 || costo >= 0) {
+            Piatto piatto = new Piatto();
+
+            piatto.setNome(nome);
+            piatto.setDescrizione(descrizione);
+            piatto.setCosto(costo);
+            piatto.setAllergeni(allergeni);
+            piatto.setCategoria(categoria);
+            piatto.setPosto(posizione);
+
+            implPiattoService.create(new Callback() {
+                @Override
+                public void returnResult(Object o) {
+                    System.out.println("piatto aggiunto");
+                }
+
+                @Override
+                public void returnError(Throwable e) {
+                    System.out.println(e);
+                }
+            }, piatto);
+        } else
+            Toast.makeText(activity.getApplicationContext(), "Uno o più campi non sono compilati" , Toast.LENGTH_SHORT).show();
     }
 
     public Piatto getPiatto() {

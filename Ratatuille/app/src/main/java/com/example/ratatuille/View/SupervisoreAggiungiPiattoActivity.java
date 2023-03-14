@@ -96,7 +96,7 @@ public class SupervisoreAggiungiPiattoActivity extends AppCompatActivity {
         btnAggiungi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                piattoPresenter.create(supervisoreAggiungiPiattoActivity);
+                piattoPresenter.create(supervisoreAggiungiPiattoActivity, utentePresenter.getUtente().getRuolo());
             }
         });
     }

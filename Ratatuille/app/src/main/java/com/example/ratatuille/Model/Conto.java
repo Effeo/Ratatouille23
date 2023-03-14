@@ -12,20 +12,20 @@ public class Conto {
     private int id_conto;
 
     @Expose
-    @SerializedName("conto")
+    @SerializedName("costo")
     private Float costo;
 
     @Expose
     @SerializedName("data")
-    private Date data;
+    private String data;
 
     @Expose
     @SerializedName("chiuso")
     private int chiuso;
 
     @Expose
-    @SerializedName("tavolo")
-    private Tavolo tavolo;
+    @SerializedName("id_tavolo")
+    private int id_tavolo;
 
     public int getChiuso() {
         return chiuso;
@@ -38,12 +38,12 @@ public class Conto {
     public Conto() {
     }
 
-    public Conto(int id_conto, Float costo, Date data, int chiuso, Tavolo tavolo) {
+    public Conto(int id_conto, Float costo, String data, int chiuso, int id_tavolo) {
         this.id_conto = id_conto;
         this.costo = costo;
         this.data = data;
         this.chiuso = chiuso;
-        this.tavolo = tavolo;
+        this.id_tavolo = id_tavolo;
     }
 
     public int getId_conto() {
@@ -62,19 +62,19 @@ public class Conto {
         this.costo = costo;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 
-    public Tavolo getTavolo() {
-        return tavolo;
+    public int getId_tavolo() {
+        return id_tavolo;
     }
 
-    public void setTavolo(Tavolo tavolo) {
-        this.tavolo = tavolo;
+    public void setId_tavolo(int id_tavolo) {
+        this.id_tavolo = id_tavolo;
     }
 }

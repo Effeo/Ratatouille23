@@ -39,7 +39,7 @@ public class CameriereOrdinazioniActivity extends AppCompatActivity {
         piattoPresenter = PiattoPresenter.getInstance();
 
         piattoPresenter.setCameriereOrdinazioniActivity(this);
-        piattoPresenter.getAllPiatti();
+        piattoPresenter.getAllPiatti(utentePresenter.getUtente().getRuolo());
 
         cameriereOrdinazioniActivity = this;
 
