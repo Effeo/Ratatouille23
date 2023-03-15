@@ -17,4 +17,9 @@ public class ImplOrdine_piattoService implements IOrdine_piattoService {
     public List<Ordine_piatto> getOrdiniPiatti() {
         return ordinePiattoRepository.findAll();
     }
+
+    @Override
+    public void delete(Ordine_piatto ordine_piatto) {
+        ordinePiattoRepository.delete(ordine_piatto);
+    }
 }

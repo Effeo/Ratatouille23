@@ -11,9 +11,7 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +35,42 @@ public class Ordine_piattoController {
             ordini_piatti_dto.add(convertDto(ordine_piatto));
 
         return ordini_piatti_dto;
+    }
+
+    @DeleteMapping("/delete")
+    public void delete(@RequestBody Ordine_Piatto_Dto ordine_piatto_dto){
+        Ordine_piatto ordine_piatto = convertEntity(ordine_piatto_dto);
+        iOrdine_piatto.delete(ordine_piatto);
+    }
+
+    private Ordine_piatto convertEntity(Ordine_Piatto_Dto ordine_piatto_dto) {
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        Ordine_piatto ordine_piatto = new Ordine_piatto();
+        ordine_piatto = modelMapper.map(ordine_piatto_dto, Ordine_piatto.class);
+
+        ordine_piatto.setPiatto(convertEntity(ordine_piatto_dto.getPiatto()));
+        ordine_piatto.setOrdine(convertEntity(ordine_piatto_dto.getOrdine()));
+
+        return ordine_piatto;
+    }
+
+    private Piatto convertEntity(PiattoDto piattoDto){
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        Piatto piatto = new Piatto();
+        piatto = modelMapper.map(piattoDto, Piatto.class);
+
+        return piatto;
+    }
+
+    private Ordine convertEntity(OrdineDto ordineDto){
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        Ordine ordine = new Ordine();
+        ordine = modelMapper.map(ordineDto, Ordine.class);
+
+        return ordine;
     }
 
     private Ordine_Piatto_Dto convertDto(Ordine_piatto element) {

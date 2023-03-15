@@ -7,4 +7,6 @@ import java.util.List;
 public interface IOrdine_piattoService {
 
     public List<Ordine_piatto> getOrdiniPiatti();
+
+    public void delete(Ordine_piatto ordine_piatto);
 }
