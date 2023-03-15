@@ -44,20 +44,22 @@ public class ListaPiattiCategorieAdapter extends RecyclerView.Adapter<ListaPiatt
         holder.button_meno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //fixxo domani
                 int quantitanum = Integer.parseInt(quantita);
-                quantitanum++;
-                holder.quantita_per_piatto.setText(String.valueOf(quantitanum));
+                if(quantitanum != 0){
+                    quantitanum--;
+                    holder.quantita_per_piatto.setText(String.valueOf(quantitanum));
+                }
             }
         });
 
         holder.button_piu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //fixxo domani
                 int quantitanum = Integer.parseInt(quantita);
-                if(quantitanum != 0){
-                    quantitanum--;
-                    holder.quantita_per_piatto.setText(String.valueOf(quantitanum));
-                }
+                quantitanum++;
+                holder.quantita_per_piatto.setText(String.valueOf(quantitanum));
             }
         });
     }
