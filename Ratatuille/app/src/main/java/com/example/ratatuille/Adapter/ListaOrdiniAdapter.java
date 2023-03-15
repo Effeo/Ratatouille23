@@ -8,11 +8,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ratatuille.Model.Ordine;
 import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Model.Tavolo;
+import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.R;
 
 import java.util.ArrayList;
@@ -44,6 +46,25 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
             @Override
             public void onClick(View v) {
                 //faccio dopo
+                /*
+                ArrayList<String> listapiattinomi = new ArrayList<>();
+                String categoria = categorie.get(holder.getAdapterPosition());
+
+                piattoPresenter = PiattoPresenter.getInstance();
+                for(int i = 0; i < piattoPresenter.getPiatti().size(); i++){
+                    if(categoria.equals(piattoPresenter.getPiatti().get(i).getCategoria())){
+                        listapiattinomi.add(piattoPresenter.getPiatti().get(i).getNome());
+                    }
+                    //System.out.println(listapiattinomi);
+                }
+
+                ListaPiattiCategorieAdapter listaPiattiCategorieAdapter = new ListaPiattiCategorieAdapter(context, listapiattinomi);
+
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+                linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                recyclerView_1.setLayoutManager(linearLayoutManager);
+                recyclerView_1.setAdapter(listaPiattiCategorieAdapter);
+                */
             }
         });
     }
