@@ -6,4 +6,6 @@ import java.util.List;
 public interface IContoService {
 
     public List<Conto> findAll();
+
+    public void update(Conto conto);
 }

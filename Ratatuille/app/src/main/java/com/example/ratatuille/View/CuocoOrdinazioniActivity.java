@@ -44,7 +44,7 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
         ordine_piattoPresenter.setCuocoOrdinazioniActivity(this);
 
-        ordine_piattoPresenter.findAllOrdiniPiatti();
+        ordine_piattoPresenter.findAllOrdiniPiatti(utentePresenter.getUtente().getRuolo());
 
         cuocoOrdinazioniActivity = this;
 

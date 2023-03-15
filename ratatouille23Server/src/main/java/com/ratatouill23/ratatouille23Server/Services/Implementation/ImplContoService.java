@@ -17,4 +17,9 @@ public class ImplContoService implements IContoService {
     public List<Conto> findAll() {
         return contoRepository.findAll();
     }
+
+    @Override
+    public void update(Conto conto) {
+        contoRepository.save(conto);
+    }
 }

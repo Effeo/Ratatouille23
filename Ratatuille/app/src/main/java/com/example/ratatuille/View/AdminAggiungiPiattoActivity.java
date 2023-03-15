@@ -10,11 +10,13 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
+import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class AdminAggiungiPiattoActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
+    private PiattoPresenter piattoPresenter;
     private AdminAggiungiPiattoActivity adminAggiungiPiattoActivity;
 
     public EditText editNome;
@@ -30,7 +32,7 @@ public class AdminAggiungiPiattoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_aggiungi_piatto);
 
         utentePresenter = UtentePresenter.getInstance();
-
+        piattoPresenter = PiattoPresenter.getInstance();
         Button btn_aggiungi = (Button) findViewById(R.id.btn_aggiungi);
 
         ImageButton btn_admin_logout = (ImageButton)  findViewById(R.id.admin_logout);
@@ -90,6 +92,13 @@ public class AdminAggiungiPiattoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 utentePresenter.goAdminAddUtente(adminAggiungiPiattoActivity);
+            }
+        });
+
+        btn_admin_aggiungi_piatto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                piattoPresenter.create(adminAggiungiPiattoActivity, utentePresenter.getUtente().getRuolo());
             }
         });
     }

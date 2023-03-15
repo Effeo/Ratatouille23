@@ -2,15 +2,15 @@ package com.ratatouill23.ratatouille23Server.Controller;
 
 import com.ratatouill23.ratatouille23Server.Dto.ContoDto;
 import com.ratatouill23.ratatouille23Server.Dto.PiattoDto;
+import com.ratatouill23.ratatouille23Server.Dto.UtenteDto;
 import com.ratatouill23.ratatouille23Server.Model.Conto;
+import com.ratatouill23.ratatouille23Server.Model.Utente;
 import com.ratatouill23.ratatouille23Server.Services.Interfaces.IContoService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -36,6 +36,22 @@ public class ContoController {
             contiDto.add(convertDto(conto));
 
         return contiDto;
+    }
+
+    @PutMapping("/update")
+    public void update(@RequestBody ContoDto contoDto){
+        Conto conto = convertEntity(contoDto);
+        iContoService.update(conto);
+    }
+
+    private Conto convertEntity(ContoDto contoDto) {
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        Conto conto = new Conto();
+        conto = modelMapper.map(contoDto, Conto.class);
+
+
+        return conto;
     }
 
     public ContoDto convertDto(Conto conto){

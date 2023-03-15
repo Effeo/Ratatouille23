@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.ratatuille.Presenter.ContoPresenter;
+import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
@@ -21,11 +22,9 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class SupervisoreContoActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private ContoPresenter contoPresenter;
+    private Ordine_piattoPresenter ordine_piattoPresenter;
 
     private SupervisoreContoActivity supervisoreContoActivity;
-
-    int pageHeight = 1120;
-    int pagewidth = 792;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +33,9 @@ public class SupervisoreContoActivity extends AppCompatActivity {
 
         utentePresenter = UtentePresenter.getInstance();
         contoPresenter = ContoPresenter.getInstance();
+        ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
+
+        ordine_piattoPresenter.findAllOrdiniPiatti(utentePresenter.getUtente().getRuolo());
 
         Button btn_scarica = (Button) findViewById(R.id.btn_scarica);
         Button btn_chiudi = (Button) findViewById(R.id.btn_chiudi);
@@ -47,7 +49,6 @@ public class SupervisoreContoActivity extends AppCompatActivity {
         supervisoreContoActivity = this;
         contoPresenter.setSupervisoreContoActivity(this);
         contoPresenter.getAllConti();
-
 
         btn_supervisore_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,8 +89,15 @@ public class SupervisoreContoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //inserire il conto da prendere per ora per i test è 0
-                //contoPresenter.scarica(contoPresenter.getConti().get(0));
-                prova();
+                scaricaConto(0);
+            }
+        });
+
+        btn_chiudi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //inserire il conto giusto
+                contoPresenter.update(0);
             }
         });
     }
@@ -119,10 +127,15 @@ public class SupervisoreContoActivity extends AppCompatActivity {
         }
     }
 
-    private void prova(){
+    public void scaricaConto(int i){
         Document document = new Document();
+        String fileName = null;
 
-        String fileName = "conto.pdf";
+        if(contoPresenter.getConti().get(i).getChiuso() == 0)
+            fileName = "ContoScaricato.pdf";
+        else
+            fileName = "ContoChiusoScaricato.pdf";
+
 
         try {
             File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
@@ -136,14 +149,36 @@ public class SupervisoreContoActivity extends AppCompatActivity {
 
             document.open();
 
-            Paragraph paragraph = new Paragraph("Hello, world!");
+            Paragraph paragraph = new Paragraph("Conto tavolo: " + contoPresenter.getConti().get(i).getId_tavolo() + "\n\n");
+            writePiatti(paragraph, i);
+            paragraph.add("\n");
+            paragraph.add("Costo totale: " +  contoPresenter.getConti().get(i).getCosto() + "\n");
+            paragraph.add("Data: " +  contoPresenter.getConti().get(i).getData() + "\n");
+
+            if(contoPresenter.getConti().get(i).getChiuso() == 0)
+                paragraph.add("Il conto non e' chiuso" + "\n");
+            else
+                paragraph.add("Il conto e' chiuso" + "\n");
+
             document.add(paragraph);
 
             document.close();
 
             Toast.makeText(this, "File pdf creato con successo", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
+            Toast.makeText(this, "Errore nella creazione del file pdf", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }
+
+    private void writePiatti(Paragraph paragraph, int i){
+        for(int j = 0; j < ordine_piattoPresenter.getOrdini_piatti().size(); j++){
+            if(ordine_piattoPresenter.getOrdini_piatti().get(j).getOrdine().getIdTavolo() == contoPresenter.getConti().get(i).getId_tavolo()){
+                paragraph.add(ordine_piattoPresenter.getOrdini_piatti().get(j).getPiatto().getNome() + " " +
+                        ordine_piattoPresenter.getOrdini_piatti().get(j).getPiatto().getCosto() + "€ x " +
+                        ordine_piattoPresenter.getOrdini_piatti().get(j).getQta() + "\n");
+            }
+        }
+    }
+
 }

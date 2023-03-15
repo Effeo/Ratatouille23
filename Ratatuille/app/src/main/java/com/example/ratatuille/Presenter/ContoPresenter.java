@@ -1,5 +1,7 @@
 package com.example.ratatuille.Presenter;
 
+import android.widget.Toast;
+
 import com.example.ratatuille.Model.Conto;
 import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplContoService;
@@ -39,13 +41,21 @@ public class ContoPresenter {
         });
     }
 
-    public void scarica(Conto conto){
+    public void update(int i){
+        conti.get(i).setChiuso(1);
 
+        implContoService.update(new Callback() {
+            @Override
+            public void returnResult(Object o) {
+                supervisoreContoActivity.scaricaConto(i);
+            }
 
+            @Override
+            public void returnError(Throwable e) {
+
+            }
+        }, conti.get(i));
     }
-
-
-
 
     public void setSupervisoreContoActivity(SupervisoreContoActivity supervisoreContoActivity) {
         this.supervisoreContoActivity = supervisoreContoActivity;
