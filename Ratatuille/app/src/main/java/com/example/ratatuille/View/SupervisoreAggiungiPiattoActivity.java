@@ -3,6 +3,7 @@ package com.example.ratatuille.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -57,6 +58,9 @@ public class SupervisoreAggiungiPiattoActivity extends AppCompatActivity {
                 R.array.categorie, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCategoria.setAdapter(adapter);
+
+        editPosizione.setInputType(InputType.TYPE_CLASS_NUMBER);
+
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override

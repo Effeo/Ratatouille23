@@ -101,19 +101,43 @@ public class PiattoPresenter {
             descrizione = activitySup.editDescrizione.getText().toString();
             allergeni = activitySup.editAllergeni.getText().toString();
             categoria = activitySup.spinnerCategoria.getSelectedItem().toString();
-            if(!activitySup.editCosto.getText().toString().equals("")) costo = Float.parseFloat(activitySup.editCosto.getText().toString());
-            if(!activitySup.editPosizione.getText().toString().equals("")) posizione = Integer.parseInt(activitySup.editPosizione.getText().toString());
+
+            try{
+                costo = Float.parseFloat(activitySup.editCosto.getText().toString());
+            }
+            catch (NumberFormatException e){
+                costo = Float.valueOf(-1);
+            }
+
+            try{
+                posizione = Integer.parseInt(activitySup.editPosizione.getText().toString());
+            }
+            catch (NumberFormatException e){
+                posizione = -1;
+            }
+
         }else{
-            /*activityAdmin = (AdminAggiungiPiattoActivity) activity;
+            activityAdmin = (AdminAggiungiPiattoActivity) activity;
 
             nome = activityAdmin.editNome.getText().toString();
             descrizione = activityAdmin.editDescrizione.getText().toString();
             allergeni = activityAdmin.editAllergeni.getText().toString();
-            String categoria = activityAdmin.spinnerCategoria.getSelectedItem().toString();
-            costo = Float.parseFloat(activityAdmin.editCosto.getText().toString());
-            posizione = Integer.parseInt(activityAdmin.editPosizione.getText().toString());*/
-        }
+            categoria = activityAdmin.spinnerCategoria.getSelectedItem().toString();
 
+            try{
+                costo = Float.parseFloat(activityAdmin.editCosto.getText().toString());
+            }
+            catch (NumberFormatException e){
+                costo = Float.valueOf(-1);
+            }
+
+            try{
+                posizione = Integer.parseInt(activityAdmin.editPosizione.getText().toString());
+            }
+            catch (NumberFormatException e){
+                posizione = -1;
+            }
+        }
 
         if (!nome.equals("") || !descrizione.equals("") || !allergeni.equals("") || posizione >= 1 || costo >= 0) {
             Piatto piatto = new Piatto();
@@ -128,7 +152,7 @@ public class PiattoPresenter {
             implPiattoService.create(new Callback() {
                 @Override
                 public void returnResult(Object o) {
-                    System.out.println("piatto aggiunto");
+                    Toast.makeText(activity.getApplicationContext(), "Piatto aggiunto" , Toast.LENGTH_SHORT).show();
                 }
 
                 @Override

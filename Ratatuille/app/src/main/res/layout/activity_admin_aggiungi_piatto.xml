@@ -173,7 +173,8 @@
                 android:layout_height="70dp"
                 android:background="@color/white"
                 android:hint="Costo"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:inputType="numberSigned|numberDecimal"/>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView

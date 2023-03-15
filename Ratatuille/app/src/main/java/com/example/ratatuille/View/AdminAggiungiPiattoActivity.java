@@ -3,9 +3,12 @@ package com.example.ratatuille.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
@@ -13,6 +16,13 @@ import com.example.ratatuille.R;
 public class AdminAggiungiPiattoActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private AdminAggiungiPiattoActivity adminAggiungiPiattoActivity;
+
+    public EditText editNome;
+    public EditText editCosto;
+    public EditText editDescrizione;
+    public EditText editAllergeni;
+    public Spinner spinnerCategoria;
+    public EditText editPosizione;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +40,16 @@ public class AdminAggiungiPiattoActivity extends AppCompatActivity {
         ImageButton btn_admin_statistiche = (ImageButton) findViewById(R.id.admin_statistiche);
         ImageButton btn_admin_add_utente = (ImageButton) findViewById(R.id.admin_add_utente);
 
+        editNome = (EditText) findViewById(R.id.textView_nome);
+        editCosto = (EditText) findViewById(R.id.textView_costo);
+        editDescrizione = (EditText) findViewById(R.id.textView_descrizione);
+        editAllergeni = (EditText) findViewById(R.id.textView_allergeni);
+        editPosizione = (EditText) findViewById(R.id.textView_posizione);
+        spinnerCategoria = (Spinner) findViewById(R.id.spinner_admin_aggiungi);
+
         adminAggiungiPiattoActivity = this;
+
+        editPosizione.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         btn_admin_logout.setOnClickListener(new View.OnClickListener() {
             @Override
