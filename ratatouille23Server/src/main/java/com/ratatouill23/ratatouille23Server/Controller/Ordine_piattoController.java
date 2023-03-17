@@ -39,8 +39,7 @@ public class Ordine_piattoController {
 
     @DeleteMapping("/delete")
     public void delete(@RequestBody Ordine_Piatto_Dto ordine_piatto_dto){
-        Ordine_piatto ordine_piatto = convertEntity(ordine_piatto_dto);
-        iOrdine_piatto.delete(ordine_piatto);
+        iOrdine_piatto.delete(Integer.valueOf(ordine_piatto_dto.getId_ordine_piatto()));
     }
 
     private Ordine_piatto convertEntity(Ordine_Piatto_Dto ordine_piatto_dto) {
@@ -50,6 +49,7 @@ public class Ordine_piattoController {
         ordine_piatto = modelMapper.map(ordine_piatto_dto, Ordine_piatto.class);
 
         ordine_piatto.setPiatto(convertEntity(ordine_piatto_dto.getPiatto()));
+
         ordine_piatto.setOrdine(convertEntity(ordine_piatto_dto.getOrdine()));
 
         return ordine_piatto;
@@ -68,6 +68,7 @@ public class Ordine_piattoController {
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.LOOSE);
         Ordine ordine = new Ordine();
+
         ordine = modelMapper.map(ordineDto, Ordine.class);
 
         return ordine;

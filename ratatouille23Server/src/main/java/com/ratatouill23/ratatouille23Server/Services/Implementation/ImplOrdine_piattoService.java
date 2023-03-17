@@ -19,7 +19,7 @@ public class ImplOrdine_piattoService implements IOrdine_piattoService {
     }
 
     @Override
-    public void delete(Ordine_piatto ordine_piatto) {
-        ordinePiattoRepository.delete(ordine_piatto);
+    public void delete(Integer id_ordine_piatto) {
+        ordinePiattoRepository.deleteById(id_ordine_piatto);
     }
 }

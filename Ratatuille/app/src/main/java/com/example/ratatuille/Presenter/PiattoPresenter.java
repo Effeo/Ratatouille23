@@ -10,6 +10,7 @@ import com.example.ratatuille.Model.Piatto;
 import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplPiattoService;
 import com.example.ratatuille.View.AdminAggiungiPiattoActivity;
+import com.example.ratatuille.View.AdminModificaMenuActivity;
 import com.example.ratatuille.View.CameriereOrdinazioniActivity;
 import com.example.ratatuille.View.CuocoOrdinazioniActivity;
 import com.example.ratatuille.View.SupervisoreAggiungiPiattoActivity;
@@ -23,9 +24,15 @@ public class PiattoPresenter {
     private ImplPiattoService implPiattoService;
     private Piatto piatto;
     private List<Piatto> piatti;
+
     private CuocoOrdinazioniActivity cuocoOrdinazioniActivity;
     private CameriereOrdinazioniActivity cameriereOrdinazioniActivity;
     private SupervisoreModificaMenuActivity supervisoreModificaMenuActivity;
+    private AdminModificaMenuActivity adminModificaMenuActivity;
+
+    public void setAdminModificaMenuActivity(AdminModificaMenuActivity adminModificaMenuActivity) {
+        this.adminModificaMenuActivity = adminModificaMenuActivity;
+    }
 
     public void setCameriereOrdinazioniActivity(CameriereOrdinazioniActivity cameriereOrdinazioniActivity) {
         this.cameriereOrdinazioniActivity = cameriereOrdinazioniActivity;
@@ -72,8 +79,10 @@ public class PiattoPresenter {
             @Override
             public void returnResult(Object o) {
                 piatti = (List<Piatto>) o;
+
                 if(ruolo.equals("cameriere")) cameriereOrdinazioniActivity.stampaPiatti();
                 else if(ruolo.equals("supervisore")) supervisoreModificaMenuActivity.stampaPiatti();
+                else if(ruolo.equals("admin")) adminModificaMenuActivity.stampaPiatti();
             }
 
             @Override

@@ -1,6 +1,10 @@
 package com.example.ratatuille.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -15,6 +19,8 @@ import com.example.ratatuille.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
+
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -25,7 +31,8 @@ public class SupervisoreContoActivity extends AppCompatActivity {
     private Ordine_piattoPresenter ordine_piattoPresenter;
 
     private SupervisoreContoActivity supervisoreContoActivity;
-
+    private Button btn_scarica;
+    private Button btn_chiudi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +44,8 @@ public class SupervisoreContoActivity extends AppCompatActivity {
 
         ordine_piattoPresenter.findAllOrdiniPiatti(utentePresenter.getUtente().getRuolo());
 
-        Button btn_scarica = (Button) findViewById(R.id.btn_scarica);
-        Button btn_chiudi = (Button) findViewById(R.id.btn_chiudi);
+        btn_scarica = (Button) findViewById(R.id.btn_scarica);
+        btn_chiudi = (Button) findViewById(R.id.btn_chiudi);
 
         ImageButton btn_supervisore_logout = (ImageButton)  findViewById(R.id.supervisore_logout);
         ImageButton btn_supervisore_aggiungi_piatto = (ImageButton) findViewById(R.id.supervisore_aggiungi_piatto);
@@ -89,6 +96,7 @@ public class SupervisoreContoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //inserire il conto da prendere per ora per i test è 0
+                System.out.println("Scarica");
                 scaricaConto(0);
             }
         });
@@ -97,6 +105,7 @@ public class SupervisoreContoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //inserire il conto giusto
+                System.out.println("Chiudi");
                 contoPresenter.update(0);
             }
         });
@@ -118,6 +127,11 @@ public class SupervisoreContoActivity extends AppCompatActivity {
     }
 
     public void stampaConti(){
+        if(contoPresenter.getConti().size() == 0){
+            btn_chiudi.setEnabled(false);
+            btn_scarica.setEnabled(false);
+        }
+
         for(int i = 0; i < contoPresenter.getConti().size(); i++){
             System.out.println("id_conto:" + contoPresenter.getConti().get(i).getId_conto());
             System.out.println("chiuso:" + contoPresenter.getConti().get(i).getChiuso());
@@ -130,20 +144,28 @@ public class SupervisoreContoActivity extends AppCompatActivity {
     public void scaricaConto(int i){
         Document document = new Document();
         String fileName = null;
+        String folder = "PdfIngsw";
 
         if(contoPresenter.getConti().get(i).getChiuso() == 0)
             fileName = "ContoScaricato.pdf";
-        else
+        else{
             fileName = "ContoChiusoScaricato.pdf";
+            contoPresenter.setOrdini_piatti(new ArrayList<>());
+        }
 
-
-        try {
-            File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+       try {
+            System.out.println("crea il file");
+            File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), folder);
             if (!dir.exists()) {
                 dir.mkdir();
             }
 
-            File file = new File(dir, fileName);
+           File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName);
+
+            if(file.exists()){
+                System.out.println("Il file esiste lo elimino");
+                file.delete();
+            }
 
             PdfWriter.getInstance(document, new FileOutputStream(file));
 
@@ -155,10 +177,15 @@ public class SupervisoreContoActivity extends AppCompatActivity {
             paragraph.add("Costo totale: " +  contoPresenter.getConti().get(i).getCosto() + "\n");
             paragraph.add("Data: " +  contoPresenter.getConti().get(i).getData() + "\n");
 
-            if(contoPresenter.getConti().get(i).getChiuso() == 0)
+            if(contoPresenter.getConti().get(i).getChiuso() == 0){
                 paragraph.add("Il conto non e' chiuso" + "\n");
-            else
+                System.out.println("file non chiuso scaricato");
+            }
+            else{
                 paragraph.add("Il conto e' chiuso" + "\n");
+                System.out.println("file chiuso scaricato");
+                removeOrdine_piatto();
+            }
 
             document.add(paragraph);
 
@@ -174,6 +201,8 @@ public class SupervisoreContoActivity extends AppCompatActivity {
     private void writePiatti(Paragraph paragraph, int i){
         for(int j = 0; j < ordine_piattoPresenter.getOrdini_piatti().size(); j++){
             if(ordine_piattoPresenter.getOrdini_piatti().get(j).getOrdine().getIdTavolo() == contoPresenter.getConti().get(i).getId_tavolo()){
+                contoPresenter.getOrdini_piatti().add(ordine_piattoPresenter.getOrdini_piatti().get(j));
+
                 paragraph.add(ordine_piattoPresenter.getOrdini_piatti().get(j).getPiatto().getNome() + " " +
                         ordine_piattoPresenter.getOrdini_piatti().get(j).getPiatto().getCosto() + "€ x " +
                         ordine_piattoPresenter.getOrdini_piatti().get(j).getQta() + "\n");
@@ -181,4 +210,10 @@ public class SupervisoreContoActivity extends AppCompatActivity {
         }
     }
 
+    private void removeOrdine_piatto(){
+        for(int i = 0; i < contoPresenter.getOrdini_piatti().size(); i++){
+            System.out.println(contoPresenter.getOrdini_piatti().get(i).getId_ordine_piatto());
+            ordine_piattoPresenter.delete(contoPresenter.getOrdini_piatti().get(i));
+        }
+    }
 }

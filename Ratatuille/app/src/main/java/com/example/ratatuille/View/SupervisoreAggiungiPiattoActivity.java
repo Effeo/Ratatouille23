@@ -61,7 +61,6 @@ public class SupervisoreAggiungiPiattoActivity extends AppCompatActivity {
 
         editPosizione.setInputType(InputType.TYPE_CLASS_NUMBER);
 
-
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

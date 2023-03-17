@@ -103,6 +103,16 @@ INSERT INTO tavolo() VALUES();
 
 
 INSERT INTO piatto(nome, descrizione, costo, posto, allergeni, categoria)
+VALUES ('zeppole', 'zeppole', 2, 1, 'da vedere', 'antipasti');
+
+INSERT INTO piatto(nome, descrizione, costo, posto, allergeni, categoria)
+VALUES ('crocche', 'frittatina', 2, 2, 'da vedere', 'antipasti');
+
+INSERT INTO piatto(nome, descrizione, costo, posto, allergeni, categoria)
+VALUES ('frittatina', 'frittatina', 3, 3, 'da vedere', 'antipasti');
+
+
+INSERT INTO piatto(nome, descrizione, costo, posto, allergeni, categoria)
 VALUES ('pasta al forno', 'pasta al forno', 10, 1, 'da vedere', 'primi');
 
 INSERT INTO piatto(nome, descrizione, costo, posto, allergeni, categoria)

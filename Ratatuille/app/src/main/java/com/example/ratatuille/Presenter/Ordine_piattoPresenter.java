@@ -44,6 +44,21 @@ public class Ordine_piattoPresenter {
         });
     }
 
+    public void delete(Ordine_piatto ordine_piatto){
+        System.out.println("Delete");
+        implOrdine_piattoService.delete(new Callback() {
+            @Override
+            public void returnResult(Object o) {
+            }
+
+            @Override
+            public void returnError(Throwable e) {
+                System.out.println(e);
+            }
+        }, ordine_piatto);
+
+    }
+
     public List<Ordine_piatto> getOrdini_piatti() {
         return ordini_piatti;
     }

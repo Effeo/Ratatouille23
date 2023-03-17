@@ -15,5 +15,6 @@ public interface PiattoRepository extends CrudRepository<Piatto, Integer> {
     @Query(value = "select * from piatto where piatto.id_piatto =:id_piatto", nativeQuery = true)
     public Optional<Piatto> findPiattoByID(@PathVariable("id_piatto") Integer id_piatto);
 
+    @Query(value = "select * from piatto order by categoria, posto", nativeQuery = true)
     public List<Piatto> findAll();
 }

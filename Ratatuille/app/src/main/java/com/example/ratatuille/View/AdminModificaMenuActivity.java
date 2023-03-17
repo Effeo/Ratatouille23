@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class AdminModificaMenuActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
+    private PiattoPresenter piattoPresenter;
+
     private AdminModificaMenuActivity adminModificaMenuActivity;
 
     @Override
@@ -19,6 +22,9 @@ public class AdminModificaMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_modifica_menu);
 
         utentePresenter = UtentePresenter.getInstance();
+        piattoPresenter = PiattoPresenter.getInstance();
+
+        piattoPresenter.setAdminModificaMenuActivity(this);
 
         ImageButton btn_admin_logout = (ImageButton)  findViewById(R.id.admin_logout);
         ImageButton btn_admin_aggiungi_piatto = (ImageButton) findViewById(R.id.admin_aggiungi_piatto);
@@ -29,6 +35,7 @@ public class AdminModificaMenuActivity extends AppCompatActivity {
 
         adminModificaMenuActivity = this;
 
+        piattoPresenter.getAllPiatti(utentePresenter.getUtente().getRuolo());
         btn_admin_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +91,12 @@ public class AdminModificaMenuActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
+
+    public void stampaPiatti(){
+        for(int i = 0; i < piattoPresenter.getPiatti().size(); i++){
+            System.out.println(piattoPresenter.getPiatti().get(i).getNome());
         }
     }
 }

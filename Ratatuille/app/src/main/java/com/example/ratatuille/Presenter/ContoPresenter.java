@@ -3,10 +3,12 @@ package com.example.ratatuille.Presenter;
 import android.widget.Toast;
 
 import com.example.ratatuille.Model.Conto;
+import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplContoService;
 import com.example.ratatuille.View.SupervisoreContoActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContoPresenter {
@@ -14,6 +16,7 @@ public class ContoPresenter {
 
     private ImplContoService implContoService;
     private List<Conto> conti;
+    private List<Ordine_piatto> ordini_piatti = new ArrayList<>();
     private SupervisoreContoActivity supervisoreContoActivity;
 
     private ContoPresenter(){
@@ -42,6 +45,7 @@ public class ContoPresenter {
     }
 
     public void update(int i){
+        System.out.println("Update chiuso");
         conti.get(i).setChiuso(1);
 
         implContoService.update(new Callback() {
@@ -64,4 +68,8 @@ public class ContoPresenter {
     public List<Conto> getConti() {
         return conti;
     }
+
+    public List<Ordine_piatto> getOrdini_piatti(){return ordini_piatti;}
+
+    public void setOrdini_piatti (List<Ordine_piatto> ordini_piatti){this.ordini_piatti = ordini_piatti;}
 }

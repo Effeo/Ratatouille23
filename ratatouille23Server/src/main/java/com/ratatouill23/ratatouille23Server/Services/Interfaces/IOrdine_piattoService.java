@@ -8,5 +8,5 @@ public interface IOrdine_piattoService {
 
     public List<Ordine_piatto> getOrdiniPiatti();
 
-    public void delete(Ordine_piatto ordine_piatto);
+    public void delete(Integer id_ordine_piatto);
 }

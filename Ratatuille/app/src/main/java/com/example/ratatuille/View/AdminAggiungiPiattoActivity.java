@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -33,6 +34,7 @@ public class AdminAggiungiPiattoActivity extends AppCompatActivity {
 
         utentePresenter = UtentePresenter.getInstance();
         piattoPresenter = PiattoPresenter.getInstance();
+
         Button btn_aggiungi = (Button) findViewById(R.id.btn_aggiungi);
 
         ImageButton btn_admin_logout = (ImageButton)  findViewById(R.id.admin_logout);
@@ -52,6 +54,11 @@ public class AdminAggiungiPiattoActivity extends AppCompatActivity {
         adminAggiungiPiattoActivity = this;
 
         editPosizione.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.categorie, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerCategoria.setAdapter(adapter);
 
         btn_admin_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +103,13 @@ public class AdminAggiungiPiattoActivity extends AppCompatActivity {
         });
 
         btn_admin_aggiungi_piatto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                utentePresenter.goAdminAggiungiPiatto(adminAggiungiPiattoActivity);
+            }
+        });
+
+        btn_aggiungi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 piattoPresenter.create(adminAggiungiPiattoActivity, utentePresenter.getUtente().getRuolo());
