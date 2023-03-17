@@ -24,7 +24,7 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
     private CameriereMessaggiActivity cameriereMessaggiActivity;
     private RecyclerView recyclerView;
     private TextView visualizza_messaggio;
-
+    private Button btn_visualizza;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
         ImageButton visualizza_comanda = (ImageButton) findViewById(R.id.cameriere_visualizza_comanda);
         ImageButton messaggi = (ImageButton) findViewById(R.id.cameriere_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cameriere_ordinazioni);
-        Button btn_visualizza = (Button) findViewById(R.id.btn_visualizza);
+        btn_visualizza = (Button) findViewById(R.id.btn_visualizza);
 
         recyclerView = findViewById(R.id.cameriere_lista_messaggi);
         visualizza_messaggio = findViewById(R.id.textView_mex_cam);
@@ -94,14 +94,19 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
     }
 
     public void stampaMessaggi(){
-        List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
+        if(messaggio_utentePresenter.getMessaggi_utenti().size() != 0){
+            List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
 
-        MessaggiAdapter messaggiAdapter = new MessaggiAdapter(cameriereMessaggiActivity.getApplicationContext(), messaggi, visualizza_messaggio);
+            MessaggiAdapter messaggiAdapter = new MessaggiAdapter(cameriereMessaggiActivity.getApplicationContext(), messaggi, visualizza_messaggio);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(messaggiAdapter);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setAdapter(messaggiAdapter);
+        }
+        else
+            btn_visualizza.setEnabled(false);
+
     }
 
     public void onWindowFocusChanged(boolean hasFocus) {

@@ -232,6 +232,9 @@ VALUES(0, 'luigi', 1);
 INSERT INTO messaggio_utente(letto, user_name, id_messaggio)
 VALUES(0, 'luigi', 2);
 
+INSERT INTO messaggio_utente(letto, user_name, id_messaggio)
+VALUES(0, 'matteo', 1);
+
 insert into ordine(id_tavolo)
 values(2);
 

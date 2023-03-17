@@ -21,8 +21,6 @@ public class ListaPiattiCategorieAdapter extends RecyclerView.Adapter<ListaPiatt
     private ArrayList<String> piatti;
     private Context context;
 
-
-
     public ListaPiattiCategorieAdapter(Context context, ArrayList<String> piatti){
         this.context = context;
         this.piatti = piatti;

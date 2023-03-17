@@ -29,7 +29,7 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
     private CuocoMessaggiActivity cuocoMessaggiActivity;
     private RecyclerView recyclerView;
     private TextView visualizza_messaggio;
-
+    private Button btn_visualizza;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
         ImageButton logout = (ImageButton) findViewById(R.id.cuoco_logout);
         ImageButton messaggi = (ImageButton) findViewById(R.id.cuoco_messaggi);
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cuoco_ordinazioni);
-        Button btn_visualizza = (Button) findViewById(R.id.btn_visualizza);
+        btn_visualizza = (Button) findViewById(R.id.btn_visualizza);
 
         recyclerView = findViewById(R.id.cuoco_lista_messaggi);
         visualizza_messaggio = findViewById(R.id.textView_mex);
@@ -99,13 +99,18 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
     }
 
     public void stampaMessaggi(){
-        List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
+        if(messaggio_utentePresenter.getMessaggi_utenti().size() != 0){
+            List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
 
-        MessaggiAdapter messaggiAdapter = new MessaggiAdapter(cuocoMessaggiActivity.getApplicationContext(), messaggi, visualizza_messaggio);
+            MessaggiAdapter messaggiAdapter = new MessaggiAdapter(cuocoMessaggiActivity.getApplicationContext(), messaggi, visualizza_messaggio);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(messaggiAdapter);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setAdapter(messaggiAdapter);
+        }
+        else
+            btn_visualizza.setEnabled(false);
+
     }
 }
