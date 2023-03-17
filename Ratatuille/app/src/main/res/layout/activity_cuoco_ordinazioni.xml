@@ -100,6 +100,7 @@
             android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lista_piatti_ordinati"
             android:layout_width="400dp"
             android:layout_height="354dp"
             android:layout_alignParentEnd="true"

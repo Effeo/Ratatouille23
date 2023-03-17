@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.ratatuille.Adapter.CategoriaAdapter;
 import com.example.ratatuille.Adapter.ListaOrdiniAdapter;
@@ -20,13 +21,18 @@ import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class CuocoOrdinazioniActivity extends AppCompatActivity {
     private Ordine_piattoPresenter ordine_piattoPresenter;
     private CuocoOrdinazioniActivity cuocoOrdinazioniActivity;
     private UtentePresenter utentePresenter;
     private RecyclerView recyclerView;
+    private RecyclerView recyclerView_c;
+    private TextView visualizza_messaggio;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +44,7 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         ImageButton ordinazioni = (ImageButton) findViewById(R.id.cuoco_ordinazioni);
 
         recyclerView = findViewById(R.id.lista_tavoli_ordinazioni);
+        recyclerView_c = findViewById(R.id.lista_piatti_ordinati);
 
         utentePresenter = UtentePresenter.getInstance();
 
@@ -92,7 +99,18 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
     public void stampaOrdiniPiatti(){
         List<Ordine_piatto> ordine_piatti = ordine_piattoPresenter.getOrdini_piatti();
 
-        ListaOrdiniAdapter listaOrdiniAdapter = new ListaOrdiniAdapter(cuocoOrdinazioniActivity.getApplicationContext(), ordine_piatti);
+        ArrayList<Ordine_piatto> piattiSenzaDuplicati = new ArrayList<>();
+
+        piattiSenzaDuplicati.add(ordine_piatti.get(0));
+        for (int i = 0; i < ordine_piatti.size(); i++){
+            for (int j = 0; j < piattiSenzaDuplicati.size(); j++){
+                if (ordine_piatti.get(i).getOrdine().getIdTavolo() != piattiSenzaDuplicati.get(j).getOrdine().getIdTavolo()){
+                    piattiSenzaDuplicati.add(ordine_piatti.get(i));
+                }
+            }
+        }
+
+        ListaOrdiniAdapter listaOrdiniAdapter = new ListaOrdiniAdapter(cuocoOrdinazioniActivity.getApplicationContext(), piattiSenzaDuplicati, recyclerView_c);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);

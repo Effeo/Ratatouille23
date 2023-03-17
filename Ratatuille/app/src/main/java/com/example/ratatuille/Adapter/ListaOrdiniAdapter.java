@@ -11,10 +11,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ratatuille.Model.Ordine;
 import com.example.ratatuille.Model.Ordine_piatto;
-import com.example.ratatuille.Model.Tavolo;
-import com.example.ratatuille.Presenter.PiattoPresenter;
+import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
 import com.example.ratatuille.R;
 
 import java.util.ArrayList;
@@ -24,10 +22,13 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
 
     private List<Ordine_piatto> ordine_piatti;
     private Context context;
+    private Ordine_piattoPresenter ordine_piattoPresenter;
+    private RecyclerView recyclerView_c;
 
-    public ListaOrdiniAdapter(Context context, List<Ordine_piatto> ordine_piatti){
+    public ListaOrdiniAdapter(Context context, List<Ordine_piatto> ordine_piatti, RecyclerView recyclerView_c){
         this.context = context;
         this.ordine_piatti = ordine_piatti;
+        this.recyclerView_c = recyclerView_c;
     }
 
     @NonNull
@@ -40,31 +41,44 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
     @Override
     public void onBindViewHolder(@NonNull ListaOrdiniHolder holder, int position) {
 
-        holder.id_del_tavolo.setText(String.valueOf(ordine_piatti.get(position).getOrdine().getIdTavolo()));
+        //questo è quello che da il doppio id
+        //holder.id_del_tavolo.setText(String.valueOf(ordine_piatti.get(position).getOrdine().getIdTavolo()));
 
+
+        //versione senza previousTableId
+        int currentTableId = ordine_piatti.get(position).getOrdine().getIdTavolo();
+        if (position == 0 || currentTableId != ordine_piatti.get(position - 1).getOrdine().getIdTavolo()) {
+            holder.id_del_tavolo.setText(String.valueOf(currentTableId));
+        }
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //faccio dopo
-                /*
-                ArrayList<String> listapiattinomi = new ArrayList<>();
-                String categoria = categorie.get(holder.getAdapterPosition());
 
-                piattoPresenter = PiattoPresenter.getInstance();
-                for(int i = 0; i < piattoPresenter.getPiatti().size(); i++){
-                    if(categoria.equals(piattoPresenter.getPiatti().get(i).getCategoria())){
-                        listapiattinomi.add(piattoPresenter.getPiatti().get(i).getNome());
+
+                ArrayList<String> listapiattiordinati = new ArrayList<>();
+                ArrayList<Integer> listapiattiquantita = new ArrayList<>();
+                int id_tavolozzo = ordine_piatti.get(holder.getAdapterPosition()).getOrdine().getIdTavolo();
+
+                ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
+                for(int i = 0; i < ordine_piattoPresenter.getOrdini_piatti().size(); i++){
+                    System.out.println(id_tavolozzo);
+                    System.out.println(ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo());
+                    if(id_tavolozzo == ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo()){
+                        listapiattiordinati.add(ordine_piattoPresenter.getOrdini_piatti().get(i).getPiatto().getNome());
+                        listapiattiquantita.add(ordine_piattoPresenter.getOrdini_piatti().get(i).getQta());
+                        System.out.println("ordine: " + listapiattiordinati);
+                        System.out.println("quantita: " + listapiattiquantita);
                     }
-                    //System.out.println(listapiattinomi);
                 }
 
-                ListaPiattiCategorieAdapter listaPiattiCategorieAdapter = new ListaPiattiCategorieAdapter(context, listapiattinomi);
+
+                ListaPiattiOrdinatiAdapter listaPiattiOrdinatiAdapter = new ListaPiattiOrdinatiAdapter(context, listapiattiordinati, listapiattiquantita);
 
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
                 linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                recyclerView_1.setLayoutManager(linearLayoutManager);
-                recyclerView_1.setAdapter(listaPiattiCategorieAdapter);
-                */
+                recyclerView_c.setLayoutManager(linearLayoutManager);
+                recyclerView_c.setAdapter(listaPiattiOrdinatiAdapter);
+
             }
         });
     }

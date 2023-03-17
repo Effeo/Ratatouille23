@@ -1,12 +1,9 @@
 package com.example.ratatuille.View;
 
-import static com.example.ratatuille.Presenter.Messaggio_utentePresenter.messaggio_utentePresenter;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -101,15 +98,18 @@ public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
     }
 
     public void stampaMessaggi(){
+        /*
         List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
 
-        MessaggiAdapter messaggiAdapter = new MessaggiAdapter(supervisoreScriviMessaggioActivity.getApplicationContext(), messaggi);
+        //MessaggiAdapter messaggiAdapter = new MessaggiAdapter(supervisoreScriviMessaggioActivity.getApplicationContext(), messaggi, visualizza_messaggio);
 
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(messaggiAdapter);
+        */
+
     }
 
 }

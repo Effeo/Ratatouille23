@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.ratatuille.Adapter.ListaOrdiniAdapter;
 import com.example.ratatuille.Adapter.MessaggiAdapter;
@@ -27,6 +28,8 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
     private Messaggio_utentePresenter messaggio_utentePresenter;
     private CuocoMessaggiActivity cuocoMessaggiActivity;
     private RecyclerView recyclerView;
+    private TextView visualizza_messaggio;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,7 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
         Button btn_visualizza = (Button) findViewById(R.id.btn_visualizza);
 
         recyclerView = findViewById(R.id.cuoco_lista_messaggi);
+        visualizza_messaggio = findViewById(R.id.textView_mex);
 
         messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
         utentePresenter = UtentePresenter.getInstance();
@@ -97,7 +101,7 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
     public void stampaMessaggi(){
         List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
 
-        MessaggiAdapter messaggiAdapter = new MessaggiAdapter(cuocoMessaggiActivity.getApplicationContext(), messaggi);
+        MessaggiAdapter messaggiAdapter = new MessaggiAdapter(cuocoMessaggiActivity.getApplicationContext(), messaggi, visualizza_messaggio);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);

@@ -4,15 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.ratatuille.Adapter.MessaggiAdapter;
 import com.example.ratatuille.Model.Messaggio_utente;
-import com.example.ratatuille.Model.Utente;
 import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
@@ -24,6 +23,8 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private CameriereMessaggiActivity cameriereMessaggiActivity;
     private RecyclerView recyclerView;
+    private TextView visualizza_messaggio;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
         Button btn_visualizza = (Button) findViewById(R.id.btn_visualizza);
 
         recyclerView = findViewById(R.id.cameriere_lista_messaggi);
+        visualizza_messaggio = findViewById(R.id.textView_mex_cam);
 
         messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
         utentePresenter = UtentePresenter.getInstance();
@@ -94,7 +96,7 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
     public void stampaMessaggi(){
         List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
 
-        MessaggiAdapter messaggiAdapter = new MessaggiAdapter(cameriereMessaggiActivity.getApplicationContext(), messaggi);
+        MessaggiAdapter messaggiAdapter = new MessaggiAdapter(cameriereMessaggiActivity.getApplicationContext(), messaggi, visualizza_messaggio);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
