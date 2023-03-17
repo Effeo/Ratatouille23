@@ -47,9 +47,12 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
 
         //versione senza previousTableId
         int currentTableId = ordine_piatti.get(position).getOrdine().getIdTavolo();
+        /*
         if (position == 0 || currentTableId != ordine_piatti.get(position - 1).getOrdine().getIdTavolo()) {
             holder.id_del_tavolo.setText(String.valueOf(currentTableId));
-        }
+        }*/
+        holder.id_del_tavolo.setText(String.valueOf(currentTableId));
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +64,7 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
 
                 ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
                 for(int i = 0; i < ordine_piattoPresenter.getOrdini_piatti().size(); i++){
-                    System.out.println(id_tavolozzo);
+                    System.out.println("id_tavolozzo " + id_tavolozzo);
                     System.out.println(ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo());
                     if(id_tavolozzo == ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo()){
                         listapiattiordinati.add(ordine_piattoPresenter.getOrdini_piatti().get(i).getPiatto().getNome());
