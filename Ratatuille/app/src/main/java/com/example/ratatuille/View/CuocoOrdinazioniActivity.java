@@ -104,7 +104,9 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         piattiSenzaDuplicati.add(ordine_piatti.get(0));
         for (int i = 0; i < ordine_piatti.size(); i++){
             for (int j = 0; j < piattiSenzaDuplicati.size(); j++){
-                if (ordine_piatti.get(i).getOrdine().getIdTavolo() != piattiSenzaDuplicati.get(j).getOrdine().getIdTavolo()){
+                if (ordine_piatti.get(i).getOrdine().getIdTavolo() == piattiSenzaDuplicati.get(j).getOrdine().getIdTavolo()){
+                    break;
+                }else{
                     piattiSenzaDuplicati.add(ordine_piatti.get(i));
                 }
             }
