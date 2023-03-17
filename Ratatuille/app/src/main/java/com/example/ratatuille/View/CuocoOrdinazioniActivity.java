@@ -107,7 +107,6 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
                 piattiSenzaDuplicati.add(ordine_piatti.get(i));
         }
 
-        System.out.println("size piatti senza duplicati: " + piattiSenzaDuplicati.size());
         ListaOrdiniAdapter listaOrdiniAdapter = new ListaOrdiniAdapter(cuocoOrdinazioniActivity.getApplicationContext(), piattiSenzaDuplicati, recyclerView_c);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
