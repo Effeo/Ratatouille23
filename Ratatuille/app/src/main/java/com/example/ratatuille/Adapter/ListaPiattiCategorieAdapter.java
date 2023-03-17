@@ -47,6 +47,14 @@ public class ListaPiattiCategorieAdapter extends RecyclerView.Adapter<ListaPiatt
                 if(quantitanum != 0){
                     quantitanum--;
                     holder.quantita_per_piatto.setText(String.valueOf(quantitanum));
+                    System.out.println(piatti.get(holder.getAdapterPosition()).toUpperCase());
+                    System.out.println(quantitanum);
+
+                    //passi per fare ciò: io ho 2 attributi su 4, il terzo lo ricavo quando inserisco l'ordine
+                    //il 4° se lo vede francesco. COSA DEVO FARE IO:
+                    //getIstance e fare un singleton
+
+                    //
                 }
             }
         });
@@ -59,6 +67,16 @@ public class ListaPiattiCategorieAdapter extends RecyclerView.Adapter<ListaPiatt
                 int quantitanum = Integer.parseInt(quantita);
                 quantitanum++;
                 holder.quantita_per_piatto.setText(String.valueOf(quantitanum));
+                System.out.println(piatti.get(holder.getAdapterPosition()).toUpperCase());
+                System.out.println(quantitanum);
+
+                //passi per fare ciò: io ho 2 attributi su 4, il terzo lo ricavo quando inserisco l'ordine
+                //il 4° se lo vede francesco. COSA DEVO FARE IO:
+
+                //ogni quantitanum per la logica implementativa, è collegato a al nome(ce penso io a inserire)
+                //fare un singleton e la sua funzione get istance
+                //Aarraylist di ordine_piatto in cui ogni volta che si clicca un bottone, si aggiorna l'arraylist
+
             }
         });
     }
