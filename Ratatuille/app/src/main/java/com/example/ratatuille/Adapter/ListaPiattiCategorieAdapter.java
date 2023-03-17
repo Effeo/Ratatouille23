@@ -39,12 +39,12 @@ public class ListaPiattiCategorieAdapter extends RecyclerView.Adapter<ListaPiatt
     public void onBindViewHolder(@NonNull ListaPiattiCategorieAdapter.ListaPiattiCategorieHolder holder, int position) {
 
         holder.nomePiatto.setText(piatti.get(position).toUpperCase());
-        String quantita = (String) holder.quantita_per_piatto.getText();
 
         holder.button_meno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //fixxo domani
+                //devo salvarmi da qualche parte quantitanum
+                String quantita = (String) holder.quantita_per_piatto.getText();
                 int quantitanum = Integer.parseInt(quantita);
                 if(quantitanum != 0){
                     quantitanum--;
@@ -56,7 +56,8 @@ public class ListaPiattiCategorieAdapter extends RecyclerView.Adapter<ListaPiatt
         holder.button_piu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //fixxo domani
+                //devo salvarmi da qualche parte quantitanum
+                String quantita = (String) holder.quantita_per_piatto.getText();
                 int quantitanum = Integer.parseInt(quantita);
                 quantitanum++;
                 holder.quantita_per_piatto.setText(String.valueOf(quantitanum));
