@@ -220,8 +220,17 @@ VALUES (1, 2, 1);
 INSERT INTO messaggio(corpo)
 VALUES('messaggio');
 
+INSERT INTO messaggio(corpo)
+VALUES('messaggio2');
+
 INSERT INTO messaggio_utente(letto, user_name, id_messaggio)
 VALUES(0, 'marco', 1);
+
+INSERT INTO messaggio_utente(letto, user_name, id_messaggio)
+VALUES(0, 'luigi', 1);
+
+INSERT INTO messaggio_utente(letto, user_name, id_messaggio)
+VALUES(0, 'luigi', 2);
 
 insert into ordine(id_tavolo)
 values(2);
