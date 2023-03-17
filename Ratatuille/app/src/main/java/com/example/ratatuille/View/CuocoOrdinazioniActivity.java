@@ -102,22 +102,31 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
         ArrayList<Ordine_piatto> piattiSenzaDuplicati = new ArrayList<>();
 
         piattiSenzaDuplicati.add(ordine_piatti.get(0));
-        for (int i = 0; i < ordine_piatti.size(); i++){
-            for (int j = 0; j < piattiSenzaDuplicati.size(); j++){
-                if (ordine_piatti.get(i).getOrdine().getIdTavolo() == piattiSenzaDuplicati.get(j).getOrdine().getIdTavolo()){
-                    break;
-                }else{
-                    piattiSenzaDuplicati.add(ordine_piatti.get(i));
-                }
-            }
+        for(int i = 1; i < ordine_piatti.size(); i++){
+            if(!isInserted(piattiSenzaDuplicati, ordine_piatti.get(i).getOrdine().getIdTavolo()))
+                piattiSenzaDuplicati.add(ordine_piatti.get(i));
         }
 
+        System.out.println("size piatti senza duplicati: " + piattiSenzaDuplicati.size());
         ListaOrdiniAdapter listaOrdiniAdapter = new ListaOrdiniAdapter(cuocoOrdinazioniActivity.getApplicationContext(), piattiSenzaDuplicati, recyclerView_c);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(listaOrdiniAdapter);
+    }
 
+    private boolean isInserted(ArrayList<Ordine_piatto> piattiSenzaDuplicati, int id_tavolo){
+        boolean flag = false;
+        int i = 0;
+
+        while(!flag && i < piattiSenzaDuplicati.size()){
+            if(piattiSenzaDuplicati.get(i).getOrdine().getIdTavolo() == id_tavolo)
+                flag = true;
+
+            i++;
+        }
+
+        return flag;
     }
 }
