@@ -4,12 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.widget.Toast;
 
-import com.example.ratatuille.Api.UtenteApi;
 import com.example.ratatuille.Model.Utente;
 import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplUtenteService;
-import com.example.ratatuille.Service.Interface.IUtenteService;
 import com.example.ratatuille.View.AdminAggiungiPiattoActivity;
+import com.example.ratatuille.View.AdminCambiaPasswordUtenteActivity;
 import com.example.ratatuille.View.AdminCreaUtenteActivity;
 import com.example.ratatuille.View.AdminModificaMenuActivity;
 import com.example.ratatuille.View.AdminScriviMessaggioActivity;
@@ -25,9 +24,10 @@ import com.example.ratatuille.View.LoginActivity;
 import com.example.ratatuille.View.MainActivity;
 import com.example.ratatuille.View.SupervisoreAggiungiPiattoActivity;
 import com.example.ratatuille.View.SupervisoreContoActivity;
-import com.example.ratatuille.View.SupervisoreLeggeMessaggiActivity;
 import com.example.ratatuille.View.SupervisoreModificaMenuActivity;
 import com.example.ratatuille.View.SupervisoreScriviMessaggioActivity;
+
+import java.util.List;
 
 public class UtentePresenter {
     private Utente utente;
@@ -36,8 +36,11 @@ public class UtentePresenter {
     private MainActivity mainActivity;
     private LoginActivity loginActivity;
     private CambioPasswordActivity cambioPasswordActivity;
+    private AdminCambiaPasswordUtenteActivity adminCambiaPasswordUtenteActivity;
 
     private ImplUtenteService implUtenteService;
+
+    private List<Utente> utenti;
 
     public static UtentePresenter getInstance(){
         if (utentePresenter == null) utentePresenter = new UtentePresenter();
@@ -134,6 +137,39 @@ public class UtentePresenter {
         activity.startActivity(finestraAdminMessaggi);
     }
 
+    public void goCambiaPasswordAdmin(Activity activity){
+        Intent finestraCambiaPasswordAdmin = new Intent(activity.getApplicationContext(), AdminCambiaPasswordUtenteActivity.class);
+        activity.startActivity(finestraCambiaPasswordAdmin);
+    }
+
+    public void creaUtente(AdminCreaUtenteActivity adminCreaUtenteActivity){
+        String userName = adminCreaUtenteActivity.editUserName.getText().toString();
+        String password = adminCreaUtenteActivity.editPassword.getText().toString();
+        String ruolo = adminCreaUtenteActivity.spinnerRuoli.getSelectedItem().toString();
+        Utente utente = new Utente();
+
+        if(!userName.equals("") && !password.equals("")){
+            utente.setPassword(password);
+            utente.setUser_name(userName);
+            utente.setRuolo(ruolo);
+            utente.setCheck_change_password(0);
+
+            implUtenteService.create(new Callback() {
+                @Override
+                public void returnResult(Object o) {
+                    Toast.makeText(adminCreaUtenteActivity.getApplicationContext(), "Utente creato" , Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void returnError(Throwable e) {
+                    System.out.println(e);
+                    Toast.makeText(adminCreaUtenteActivity.getApplicationContext(), "Errore nella creazione dell'utente" , Toast.LENGTH_SHORT).show();
+                }
+            }, utente);
+        }
+        else Toast.makeText(adminCreaUtenteActivity.getApplicationContext(), "Uno o più campi non sono compilati" , Toast.LENGTH_SHORT).show();
+    }
+
     public void login(String userName, String password){
         implUtenteService.findUtenteByUser_nameAndPassword(new Callback(){
             @Override
@@ -187,22 +223,6 @@ public class UtentePresenter {
 
     }
 
-    public Utente getUtente() {
-        return utente;
-    }
-
-    public void setMainActivity(MainActivity mainActivity) {
-        this.mainActivity = mainActivity;
-    }
-
-    public void setLoginActivity(LoginActivity loginActivity) {
-        this.loginActivity = loginActivity;
-    }
-
-    public void setCambioPasswordActivity(CambioPasswordActivity cambioPasswordActivity) {
-        this.cambioPasswordActivity = cambioPasswordActivity;
-    }
-
     public void update(Utente utente){
         implUtenteService.update(new Callback() {
             @Override
@@ -233,5 +253,44 @@ public class UtentePresenter {
         utente.setPassword(password);
         utente.setCheck_change_password(1);
         update(utente);
+    }
+
+    public void getAllUser(){
+        implUtenteService.getAll(new Callback() {
+            @Override
+            public void returnResult(Object o) {
+                utenti = (List<Utente>) o;
+                adminCambiaPasswordUtenteActivity.stampaUteni();
+            }
+
+            @Override
+            public void returnError(Throwable e) {
+
+            }
+        });
+    }
+
+    public Utente getUtente() {
+        return utente;
+    }
+
+    public void setMainActivity(MainActivity mainActivity) {
+        this.mainActivity = mainActivity;
+    }
+
+    public void setLoginActivity(LoginActivity loginActivity) {
+        this.loginActivity = loginActivity;
+    }
+
+    public void setCambioPasswordActivity(CambioPasswordActivity cambioPasswordActivity) {
+        this.cambioPasswordActivity = cambioPasswordActivity;
+    }
+
+    public void setAdminCambiaPasswordUtenteActivity(AdminCambiaPasswordUtenteActivity adminCambiaPasswordUtenteActivity) {
+        this.adminCambiaPasswordUtenteActivity = adminCambiaPasswordUtenteActivity;
+    }
+
+    public List<Utente> getUtenti() {
+        return utenti;
     }
 }

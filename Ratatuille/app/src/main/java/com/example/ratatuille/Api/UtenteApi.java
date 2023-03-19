@@ -2,6 +2,8 @@ package com.example.ratatuille.Api;
 
 import com.example.ratatuille.Model.Utente;
 
+import java.util.List;
+
 import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Single;
 import retrofit2.http.Body;
@@ -17,4 +19,10 @@ public interface UtenteApi {
 
     @PUT("utente/update")
     Completable update(@Body Utente utente);
+
+    @POST("utente/create")
+    Completable create(@Body Utente utente);
+
+    @GET("utente/getAll")
+    Single<List<Utente>> getAll();
 }

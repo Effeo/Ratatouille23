@@ -144,4 +144,10 @@
         <item>varie</item>
     </string-array>
 
+    <string-array name="ruoli">
+        <item>supervisore</item>
+        <item>cameriere</item>
+        <item>cuoco</item>
+    </string-array>
+
 </resources>

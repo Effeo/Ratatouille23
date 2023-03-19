@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
@@ -12,6 +16,9 @@ import com.example.ratatuille.R;
 public class AdminCreaUtenteActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private AdminCreaUtenteActivity adminCreaUtenteActivity;
+    public EditText editUserName;
+    public EditText editPassword;
+    public Spinner spinnerRuoli;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +33,20 @@ public class AdminCreaUtenteActivity extends AppCompatActivity {
         ImageButton btn_admin_messaggi = (ImageButton) findViewById(R.id.admin_messaggi);
         ImageButton btn_admin_statistiche = (ImageButton) findViewById(R.id.admin_statistiche);
         ImageButton btn_admin_add_utente = (ImageButton) findViewById(R.id.admin_add_utente);
+
+        Button btn_crea_utente = (Button) findViewById(R.id.btn_crea_utente);
+        Button btn_cambia_password = (Button) findViewById(R.id.btn_cambia_password);
+
+        editUserName = (EditText) findViewById(R.id.edit_username);
+        editPassword = (EditText) findViewById(R.id.edit_password);
+        spinnerRuoli = (Spinner) findViewById(R.id.spinner_admin_scelta_ruolo);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.ruoli, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinnerRuoli.setAdapter(adapter);
+
 
         adminCreaUtenteActivity = this;
 
@@ -68,6 +89,20 @@ public class AdminCreaUtenteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 utentePresenter.goAdminAddUtente(adminCreaUtenteActivity);
+            }
+        });
+
+        btn_crea_utente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                utentePresenter.creaUtente(adminCreaUtenteActivity);
+            }
+        });
+
+        btn_cambia_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                utentePresenter.goCambiaPasswordAdmin(adminCreaUtenteActivity);
             }
         });
     }

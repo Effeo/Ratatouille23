@@ -4,14 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import com.example.ratatuille.Presenter.MessaggioPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class AdminScriviMessaggioActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
+    private MessaggioPresenter messaggioPresenter;
+
     private AdminScriviMessaggioActivity adminScriviMessaggioActivity;
+    private EditText editMessaggio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +26,7 @@ public class AdminScriviMessaggioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_scrivi_messaggio);
 
         utentePresenter = UtentePresenter.getInstance();
+        messaggioPresenter = MessaggioPresenter.getInstance();
 
         ImageButton btn_admin_logout = (ImageButton)  findViewById(R.id.admin_logout);
         ImageButton btn_admin_aggiungi_piatto = (ImageButton) findViewById(R.id.admin_aggiungi_piatto);
@@ -27,7 +35,12 @@ public class AdminScriviMessaggioActivity extends AppCompatActivity {
         ImageButton btn_admin_statistiche = (ImageButton) findViewById(R.id.admin_statistiche);
         ImageButton btn_admin_add_utente = (ImageButton) findViewById(R.id.admin_add_utente);
 
+        Button btn_scrivi = (Button) findViewById(R.id.btn_scrivi);
+
+        editMessaggio = (EditText) findViewById(R.id.edit_messaggio);
+
         adminScriviMessaggioActivity = this;
+        messaggioPresenter.setAdminScriviMessaggioActivity(this);
 
         btn_admin_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +81,16 @@ public class AdminScriviMessaggioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 utentePresenter.goAdminAddUtente(adminScriviMessaggioActivity);
+            }
+        });
+
+        btn_scrivi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!editMessaggio.getText().toString().equals(""))
+                    messaggioPresenter.create(editMessaggio.getText().toString());
+                else
+                    Toast.makeText(adminScriviMessaggioActivity.getApplicationContext(), "Scrivere un messaggio da inviare", Toast.LENGTH_SHORT).show();
             }
         });
     }

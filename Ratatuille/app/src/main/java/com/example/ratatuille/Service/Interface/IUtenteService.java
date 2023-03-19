@@ -9,5 +9,7 @@ public interface IUtenteService {
 
     void update(Callback callback, Utente utente);
 
+    void create(Callback callback, Utente utente);
 
+    void getAll(Callback callback);
 }

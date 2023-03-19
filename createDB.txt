@@ -243,3 +243,17 @@ values(2, 2, 2);
 
 insert into messaggio_utente(letto, user_name, id_messaggio)
 values(false, 'luigi', 1);
+
+delimiter #
+
+CREATE TRIGGER after_insert_messaggio
+AFTER INSERT ON messaggio
+FOR EACH ROW
+BEGIN
+	INSERT INTO messaggio_utente (letto, user_name, id_messaggio)
+	SELECT false, user_name, NEW.id_messaggio
+	FROM utente
+	WHERE ruolo != 'admin';
+end#
+
+delimiter ;

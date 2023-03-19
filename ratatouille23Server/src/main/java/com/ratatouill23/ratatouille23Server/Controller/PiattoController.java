@@ -69,6 +69,4 @@ public class PiattoController {
         Piatto piatto = convertEntity(piattoDto);
         iPiattoService.create(piatto);
     }
-
-
 }

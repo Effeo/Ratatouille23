@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.modelmapper.ModelMapper;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -40,6 +42,23 @@ public class UtenteController {
         utenteService.update(utente);
     }
 
+    @GetMapping("/getAll")
+    public List<UtenteDto> findAll(){
+        List<Utente> utenti = utenteService.findAll();
+        List<UtenteDto> utentiDto = new ArrayList<>();
+
+        for(Utente utente : utenti)
+            utentiDto.add(convertDto(utente));
+
+        return utentiDto;
+    }
+
+    @PostMapping("/create")
+    public void create(@RequestBody UtenteDto utenteDto){
+        Utente utente = convertEntity(utenteDto);
+        utenteService.create(utente);
+    }
+
     private UtenteDto convertDto(Utente utente) {
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.LOOSE);
@@ -54,7 +73,6 @@ public class UtenteController {
                 .setMatchingStrategy(MatchingStrategies.LOOSE);
         Utente user = new Utente();
         user = modelMapper.map(userDTO, Utente.class);
-
 
         return user;
     }

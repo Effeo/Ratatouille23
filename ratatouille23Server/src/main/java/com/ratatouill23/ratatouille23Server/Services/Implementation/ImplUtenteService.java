@@ -6,6 +6,7 @@ import com.ratatouill23.ratatouille23Server.Services.Interfaces.IUtenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service("ImplUtenteService")
@@ -21,5 +22,15 @@ public class ImplUtenteService implements IUtenteService {
     @Override
     public void update(Utente utente) {
         utenteRepository.save(utente);
+    }
+
+    @Override
+    public void create(Utente utente) {
+        utenteRepository.save(utente);
+    }
+
+    @Override
+    public List<Utente> findAll() {
+        return utenteRepository.getAll();
     }
 }

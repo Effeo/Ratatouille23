@@ -167,6 +167,7 @@ public class PiattoPresenter {
                 @Override
                 public void returnError(Throwable e) {
                     System.out.println(e);
+                    Toast.makeText(activity.getApplicationContext(), "Errore nella creazione del piatto" , Toast.LENGTH_SHORT).show();
                 }
             }, piatto);
         } else

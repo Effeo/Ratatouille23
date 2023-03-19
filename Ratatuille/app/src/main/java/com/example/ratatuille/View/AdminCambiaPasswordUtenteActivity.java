@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.example.ratatuille.Presenter.UtentePresenter;
@@ -12,6 +14,8 @@ import com.example.ratatuille.R;
 public class AdminCambiaPasswordUtenteActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private AdminCambiaPasswordUtenteActivity adminCambiaPasswordUtenteActivity;
+    public EditText editPassword;
+    public EditText editConfermaPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +31,16 @@ public class AdminCambiaPasswordUtenteActivity extends AppCompatActivity {
         ImageButton btn_admin_statistiche = (ImageButton) findViewById(R.id.admin_statistiche);
         ImageButton btn_admin_add_utente = (ImageButton) findViewById(R.id.admin_add_utente);
 
+        Button btn_conferma_cambio = (Button) findViewById(R.id.btn_conferma_cambio);
+        Button btn_torna_indietro = (Button) findViewById(R.id.btn_torna_indietro);
+
+        editPassword = (EditText) findViewById(R.id.edit_new_password);
+        editConfermaPassword = (EditText) findViewById(R.id.edit_conferma_password);
+
         adminCambiaPasswordUtenteActivity = this;
+
+        utentePresenter.setAdminCambiaPasswordUtenteActivity(this);
+        utentePresenter.getAllUser();
 
         btn_admin_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +83,20 @@ public class AdminCambiaPasswordUtenteActivity extends AppCompatActivity {
                 utentePresenter.goAdminAddUtente(adminCambiaPasswordUtenteActivity);
             }
         });
+
+        btn_conferma_cambio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Work in progress");
+            }
+        });
+
+        btn_torna_indietro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                utentePresenter.goAdminAddUtente(adminCambiaPasswordUtenteActivity);
+            }
+        });
     }
 
     public void onWindowFocusChanged(boolean hasFocus) {
@@ -84,6 +111,12 @@ public class AdminCambiaPasswordUtenteActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
+
+    public void stampaUteni(){
+        for(int i = 0; i < utentePresenter.getUtenti().size(); i++){
+            System.out.println(utentePresenter.getUtenti().get(i).getUser_name());
         }
     }
 }
