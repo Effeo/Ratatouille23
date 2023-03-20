@@ -17,4 +17,9 @@ public class ImplOrdineService implements IOrdineService {
     public Optional<Ordine> findOrdineById(Integer id_ordine) {
         return ordineRepository.findOrdineById(id_ordine);
     }
+
+    @Override
+    public void create(Ordine ordine) {
+        ordineRepository.save(ordine);
+    }
 }
