@@ -1,19 +1,27 @@
 package com.example.ratatuille.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Adapter.CategoriaAdapter;
+import com.example.ratatuille.Adapter.CategoriePerModificareAdapter;
 import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+
+import java.util.ArrayList;
 
 public class SupervisoreModificaMenuActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private SupervisoreModificaMenuActivity supervisoreModificaMenuActivity;
     private PiattoPresenter piattoPresenter;
+    private RecyclerView recyclerView_categorie;
+    private RecyclerView recyclerView_piatti;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +30,8 @@ public class SupervisoreModificaMenuActivity extends AppCompatActivity {
 
         utentePresenter = UtentePresenter.getInstance();
         piattoPresenter = PiattoPresenter.getInstance();
+        recyclerView_categorie = findViewById(R.id.categorie_da_poter_modificare);
+        recyclerView_piatti = findViewById(R.id.piatti_da_poter_modificare);
 
         ImageButton btn_supervisore_logout = (ImageButton)  findViewById(R.id.supervisore_logout);
         ImageButton btn_supervisore_aggiungi_piatto = (ImageButton) findViewById(R.id.supervisore_aggiungi_piatto);
@@ -68,6 +78,23 @@ public class SupervisoreModificaMenuActivity extends AppCompatActivity {
                 utentePresenter.goSupervisoreMessaggi(supervisoreModificaMenuActivity);
             }
         });
+
+        ArrayList<String> categorie = new ArrayList<>();
+        categorie.add("antipasti");
+        categorie.add("primi");
+        categorie.add("secondi");
+        categorie.add("contorni");
+        categorie.add("dolci");
+        categorie.add("bevande");
+        categorie.add("frutta");
+        categorie.add("varie");
+
+        CategoriePerModificareAdapter categoriePerModificareAdapter = new CategoriePerModificareAdapter(this, categorie, recyclerView_piatti);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView_categorie.setLayoutManager(linearLayoutManager);
+        recyclerView_categorie.setAdapter(categoriePerModificareAdapter);
     }
 
     public void onWindowFocusChanged(boolean hasFocus) {
