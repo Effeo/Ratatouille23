@@ -5,14 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 
+import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private SupervisoreModificaEliminaMenuActivity supervisoreModificaEliminaMenuActivity;
+    private PiattoPresenter piattoPresenter = PiattoPresenter.getInstance();
+
+    private EditText editTextNome = findViewById(R.id.textView_nome);
+    private EditText editTextDescrizione = findViewById(R.id.textView_descrizione);
+    private Spinner spinner_supervisore_modifica = findViewById(R.id.spinner_supervisore_modifica);
+    private EditText editTextCosto = findViewById(R.id.textView_costo);
+    private EditText editTextAllergeni = findViewById(R.id.textView_allergeni);
+    private EditText editTextPosizione = findViewById(R.id.textView_posizione);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +43,13 @@ public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
         ImageButton btn_supervisore_messaggi = (ImageButton) findViewById(R.id.supervisore_messaggi);
 
         supervisoreModificaEliminaMenuActivity = this;
+
+        editTextNome.setText(piattoPresenter.getPiatto().getNome());
+        editTextDescrizione.setText(piattoPresenter.getPiatto().getDescrizione());
+        //spinner_supervisore_modifica;
+        editTextCosto.setText(String.valueOf(piattoPresenter.getPiatto().getCosto()));
+        editTextAllergeni.setText(piattoPresenter.getPiatto().getAllergeni());
+        editTextPosizione.setText(String.valueOf(piattoPresenter.getPiatto().getPosto()));
 
         btn_supervisore_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +85,6 @@ public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
                 utentePresenter.goSupervisoreMessaggi(supervisoreModificaEliminaMenuActivity);
             }
         });
-
 
     }
 
