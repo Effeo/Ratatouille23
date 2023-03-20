@@ -67,6 +67,8 @@ public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
                 utentePresenter.goSupervisoreMessaggi(supervisoreModificaEliminaMenuActivity);
             }
         });
+
+
     }
 
     public void onWindowFocusChanged(boolean hasFocus) {
