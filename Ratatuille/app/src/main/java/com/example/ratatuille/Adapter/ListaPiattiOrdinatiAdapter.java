@@ -36,7 +36,6 @@ public class ListaPiattiOrdinatiAdapter extends RecyclerView.Adapter<ListaPiatti
     @Override
     public void onBindViewHolder(@NonNull ListaPiattiOrdinatiAdapter.ListaPiattiOrdinatiHolder holder, int position) {
         holder.nomePiattoOrdinato.setText(piatti_ordinati.get(position).toUpperCase());
-        System.out.println("qta da onBindViewHolder: " + qta.get(position));
         holder.quantita_per_piatto.setText(String.valueOf(qta.get(position)));
     }
 
