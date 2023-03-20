@@ -42,6 +42,11 @@ public class Ordine_piattoController {
         iOrdine_piatto.delete(Integer.valueOf(ordine_piatto_dto.getId_ordine_piatto()));
     }
 
+    @PostMapping("/create")
+    public void create(@RequestBody Ordine_Piatto_Dto ordine_piatto_dto){
+        iOrdine_piatto.create(convertEntity(ordine_piatto_dto));
+    }
+
     private Ordine_piatto convertEntity(Ordine_Piatto_Dto ordine_piatto_dto) {
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.LOOSE);

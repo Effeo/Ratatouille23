@@ -88,7 +88,7 @@ public class AdminScriviMessaggioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!editMessaggio.getText().toString().equals(""))
-                    messaggioPresenter.create(editMessaggio.getText().toString());
+                    messaggioPresenter.create(editMessaggio.getText().toString(), utentePresenter.getUtente().getRuolo());
                 else
                     Toast.makeText(adminScriviMessaggioActivity.getApplicationContext(), "Scrivere un messaggio da inviare", Toast.LENGTH_SHORT).show();
             }
