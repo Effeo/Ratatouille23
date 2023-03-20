@@ -5,12 +5,13 @@ import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplOrdine_piattoService;
 import com.example.ratatuille.View.CuocoOrdinazioniActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Ordine_piattoPresenter {
     private static Ordine_piattoPresenter ordine_piattoPresenter = null;
     private ImplOrdine_piattoService implOrdine_piattoService;
-    private List<Ordine_piatto> ordini_piatti;
+    private List<Ordine_piatto> ordini_piatti = new ArrayList<>();
 
     private CuocoOrdinazioniActivity cuocoOrdinazioniActivity;
 
@@ -62,4 +63,5 @@ public class Ordine_piattoPresenter {
     public List<Ordine_piatto> getOrdini_piatti() {
         return ordini_piatti;
     }
+
 }
