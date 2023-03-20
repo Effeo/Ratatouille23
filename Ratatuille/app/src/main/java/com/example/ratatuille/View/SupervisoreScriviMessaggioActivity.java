@@ -7,10 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.ratatuille.Adapter.MessaggiAdapter;
 import com.example.ratatuille.Model.Messaggio_utente;
+import com.example.ratatuille.Presenter.MessaggioPresenter;
 import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
@@ -21,7 +24,9 @@ public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private SupervisoreScriviMessaggioActivity supervisoreScriviMessaggioActivity;
     private Messaggio_utentePresenter messaggio_utentePresenter;
+    private MessaggioPresenter messaggioPresenter;
     private RecyclerView recyclerView;
+    private EditText editMessaggio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +35,14 @@ public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
 
         utentePresenter = UtentePresenter.getInstance();
         messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
+        messaggioPresenter = MessaggioPresenter.getInstance();
 
         messaggio_utentePresenter.getAllMessaggioUtente(utentePresenter.getUtente().getRuolo(), utentePresenter.getUtente().getUser_name());
         messaggio_utentePresenter.setSupervisoreScriviMessaggioActivity(this);
 
         recyclerView = findViewById(R.id.supervisore_lista_messaggi_1);
 
+        Button btn_invia = (Button) findViewById(R.id.btn_invia);
         Button btn_scrivi = (Button) findViewById(R.id.btn_scrivi);
 
         ImageButton btn_supervisore_logout = (ImageButton)  findViewById(R.id.supervisore_logout);
@@ -44,7 +51,11 @@ public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
         ImageButton btn_supervisore_conto = (ImageButton) findViewById(R.id.supervisore_conto);
         ImageButton btn_supervisore_messaggi = (ImageButton) findViewById(R.id.supervisore_messaggi);
 
+        editMessaggio = (EditText) findViewById(R.id.edit_messaggio);
+
         supervisoreScriviMessaggioActivity = this;
+
+        messaggioPresenter.setSupervisoreScriviMessaggioActivity(this);
 
         btn_supervisore_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +89,23 @@ public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 utentePresenter.goSupervisoreMessaggi(supervisoreScriviMessaggioActivity);
+            }
+        });
+
+        btn_scrivi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                utentePresenter.goSupervisoreMessaggi(supervisoreScriviMessaggioActivity);
+            }
+        });
+
+        btn_invia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!editMessaggio.getText().toString().equals(""))
+                    messaggioPresenter.create(editMessaggio.getText().toString(), utentePresenter.getUtente().getRuolo());
+                else
+                    Toast.makeText(supervisoreScriviMessaggioActivity.getApplicationContext(), "Scrivere un messaggio da inviare", Toast.LENGTH_SHORT).show();
             }
         });
     }

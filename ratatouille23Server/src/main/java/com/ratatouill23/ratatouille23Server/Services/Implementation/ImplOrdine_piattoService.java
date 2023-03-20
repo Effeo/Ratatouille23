@@ -22,4 +22,9 @@ public class ImplOrdine_piattoService implements IOrdine_piattoService {
     public void delete(Integer id_ordine_piatto) {
         ordinePiattoRepository.deleteById(id_ordine_piatto);
     }
+
+    @Override
+    public void create(Ordine_piatto ordine_piatto) {
+        ordinePiattoRepository.save(ordine_piatto);
+    }
 }
