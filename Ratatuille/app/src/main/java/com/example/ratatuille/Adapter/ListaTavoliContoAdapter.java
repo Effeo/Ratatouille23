@@ -53,28 +53,15 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                int i = 0;
-                boolean trovato = false;
-                Conto conto = new Conto();
-
-                while(i < contoPresenter.getConti().size() && !trovato){
-                    if(contoPresenter.getConti().get(i).getId_tavolo() == currentTableId){
-                        trovato = true;
-
-                        //modifica a volo
-                        conto.setCosto(contoPresenter.getConti().get(i).getCosto());
-                        conto.setId_tavolo(contoPresenter.getConti().get(i).getId_tavolo());
-                        conto.setChiuso(contoPresenter.getConti().get(i).getChiuso());
-                        conto.setData(contoPresenter.getConti().get(i).getData());
-                        conto.setId_conto(contoPresenter.getConti().get(i).getId_conto());
-
-                        contoPresenter.setConto(conto);
+                /*
+                for (int i = 0; i < tavoli.size(); i++ ){
+                    if(currentTableId == comanda.getOrdini_piatti().get(i).getOrdine().getIdTavolo()){
+                        //caso in cui la mia prova non va bene devo lavorare qua
                     }
-
-                    i++;
                 }
+                */
                 //qui metto in input un array di ordine piatti, ma deve vedere francesco se va bene o meno
+                //nel caso mi devo creare un oggetto Ordine_Piatti in cui ci sta solo l'ordine che mi serve
                 MostraComandaAdapter mostraComandaAdapter = new MostraComandaAdapter(context, comanda.getOrdini_piatti());
 
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
