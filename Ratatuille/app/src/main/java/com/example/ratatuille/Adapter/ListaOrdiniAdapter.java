@@ -45,12 +45,8 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
         //holder.id_del_tavolo.setText(String.valueOf(ordine_piatti.get(position).getOrdine().getIdTavolo()));
 
 
-        //versione senza previousTableId
         int currentTableId = ordine_piatti.get(position).getOrdine().getIdTavolo();
-        /*
-        if (position == 0 || currentTableId != ordine_piatti.get(position - 1).getOrdine().getIdTavolo()) {
-            holder.id_del_tavolo.setText(String.valueOf(currentTableId));
-        }*/
+
         holder.id_del_tavolo.setText(String.valueOf(currentTableId));
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -64,13 +60,13 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
 
                 ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
                 for(int i = 0; i < ordine_piattoPresenter.getOrdini_piatti().size(); i++){
-                    System.out.println("id_tavolozzo " + id_tavolozzo);
-                    System.out.println(ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo());
+                    //System.out.println("id_tavolozzo " + id_tavolozzo);
+                    //System.out.println(ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo());
                     if(id_tavolozzo == ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo()){
                         listapiattiordinati.add(ordine_piattoPresenter.getOrdini_piatti().get(i).getPiatto().getNome());
                         listapiattiquantita.add(ordine_piattoPresenter.getOrdini_piatti().get(i).getQta());
-                        System.out.println("ordine: " + listapiattiordinati);
-                        System.out.println("quantita: " + listapiattiquantita);
+                        //System.out.println("ordine: " + listapiattiordinati);
+                        //System.out.println("quantita: " + listapiattiquantita);
                     }
                 }
 

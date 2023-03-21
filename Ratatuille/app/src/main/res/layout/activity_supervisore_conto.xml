@@ -116,6 +116,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/supervisore_lista_tavoli_conto"
             android:layout_width="214dp"
             android:layout_height="283dp"
             android:layout_alignParentEnd="true"
@@ -135,8 +136,9 @@
             android:gravity="center"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/supervisore_conto_del_tavolo"
             android:layout_width="535dp"
-            android:layout_height="282dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="250dp"

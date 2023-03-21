@@ -58,9 +58,9 @@ public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
 
         editTextNome.setText(piattoPresenter.getPiatto().getNome());
         editTextDescrizione.setText(piattoPresenter.getPiatto().getDescrizione());
-        editTextCosto.setText(String.valueOf(piattoPresenter.getPiatto().getCosto()));
+        editTextCosto.setInputType(InputType.TYPE_CLASS_NUMBER);
         editTextAllergeni.setText(piattoPresenter.getPiatto().getAllergeni());
-        editTextPosizione.setText(piattoPresenter.getPiatto().getPosto());
+        editTextPosizione.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         ArrayList<String> categorie = new ArrayList<>();
         categorie.add("antipasti");

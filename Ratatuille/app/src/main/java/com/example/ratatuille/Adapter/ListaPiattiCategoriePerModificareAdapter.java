@@ -54,7 +54,7 @@ public class ListaPiattiCategoriePerModificareAdapter extends RecyclerView.Adapt
                         trovato = true;
 
                         //modifica a volo
-                        /*
+
                         piatto.setIdPiatto(piattoPresenter.getPiatti().get(i).getIdPiatto());
                         piatto.setNome(piattoPresenter.getPiatti().get(i).getNome());
                         piatto.setCategoria(piattoPresenter.getPiatti().get(i).getCategoria());
@@ -62,14 +62,8 @@ public class ListaPiattiCategoriePerModificareAdapter extends RecyclerView.Adapt
                         piatto.setAllergeni(piattoPresenter.getPiatti().get(i).getAllergeni());
                         piatto.setDescrizione(piattoPresenter.getPiatti().get(i).getDescrizione());
                         piatto.setPosto(piattoPresenter.getPiatti().get(i).getPosto());
-                        */
-                        piatto.setIdPiatto(piattoPresenter.getPiatto().getIdPiatto());
-                        piatto.setNome(piattoPresenter.getPiatto().getNome());
-                        piatto.setCategoria(piattoPresenter.getPiatto().getCategoria());
-                        piatto.setCosto(piattoPresenter.getPiatto().getCosto());
-                        piatto.setAllergeni(piattoPresenter.getPiatto().getAllergeni());
-                        piatto.setDescrizione(piattoPresenter.getPiatto().getDescrizione());
-                        piatto.setPosto(piattoPresenter.getPiatto().getPosto());
+
+                        piattoPresenter.setPiatto(piatto);
                     }
 
                     i++;
