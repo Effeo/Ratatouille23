@@ -2,14 +2,17 @@ package com.example.ratatuille.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class CameriereAggiungiTavoloActivity extends AppCompatActivity {
+    private CameriereAggiungiTavoloActivity cameriereAggiungiTavoloActivity;
+
+    private UtentePresenter utentePresenter = UtentePresenter.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,26 +22,20 @@ public class CameriereAggiungiTavoloActivity extends AppCompatActivity {
         Button conferma = (Button) findViewById(R.id.button_conferma);
         Button torna_indietro = (Button) findViewById(R.id.btn_torna_indietro);
 
+        cameriereAggiungiTavoloActivity = this;
         conferma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraCameriereConfermaTavoli = new Intent(view.getContext(), CameriereOrdinazioniActivity.class);
-                startActivity(finestraCameriereConfermaTavoli);
-                //manda anche info al db
+
             }
         });
 
         torna_indietro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //la gestione del bottone va fatto in un presenter
-                Intent finestraCameriereConfermaTavoli = new Intent(view.getContext(), CameriereOrdinazioniActivity.class);
-                startActivity(finestraCameriereConfermaTavoli);
+                utentePresenter.goCameriereOrdinazioni(cameriereAggiungiTavoloActivity);
             }
         });
-
-
     }
 
     public void onWindowFocusChanged(boolean hasFocus) {
