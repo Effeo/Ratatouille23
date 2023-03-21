@@ -4,14 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 
+import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
 public class AdminModificaEliminaMenuActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private AdminModificaEliminaMenuActivity adminModificaEliminaMenuActivity;
+    private PiattoPresenter piattoPresenter = PiattoPresenter.getInstance();
+
+
+    private EditText editTextNome = findViewById(R.id.textView_nome_admin);
+    private EditText editTextDescrizione = findViewById(R.id.textView_descrizione_admin);
+    private Spinner spinner_supervisore_modifica = findViewById(R.id.spinner_admin_modifica_);
+    private EditText editTextCosto = findViewById(R.id.textView_costo_admin);
+    private EditText editTextAllergeni = findViewById(R.id.textView_allergeni_admin);
+    private EditText editTextPosizione = findViewById(R.id.textView_posizione_admin);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +40,13 @@ public class AdminModificaEliminaMenuActivity extends AppCompatActivity {
         ImageButton btn_admin_add_utente = (ImageButton) findViewById(R.id.admin_add_utente);
 
         adminModificaEliminaMenuActivity = this;
+
+        editTextNome.setText(piattoPresenter.getPiatto().getNome());
+        editTextDescrizione.setText(piattoPresenter.getPiatto().getDescrizione());
+        //spinner_supervisore_modifica;
+        editTextCosto.setText(String.valueOf(piattoPresenter.getPiatto().getCosto()));
+        editTextAllergeni.setText(piattoPresenter.getPiatto().getAllergeni());
+        editTextPosizione.setText(String.valueOf(piattoPresenter.getPiatto().getPosto()));
 
         btn_admin_logout.setOnClickListener(new View.OnClickListener() {
             @Override

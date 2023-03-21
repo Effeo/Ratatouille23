@@ -146,7 +146,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="115dp">
             <EditText
-                android:id="@+id/textView_nome"
+                android:id="@+id/textView_nome_admin"
                 android:layout_width="300dp"
                 android:layout_height="70dp"
                 android:background="@color/white"
@@ -161,7 +161,7 @@
             android:layout_marginLeft="470dp"
             android:layout_marginTop="115dp">
             <EditText
-                android:id="@+id/textView_costo"
+                android:id="@+id/textView_costo_admin"
                 android:layout_width="300dp"
                 android:layout_height="70dp"
                 android:background="@color/white"
@@ -175,7 +175,7 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="215dp">
             <EditText
-                android:id="@+id/textView_descrizione"
+                android:id="@+id/textView_descrizione_admin"
                 android:layout_width="300dp"
                 android:layout_height="70dp"
                 android:background="@color/white"
@@ -189,7 +189,7 @@
             android:layout_marginLeft="470dp"
             android:layout_marginTop="215dp">
             <EditText
-                android:id="@+id/textView_allergeni"
+                android:id="@+id/textView_allergeni_admin"
                 android:layout_width="300dp"
                 android:layout_height="70dp"
                 android:background="@color/white"
@@ -198,7 +198,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <Spinner
-            android:id="@+id/spinner_admin_modifica"
+            android:id="@+id/spinner_admin_modifica_"
             android:layout_width="300dp"
             android:layout_height="70dp"
             android:layout_marginLeft="50dp"
@@ -211,7 +211,7 @@
             android:layout_marginLeft="470dp"
             android:layout_marginTop="360dp">
             <EditText
-                android:id="@+id/textView_posizione"
+                android:id="@+id/textView_posizione_admin"
                 android:layout_width="300dp"
                 android:layout_height="70dp"
                 android:background="@color/white"

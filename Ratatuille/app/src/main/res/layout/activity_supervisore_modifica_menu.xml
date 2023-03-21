@@ -137,17 +137,16 @@
         android:textColor="@color/black"
         android:gravity="center"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/piatti_da_poter_modificare"
-        android:layout_width="318dp"
-        android:layout_height="283dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="250dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginRight="200dp"
-        android:orientation="vertical"
-        ></androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/piatti_da_poter_modificare"
+            android:layout_width="307dp"
+            android:layout_height="283dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginRight="200dp"
+            android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
 
 
 

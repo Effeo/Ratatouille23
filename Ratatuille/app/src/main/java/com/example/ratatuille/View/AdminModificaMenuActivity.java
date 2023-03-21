@@ -1,18 +1,25 @@
 package com.example.ratatuille.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Adapter.CategoriePerModificareAdapter;
 import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
+import java.util.ArrayList;
+
 public class AdminModificaMenuActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private PiattoPresenter piattoPresenter;
+    private RecyclerView recyclerView_categorie;
+    private RecyclerView recyclerView_piatti;
 
     private AdminModificaMenuActivity adminModificaMenuActivity;
 
@@ -23,6 +30,8 @@ public class AdminModificaMenuActivity extends AppCompatActivity {
 
         utentePresenter = UtentePresenter.getInstance();
         piattoPresenter = PiattoPresenter.getInstance();
+        recyclerView_categorie = findViewById(R.id.categorie_da_poter_modificare_admin);
+        recyclerView_piatti = findViewById(R.id.piatti_da_poter_modificare_admin);
 
         piattoPresenter.setAdminModificaMenuActivity(this);
 
@@ -34,6 +43,23 @@ public class AdminModificaMenuActivity extends AppCompatActivity {
         ImageButton btn_admin_add_utente = (ImageButton) findViewById(R.id.admin_add_utente);
 
         adminModificaMenuActivity = this;
+
+        ArrayList<String> categorie = new ArrayList<>();
+        categorie.add("antipasti");
+        categorie.add("primi");
+        categorie.add("secondi");
+        categorie.add("contorni");
+        categorie.add("dolci");
+        categorie.add("bevande");
+        categorie.add("frutta");
+        categorie.add("varie");
+
+        CategoriePerModificareAdapter categoriePerModificareAdapter = new CategoriePerModificareAdapter(this, categorie, recyclerView_piatti);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView_categorie.setLayoutManager(linearLayoutManager);
+        recyclerView_categorie.setAdapter(categoriePerModificareAdapter);
 
         piattoPresenter.getAllPiatti(utentePresenter.getUtente().getRuolo());
         btn_admin_logout.setOnClickListener(new View.OnClickListener() {
