@@ -33,7 +33,7 @@ public class ListaPiattiCategoriePerModificareAdapter extends RecyclerView.Adapt
     @NonNull
     @Override
     public ListaPiattiCategoriePerModificareAdapter.ListaPiattiCategoriePerModificareHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.riga_cliccabile, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.riga_non_cliccabile, parent, false);
         return new ListaPiattiCategoriePerModificareAdapter.ListaPiattiCategoriePerModificareHolder(view);
     }
 
@@ -41,30 +41,41 @@ public class ListaPiattiCategoriePerModificareAdapter extends RecyclerView.Adapt
     public void onBindViewHolder(@NonNull ListaPiattiCategoriePerModificareAdapter.ListaPiattiCategoriePerModificareHolder holder, int position) {
         holder.nomePiatto.setText(piatti_modificabili.get(position).toUpperCase());
 
-        int i = 0;
-        boolean trovato = false;
-        Piatto piatto = new Piatto();
-
-        while(i < piattoPresenter.getPiatti().size() && !trovato){
-            if(piattoPresenter.getPiatti().get(i).getNome().equals(piatti_modificabili.get(holder.getAdapterPosition()))){
-                trovato = true;
-
-                piatto.setIdPiatto(piattoPresenter.getPiatti().get(i).getIdPiatto());
-                piatto.setNome(piattoPresenter.getPiatti().get(i).getNome());
-                piatto.setCategoria(piattoPresenter.getPiatti().get(i).getCategoria());
-                piatto.setCosto(piattoPresenter.getPiatti().get(i).getCosto());
-                piatto.setAllergeni(piattoPresenter.getPiatti().get(i).getAllergeni());
-                piatto.setDescrizione(piattoPresenter.getPiatti().get(i).getDescrizione());
-                piatto.setPosto(piattoPresenter.getPiatti().get(i).getPosto());
-
-            }
-
-            i++;
-        }
-
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                int i = 0;
+                boolean trovato = false;
+                Piatto piatto = new Piatto();
+
+                while(i < piattoPresenter.getPiatti().size() && !trovato){
+                    if(piattoPresenter.getPiatti().get(i).getNome().equals(piatti_modificabili.get(holder.getAdapterPosition()))){
+                        trovato = true;
+
+                        //modifica a volo
+                        /*
+                        piatto.setIdPiatto(piattoPresenter.getPiatti().get(i).getIdPiatto());
+                        piatto.setNome(piattoPresenter.getPiatti().get(i).getNome());
+                        piatto.setCategoria(piattoPresenter.getPiatti().get(i).getCategoria());
+                        piatto.setCosto(piattoPresenter.getPiatti().get(i).getCosto());
+                        piatto.setAllergeni(piattoPresenter.getPiatti().get(i).getAllergeni());
+                        piatto.setDescrizione(piattoPresenter.getPiatti().get(i).getDescrizione());
+                        piatto.setPosto(piattoPresenter.getPiatti().get(i).getPosto());
+                        */
+                        piatto.setIdPiatto(piattoPresenter.getPiatto().getIdPiatto());
+                        piatto.setNome(piattoPresenter.getPiatto().getNome());
+                        piatto.setCategoria(piattoPresenter.getPiatto().getCategoria());
+                        piatto.setCosto(piattoPresenter.getPiatto().getCosto());
+                        piatto.setAllergeni(piattoPresenter.getPiatto().getAllergeni());
+                        piatto.setDescrizione(piattoPresenter.getPiatto().getDescrizione());
+                        piatto.setPosto(piattoPresenter.getPiatto().getPosto());
+                    }
+
+                    i++;
+                }
+
+
                 Intent finestraSupervisoreModificaEliminaMenuActivity = new Intent(v.getContext(), SupervisoreModificaEliminaMenuActivity.class);
                 context.startActivity(finestraSupervisoreModificaEliminaMenuActivity);
             }
@@ -84,7 +95,7 @@ public class ListaPiattiCategoriePerModificareAdapter extends RecyclerView.Adapt
         public ListaPiattiCategoriePerModificareHolder(@NonNull View itemView) {
             super(itemView);
             nomePiatto = itemView.findViewById(R.id.text_nome_piatti);
-            cardView = itemView.findViewById(R.id.riga_cliccabile);
+            cardView = itemView.findViewById(R.id.riga_non_cliccabile);
         }
     }
 }

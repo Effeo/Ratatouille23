@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
@@ -12,18 +13,20 @@ import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
+import java.util.ArrayList;
+
 public class AdminModificaEliminaMenuActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private AdminModificaEliminaMenuActivity adminModificaEliminaMenuActivity;
     private PiattoPresenter piattoPresenter = PiattoPresenter.getInstance();
 
 
-    private EditText editTextNome = findViewById(R.id.textView_nome_admin);
-    private EditText editTextDescrizione = findViewById(R.id.textView_descrizione_admin);
-    private Spinner spinner_supervisore_modifica = findViewById(R.id.spinner_admin_modifica_);
-    private EditText editTextCosto = findViewById(R.id.textView_costo_admin);
-    private EditText editTextAllergeni = findViewById(R.id.textView_allergeni_admin);
-    private EditText editTextPosizione = findViewById(R.id.textView_posizione_admin);
+    private EditText editTextNome;
+    private EditText editTextDescrizione;
+    private Spinner spinner_admin_modifica;
+    private EditText editTextCosto;
+    private EditText editTextAllergeni;
+    private EditText editTextPosizione;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +35,36 @@ public class AdminModificaEliminaMenuActivity extends AppCompatActivity {
 
         utentePresenter = UtentePresenter.getInstance();
 
-        ImageButton btn_admin_logout = (ImageButton)  findViewById(R.id.admin_logout);
+        ImageButton btn_admin_logout = (ImageButton) findViewById(R.id.admin_logout);
         ImageButton btn_admin_aggiungi_piatto = (ImageButton) findViewById(R.id.admin_aggiungi_piatto);
         ImageButton btn_admin_modifica_menu = (ImageButton) findViewById(R.id.admin_modifica_menu);
         ImageButton btn_admin_messaggi = (ImageButton) findViewById(R.id.admin_messaggi);
         ImageButton btn_admin_statistiche = (ImageButton) findViewById(R.id.admin_statistiche);
         ImageButton btn_admin_add_utente = (ImageButton) findViewById(R.id.admin_add_utente);
+
+        editTextNome = (EditText) findViewById(R.id.textView_nome_admin);
+        editTextDescrizione = (EditText) findViewById(R.id.textView_descrizione_admin);
+        spinner_admin_modifica = (Spinner) findViewById(R.id.spinner_admin_modifica_);
+        editTextCosto = (EditText) findViewById(R.id.textView_costo_admin);
+        editTextAllergeni = (EditText) findViewById(R.id.textView_allergeni_admin);
+        editTextPosizione = (EditText) findViewById(R.id.textView_posizione_admin);
+
+        ArrayList<String> categorie = new ArrayList<>();
+        categorie.add("antipasti");
+        categorie.add("primi");
+        categorie.add("secondi");
+        categorie.add("contorni");
+        categorie.add("dolci");
+        categorie.add("bevande");
+        categorie.add("frutta");
+        categorie.add("varie");
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.categorie, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_admin_modifica.setAdapter(adapter);
+
+
 
         adminModificaEliminaMenuActivity = this;
 

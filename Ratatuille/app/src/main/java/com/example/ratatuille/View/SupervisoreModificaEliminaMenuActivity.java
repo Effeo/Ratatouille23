@@ -3,7 +3,9 @@ package com.example.ratatuille.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -13,17 +15,19 @@ import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
+import java.util.ArrayList;
+
 public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private SupervisoreModificaEliminaMenuActivity supervisoreModificaEliminaMenuActivity;
-    private PiattoPresenter piattoPresenter = PiattoPresenter.getInstance();
+    private PiattoPresenter piattoPresenter;
 
-    private EditText editTextNome = findViewById(R.id.textView_nome);
-    private EditText editTextDescrizione = findViewById(R.id.textView_descrizione);
-    private Spinner spinner_supervisore_modifica = findViewById(R.id.spinner_supervisore_modifica);
-    private EditText editTextCosto = findViewById(R.id.textView_costo);
-    private EditText editTextAllergeni = findViewById(R.id.textView_allergeni);
-    private EditText editTextPosizione = findViewById(R.id.textView_posizione);
+    private EditText editTextNome;
+    private EditText editTextDescrizione;
+    private Spinner spinner_supervisore_modifica;
+    private EditText editTextCosto;
+    private EditText editTextAllergeni;
+    private EditText editTextPosizione;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_supervisore_modifica_elimina_menu);
 
         utentePresenter = UtentePresenter.getInstance();
+        piattoPresenter = PiattoPresenter.getInstance();
 
         Button btn_modifica = (Button) findViewById(R.id.btn_modifica);
         Button btn_torna_inidetro = (Button) findViewById(R.id.btn_torna_indietro);
@@ -42,14 +47,35 @@ public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
         ImageButton btn_supervisore_conto = (ImageButton) findViewById(R.id.supervisore_conto);
         ImageButton btn_supervisore_messaggi = (ImageButton) findViewById(R.id.supervisore_messaggi);
 
+        editTextNome = (EditText) findViewById(R.id.textView_nome);
+        editTextDescrizione = (EditText) findViewById(R.id.textView_descrizione);
+        spinner_supervisore_modifica = (Spinner) findViewById(R.id.spinner_supervisore_modifica);
+        editTextCosto = (EditText) findViewById(R.id.textView_costo);
+        editTextAllergeni = (EditText) findViewById(R.id.textView_allergeni);
+        editTextPosizione = (EditText) findViewById(R.id.textView_posizione);
+
         supervisoreModificaEliminaMenuActivity = this;
 
         editTextNome.setText(piattoPresenter.getPiatto().getNome());
         editTextDescrizione.setText(piattoPresenter.getPiatto().getDescrizione());
-        //spinner_supervisore_modifica;
         editTextCosto.setText(String.valueOf(piattoPresenter.getPiatto().getCosto()));
         editTextAllergeni.setText(piattoPresenter.getPiatto().getAllergeni());
-        editTextPosizione.setText(String.valueOf(piattoPresenter.getPiatto().getPosto()));
+        editTextPosizione.setText(piattoPresenter.getPiatto().getPosto());
+
+        ArrayList<String> categorie = new ArrayList<>();
+        categorie.add("antipasti");
+        categorie.add("primi");
+        categorie.add("secondi");
+        categorie.add("contorni");
+        categorie.add("dolci");
+        categorie.add("bevande");
+        categorie.add("frutta");
+        categorie.add("varie");
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.categorie, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_supervisore_modifica.setAdapter(adapter);
 
         btn_supervisore_logout.setOnClickListener(new View.OnClickListener() {
             @Override

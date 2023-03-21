@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/riga_cliccabile"
+    android:id="@+id/riga_non_cliccabile"
     android:layout_height="90dp"
     android:layout_width="358dp"
     card_view:cardCornerRadius="5dp"
