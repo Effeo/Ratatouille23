@@ -27,7 +27,7 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
     private Context context;
     private ContoPresenter contoPresenter = ContoPresenter.getInstance();
     private RecyclerView recyclerView_conto;
-    //private Ordine_piattoPresenter comanda = Ordine_piattoPresenter.getInstance();
+    private Ordine_piattoPresenter comanda = Ordine_piattoPresenter.getInstance();
 
 
     public ListaTavoliContoAdapter(Context context, List<Conto> tavoli, RecyclerView recyclerView_conto){
@@ -74,9 +74,8 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
 
                     i++;
                 }
-                //mi so bloccato qui
-                //mi dovrei prendere un arraylist di ordini_piatti che sta in conto ma non ci riesco
-                MostraComandaAdapter mostraComandaAdapter = new MostraComandaAdapter(context, contoPresenter.getOrdini_piatti());
+                //qui metto in input un array di ordine piatti, ma deve vedere francesco se va bene o meno
+                MostraComandaAdapter mostraComandaAdapter = new MostraComandaAdapter(context, comanda.getOrdini_piatti());
 
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
                 linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
