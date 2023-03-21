@@ -2,6 +2,8 @@ package com.example.ratatuille.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -12,6 +14,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.ratatuille.Adapter.ListaOrdiniAdapter;
+import com.example.ratatuille.Adapter.ListaTavoliContoAdapter;
+import com.example.ratatuille.Model.Conto;
+import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Presenter.ContoPresenter;
 import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
@@ -20,6 +26,7 @@ import com.example.ratatuille.R;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
@@ -33,6 +40,9 @@ public class SupervisoreContoActivity extends AppCompatActivity {
     private SupervisoreContoActivity supervisoreContoActivity;
     private Button btn_scarica;
     private Button btn_chiudi;
+    private RecyclerView recyclerView_tavoli;
+    private RecyclerView recyclerView_conti;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +62,9 @@ public class SupervisoreContoActivity extends AppCompatActivity {
         ImageButton btn_supervisore_modifica_menu = (ImageButton) findViewById(R.id.supervisore_modifica_menu);
         ImageButton btn_supervisore_conto = (ImageButton) findViewById(R.id.supervisore_conto);
         ImageButton btn_supervisore_messaggi = (ImageButton) findViewById(R.id.supervisore_messaggi);
+
+        recyclerView_conti = findViewById(R.id.supervisore_conto_del_tavolo);
+        recyclerView_tavoli = findViewById(R.id.supervisore_lista_tavoli_conto);
 
         supervisoreContoActivity = this;
         contoPresenter.setSupervisoreContoActivity(this);
@@ -132,13 +145,14 @@ public class SupervisoreContoActivity extends AppCompatActivity {
             btn_scarica.setEnabled(false);
         }
 
-        for(int i = 0; i < contoPresenter.getConti().size(); i++){
-            System.out.println("id_conto:" + contoPresenter.getConti().get(i).getId_conto());
-            System.out.println("chiuso:" + contoPresenter.getConti().get(i).getChiuso());
-            System.out.println("costo:" + contoPresenter.getConti().get(i).getCosto());
-            System.out.println("data:" + contoPresenter.getConti().get(i).getData());
-            System.out.println("id_tavolo:" + contoPresenter.getConti().get(i).getId_tavolo());
-        }
+        List<Conto> conto_tavoli = contoPresenter.getConti();
+
+        ListaTavoliContoAdapter listaTavoliContoAdapter = new ListaTavoliContoAdapter(supervisoreContoActivity.getApplicationContext(), conto_tavoli, recyclerView_conti);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView_tavoli.setLayoutManager(linearLayoutManager);
+        recyclerView_tavoli.setAdapter(listaTavoliContoAdapter);
     }
 
     public void scaricaConto(int i){

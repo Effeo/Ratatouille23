@@ -2,6 +2,7 @@ package com.example.ratatuille.Presenter;
 
 import com.example.ratatuille.Model.Conto;
 import com.example.ratatuille.Model.Ordine_piatto;
+import com.example.ratatuille.Model.Piatto;
 import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplContoService;
 import com.example.ratatuille.View.SupervisoreContoActivity;
@@ -14,6 +15,7 @@ public class ContoPresenter {
 
     private ImplContoService implContoService;
     private List<Conto> conti;
+    private Conto conto;
     private List<Ordine_piatto> ordini_piatti = new ArrayList<>();
     private SupervisoreContoActivity supervisoreContoActivity;
 
@@ -68,6 +70,9 @@ public class ContoPresenter {
     }
 
     public List<Ordine_piatto> getOrdini_piatti(){return ordini_piatti;}
+
+    public void setConto(Conto conto){this.conto = conto;}
+
 
     public void setOrdini_piatti (List<Ordine_piatto> ordini_piatti){this.ordini_piatti = ordini_piatti;}
 }

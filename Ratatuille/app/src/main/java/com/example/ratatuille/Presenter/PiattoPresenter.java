@@ -178,6 +178,8 @@ public class PiattoPresenter {
         return piatto;
     }
 
+    public void setPiatto(Piatto piatto){this.piatto = piatto;}
+
     public List<Piatto> getPiatti() {
         return piatti;
     }

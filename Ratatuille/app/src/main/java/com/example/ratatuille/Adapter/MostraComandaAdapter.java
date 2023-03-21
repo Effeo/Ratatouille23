@@ -13,17 +13,16 @@ import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MostraComandaAdapter extends RecyclerView.Adapter<MostraComandaAdapter.MostraComandaHolder>{
 
-    private ArrayList<Ordine_piatto> comanda;
+    private List<Ordine_piatto> comanda;
     private Context context;
-    private TextView textView_mostra_conto;
 
-    public MostraComandaAdapter(Context context, ArrayList<Ordine_piatto> comanda){
+    public MostraComandaAdapter(Context context, List<Ordine_piatto> comanda){
         this.comanda = comanda;
         this.context = context;
-        this.textView_mostra_conto = textView_mostra_conto;
     }
 
     @NonNull
