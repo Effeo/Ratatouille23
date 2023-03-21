@@ -13,10 +13,6 @@ public class Tavolo {
     @Column(name = "id_tavolo")
     private int id_tavolo;
 
-    @OneToOne(mappedBy = "tavolo", fetch = FetchType.EAGER)
-    @JsonBackReference
-    private Conto conto;
-
     @OneToMany(mappedBy = "tavolo", fetch = FetchType.LAZY)
     @JsonBackReference
     private List<Ordine> ordini = new ArrayList<>();
@@ -24,9 +20,8 @@ public class Tavolo {
     public Tavolo() {
     }
 
-    public Tavolo(int id_tavolo, Conto conto, ArrayList<Ordine> ordini) {
+    public Tavolo(int id_tavolo, ArrayList<Ordine> ordini) {
         this.id_tavolo = id_tavolo;
-        this.conto = conto;
         this.ordini = ordini;
     }
 
@@ -36,14 +31,6 @@ public class Tavolo {
 
     public List<Ordine> getOrdini() {
         return ordini;
-    }
-
-    public Conto getConto() {
-        return conto;
-    }
-
-    public void setConto(Conto conto) {
-        this.conto = conto;
     }
 
     public int getId_tavolo() {

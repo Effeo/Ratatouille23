@@ -7,7 +7,7 @@ public class Tavolo {
 
     @Expose
     @SerializedName("id_tavolo")
-    private String id_tavolo;
+    private int id_tavolo;
 
     @Expose
     @SerializedName("conto")
@@ -16,16 +16,16 @@ public class Tavolo {
     public Tavolo() {
     }
 
-    public Tavolo(String id_tavolo, Conto conto) {
+    public Tavolo(int id_tavolo, Conto conto) {
         this.id_tavolo = id_tavolo;
         this.conto = conto;
     }
 
-    public String getId_tavolo() {
+    public int getId_tavolo() {
         return id_tavolo;
     }
 
-    public void setId_tavolo(String id_tavolo) {
+    public void setId_tavolo(int id_tavolo) {
         this.id_tavolo = id_tavolo;
     }
 

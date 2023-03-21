@@ -6,6 +6,7 @@ import com.ratatouill23.ratatouille23Server.Dto.PiattoDto;
 import com.ratatouill23.ratatouille23Server.Model.Ordine;
 import com.ratatouill23.ratatouille23Server.Model.Ordine_piatto;
 import com.ratatouill23.ratatouille23Server.Model.Piatto;
+import com.ratatouill23.ratatouille23Server.Model.Tavolo;
 import com.ratatouill23.ratatouille23Server.Services.Interfaces.IOrdine_piattoService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
@@ -44,6 +45,11 @@ public class Ordine_piattoController {
 
     @PostMapping("/create")
     public void create(@RequestBody Ordine_Piatto_Dto ordine_piatto_dto){
+        /*System.out.println("id_ordine_piatto: " +  ordine_piatto_dto.getId_ordine_piatto());
+        System.out.println("qta: " +  ordine_piatto_dto.getQta());
+        System.out.println("id_ordine: " +  ordine_piatto_dto.getOrdine().getId_ordine());
+        System.out.println("id_piatto: " +  ordine_piatto_dto.getPiatto().getId_piatto());*/
+
         iOrdine_piatto.create(convertEntity(ordine_piatto_dto));
     }
 
@@ -73,8 +79,12 @@ public class Ordine_piattoController {
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.LOOSE);
         Ordine ordine = new Ordine();
-
         ordine = modelMapper.map(ordineDto, Ordine.class);
+
+        Tavolo tavolo = new Tavolo();
+        tavolo.setId_tavolo(ordineDto.getId_tavolo());
+
+        ordine.setTavolo(tavolo);
 
         return ordine;
     }

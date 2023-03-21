@@ -16,8 +16,6 @@ public interface OrdineRepository extends CrudRepository<Ordine, Integer> {
     @Query(value = "select * from ordine where ordine.id_ordine =:id_ordine", nativeQuery = true)
     public Optional<Ordine> findOrdineById(@PathVariable("id_ordine") Integer id_ordine);
 
-    /*@Modifying
-    @Query(value = "insert into ordine(id_tavolo) values (:idTavolo)", nativeQuery = true)
-    @Transactional
-    public void insert(@Param("idTavolo") Integer id_tavolo);*/
+    @Query(value = "select * from ordine order by id_ordine desc limit 1", nativeQuery = true)
+    public Optional<Ordine> getGreatest();
 }

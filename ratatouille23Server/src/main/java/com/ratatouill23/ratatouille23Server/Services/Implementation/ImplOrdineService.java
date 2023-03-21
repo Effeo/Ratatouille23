@@ -1,5 +1,6 @@
 package com.ratatouill23.ratatouille23Server.Services.Implementation;
 
+import com.ratatouill23.ratatouille23Server.Dto.OrdineDto;
 import com.ratatouill23.ratatouille23Server.Model.Ordine;
 import com.ratatouill23.ratatouille23Server.Repositories.OrdineRepository;
 import com.ratatouill23.ratatouille23Server.Services.Interfaces.IOrdineService;
@@ -20,7 +21,12 @@ public class ImplOrdineService implements IOrdineService {
     }
 
     @Override
-    public void create(Integer id_tavolo) {
-        //ordineRepository.insert(id_tavolo);
+    public Ordine create(Ordine ordine) {
+        return ordineRepository.save(ordine);
+    }
+
+    @Override
+    public Optional<Ordine> getGreatest() {
+        return ordineRepository.getGreatest();
     }
 }

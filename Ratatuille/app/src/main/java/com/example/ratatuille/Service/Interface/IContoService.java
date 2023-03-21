@@ -8,4 +8,6 @@ public interface IContoService {
     public void getAllConti(Callback callback);
 
     public void update(Callback callback, Conto conto);
+
+    public void create(Callback callback, Conto conto);
 }

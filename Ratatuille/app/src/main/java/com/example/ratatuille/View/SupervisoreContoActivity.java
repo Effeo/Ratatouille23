@@ -140,19 +140,22 @@ public class SupervisoreContoActivity extends AppCompatActivity {
     }
 
     public void stampaConti(){
-        if(contoPresenter.getConti().size() == 0){
+        if(contoPresenter.getConti().size() != 0){
+            List<Conto> conto_tavoli = contoPresenter.getConti();
+
+            ListaTavoliContoAdapter listaTavoliContoAdapter = new ListaTavoliContoAdapter(supervisoreContoActivity.getApplicationContext(), conto_tavoli, recyclerView_conti);
+
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            recyclerView_tavoli.setLayoutManager(linearLayoutManager);
+            recyclerView_tavoli.setAdapter(listaTavoliContoAdapter);
+        }
+        else{
             btn_chiudi.setEnabled(false);
             btn_scarica.setEnabled(false);
         }
 
-        List<Conto> conto_tavoli = contoPresenter.getConti();
 
-        ListaTavoliContoAdapter listaTavoliContoAdapter = new ListaTavoliContoAdapter(supervisoreContoActivity.getApplicationContext(), conto_tavoli, recyclerView_conti);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView_tavoli.setLayoutManager(linearLayoutManager);
-        recyclerView_tavoli.setAdapter(listaTavoliContoAdapter);
     }
 
     public void scaricaConto(int i){

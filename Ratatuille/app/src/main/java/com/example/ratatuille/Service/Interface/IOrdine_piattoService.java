@@ -7,4 +7,6 @@ public interface IOrdine_piattoService {
     void getOrdini_piatti(Callback callback);
 
     void delete(Callback callback, Ordine_piatto ordine_piatto);
+
+    void create(Callback callback, Ordine_piatto ordine_piatto);
 }

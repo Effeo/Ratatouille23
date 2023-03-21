@@ -1,7 +1,10 @@
 package com.ratatouill23.ratatouille23Server.Controller;
 
 import com.ratatouill23.ratatouille23Server.Dto.OrdineDto;
+import com.ratatouill23.ratatouille23Server.Dto.PiattoDto;
 import com.ratatouill23.ratatouille23Server.Model.Ordine;
+import com.ratatouill23.ratatouille23Server.Model.Piatto;
+import com.ratatouill23.ratatouille23Server.Model.Tavolo;
 import com.ratatouill23.ratatouille23Server.Services.Interfaces.IOrdineService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
@@ -34,10 +37,33 @@ public class OrdineController {
         return ordineDto;
     }
 
-    @PostMapping("ordine/create")
-    public void insert(@RequestBody OrdineDto ordineDto){
-        System.out.println("id_tavolo: " + ordineDto.getId_tavolo());
-        iOrdineService.create(ordineDto.getId_tavolo());
+    @PostMapping("/create")
+    public OrdineDto insert(@RequestBody OrdineDto ordineDto){
+        return(convertDto(iOrdineService.create(convertEntity(ordineDto))));
+    }
+
+    @GetMapping("/get/getGreatest")
+    public OrdineDto getGreatest(){
+        Optional<Ordine> ordine = iOrdineService.getGreatest();
+
+        if(ordine.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+
+        OrdineDto ordineDto = convertDto(ordine.get());
+        return ordineDto;
+    }
+
+    private Ordine convertEntity(OrdineDto ordineDto){
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.LOOSE);
+        Ordine ordine = new Ordine();
+        ordine = modelMapper.map(ordineDto, Ordine.class);
+
+        Tavolo tavolo = new Tavolo();
+        tavolo.setId_tavolo(ordineDto.getId_tavolo());
+
+        ordine.setTavolo(tavolo);
+
+        return ordine;
     }
 
     public OrdineDto convertDto(Ordine ordine){
