@@ -5,7 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.ratatuille.Model.Ordine_piatto;
+import com.example.ratatuille.Presenter.OrdinePresenter;
+import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
@@ -13,7 +18,10 @@ public class CameriereAggiungiTavoloActivity extends AppCompatActivity {
     private CameriereAggiungiTavoloActivity cameriereAggiungiTavoloActivity;
 
     private UtentePresenter utentePresenter = UtentePresenter.getInstance();
+    private OrdinePresenter ordinePresenter = OrdinePresenter.getInstance();
+    private Ordine_piattoPresenter ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
 
+    private EditText editTavolo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +30,17 @@ public class CameriereAggiungiTavoloActivity extends AppCompatActivity {
         Button conferma = (Button) findViewById(R.id.button_conferma);
         Button torna_indietro = (Button) findViewById(R.id.btn_torna_indietro);
 
+        editTavolo = (EditText) findViewById(R.id.edit_id_tavolo);
+
         cameriereAggiungiTavoloActivity = this;
+        ordinePresenter.setCameriereAggiungiTavoloActivity(this);
         conferma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if(ordine_piattoPresenter.getOrdini_piatti().size() != 0)
+                    ordinePresenter.create(Integer.parseInt(editTavolo.getText().toString()));
+                else
+                    Toast.makeText(cameriereAggiungiTavoloActivity.getApplicationContext(), "Non ci sono ordinazioni", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -51,5 +65,13 @@ public class CameriereAggiungiTavoloActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
+    }
+
+    public void chiamaOrdine(){
+        ordinePresenter.getGreatest();
+    }
+
+    public void insertOrdine_piatto(){
+        System.out.println(ordinePresenter.getOrdine().getId_ordine());
     }
 }

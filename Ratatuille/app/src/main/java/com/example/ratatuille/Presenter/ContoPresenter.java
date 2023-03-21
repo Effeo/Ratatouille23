@@ -1,7 +1,5 @@
 package com.example.ratatuille.Presenter;
 
-import android.widget.Toast;
-
 import com.example.ratatuille.Model.Conto;
 import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Service.Callback;

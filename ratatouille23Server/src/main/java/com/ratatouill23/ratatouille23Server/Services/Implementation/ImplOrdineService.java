@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service("ImplOrdineService")
+
 public class ImplOrdineService implements IOrdineService {
     @Autowired
     private OrdineRepository ordineRepository;
@@ -19,7 +20,7 @@ public class ImplOrdineService implements IOrdineService {
     }
 
     @Override
-    public void create(Ordine ordine) {
-        ordineRepository.save(ordine);
+    public void create(Integer id_tavolo) {
+        //ordineRepository.insert(id_tavolo);
     }
 }

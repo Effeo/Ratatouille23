@@ -204,12 +204,15 @@ VALUES ('menu speciale', 'menu speciale', 25, 2, 'da vedere', 'varie');
 
 
 
-INSERT INTO conto(costo, data, id_tavolo)
-VALUES (25, '2023-02-28', 1);
+INSERT INTO conto(costo, data, id_tavolo, chiuso)
+VALUES (25, '2023-02-28', 1, 0);
 
 
 INSERT INTO ordine(id_tavolo)
 VALUES (1);
+
+insert into ordine(id_tavolo)
+values(2);
 
 INSERT INTO ordine_piatto(qta, id_piatto, id_ordine)
 VALUES (1, 1, 1);
@@ -235,8 +238,7 @@ VALUES(0, 'luigi', 2);
 INSERT INTO messaggio_utente(letto, user_name, id_messaggio)
 VALUES(0, 'matteo', 1);
 
-insert into ordine(id_tavolo)
-values(2);
+
 
 insert into ordine_piatto(qta, id_piatto, id_ordine)
 values(2, 2, 2);

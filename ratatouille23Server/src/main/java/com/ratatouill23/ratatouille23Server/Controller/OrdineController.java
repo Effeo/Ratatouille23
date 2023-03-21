@@ -8,10 +8,7 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Optional;
@@ -35,6 +32,12 @@ public class OrdineController {
 
         OrdineDto ordineDto = convertDto(ordine.get());
         return ordineDto;
+    }
+
+    @PostMapping("ordine/create")
+    public void insert(@RequestBody OrdineDto ordineDto){
+        System.out.println("id_tavolo: " + ordineDto.getId_tavolo());
+        iOrdineService.create(ordineDto.getId_tavolo());
     }
 
     public OrdineDto convertDto(Ordine ordine){

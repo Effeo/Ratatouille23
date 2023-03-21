@@ -7,5 +7,5 @@ import java.util.Optional;
 public interface IOrdineService {
     public Optional<Ordine> findOrdineById(Integer id_ordine);
 
-    public void create(Ordine ordine);
+    public void create(Integer id_tavolo);
 }
