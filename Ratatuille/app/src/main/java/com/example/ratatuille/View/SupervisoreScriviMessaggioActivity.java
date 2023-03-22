@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.ratatuille.Adapter.MessaggiAdapter;
+import com.example.ratatuille.Adapter.MessaggiCambiaFinestraAdapter;
 import com.example.ratatuille.Model.Messaggio_utente;
 import com.example.ratatuille.Presenter.MessaggioPresenter;
 import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
@@ -126,17 +127,17 @@ public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
     }
 
     public void stampaMessaggi(){
-        /*
+        //qua entra
         List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
 
-        //MessaggiAdapter messaggiAdapter = new MessaggiAdapter(supervisoreScriviMessaggioActivity.getApplicationContext(), messaggi, visualizza_messaggio);
+        MessaggiCambiaFinestraAdapter messaggiCambiaFinestraAdapter = new MessaggiCambiaFinestraAdapter(supervisoreScriviMessaggioActivity.getApplicationContext(), messaggi);
 
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(messaggiAdapter);
-        */
+        recyclerView.setAdapter(messaggiCambiaFinestraAdapter);
+
 
     }
 

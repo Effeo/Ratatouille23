@@ -28,6 +28,7 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
     private ContoPresenter contoPresenter = ContoPresenter.getInstance();
     private RecyclerView recyclerView_conto;
     private Ordine_piattoPresenter ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
+    private Ordine_piattoPresenter tmp;
 
 
     public ListaTavoliContoAdapter(Context context, List<Conto> tavoli, RecyclerView recyclerView_conto){
@@ -55,19 +56,27 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
             public void onClick(View v) {
                 /*
                 for (int i = 0; i < tavoli.size(); i++ ){
-                    if(currentTableId == comanda.getOrdini_piatti().get(i).getOrdine().getIdTavolo()){
-                        //caso in cui la mia prova non va bene devo lavorare qua
+                    if(currentTableId == ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo()){
+                        tmp.getOrdini_piatti().add(ordine_piattoPresenter.getOrdini_piatti().get(position));
+                    }
+                }
+
+
+                for (int i = 0; i < tavoli.size(); i++ ){
+                    if(currentTableId == contoPresenter.getConti().get(i).getId_tavolo()){
+                        tmp.getOrdini_piatti().add(ordine_piattoPresenter.getOrdini_piatti().get(i));
                     }
                 }
                 */
-                //qui metto in input un array di ordine piatti, ma deve vedere francesco se va bene o meno
-                //nel caso mi devo creare un oggetto Ordine_Piatti in cui ci sta solo l'ordine che mi serve
-                MostraComandaAdapter mostraComandaAdapter = new MostraComandaAdapter(context, ordine_piattoPresenter.getOrdini_piatti());
+
+
+                MostraComandaAdapter mostraComandaAdapter = new MostraComandaAdapter(context, tmp.getOrdini_piatti());
 
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
                 linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                 recyclerView_conto.setLayoutManager(linearLayoutManager);
                 recyclerView_conto.setAdapter(mostraComandaAdapter);
+
             }
         });
     }
