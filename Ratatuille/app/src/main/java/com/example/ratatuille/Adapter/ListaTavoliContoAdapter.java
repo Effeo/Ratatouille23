@@ -28,8 +28,6 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
     private ContoPresenter contoPresenter = ContoPresenter.getInstance();
     private RecyclerView recyclerView_conto;
     private Ordine_piattoPresenter ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
-    private Ordine_piattoPresenter tmp;
-
 
     public ListaTavoliContoAdapter(Context context, List<Conto> tavoli, RecyclerView recyclerView_conto){
         this.tavoli = tavoli;
@@ -41,36 +39,28 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
     @Override
     public ListaTavoliContoAdapter.ListaTavoliContoHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.riga_cliccabile_tavolo, parent, false);
-        return new ListaTavoliContoAdapter.ListaTavoliContoHolder(view);    }
+        return new ListaTavoliContoAdapter.ListaTavoliContoHolder(view);
+    }
 
     @Override
     public void onBindViewHolder(@NonNull ListaTavoliContoAdapter.ListaTavoliContoHolder holder, int position) {
-
         int currentTableId = tavoli.get(position).getId_tavolo();
 
+        contoPresenter.setPosizione_conto(position);
 
         holder.id_del_tavolo.setText(String.valueOf(currentTableId));
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                for (int i = 0; i < tavoli.size(); i++ ){
+                ordine_piattoPresenter.setOrdine_piatti_tmp(new ArrayList<>());
+                for (int i = 0; i < ordine_piattoPresenter.getOrdini_piatti().size(); i++ ){
                     if(currentTableId == ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo()){
-                        tmp.getOrdini_piatti().add(ordine_piattoPresenter.getOrdini_piatti().get(i));
+                        ordine_piattoPresenter.getOrdini_piatti_tmp().add(ordine_piattoPresenter.getOrdini_piatti().get(i));
                     }
                 }
 
-
-                for (int i = 0; i < tavoli.size(); i++ ){
-                    if(currentTableId == contoPresenter.getConti().get(i).getId_tavolo()){
-                        tmp.getOrdini_piatti().add(ordine_piattoPresenter.getOrdini_piatti().get(i));
-                    }
-                }
-
-
-
-                MostraComandaAdapter mostraComandaAdapter = new MostraComandaAdapter(context, tmp.getOrdini_piatti());
+                MostraComandaAdapter mostraComandaAdapter = new MostraComandaAdapter(context, ordine_piattoPresenter.getOrdini_piatti_tmp());
 
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
                 linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);

@@ -30,6 +30,16 @@ public class ContoPresenter {
     private SupervisoreContoActivity supervisoreContoActivity;
     private CameriereAggiungiTavoloActivity cameriereAggiungiTavoloActivity;
 
+    private int posizione_conto;
+
+    public void setPosizione_conto(int posizione_conto) {
+        this.posizione_conto = posizione_conto;
+    }
+
+    public int getPosizione_conto() {
+        return posizione_conto;
+    }
+
     private ContoPresenter(){
         implContoService = new ImplContoService();
     }
@@ -62,7 +72,7 @@ public class ContoPresenter {
         implContoService.update(new Callback() {
             @Override
             public void returnResult(Object o) {
-                supervisoreContoActivity.scaricaConto(i);
+                supervisoreContoActivity.scaricaConto();
             }
 
             @Override

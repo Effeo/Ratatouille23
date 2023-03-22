@@ -12,6 +12,7 @@ public class Ordine_piattoPresenter {
     private static Ordine_piattoPresenter ordine_piattoPresenter = null;
     private ImplOrdine_piattoService implOrdine_piattoService;
     private List<Ordine_piatto> ordini_piatti = new ArrayList<>();
+    private List<Ordine_piatto> ordine_piatti_tmp = new ArrayList<>();
 
     private CuocoOrdinazioniActivity cuocoOrdinazioniActivity;
 
@@ -78,7 +79,15 @@ public class Ordine_piattoPresenter {
         return ordini_piatti;
     }
 
+    public List<Ordine_piatto> getOrdini_piatti_tmp() {
+        return ordine_piatti_tmp;
+    }
+
     public void setOrdini_piatti(List<Ordine_piatto> ordini_piatti) {
         this.ordini_piatti = ordini_piatti;
+    }
+
+    public void setOrdine_piatti_tmp(List<Ordine_piatto> ordine_piatti_tmp) {
+        this.ordine_piatti_tmp = ordine_piatti_tmp;
     }
 }

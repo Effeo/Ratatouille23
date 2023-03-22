@@ -110,7 +110,7 @@ public class SupervisoreContoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //inserire il conto da prendere per ora per i test è 0
                 System.out.println("Scarica");
-                scaricaConto(0);
+                scaricaConto();
             }
         });
 
@@ -119,7 +119,7 @@ public class SupervisoreContoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //inserire il conto giusto
                 System.out.println("Chiudi");
-                contoPresenter.update(0);
+                contoPresenter.update(contoPresenter.getPosizione_conto());
             }
         });
     }
@@ -158,12 +158,12 @@ public class SupervisoreContoActivity extends AppCompatActivity {
 
     }
 
-    public void scaricaConto(int i){
+    public void scaricaConto(){
         Document document = new Document();
         String fileName = null;
         String folder = "PdfIngsw";
 
-        if(contoPresenter.getConti().get(i).getChiuso() == 0)
+        if(contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getChiuso() == 0)
             fileName = "ContoScaricato.pdf";
         else{
             fileName = "ContoChiusoScaricato.pdf";
@@ -188,13 +188,13 @@ public class SupervisoreContoActivity extends AppCompatActivity {
 
             document.open();
 
-            Paragraph paragraph = new Paragraph("Conto tavolo: " + contoPresenter.getConti().get(i).getId_tavolo() + "\n\n");
-            writePiatti(paragraph, i);
+            Paragraph paragraph = new Paragraph("Conto tavolo: " + contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getId_tavolo() + "\n\n");
+            writePiatti(paragraph, contoPresenter.getPosizione_conto());
             paragraph.add("\n");
-            paragraph.add("Costo totale: " +  contoPresenter.getConti().get(i).getCosto() + "\n");
-            paragraph.add("Data: " +  contoPresenter.getConti().get(i).getData() + "\n");
+            paragraph.add("Costo totale: " +  contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getCosto() + "\n");
+            paragraph.add("Data: " +  contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getData() + "\n");
 
-            if(contoPresenter.getConti().get(i).getChiuso() == 0){
+            if(contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getChiuso() == 0){
                 paragraph.add("Il conto non e' chiuso" + "\n");
                 System.out.println("file non chiuso scaricato");
             }
