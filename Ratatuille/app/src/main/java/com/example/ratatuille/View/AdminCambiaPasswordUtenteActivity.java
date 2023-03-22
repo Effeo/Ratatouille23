@@ -1,6 +1,8 @@
 package com.example.ratatuille.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,14 +10,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.example.ratatuille.Adapter.MessaggiAdapter;
+import com.example.ratatuille.Adapter.VisualizzaNomiAdapter;
+import com.example.ratatuille.Model.Utente;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+
+import java.util.List;
 
 public class AdminCambiaPasswordUtenteActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private AdminCambiaPasswordUtenteActivity adminCambiaPasswordUtenteActivity;
     public EditText editPassword;
     public EditText editConfermaPassword;
+    public RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +44,7 @@ public class AdminCambiaPasswordUtenteActivity extends AppCompatActivity {
 
         editPassword = (EditText) findViewById(R.id.edit_new_password);
         editConfermaPassword = (EditText) findViewById(R.id.edit_conferma_password);
+        recyclerView = (RecyclerView) findViewById(R.id.lista_nomi_utenti);
 
         adminCambiaPasswordUtenteActivity = this;
 
@@ -115,8 +124,14 @@ public class AdminCambiaPasswordUtenteActivity extends AppCompatActivity {
     }
 
     public void stampaUteni(){
-        for(int i = 0; i < utentePresenter.getUtenti().size(); i++){
-            System.out.println(utentePresenter.getUtenti().get(i).getUser_name());
-        }
+
+        VisualizzaNomiAdapter visualizzaNomiAdapter = new VisualizzaNomiAdapter(adminCambiaPasswordUtenteActivity.getApplicationContext(), utentePresenter.getUtenti());
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(visualizzaNomiAdapter);
+
+
     }
 }

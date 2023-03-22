@@ -127,7 +127,6 @@ public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
     }
 
     public void stampaMessaggi(){
-        //qua entra
         List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
 
         MessaggiCambiaFinestraAdapter messaggiCambiaFinestraAdapter = new MessaggiCambiaFinestraAdapter(supervisoreScriviMessaggioActivity.getApplicationContext(), messaggi);

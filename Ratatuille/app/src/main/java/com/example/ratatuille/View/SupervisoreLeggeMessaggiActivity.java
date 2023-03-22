@@ -98,7 +98,6 @@ public class SupervisoreLeggeMessaggiActivity extends AppCompatActivity {
     }
 
     public void stampaMessaggi(){
-        //qua non entra mai, francesco deve modificare!!
         List<Messaggio_utente> messaggi = messaggio_utentePresenter.getMessaggi_utenti();
 
         MessaggiAdapter messaggiAdapter = new MessaggiAdapter(supervisoreLeggeMessaggiActivity.getApplicationContext(), messaggi, visualizza_messaggio);
