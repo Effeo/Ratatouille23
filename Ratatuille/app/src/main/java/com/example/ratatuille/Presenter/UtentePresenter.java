@@ -249,6 +249,24 @@ public class UtentePresenter {
       },utente);
     }
 
+    public void cambiaPasswordAdmin(Utente utente){
+        implUtenteService.update(new Callback() {
+            @Override
+            public void returnResult(Object o) {
+                Toast.makeText(adminCambiaPasswordUtenteActivity.getApplicationContext(), "Password cambiata", Toast.LENGTH_SHORT).show();
+
+                Intent finestraAddUtente = new Intent(adminCambiaPasswordUtenteActivity, AdminCreaUtenteActivity.class);
+                adminCambiaPasswordUtenteActivity.startActivity(finestraAddUtente);
+            }
+
+            @Override
+            public void returnError(Throwable e) {
+                System.out.println(e);
+                Toast.makeText(adminCambiaPasswordUtenteActivity.getApplicationContext(), "Errore nell'aggiornamento", Toast.LENGTH_SHORT).show();
+            }
+        }, utente);
+    }
+
     public void cambiaPassword(String password){
         utente.setPassword(password);
         utente.setCheck_change_password(1);

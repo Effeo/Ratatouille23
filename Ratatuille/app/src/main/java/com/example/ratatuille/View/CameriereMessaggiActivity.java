@@ -88,7 +88,7 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //da cambiare mettendo l'id giusto
-                messaggio_utentePresenter.setLetto(0);
+                messaggio_utentePresenter.setLetto();
             }
         });
     }

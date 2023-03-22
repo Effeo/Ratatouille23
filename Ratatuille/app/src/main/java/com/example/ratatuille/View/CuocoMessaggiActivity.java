@@ -78,7 +78,7 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //da cambiare mettendo il messaggio giusto
-                messaggio_utentePresenter.setLetto(0);
+                messaggio_utentePresenter.setLetto();
             }
         });
     }

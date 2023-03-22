@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -42,6 +43,9 @@ public class SupervisoreLeggeMessaggiActivity extends AppCompatActivity {
         ImageButton btn_supervisore_modifica_menu = (ImageButton) findViewById(R.id.supervisore_modifica_menu);
         ImageButton btn_supervisore_conto = (ImageButton) findViewById(R.id.supervisore_conto);
         ImageButton btn_supervisore_messaggi = (ImageButton) findViewById(R.id.supervisore_messaggi);
+
+        Button btn_scrivi = (Button) findViewById(R.id.button_scrivi);
+        Button btn_visualizza = (Button) findViewById(R.id.btn_visualizza);
 
         supervisoreLeggeMessaggiActivity = this;
 
@@ -78,6 +82,20 @@ public class SupervisoreLeggeMessaggiActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 utentePresenter.goSupervisoreMessaggi(supervisoreLeggeMessaggiActivity);
+            }
+        });
+
+        btn_scrivi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                utentePresenter.goSupervisoreMessaggi(supervisoreLeggeMessaggiActivity);
+            }
+        });
+
+        btn_visualizza.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                messaggio_utentePresenter.setLetto();
             }
         });
     }

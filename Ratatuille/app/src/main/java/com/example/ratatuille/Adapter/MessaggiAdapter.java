@@ -11,6 +11,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ratatuille.Model.Messaggio_utente;
+import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
 import com.example.ratatuille.R;
 
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.List;
 public class MessaggiAdapter extends RecyclerView.Adapter<MessaggiAdapter.MessaggiHolder>{
 
     private List<Messaggio_utente> messaggi;
+    private Messaggio_utentePresenter messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
     private Context context;
     private TextView visualizza_messaggio;
 
@@ -46,6 +48,7 @@ public class MessaggiAdapter extends RecyclerView.Adapter<MessaggiAdapter.Messag
             @Override
             public void onClick(View v) {
                 visualizza_messaggio.setText(messaggi.get(holder.getAdapterPosition()).getMessaggio().getCorpo());
+                messaggio_utentePresenter.setPosizione_messaggio_letto(holder.getAdapterPosition());
             }
         });
     }

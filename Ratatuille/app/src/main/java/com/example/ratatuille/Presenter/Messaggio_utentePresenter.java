@@ -20,6 +20,12 @@ public class Messaggio_utentePresenter {
     private CameriereMessaggiActivity cameriereMessaggiActivity;
     private SupervisoreLeggeMessaggiActivity supervisoreLeggeMessaggiActivity;
 
+    private int posizione_messaggio_letto;
+
+    public void setPosizione_messaggio_letto(int posizione_messaggio_letto) {
+        this.posizione_messaggio_letto = posizione_messaggio_letto;
+    }
+
     public SupervisoreScriviMessaggioActivity getSupervisoreScriviMessaggioActivity() {
         return supervisoreScriviMessaggioActivity;
     }
@@ -92,9 +98,9 @@ public class Messaggio_utentePresenter {
         }, messaggio_utente);
     }
 
-    public void setLetto(int id_messaggio_utente){
+    public void setLetto(){
         //prendere il messaggio giusto con l'id (vedere come organizzarlo)
-        messaggi_utenti.get(0).setLetto(true);
-        update(messaggi_utenti.get(0));
+        messaggi_utenti.get(posizione_messaggio_letto).setLetto(true);
+        update(messaggi_utenti.get(posizione_messaggio_letto));
     }
 }
