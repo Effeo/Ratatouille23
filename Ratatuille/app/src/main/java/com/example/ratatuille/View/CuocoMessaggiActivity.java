@@ -48,7 +48,7 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
         utentePresenter = UtentePresenter.getInstance();
 
         messaggio_utentePresenter.setCuocoMessaggiActivity(this);
-        messaggio_utentePresenter.getAllMessaggioUtente(utentePresenter.getUtente().getRuolo(), utentePresenter.getUtente().getUser_name());
+        messaggio_utentePresenter.getAllMessaggioUtente(utentePresenter.getUtente().getRuolo(), utentePresenter.getUtente().getUser_name(), null);
 
         cuocoMessaggiActivity = this;
 
