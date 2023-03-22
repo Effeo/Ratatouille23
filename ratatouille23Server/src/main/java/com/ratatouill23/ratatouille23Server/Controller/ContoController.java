@@ -44,6 +44,11 @@ public class ContoController {
         iContoService.update(conto);
     }
 
+    @PostMapping("/create")
+    public void create(@RequestBody ContoDto contoDto){
+        iContoService.create(convertEntity(contoDto));
+    }
+
     private Conto convertEntity(ContoDto contoDto) {
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.LOOSE);

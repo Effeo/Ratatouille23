@@ -1,16 +1,19 @@
 package com.ratatouill23.ratatouille23Server.Model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "ordine_piatto")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idPiatto", scope = Long.class)
 public class Ordine_piatto {
     @Id
     @Column(name = "id_ordine_piatto")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_ordine_piatto;
 
     @Column(name = "qta")

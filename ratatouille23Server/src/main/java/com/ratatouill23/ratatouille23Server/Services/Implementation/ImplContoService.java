@@ -22,4 +22,9 @@ public class ImplContoService implements IContoService {
     public void update(Conto conto) {
         contoRepository.save(conto);
     }
+
+    @Override
+    public void create(Conto conto) {
+        contoRepository.save(conto);
+    }
 }

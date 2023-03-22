@@ -8,6 +8,7 @@ import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Single;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
 public interface ContoApi {
@@ -17,4 +18,7 @@ public interface ContoApi {
 
     @PUT("conto/update")
     Completable update(@Body Conto conto);
+
+    @POST("conto/create")
+    Completable create(@Body Conto conto);
 }

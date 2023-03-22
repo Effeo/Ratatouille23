@@ -68,4 +68,26 @@ public class ImplOrdine_piattoService implements IOrdine_piattoService {
                     }
                 });
     }
+
+    @Override
+    public void create(Callback callback, Ordine_piatto ordine_piatto) {
+        ordine_piattoApi.create(ordine_piatto)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new CompletableObserver() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {}
+
+                    @Override
+                    public void onComplete() {
+                        callback.returnResult(true);
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        System.out.println(e);
+                        callback.returnResult(null);
+                    }
+                });
+    }
 }

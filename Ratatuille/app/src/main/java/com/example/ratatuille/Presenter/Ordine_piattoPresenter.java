@@ -60,8 +60,25 @@ public class Ordine_piattoPresenter {
 
     }
 
+    public void create(Ordine_piatto ordine_piatto){
+        implOrdine_piattoService.create(new Callback() {
+            @Override
+            public void returnResult(Object o) {
+                System.out.println("Inserito ordine piatto");
+            }
+
+            @Override
+            public void returnError(Throwable e) {
+                System.out.println(e);
+            }
+        }, ordine_piatto);
+    }
+
     public List<Ordine_piatto> getOrdini_piatti() {
         return ordini_piatti;
     }
 
+    public void setOrdini_piatti(List<Ordine_piatto> ordini_piatti) {
+        this.ordini_piatti = ordini_piatti;
+    }
 }

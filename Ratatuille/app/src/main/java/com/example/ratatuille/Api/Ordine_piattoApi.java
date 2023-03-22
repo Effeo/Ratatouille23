@@ -8,6 +8,7 @@ import io.reactivex.rxjava3.core.Single;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.HTTP;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface Ordine_piattoApi {
@@ -17,4 +18,7 @@ public interface Ordine_piattoApi {
 
     @HTTP(method = "DELETE", path="/ordine_piatto/delete",hasBody = true)
     public Completable delete(@Body Ordine_piatto ordine_piatto);
+
+    @POST("ordine_piatto/create")
+    public Completable create(@Body Ordine_piatto ordine_piatto);
 }
