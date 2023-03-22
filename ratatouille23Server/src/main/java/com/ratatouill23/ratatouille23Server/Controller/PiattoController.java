@@ -46,6 +46,17 @@ public class PiattoController {
         return piattiDto;
     }
 
+    @DeleteMapping("/delete")
+    public void delete(@RequestBody PiattoDto piattoDto){
+        iPiattoService.delete(piattoDto.getId_piatto());
+    }
+
+    @PutMapping("/update")
+    public void update(@RequestBody PiattoDto piattoDto){
+        System.out.println(piattoDto.getId_piatto());
+        iPiattoService.update(convertEntity(piattoDto));
+    }
+
     public PiattoDto convertDto(Piatto piatto){
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.LOOSE);

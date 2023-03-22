@@ -9,4 +9,8 @@ public interface IPiattoService {
     public void getAllPiatti(Callback callback);
 
     public void create(Callback callback, Piatto piatto);
+
+    public void update(Callback callback, Piatto piatto);
+
+    public void delete(Callback callback, Piatto piatto);
 }

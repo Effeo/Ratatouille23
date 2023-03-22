@@ -15,19 +15,17 @@ import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
-import java.util.ArrayList;
-
 public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private SupervisoreModificaEliminaMenuActivity supervisoreModificaEliminaMenuActivity;
     private PiattoPresenter piattoPresenter;
 
-    private EditText editTextNome;
-    private EditText editTextDescrizione;
-    private Spinner spinner_supervisore_modifica;
-    private EditText editTextCosto;
-    private EditText editTextAllergeni;
-    private EditText editTextPosizione;
+    public EditText editNome;
+    public EditText editDescrizione;
+    public Spinner spinnerCategoria;
+    public EditText editCosto;
+    public EditText editAllergeni;
+    public EditText editPosizione;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,35 +45,27 @@ public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
         ImageButton btn_supervisore_conto = (ImageButton) findViewById(R.id.supervisore_conto);
         ImageButton btn_supervisore_messaggi = (ImageButton) findViewById(R.id.supervisore_messaggi);
 
-        editTextNome = (EditText) findViewById(R.id.textView_nome);
-        editTextDescrizione = (EditText) findViewById(R.id.textView_descrizione);
-        spinner_supervisore_modifica = (Spinner) findViewById(R.id.spinner_supervisore_modifica);
-        editTextCosto = (EditText) findViewById(R.id.textView_costo);
-        editTextAllergeni = (EditText) findViewById(R.id.textView_allergeni);
-        editTextPosizione = (EditText) findViewById(R.id.textView_posizione);
+        editNome = (EditText) findViewById(R.id.textView_nome);
+        editDescrizione = (EditText) findViewById(R.id.textView_descrizione);
+        spinnerCategoria = (Spinner) findViewById(R.id.spinner_supervisore_modifica);
+        editCosto = (EditText) findViewById(R.id.textView_costo);
+        editAllergeni = (EditText) findViewById(R.id.textView_allergeni);
+        editPosizione = (EditText) findViewById(R.id.textView_posizione);
 
         supervisoreModificaEliminaMenuActivity = this;
 
-        editTextNome.setText(piattoPresenter.getPiatto().getNome());
-        editTextDescrizione.setText(piattoPresenter.getPiatto().getDescrizione());
-        editTextCosto.setInputType(InputType.TYPE_CLASS_NUMBER);
-        editTextAllergeni.setText(piattoPresenter.getPiatto().getAllergeni());
-        editTextPosizione.setInputType(InputType.TYPE_CLASS_NUMBER);
-
-        ArrayList<String> categorie = new ArrayList<>();
-        categorie.add("antipasti");
-        categorie.add("primi");
-        categorie.add("secondi");
-        categorie.add("contorni");
-        categorie.add("dolci");
-        categorie.add("bevande");
-        categorie.add("frutta");
-        categorie.add("varie");
+        editNome.setText(piattoPresenter.getPiatto().getNome());
+        editDescrizione.setText(piattoPresenter.getPiatto().getDescrizione());
+        editCosto.setInputType(InputType.TYPE_CLASS_NUMBER);
+        editCosto.setText(String.valueOf(piattoPresenter.getPiatto().getCosto()));
+        editAllergeni.setText(piattoPresenter.getPiatto().getAllergeni());
+        editPosizione.setInputType(InputType.TYPE_CLASS_NUMBER);
+        editPosizione.setText(String.valueOf(piattoPresenter.getPiatto().getPosto()));
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.categorie, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_supervisore_modifica.setAdapter(adapter);
+        spinnerCategoria.setAdapter(adapter);
 
         btn_supervisore_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +99,27 @@ public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 utentePresenter.goSupervisoreMessaggi(supervisoreModificaEliminaMenuActivity);
+            }
+        });
+
+        btn_torna_inidetro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                utentePresenter.goSupervisoreModificaMenu(supervisoreModificaEliminaMenuActivity);
+            }
+        });
+
+        btn_elimina.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                piattoPresenter.delete(supervisoreModificaEliminaMenuActivity, utentePresenter.getUtente().getRuolo(), piattoPresenter.getPiatto());
+            }
+        });
+
+        btn_modifica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                piattoPresenter.update(supervisoreModificaEliminaMenuActivity, utentePresenter.getUtente().getRuolo(), piattoPresenter.getPiatto());
             }
         });
 

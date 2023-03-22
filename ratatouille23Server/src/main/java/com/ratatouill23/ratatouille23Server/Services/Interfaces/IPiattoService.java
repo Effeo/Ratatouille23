@@ -12,4 +12,8 @@ public interface IPiattoService {
     public List<Piatto> findAll();
 
     public void create(Piatto piatto);
+
+    public void update(Piatto piatto);
+
+    public void delete(Integer id_piatto);
 }

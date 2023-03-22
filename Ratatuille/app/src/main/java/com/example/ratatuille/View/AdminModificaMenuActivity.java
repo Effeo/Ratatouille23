@@ -62,6 +62,7 @@ public class AdminModificaMenuActivity extends AppCompatActivity {
         recyclerView_categorie.setAdapter(categoriePerModificareAdapter);
 
         piattoPresenter.getAllPiatti(utentePresenter.getUtente().getRuolo());
+
         btn_admin_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

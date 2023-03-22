@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
@@ -17,16 +18,16 @@ import java.util.ArrayList;
 
 public class AdminModificaEliminaMenuActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
-    private AdminModificaEliminaMenuActivity adminModificaEliminaMenuActivity;
     private PiattoPresenter piattoPresenter = PiattoPresenter.getInstance();
 
+    private AdminModificaEliminaMenuActivity adminModificaEliminaMenuActivity;
 
-    private EditText editTextNome;
-    private EditText editTextDescrizione;
-    private Spinner spinner_admin_modifica;
-    private EditText editTextCosto;
-    private EditText editTextAllergeni;
-    private EditText editTextPosizione;
+    public EditText editNome;
+    public EditText editDescrizione;
+    public Spinner spinnerCategoria;
+    public EditText editCosto;
+    public EditText editAllergeni;
+    public EditText editPosizione;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,38 +43,29 @@ public class AdminModificaEliminaMenuActivity extends AppCompatActivity {
         ImageButton btn_admin_statistiche = (ImageButton) findViewById(R.id.admin_statistiche);
         ImageButton btn_admin_add_utente = (ImageButton) findViewById(R.id.admin_add_utente);
 
-        editTextNome = (EditText) findViewById(R.id.textView_nome_admin);
-        editTextDescrizione = (EditText) findViewById(R.id.textView_descrizione_admin);
-        spinner_admin_modifica = (Spinner) findViewById(R.id.spinner_admin_modifica_);
-        editTextCosto = (EditText) findViewById(R.id.textView_costo_admin);
-        editTextAllergeni = (EditText) findViewById(R.id.textView_allergeni_admin);
-        editTextPosizione = (EditText) findViewById(R.id.textView_posizione_admin);
+        Button btn_torna_indietro = (Button) findViewById(R.id.btn_admin_torna_indietro);
+        Button btn_elimina = (Button) findViewById(R.id.btn_admin_elimina);
+        Button btn_modifica = (Button) findViewById(R.id.btn_admin_modifica);
 
-        ArrayList<String> categorie = new ArrayList<>();
-        categorie.add("antipasti");
-        categorie.add("primi");
-        categorie.add("secondi");
-        categorie.add("contorni");
-        categorie.add("dolci");
-        categorie.add("bevande");
-        categorie.add("frutta");
-        categorie.add("varie");
+        editNome = (EditText) findViewById(R.id.textView_nome_admin);
+        editDescrizione = (EditText) findViewById(R.id.textView_descrizione_admin);
+        spinnerCategoria = (Spinner) findViewById(R.id.spinner_admin_modifica_);
+        editCosto = (EditText) findViewById(R.id.textView_costo_admin);
+        editAllergeni = (EditText) findViewById(R.id.textView_allergeni_admin);
+        editPosizione = (EditText) findViewById(R.id.textView_posizione_admin);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.categorie, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_admin_modifica.setAdapter(adapter);
-
-
+        spinnerCategoria.setAdapter(adapter);
 
         adminModificaEliminaMenuActivity = this;
 
-        editTextNome.setText(piattoPresenter.getPiatto().getNome());
-        editTextDescrizione.setText(piattoPresenter.getPiatto().getDescrizione());
-        //spinner_supervisore_modifica;
-        editTextCosto.setText(String.valueOf(piattoPresenter.getPiatto().getCosto()));
-        editTextAllergeni.setText(piattoPresenter.getPiatto().getAllergeni());
-        editTextPosizione.setText(String.valueOf(piattoPresenter.getPiatto().getPosto()));
+        editNome.setText(piattoPresenter.getPiatto().getNome());
+        editDescrizione.setText(piattoPresenter.getPiatto().getDescrizione());
+        editCosto.setText(String.valueOf(piattoPresenter.getPiatto().getCosto()));
+        editAllergeni.setText(piattoPresenter.getPiatto().getAllergeni());
+        editPosizione.setText(String.valueOf(piattoPresenter.getPiatto().getPosto()));
 
         btn_admin_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +106,27 @@ public class AdminModificaEliminaMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 utentePresenter.goAdminAddUtente(adminModificaEliminaMenuActivity);
+            }
+        });
+
+        btn_torna_indietro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                utentePresenter.goAdminModificaMenu(adminModificaEliminaMenuActivity);
+            }
+        });
+
+        btn_elimina.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                piattoPresenter.delete(adminModificaEliminaMenuActivity, utentePresenter.getUtente().getRuolo(), piattoPresenter.getPiatto());
+            }
+        });
+
+        btn_modifica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                piattoPresenter.update(adminModificaEliminaMenuActivity, utentePresenter.getUtente().getRuolo(), piattoPresenter.getPiatto());
             }
         });
     }

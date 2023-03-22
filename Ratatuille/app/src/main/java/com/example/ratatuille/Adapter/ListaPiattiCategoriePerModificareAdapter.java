@@ -14,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Model.Piatto;
 import com.example.ratatuille.Presenter.PiattoPresenter;
+import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.example.ratatuille.View.AdminModificaEliminaMenuActivity;
 import com.example.ratatuille.View.SupervisoreModificaEliminaMenuActivity;
 
 import java.util.ArrayList;
@@ -23,7 +25,9 @@ public class ListaPiattiCategoriePerModificareAdapter extends RecyclerView.Adapt
 
     private ArrayList<String> piatti_modificabili;
     private Context context;
+
     private PiattoPresenter piattoPresenter = PiattoPresenter.getInstance();
+    private UtentePresenter utentePresenter = UtentePresenter.getInstance();
 
     public ListaPiattiCategoriePerModificareAdapter(Context context, ArrayList<String> piatti_modificabili){
         this.context = context;
@@ -69,9 +73,15 @@ public class ListaPiattiCategoriePerModificareAdapter extends RecyclerView.Adapt
                     i++;
                 }
 
+                if(utentePresenter.getUtente().getRuolo().equals("supervisore")){
+                    Intent finestraSupervisoreModificaEliminaMenuActivity = new Intent(v.getContext(), SupervisoreModificaEliminaMenuActivity.class);
+                    context.startActivity(finestraSupervisoreModificaEliminaMenuActivity);
+                }
+                else{
+                    Intent finestraAdminModificaEliminaMenuActivity = new Intent(v.getContext(), AdminModificaEliminaMenuActivity.class);
+                    context.startActivity(finestraAdminModificaEliminaMenuActivity);
+                }
 
-                Intent finestraSupervisoreModificaEliminaMenuActivity = new Intent(v.getContext(), SupervisoreModificaEliminaMenuActivity.class);
-                context.startActivity(finestraSupervisoreModificaEliminaMenuActivity);
             }
         });
 

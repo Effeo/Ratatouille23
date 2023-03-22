@@ -220,7 +220,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <Button
-            android:id="@+id/btn_scarica"
+            android:id="@+id/btn_admin_modifica"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
@@ -236,7 +236,7 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/btn_chiudi"
+            android:id="@+id/btn_admin_torna_indietro"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
@@ -252,7 +252,7 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/button_3"
+            android:id="@+id/btn_admin_elimina"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"

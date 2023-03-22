@@ -23,4 +23,14 @@ public class ImplPiattoService implements IPiattoService {
 
     @Override
     public void create(Piatto piatto){piattoRepository.save(piatto);}
+
+    @Override
+    public void update(Piatto piatto) {
+        piattoRepository.save(piatto);
+    }
+
+    @Override
+    public void delete(Integer id_piatto) {
+        piattoRepository.deleteById(id_piatto);
+    }
 }

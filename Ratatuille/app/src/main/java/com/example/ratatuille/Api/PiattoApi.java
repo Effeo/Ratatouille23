@@ -8,7 +8,9 @@ import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Single;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.HTTP;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface PiattoApi {
@@ -21,4 +23,10 @@ public interface PiattoApi {
 
     @POST("piatto/create")
     Completable create(@Body Piatto piatto);
+
+    @HTTP(method = "DELETE", path="piatto/delete",hasBody = true)
+    public Completable delete(@Body Piatto piatto);
+
+    @PUT("piatto/update")
+    Completable update(@Body Piatto piatto);
 }
