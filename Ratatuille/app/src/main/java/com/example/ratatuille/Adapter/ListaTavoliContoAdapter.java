@@ -54,10 +54,10 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*
+
                 for (int i = 0; i < tavoli.size(); i++ ){
                     if(currentTableId == ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo()){
-                        tmp.getOrdini_piatti().add(ordine_piattoPresenter.getOrdini_piatti().get(position));
+                        tmp.getOrdini_piatti().add(ordine_piattoPresenter.getOrdini_piatti().get(i));
                     }
                 }
 
@@ -67,7 +67,7 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
                         tmp.getOrdini_piatti().add(ordine_piattoPresenter.getOrdini_piatti().get(i));
                     }
                 }
-                */
+
 
 
                 MostraComandaAdapter mostraComandaAdapter = new MostraComandaAdapter(context, tmp.getOrdini_piatti());
