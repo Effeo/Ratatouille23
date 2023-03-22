@@ -27,7 +27,7 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
     private Context context;
     private ContoPresenter contoPresenter = ContoPresenter.getInstance();
     private RecyclerView recyclerView_conto;
-    private Ordine_piattoPresenter comanda = Ordine_piattoPresenter.getInstance();
+    private Ordine_piattoPresenter ordine_piattoPresenter = Ordine_piattoPresenter.getInstance();
 
 
     public ListaTavoliContoAdapter(Context context, List<Conto> tavoli, RecyclerView recyclerView_conto){
@@ -62,7 +62,7 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
                 */
                 //qui metto in input un array di ordine piatti, ma deve vedere francesco se va bene o meno
                 //nel caso mi devo creare un oggetto Ordine_Piatti in cui ci sta solo l'ordine che mi serve
-                MostraComandaAdapter mostraComandaAdapter = new MostraComandaAdapter(context, comanda.getOrdini_piatti());
+                MostraComandaAdapter mostraComandaAdapter = new MostraComandaAdapter(context, ordine_piattoPresenter.getOrdini_piatti());
 
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
                 linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
