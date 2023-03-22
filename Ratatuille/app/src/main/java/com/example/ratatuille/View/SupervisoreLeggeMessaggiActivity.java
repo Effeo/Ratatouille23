@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.ratatuille.Adapter.MessaggiAdapter;
 import com.example.ratatuille.Model.Messaggio_utente;
+import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
@@ -20,6 +21,8 @@ import java.util.List;
 
 public class SupervisoreLeggeMessaggiActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
+    private Messaggio_utentePresenter messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
+
     private SupervisoreLeggeMessaggiActivity supervisoreLeggeMessaggiActivity;
     private RecyclerView recyclerView;
     private TextView visualizza_messaggio;
@@ -42,6 +45,7 @@ public class SupervisoreLeggeMessaggiActivity extends AppCompatActivity {
 
         supervisoreLeggeMessaggiActivity = this;
 
+        messaggio_utentePresenter.getAllMessaggioUtente(utentePresenter.getUtente().getRuolo(), utentePresenter.getUtente().getUser_name(), this);
         btn_supervisore_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

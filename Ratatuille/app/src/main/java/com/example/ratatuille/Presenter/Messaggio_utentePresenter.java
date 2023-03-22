@@ -50,14 +50,19 @@ public class Messaggio_utentePresenter {
         return messaggio_utentePresenter;
     }
 
-    public void getAllMessaggioUtente(String ruolo, String user_name){
+    public void getAllMessaggioUtente(String ruolo, String user_name, SupervisoreLeggeMessaggiActivity supervisoreLeggeMessaggiActivity){
         implMessaggio_utenteService.getAllMessaggioUtente(new Callback() {
             @Override
             public void returnResult(Object o) {
                 messaggi_utenti = (List<Messaggio_utente>) o;
 
                 if(ruolo.equals("cuoco")) cuocoMessaggiActivity.stampaMessaggi();
-                else if(ruolo.equals("supervisore")) supervisoreScriviMessaggioActivity.stampaMessaggi();
+                else if(ruolo.equals("supervisore")){
+                    if(supervisoreLeggeMessaggiActivity != null)
+                        supervisoreLeggeMessaggiActivity.stampaMessaggi();
+                    else
+                        supervisoreScriviMessaggioActivity.stampaMessaggi();
+                }
                 else if(ruolo.equals("cameriere")) cameriereMessaggiActivity.stampaMessaggi();
             }
 

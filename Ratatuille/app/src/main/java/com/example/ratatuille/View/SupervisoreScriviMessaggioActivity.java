@@ -38,7 +38,7 @@ public class SupervisoreScriviMessaggioActivity extends AppCompatActivity {
         messaggio_utentePresenter = Messaggio_utentePresenter.getInstance();
         messaggioPresenter = MessaggioPresenter.getInstance();
 
-        messaggio_utentePresenter.getAllMessaggioUtente(utentePresenter.getUtente().getRuolo(), utentePresenter.getUtente().getUser_name());
+        messaggio_utentePresenter.getAllMessaggioUtente(utentePresenter.getUtente().getRuolo(), utentePresenter.getUtente().getUser_name(), null);
         messaggio_utentePresenter.setSupervisoreScriviMessaggioActivity(this);
 
         recyclerView = findViewById(R.id.supervisore_lista_messaggi_1);
