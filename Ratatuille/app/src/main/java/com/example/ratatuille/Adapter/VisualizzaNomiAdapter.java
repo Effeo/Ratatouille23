@@ -12,6 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ratatuille.Model.Utente;
+import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 import com.example.ratatuille.View.SupervisoreLeggeMessaggiActivity;
 
@@ -20,6 +21,7 @@ import java.util.List;
 public class VisualizzaNomiAdapter extends RecyclerView.Adapter<VisualizzaNomiAdapter.VisualizzaNomiHolder>{
 
     private List<Utente> utenti;
+    private UtentePresenter utentePresenter = UtentePresenter.getInstance();
     private Context context;
 
     public VisualizzaNomiAdapter(Context context, List<Utente> utenti){
@@ -41,7 +43,7 @@ public class VisualizzaNomiAdapter extends RecyclerView.Adapter<VisualizzaNomiAd
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //faccio dopo
+                utentePresenter.setUtente_clicked(holder.getAdapterPosition());
             }
         });
     }

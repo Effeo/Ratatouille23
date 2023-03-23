@@ -1,12 +1,10 @@
 package com.example.ratatuille.View;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -14,10 +12,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.ratatuille.Adapter.ListaOrdiniAdapter;
 import com.example.ratatuille.Adapter.ListaTavoliContoAdapter;
 import com.example.ratatuille.Model.Conto;
-import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Presenter.ContoPresenter;
 import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
@@ -108,7 +104,6 @@ public class SupervisoreContoActivity extends AppCompatActivity {
         btn_scarica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //inserire il conto da prendere per ora per i test è 0
                 System.out.println("Scarica");
                 scaricaConto();
             }
@@ -117,10 +112,8 @@ public class SupervisoreContoActivity extends AppCompatActivity {
         btn_chiudi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //inserire il conto giusto
                 System.out.println("Chiudi");
                 contoPresenter.update(contoPresenter.getPosizione_conto());
-                utentePresenter.goSupervisoreConto(supervisoreContoActivity);
             }
         });
     }
@@ -155,83 +148,105 @@ public class SupervisoreContoActivity extends AppCompatActivity {
             btn_chiudi.setEnabled(false);
             btn_scarica.setEnabled(false);
         }
-
-
     }
 
     public void scaricaConto(){
-        Document document = new Document();
-        String fileName = null;
-        String folder = "PdfIngsw";
+        CreaPdfTask creaPdfTask = new CreaPdfTask();
+        creaPdfTask.execute();
+    }
 
-        if(contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getChiuso() == 0)
-            fileName = "ContoScaricato.pdf";
-        else{
-            fileName = "ContoChiusoScaricato.pdf";
-            contoPresenter.setOrdini_piatti(new ArrayList<>());
-        }
+    private class CreaPdfTask extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            Document document = new Document();
+            String fileName = null;
+            String folder = "PdfIngsw";
 
-       try {
-            System.out.println("crea il file");
-            File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), folder);
-            if (!dir.exists()) {
-                dir.mkdir();
-            }
-
-           File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName);
-
-            if(file.exists()){
-                System.out.println("Il file esiste lo elimino");
-                file.delete();
-            }
-
-            PdfWriter.getInstance(document, new FileOutputStream(file));
-
-            document.open();
-
-            Paragraph paragraph = new Paragraph("Conto tavolo: " + contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getId_tavolo() + "\n\n");
-            writePiatti(paragraph, contoPresenter.getPosizione_conto());
-            paragraph.add("\n");
-            paragraph.add("Costo totale: " +  contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getCosto() + "\n");
-            paragraph.add("Data: " +  contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getData() + "\n");
-
-            if(contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getChiuso() == 0){
-                paragraph.add("Il conto non e' chiuso" + "\n");
-                System.out.println("file non chiuso scaricato");
-            }
+            if(contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getChiuso() == 0)
+                fileName = "ContoScaricato.pdf";
             else{
-                paragraph.add("Il conto e' chiuso" + "\n");
-                System.out.println("file chiuso scaricato");
-                removeOrdine_piatto();
+                fileName = "ContoChiusoScaricato.pdf";
+                contoPresenter.setOrdini_piatti(new ArrayList<>());
             }
 
-            document.add(paragraph);
+            try {
+                System.out.println("crea il file");
+                File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), folder);
+                if (!dir.exists()) {
+                    dir.mkdir();
+                }
 
-            document.close();
+                File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName);
 
-            Toast.makeText(this, "File pdf creato con successo", Toast.LENGTH_LONG).show();
-        } catch (Exception e) {
-            Toast.makeText(this, "Errore nella creazione del file pdf", Toast.LENGTH_LONG).show();
-            e.printStackTrace();
+                if(file.exists()){
+                    System.out.println("Il file esiste lo elimino");
+                    file.delete();
+                }
+
+                PdfWriter.getInstance(document, new FileOutputStream(file));
+
+                document.open();
+
+                Paragraph paragraph = new Paragraph("Conto tavolo: " + contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getId_tavolo() + "\n\n");
+
+                writePiatti(paragraph, contoPresenter.getPosizione_conto());
+
+                paragraph.add("\n");
+                paragraph.add("Costo totale: " +  contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getCosto() + "\n");
+                paragraph.add("Data: " +  contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getData() + "\n");
+
+                if(contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getChiuso() == 0){
+                    paragraph.add("Il conto non e' chiuso" + "\n");
+                    System.out.println("file non chiuso scaricato");
+                }
+                else{
+                    paragraph.add("Il conto e' chiuso" + "\n");
+                    System.out.println("file chiuso scaricato");
+                    removeOrdine_piatto();
+                }
+
+                document.add(paragraph);
+                document.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return null;
         }
-    }
 
-    private void writePiatti(Paragraph paragraph, int i){
-        for(int j = 0; j < ordine_piattoPresenter.getOrdini_piatti().size(); j++){
-            if(ordine_piattoPresenter.getOrdini_piatti().get(j).getOrdine().getIdTavolo() == contoPresenter.getConti().get(i).getId_tavolo()){
-                contoPresenter.getOrdini_piatti().add(ordine_piattoPresenter.getOrdini_piatti().get(j));
-
-                paragraph.add(ordine_piattoPresenter.getOrdini_piatti().get(j).getPiatto().getNome() + " " +
-                        ordine_piattoPresenter.getOrdini_piatti().get(j).getPiatto().getCosto() + "€ x " +
-                        ordine_piattoPresenter.getOrdini_piatti().get(j).getQta() + "\n");
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            Toast.makeText(supervisoreContoActivity.getApplicationContext(), "File pdf creato con successo", Toast.LENGTH_LONG).show();
+            if(contoPresenter.getConti().get(contoPresenter.getPosizione_conto()).getChiuso() == 1){
+                contoPresenter.setConti(new ArrayList<>());
+                utentePresenter.goSupervisoreConto(supervisoreContoActivity);
             }
         }
-    }
 
-    private void removeOrdine_piatto(){
-        for(int i = 0; i < contoPresenter.getOrdini_piatti().size(); i++){
-            System.out.println(contoPresenter.getOrdini_piatti().get(i).getId_ordine_piatto());
-            ordine_piattoPresenter.delete(contoPresenter.getOrdini_piatti().get(i));
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
+            Toast.makeText(supervisoreContoActivity.getApplicationContext(), "Creazione del file pdf annullata", Toast.LENGTH_LONG).show();
+        }
+
+        private void writePiatti(Paragraph paragraph, int i){
+            for(int j = 0; j < ordine_piattoPresenter.getOrdini_piatti().size(); j++){
+                if(ordine_piattoPresenter.getOrdini_piatti().get(j).getOrdine().getIdTavolo() == contoPresenter.getConti().get(i).getId_tavolo()){
+                    contoPresenter.getOrdini_piatti().add(ordine_piattoPresenter.getOrdini_piatti().get(j));
+
+                    paragraph.add(ordine_piattoPresenter.getOrdini_piatti().get(j).getPiatto().getNome() + " " +
+                            ordine_piattoPresenter.getOrdini_piatti().get(j).getPiatto().getCosto() + "€ x " +
+                            ordine_piattoPresenter.getOrdini_piatti().get(j).getQta() + "\n");
+                }
+            }
+        }
+
+        private void removeOrdine_piatto(){
+            for(int i = 0; i < contoPresenter.getOrdini_piatti().size(); i++){
+                System.out.println(contoPresenter.getOrdini_piatti().get(i).getId_ordine_piatto());
+                ordine_piattoPresenter.delete(contoPresenter.getOrdini_piatti().get(i));
+            }
         }
     }
 }

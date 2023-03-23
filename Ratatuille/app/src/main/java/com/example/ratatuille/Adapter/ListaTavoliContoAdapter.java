@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ratatuille.Model.Conto;
-import com.example.ratatuille.Model.Ordine_piatto;
-import com.example.ratatuille.Model.Piatto;
 import com.example.ratatuille.Presenter.ContoPresenter;
 import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
 import com.example.ratatuille.R;
@@ -46,7 +44,7 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
     public void onBindViewHolder(@NonNull ListaTavoliContoAdapter.ListaTavoliContoHolder holder, int position) {
         int currentTableId = tavoli.get(position).getId_tavolo();
 
-        contoPresenter.setPosizione_conto(position);
+
 
         holder.id_del_tavolo.setText(String.valueOf(currentTableId));
 
@@ -54,6 +52,7 @@ public class ListaTavoliContoAdapter extends RecyclerView.Adapter<ListaTavoliCon
             @Override
             public void onClick(View v) {
                 ordine_piattoPresenter.setOrdine_piatti_tmp(new ArrayList<>());
+                contoPresenter.setPosizione_conto(holder.getAdapterPosition());
                 for (int i = 0; i < ordine_piattoPresenter.getOrdini_piatti().size(); i++ ){
                     if(currentTableId == ordine_piattoPresenter.getOrdini_piatti().get(i).getOrdine().getIdTavolo()){
                         ordine_piattoPresenter.getOrdini_piatti_tmp().add(ordine_piattoPresenter.getOrdini_piatti().get(i));

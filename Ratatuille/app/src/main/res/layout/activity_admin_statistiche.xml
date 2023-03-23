@@ -218,22 +218,6 @@
         </com.google.android.material.card.MaterialCardView>
 
 
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="220dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="500dp"
-            android:layout_marginTop="200dp">
-
-            <TextView
-                android:id="@+id/valore_medio_conto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </com.google.android.material.card.MaterialCardView>
-
-
         <com.google.android.material.card.MaterialCardView
             android:layout_width="220dp"
             android:layout_height="56dp"

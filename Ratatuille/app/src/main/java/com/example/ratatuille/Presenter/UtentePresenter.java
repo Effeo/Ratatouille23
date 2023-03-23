@@ -31,7 +31,9 @@ import java.util.List;
 
 public class UtentePresenter {
     private Utente utente;
+    private List<Utente> utenti;
     private static UtentePresenter utentePresenter = null;
+    private int utente_clicked;
 
     private MainActivity mainActivity;
     private LoginActivity loginActivity;
@@ -39,8 +41,6 @@ public class UtentePresenter {
     private AdminCambiaPasswordUtenteActivity adminCambiaPasswordUtenteActivity;
 
     private ImplUtenteService implUtenteService;
-
-    private List<Utente> utenti;
 
     public static UtentePresenter getInstance(){
         if (utentePresenter == null) utentePresenter = new UtentePresenter();
@@ -249,7 +249,9 @@ public class UtentePresenter {
       },utente);
     }
 
-    public void cambiaPasswordAdmin(Utente utente){
+    public void cambiaPasswordAdmin(String password){
+        utenti.get(utente_clicked).setPassword(password);
+
         implUtenteService.update(new Callback() {
             @Override
             public void returnResult(Object o) {
@@ -264,7 +266,7 @@ public class UtentePresenter {
                 System.out.println(e);
                 Toast.makeText(adminCambiaPasswordUtenteActivity.getApplicationContext(), "Errore nell'aggiornamento", Toast.LENGTH_SHORT).show();
             }
-        }, utente);
+        }, utenti.get(utente_clicked));
     }
 
     public void cambiaPassword(String password){
@@ -306,6 +308,10 @@ public class UtentePresenter {
 
     public void setAdminCambiaPasswordUtenteActivity(AdminCambiaPasswordUtenteActivity adminCambiaPasswordUtenteActivity) {
         this.adminCambiaPasswordUtenteActivity = adminCambiaPasswordUtenteActivity;
+    }
+
+    public void setUtente_clicked(int utente_clicked) {
+        this.utente_clicked = utente_clicked;
     }
 
     public List<Utente> getUtenti() {

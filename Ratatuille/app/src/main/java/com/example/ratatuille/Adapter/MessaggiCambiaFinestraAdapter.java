@@ -46,8 +46,6 @@ public class MessaggiCambiaFinestraAdapter extends RecyclerView.Adapter<Messaggi
                 Intent finestraSupervisoreLeggeMex = new Intent(v.getContext(), SupervisoreLeggeMessaggiActivity.class);
                 finestraSupervisoreLeggeMex.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(finestraSupervisoreLeggeMex);
-
-
             }
         });
     }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.ratatuille.Adapter.MessaggiAdapter;
 import com.example.ratatuille.Adapter.VisualizzaNomiAdapter;
@@ -21,8 +22,10 @@ import java.util.List;
 public class AdminCambiaPasswordUtenteActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private AdminCambiaPasswordUtenteActivity adminCambiaPasswordUtenteActivity;
+
     public EditText editPassword;
     public EditText editConfermaPassword;
+
     public RecyclerView recyclerView;
 
     @Override
@@ -96,7 +99,13 @@ public class AdminCambiaPasswordUtenteActivity extends AppCompatActivity {
         btn_conferma_cambio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Work in progress");
+                if(!editPassword.getText().toString().equals("") && !editConfermaPassword.getText().toString().equals(""))
+                    if(editPassword.getText().toString().equals(editConfermaPassword.getText().toString()))
+                        utentePresenter.cambiaPasswordAdmin(editPassword.getText().toString());
+                    else
+                        Toast.makeText(adminCambiaPasswordUtenteActivity, "Le password non corripondono", Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(adminCambiaPasswordUtenteActivity, "Inserire la password", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -124,7 +133,6 @@ public class AdminCambiaPasswordUtenteActivity extends AppCompatActivity {
     }
 
     public void stampaUteni(){
-
         VisualizzaNomiAdapter visualizzaNomiAdapter = new VisualizzaNomiAdapter(adminCambiaPasswordUtenteActivity.getApplicationContext(), utentePresenter.getUtenti());
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);

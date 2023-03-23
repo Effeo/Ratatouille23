@@ -8,7 +8,6 @@ import androidx.annotation.RequiresApi;
 
 import com.example.ratatuille.Model.Conto;
 import com.example.ratatuille.Model.Ordine_piatto;
-import com.example.ratatuille.Model.Piatto;
 import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplContoService;
 import com.example.ratatuille.View.AdminStatisticheActivity;
@@ -36,6 +35,10 @@ public class ContoPresenter {
 
     public void setAdminStatisticheActivity(AdminStatisticheActivity adminStatisticheActivity) {
         this.adminStatisticheActivity = adminStatisticheActivity;
+    }
+
+    public void setConti(List<Conto> conti) {
+        this.conti = conti;
     }
 
     public void setPosizione_conto(int posizione_conto) {
