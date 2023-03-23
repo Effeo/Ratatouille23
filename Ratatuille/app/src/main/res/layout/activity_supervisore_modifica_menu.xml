@@ -77,7 +77,7 @@
                     android:layout_height="100dp"
                     android:id="@+id/supervisore_modifica_menu"
                     android:backgroundTint="@color/black"
-                    android:src="@drawable/__icon__menu_book_"/>
+                    android:src="@drawable/__icon__menu_book_clicked"/>
 
             </com.google.android.material.card.MaterialCardView>
 

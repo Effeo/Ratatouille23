@@ -112,7 +112,7 @@
                     android:layout_width="164dp"
                     android:layout_height="100dp"
                     android:backgroundTint="@color/black"
-                    android:src="@drawable/monitoring_fill0_wght400_grad0_opsz48_1" />
+                    android:src="@drawable/statistiche_cliccato" />
 
 
             </com.google.android.material.card.MaterialCardView>

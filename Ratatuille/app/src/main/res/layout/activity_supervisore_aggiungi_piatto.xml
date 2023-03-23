@@ -62,7 +62,7 @@
                     android:layout_height="100dp"
                     android:id="@+id/supervisore_aggiungi_piatto"
                     android:backgroundTint="@color/black"
-                    android:src="@drawable/adding_1"/>
+                    android:src="@drawable/adding_1_clicked"/>
 
             </com.google.android.material.card.MaterialCardView>
 
