@@ -101,12 +101,13 @@
                 android:layout_height="wrap_content"
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
+
                 <ImageButton
+                    android:id="@+id/cameriere_ordinazioni"
                     android:layout_width="160dp"
                     android:layout_height="100dp"
-                    android:id="@+id/cameriere_ordinazioni"
                     android:backgroundTint="@color/black"
-                    android:src="@drawable/__icon__menu_book_"/>
+                    android:src="@drawable/__icon__menu_book_clicked" />
 
 
             </com.google.android.material.card.MaterialCardView>

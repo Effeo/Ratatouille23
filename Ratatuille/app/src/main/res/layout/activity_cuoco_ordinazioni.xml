@@ -41,7 +41,7 @@
             android:gravity="center"/>
 
         <LinearLayout
-            android:layout_width="300dp"
+            android:layout_width="480dp"
             android:layout_height="100dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
@@ -54,7 +54,7 @@
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
                 <ImageButton
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="100dp"
                     android:id="@+id/cuoco_logout"
                     android:backgroundTint="@color/black"
@@ -67,7 +67,7 @@
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
                 <ImageButton
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="100dp"
                     android:backgroundTint="@color/black"
                     android:id="@+id/cuoco_messaggi"
@@ -80,11 +80,11 @@
                 app:strokeWidth="1dp"
                 app:strokeColor="@color/purple_500">
                 <ImageButton
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="100dp"
                     android:backgroundTint="@color/black"
                     android:id="@+id/cuoco_ordinazioni"
-                    android:src="@drawable/__icon__list_alt_"/>
+                    android:src="@drawable/__icon__list_alt_clicked"/>
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>

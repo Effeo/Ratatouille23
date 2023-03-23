@@ -129,7 +129,7 @@
                     android:layout_width="134dp"
                     android:layout_height="100dp"
                     android:backgroundTint="@color/black"
-                    android:src="@drawable/vector" />
+                    android:src="@drawable/vector_clicked" />
 
 
             </com.google.android.material.card.MaterialCardView>

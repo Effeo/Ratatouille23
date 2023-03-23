@@ -91,7 +91,7 @@
                     android:layout_height="100dp"
                     android:id="@+id/supervisore_conto"
                     android:backgroundTint="@color/black"
-                    android:src="@drawable/__icon__list_alt_"/>
+                    android:src="@drawable/__icon__list_alt_clicked"/>
 
 
             </com.google.android.material.card.MaterialCardView>
