@@ -30,7 +30,7 @@ public class VisualizzaNomiAdapter extends RecyclerView.Adapter<VisualizzaNomiAd
     @NonNull
     @Override
     public VisualizzaNomiAdapter.VisualizzaNomiHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.riga_non_cliccabile, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.riga_cliccabile_utente, parent, false);
         return new VisualizzaNomiAdapter.VisualizzaNomiHolder(view);
     }
 
@@ -53,12 +53,12 @@ public class VisualizzaNomiAdapter extends RecyclerView.Adapter<VisualizzaNomiAd
 
     public class VisualizzaNomiHolder extends RecyclerView.ViewHolder{
         private CardView cardView;
-        private TextView nome_utente;
+       private TextView nome_utente;
 
         public VisualizzaNomiHolder(@NonNull View itemView) {
             super(itemView);
-            cardView = itemView.findViewById(R.id.riga_non_cliccabile);
-            nome_utente = itemView.findViewById(R.id.text_nome_piatti);
+            cardView = itemView.findViewById(R.id.riga_utente);
+            nome_utente = itemView.findViewById(R.id.text_utente);
         }
     }
 }
