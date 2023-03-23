@@ -1,6 +1,8 @@
 package com.example.ratatuille.Adapter;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,9 +42,18 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ListaOrdiniHolder holder, int position) {
+        System.out.println("@@@@@@@@ CLICCATO @@@@@@@@@");
 
-        //questo è quello che da il doppio id
-        //holder.id_del_tavolo.setText(String.valueOf(ordine_piatti.get(position).getOrdine().getIdTavolo()));
+        if(holder.cardView != null){
+            if(ordine_piatti.get(holder.getAdapterPosition()).isClicked()){
+                System.out.println("@@@@@@@@ CLICCATO @@@@@@@@@");
+            }
+            else{
+                holder.id_del_tavolo.setTextColor(ColorStateList.valueOf(Color.parseColor("#ffffff")));
+                System.out.println("@@@@@@@@ NON CLICCATO @@@@@@@@@");
+
+            }
+        }
 
 
         int currentTableId = ordine_piatti.get(position).getOrdine().getIdTavolo();
@@ -52,6 +63,7 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
 
                 ArrayList<String> listapiattiordinati = new ArrayList<>();

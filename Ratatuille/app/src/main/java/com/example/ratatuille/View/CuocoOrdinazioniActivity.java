@@ -101,11 +101,14 @@ public class CuocoOrdinazioniActivity extends AppCompatActivity {
 
         ArrayList<Ordine_piatto> piattiSenzaDuplicati = new ArrayList<>();
 
-        piattiSenzaDuplicati.add(ordine_piatti.get(0));
-        for(int i = 1; i < ordine_piatti.size(); i++){
-            if(!isInserted(piattiSenzaDuplicati, ordine_piatti.get(i).getOrdine().getIdTavolo()))
-                piattiSenzaDuplicati.add(ordine_piatti.get(i));
+        if(ordine_piatti.size() != 0){
+            piattiSenzaDuplicati.add(ordine_piatti.get(0));
+            for(int i = 1; i < ordine_piatti.size(); i++){
+                if(!isInserted(piattiSenzaDuplicati, ordine_piatti.get(i).getOrdine().getIdTavolo()))
+                    piattiSenzaDuplicati.add(ordine_piatti.get(i));
+            }
         }
+
 
         ListaOrdiniAdapter listaOrdiniAdapter = new ListaOrdiniAdapter(cuocoOrdinazioniActivity.getApplicationContext(), piattiSenzaDuplicati, recyclerView_c);
 
