@@ -62,4 +62,16 @@ public class Ordine_piatto {
     public void setPiatto(Piatto piatto) {
         this.piatto = piatto;
     }
+
+
+    /////////////////////////////////////////////////////////////////////////////////
+    private boolean clicked = false;
+
+    public boolean isClicked() {
+        return clicked;
+    }
+
+    public void setClicked(boolean clicked) {
+        this.clicked = clicked;
+    }
 }
