@@ -33,6 +33,7 @@
         app:layout_constraintTop_toTopOf="@+id/vector_1">
 
         <LinearLayout
+
             android:layout_width="980dp"
             android:layout_height="100dp"
             android:layout_alignParentEnd="true"
@@ -188,7 +189,7 @@
             android:layout_marginTop="110dp"></Spinner>
 
         <Button
-            android:id="@+id/button_continua"
+            android:id="@+id/button_calcola"
             android:layout_width="220dp"
             android:layout_height="56dp"
             android:layout_alignParentStart="true"
