@@ -10,4 +10,6 @@ public interface IContoService {
     public void update(Callback callback, Conto conto);
 
     public void create(Callback callback, Conto conto);
+
+    public void getAllBeetween(Callback callback, String dataInizio, String dataFine);
 }

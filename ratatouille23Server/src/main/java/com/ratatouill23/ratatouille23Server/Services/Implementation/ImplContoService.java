@@ -27,4 +27,9 @@ public class ImplContoService implements IContoService {
     public void create(Conto conto) {
         contoRepository.save(conto);
     }
+
+    @Override
+    public List<Conto> getAllBeetween(String dataInizio, String dataFine) {
+        return contoRepository.getAllBeetween(dataInizio, dataFine);
+    }
 }

@@ -10,4 +10,6 @@ public interface IContoService {
     public void update(Conto conto);
 
     public void create(Conto conto);
+
+    public List<Conto> getAllBeetween(String dataInizio, String dataFine);
 }

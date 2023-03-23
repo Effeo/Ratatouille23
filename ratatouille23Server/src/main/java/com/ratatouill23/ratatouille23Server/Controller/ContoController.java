@@ -27,6 +27,17 @@ public class ContoController {
     @Autowired
     private ModelMapper modelMapper;
 
+    @GetMapping("/get/getAllBeetween/{dataInizio}/{dataFine}")
+    public List<ContoDto> findAllBeetween(@PathVariable String dataInizio, @PathVariable String dataFine){
+        List<Conto> conti = iContoService.getAllBeetween(dataInizio, dataFine);
+        List<ContoDto> contiDto = new ArrayList<>();
+
+        for(Conto conto : conti)
+            contiDto.add(convertDto(conto));
+
+        return contiDto;
+    }
+
     @GetMapping("/get/getAll")
     public List<ContoDto> findAll(){
         List<Conto> conti = iContoService.findAll();

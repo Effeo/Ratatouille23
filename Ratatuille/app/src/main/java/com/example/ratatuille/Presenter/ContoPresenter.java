@@ -11,6 +11,7 @@ import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Model.Piatto;
 import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplContoService;
+import com.example.ratatuille.View.AdminStatisticheActivity;
 import com.example.ratatuille.View.CameriereAggiungiTavoloActivity;
 import com.example.ratatuille.View.CameriereOrdinazioniActivity;
 import com.example.ratatuille.View.SupervisoreContoActivity;
@@ -29,8 +30,13 @@ public class ContoPresenter {
 
     private SupervisoreContoActivity supervisoreContoActivity;
     private CameriereAggiungiTavoloActivity cameriereAggiungiTavoloActivity;
+    private AdminStatisticheActivity adminStatisticheActivity;
 
     private int posizione_conto;
+
+    public void setAdminStatisticheActivity(AdminStatisticheActivity adminStatisticheActivity) {
+        this.adminStatisticheActivity = adminStatisticheActivity;
+    }
 
     public void setPosizione_conto(int posizione_conto) {
         this.posizione_conto = posizione_conto;
@@ -63,6 +69,23 @@ public class ContoPresenter {
                 System.out.println(e);
             }
         });
+    }
+
+    public void getAllContiBeetween(String dataInizio, String dataFine){
+        implContoService.getAllBeetween(new Callback() {
+            @Override
+            public void returnResult(Object o) {
+                conti = (List<Conto>) o;
+
+                adminStatisticheActivity.stampaConti();
+            }
+
+            @Override
+            public void returnError(Throwable e) {
+                System.out.println(e);
+                Toast.makeText(adminStatisticheActivity.getApplicationContext(), "Errore nel recupero dei dati", Toast.LENGTH_SHORT).show();
+            }
+        }, dataInizio, dataFine);
     }
 
     public void update(int i){

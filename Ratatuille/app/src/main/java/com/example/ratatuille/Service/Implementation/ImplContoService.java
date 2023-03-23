@@ -46,6 +46,28 @@ public class ImplContoService implements IContoService {
     }
 
     @Override
+    public void getAllBeetween(Callback callback, String dataInizio, String dataFine) {
+        contoApi.getAllContiBeetween(dataInizio, dataFine)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new SingleObserver<List<Conto>>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {}
+
+                    @Override
+                    public void onSuccess(@NonNull List<Conto> conti) {
+                        callback.returnResult(conti);
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        System.out.println(e);
+                        callback.returnResult(null);
+                    }
+                });
+    }
+
+    @Override
     public void update(Callback callback, Conto conto) {
         contoApi.update(conto)
                 .subscribeOn(Schedulers.newThread())

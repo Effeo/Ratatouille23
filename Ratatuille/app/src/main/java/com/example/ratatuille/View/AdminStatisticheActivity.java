@@ -12,15 +12,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ratatuille.Presenter.ContoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AdminStatisticheActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
+    private ContoPresenter contoPresenter = ContoPresenter.getInstance();
 
     private AdminStatisticheActivity adminStatisticheActivity;
 
@@ -103,6 +107,7 @@ public class AdminStatisticheActivity extends AppCompatActivity {
         spinnerGiornoFine.setAdapter(adapter6);
 
         adminStatisticheActivity = this;
+        contoPresenter.setAdminStatisticheActivity(this);
 
         btn_admin_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,7 +155,7 @@ public class AdminStatisticheActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(checkDate()){
-                    System.out.println("Tutto ok");
+                    contoPresenter.getAllContiBeetween(anno_inizio + "-" + mese_inizio + "-" + giorno_inizio,anno_fine + "-" + mese_fine + "-" + giorno_fine );
                 }
                 else
                     Toast.makeText(adminStatisticheActivity.getApplicationContext(), "Le date non sono valide", Toast.LENGTH_SHORT).show();
@@ -190,7 +195,7 @@ public class AdminStatisticheActivity extends AppCompatActivity {
             Date dataInizio = dateFormat.parse(anno_inizio + "-" + mese_inizio + "-" + giorno_inizio);
             Date dataFine = dateFormat.parse(anno_fine + "-" + mese_fine + "-" + giorno_fine);
 
-            if(dataInizio.before(dataFine)){
+            if(dataInizio.before(dataFine) || dataInizio.equals(dataFine)){
                 if(checkNovembre(1) && checkNovembre(0) && checkFebbraio(1) && checkFebbraio(0)){
                     flag = true;
                 }
@@ -243,5 +248,27 @@ public class AdminStatisticheActivity extends AppCompatActivity {
 
     public boolean checkBisestile(int anno){
         return (anno % 4 == 0 && anno % 100 != 0) || (anno % 400 == 0);
+    }
+
+    public void stampaConti(){
+        float tot = 0;
+        float incasso_medio;
+
+        DecimalFormat df = new DecimalFormat("#####.##");
+        df.setRoundingMode(RoundingMode.DOWN);
+
+        for(int i = 0; i < contoPresenter.getConti().size(); i++){
+            tot += contoPresenter.getConti().get(i).getCosto();
+
+            System.out.println(contoPresenter.getConti().get(i).getData());
+        }
+
+        incasso_medio = tot / contoPresenter.getConti().size();
+
+        String totale = "Totale: " + df.format(tot) + "€";
+        String incasso_medioString = "Incasso medio: " + df.format(incasso_medio) + "€";
+
+        textIncassoComplessivo.setText(totale);
+        textIncassoMedio.setText(incasso_medioString);
     }
 }

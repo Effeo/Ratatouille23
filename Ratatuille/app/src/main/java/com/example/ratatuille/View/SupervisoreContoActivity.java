@@ -120,6 +120,7 @@ public class SupervisoreContoActivity extends AppCompatActivity {
                 //inserire il conto giusto
                 System.out.println("Chiudi");
                 contoPresenter.update(contoPresenter.getPosizione_conto());
+                utentePresenter.goSupervisoreConto(supervisoreContoActivity);
             }
         });
     }
