@@ -23,6 +23,7 @@ import java.util.List;
 
 public class PiattoPresenter {
     private static PiattoPresenter piattoPresenter = null;
+
     private ImplPiattoService implPiattoService;
     private Piatto piatto;
     private List<Piatto> piatti;

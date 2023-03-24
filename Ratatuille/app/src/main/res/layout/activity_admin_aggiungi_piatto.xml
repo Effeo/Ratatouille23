@@ -189,7 +189,7 @@
                 android:layout_width="300dp"
                 android:layout_height="70dp"
                 android:background="@color/white"
-                android:hint="Descrizione"
+                android:hint="Descrizione (lasciare vuoto per l'autocompletamento)"
                 android:textColor="@color/black" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -205,7 +205,7 @@
                 android:layout_width="300dp"
                 android:layout_height="70dp"
                 android:background="@color/white"
-                android:hint="Allergeni"
+                android:hint="Allergeni (lasciare vuoto per l'autocompletamento)"
                 android:textColor="@color/black" />
         </com.google.android.material.card.MaterialCardView>
 

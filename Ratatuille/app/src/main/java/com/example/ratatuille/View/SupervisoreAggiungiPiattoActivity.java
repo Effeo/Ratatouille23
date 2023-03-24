@@ -10,7 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.example.ratatuille.Presenter.OpenFoodPresenter;
 import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
@@ -19,6 +21,7 @@ public class SupervisoreAggiungiPiattoActivity extends AppCompatActivity {
 
     private UtentePresenter utentePresenter;
     private PiattoPresenter piattoPresenter;
+    private OpenFoodPresenter openFoodPresenter = OpenFoodPresenter.getInstance();
 
     private SupervisoreAggiungiPiattoActivity supervisoreAggiungiPiattoActivity;
 
@@ -61,6 +64,8 @@ public class SupervisoreAggiungiPiattoActivity extends AppCompatActivity {
 
         editPosizione.setInputType(InputType.TYPE_CLASS_NUMBER);
 
+        openFoodPresenter.setSupervisoreAggiungiPiattoActivity(this);
+
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +104,17 @@ public class SupervisoreAggiungiPiattoActivity extends AppCompatActivity {
         btnAggiungi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                piattoPresenter.create(supervisoreAggiungiPiattoActivity, utentePresenter.getUtente().getRuolo());
+                if(!editNome.getText().toString().equals("")){
+                    if(editDescrizione.getText().toString().equals("") || editAllergeni.getText().toString().equals(""))
+                        if(editDescrizione.getText().toString().equals(""))
+                            openFoodPresenter.getDescrizione(editNome.getText().toString(), utentePresenter.getUtente().getRuolo());
+                        if(editAllergeni.getText().toString().equals(""))
+                            openFoodPresenter.getAllergeni(editNome.getText().toString(), utentePresenter.getUtente().getRuolo());
+                    else
+                        piattoPresenter.create(supervisoreAggiungiPiattoActivity, utentePresenter.getUtente().getRuolo());
+                }
+                else
+                    Toast.makeText(supervisoreAggiungiPiattoActivity, "Inserire un nome", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -117,5 +132,13 @@ public class SupervisoreAggiungiPiattoActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
+    }
+
+    public void setDescrizione(){
+        editDescrizione.setText(openFoodPresenter.getDescrizione());
+    }
+
+    public void setAllergeni(){
+        editAllergeni.setText(openFoodPresenter.getAllergeni());
     }
 }
