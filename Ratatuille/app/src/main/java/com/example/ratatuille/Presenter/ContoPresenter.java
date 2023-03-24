@@ -154,4 +154,6 @@ public class ContoPresenter {
 
 
     public void setOrdini_piatti (List<Ordine_piatto> ordini_piatti){this.ordini_piatti = ordini_piatti;}
+
+
 }

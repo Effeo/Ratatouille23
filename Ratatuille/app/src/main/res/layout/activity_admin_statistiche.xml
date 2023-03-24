@@ -232,6 +232,15 @@
                 android:textStyle="bold" />
         </com.google.android.material.card.MaterialCardView>
 
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/mostra_grafica_statistiche"
+            android:layout_width="949dp"
+            android:layout_height="250dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="300dp">
+
+        </com.github.mikephil.charting.charts.BarChart>
+
 
     </androidx.cardview.widget.CardView>
 
