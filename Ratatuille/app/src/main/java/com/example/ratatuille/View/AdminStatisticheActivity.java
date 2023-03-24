@@ -3,6 +3,7 @@ package com.example.ratatuille.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -15,11 +16,20 @@ import android.widget.Toast;
 import com.example.ratatuille.Presenter.ContoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.DefaultValueFormatter;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class AdminStatisticheActivity extends AppCompatActivity {
@@ -48,6 +58,14 @@ public class AdminStatisticheActivity extends AppCompatActivity {
     public String mese_fine;
     public String giorno_fine;
 
+    public BarChart barChart;
+
+    private ArrayList<BarEntry> barArraylist;
+
+
+    private BarDataSet barDataSet;
+    private BarData barData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +93,8 @@ public class AdminStatisticheActivity extends AppCompatActivity {
         spinnerAnnoFine = (Spinner) findViewById(R.id.spinner_anno_di_fine);
         spinnerMeseFine = (Spinner) findViewById(R.id.spinner_mese_di_fine);
         spinnerGiornoFine = (Spinner) findViewById(R.id.spinner_giorno_di_fine);
+
+        barChart = (BarChart) findViewById(R.id.mostra_grafica_statistiche);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.anni_inizio, android.R.layout.simple_spinner_item);
@@ -108,6 +128,8 @@ public class AdminStatisticheActivity extends AppCompatActivity {
 
         adminStatisticheActivity = this;
         contoPresenter.setAdminStatisticheActivity(this);
+
+        this.barArraylist = new ArrayList<BarEntry>();
 
         btn_admin_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -257,18 +279,100 @@ public class AdminStatisticheActivity extends AppCompatActivity {
         DecimalFormat df = new DecimalFormat("#####.##");
         df.setRoundingMode(RoundingMode.DOWN);
 
+        contoPresenter.setDate(new ArrayList<>());
+        contoPresenter.setGuadagni(new ArrayList<>());
+
         for(int i = 0; i < contoPresenter.getConti().size(); i++){
             tot += contoPresenter.getConti().get(i).getCosto();
 
-            System.out.println(contoPresenter.getConti().get(i).getData());
+            if(!isPresenteData(contoPresenter.getConti().get(i).getData()))
+                contoPresenter.getDate().add(contoPresenter.getConti().get(i).getData());
         }
+
+        setGuadagni();
 
         incasso_medio = tot / contoPresenter.getConti().size();
 
         String totale = "Totale: " + df.format(tot) + "€";
         String incasso_medioString = "Incasso medio: " + df.format(incasso_medio) + "€";
 
+        for(int i = 0; i < contoPresenter.getDate().size(); i++)
+            System.out.println(contoPresenter.getDate().get(i));
+
+        for(int i = 0; i < contoPresenter.getGuadagni().size(); i++)
+            System.out.println(contoPresenter.getGuadagni().get(i));
+
         textIncassoComplessivo.setText(totale);
         textIncassoMedio.setText(incasso_medioString);
+
+        makeChart();
+
+    }
+
+    private boolean isPresenteData(String data){
+        boolean trovato = false;
+        int i = 0;
+
+        while(i < contoPresenter.getDate().size() && !trovato){
+            if(contoPresenter.getDate().get(i).equals(data))
+                trovato = true;
+
+            i++;
+        }
+
+        return trovato;
+    }
+
+    private void setGuadagni(){
+        float tot = 0;
+        DecimalFormat df = new DecimalFormat("#####.##");
+        df.setRoundingMode(RoundingMode.DOWN);
+
+        for(String data : contoPresenter.getDate()){
+            for(int i = 0; i < contoPresenter.getConti().size(); i++){
+                if(contoPresenter.getConti().get(i).getData().equals(data))
+                    tot += contoPresenter.getConti().get(i).getCosto();
+            }
+
+            contoPresenter.getGuadagni().add(Float.valueOf(df.format(tot)));
+            tot = 0;
+        }
+    }
+
+    public void makeChart() {
+        barArraylist.clear();
+
+        for(int i=0; i < contoPresenter.getGuadagni().size(); i++)
+            barArraylist.add(new BarEntry(i, contoPresenter.getGuadagni().get(i), contoPresenter.getGuadagni().get(i)));
+
+        barDataSet = new BarDataSet(barArraylist, "");
+        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        barDataSet.setValueTextColor(Color.BLACK);
+        barDataSet.setValueTextSize(20f);
+        barDataSet.setValueFormatter(new DefaultValueFormatter(0));
+
+        barData = new BarData(barDataSet);
+        barChart.setFitBars(true);
+        barChart.setData(barData);
+        barChart.animateY(2000);
+        barChart.animateY(2000);
+        barChart.getDescription().setText("");
+
+        barChart.setDragEnabled(true);
+        barChart.setVisibleXRangeMaximum(2);
+
+        XAxis xAxis = barChart.getXAxis();
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(contoPresenter.getDate()));
+        xAxis.setCenterAxisLabels(false);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setGranularity(1);
+        xAxis.setGranularityEnabled(true);
+        xAxis.setDrawGridLines(false);
+
+        barDataSet.notifyDataSetChanged();
+        barData.notifyDataChanged();
+        barChart.notifyDataSetChanged();
+        barChart.invalidate();
+
     }
 }

@@ -33,6 +33,25 @@ public class ContoPresenter {
 
     private int posizione_conto;
 
+    private List<String> date;
+    private List<Float> guadagni;
+
+    public List<Float> getGuadagni() {
+        return guadagni;
+    }
+
+    public void setGuadagni(List<Float> guadagni) {
+        this.guadagni = guadagni;
+    }
+
+    public List<String> getDate() {
+        return date;
+    }
+
+    public void setDate(List<String> date) {
+        this.date = date;
+    }
+
     public void setAdminStatisticheActivity(AdminStatisticheActivity adminStatisticheActivity) {
         this.adminStatisticheActivity = adminStatisticheActivity;
     }
