@@ -27,6 +27,8 @@ Manutenzione - Il sistema deve essere di facile manutenzione e aggiornamento.
 
 Portabilità - Il sistema deve essere in grado di funzionare su piattaforme diverse con modifiche minime.
 
+Stakeholders - Tutti i soggetti coinvolti nello sviluppo del software.
+
 Design Pattern - è una soluzione progettuale generale ad un problema ricorrente.
 
 Use Case Diagram - rappresenta una funzione o servizio offerto dal sistema a uno o più attori.
