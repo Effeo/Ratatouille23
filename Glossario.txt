@@ -29,6 +29,8 @@ Portabilità - Il sistema deve essere in grado di funzionare su piattaforme dive
 
 Stakeholders - Tutti i soggetti coinvolti nello sviluppo del software.
 
+Personas - Sono dei personaggi immaginari creati sulla base di una ricerca condotta su utenti reali allo scopo di identificare gli utenti-tipo di un prodotto/servizio.
+
 Design Pattern - è una soluzione progettuale generale ad un problema ricorrente.
 
 Use Case Diagram - rappresenta una funzione o servizio offerto dal sistema a uno o più attori.
