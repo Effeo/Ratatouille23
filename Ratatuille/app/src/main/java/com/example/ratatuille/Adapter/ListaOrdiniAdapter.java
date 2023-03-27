@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ratatuille.Model.Ordine;
 import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
 import com.example.ratatuille.R;
@@ -26,6 +27,7 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
     private Context context;
     private Ordine_piattoPresenter ordine_piattoPresenter;
     private RecyclerView recyclerView_c;
+
 
     public ListaOrdiniAdapter(Context context, List<Ordine_piatto> ordine_piatti, RecyclerView recyclerView_c){
         this.context = context;
@@ -42,19 +44,6 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ListaOrdiniHolder holder, int position) {
-        System.out.println("@@@@@@@@ CLICCATO @@@@@@@@@");
-
-        if(holder.cardView != null){
-            if(ordine_piatti.get(holder.getAdapterPosition()).isClicked()){
-                System.out.println("@@@@@@@@ CLICCATO @@@@@@@@@");
-            }
-            else{
-                holder.id_del_tavolo.setTextColor(ColorStateList.valueOf(Color.parseColor("#ffffff")));
-                System.out.println("@@@@@@@@ NON CLICCATO @@@@@@@@@");
-
-            }
-        }
-
 
         int currentTableId = ordine_piatti.get(position).getOrdine().getIdTavolo();
 
@@ -63,8 +52,6 @@ public class ListaOrdiniAdapter extends RecyclerView.Adapter<ListaOrdiniAdapter.
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
 
                 ArrayList<String> listapiattiordinati = new ArrayList<>();
                 ArrayList<Integer> listapiattiquantita = new ArrayList<>();
