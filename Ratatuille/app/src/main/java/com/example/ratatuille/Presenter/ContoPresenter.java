@@ -163,6 +163,10 @@ public class ContoPresenter {
         this.cameriereAggiungiTavoloActivity = cameriereAggiungiTavoloActivity;
     }
 
+    public boolean checkBisestile(int anno){
+        return (anno % 4 == 0 && anno % 100 != 0) || (anno % 400 == 0);
+    }
+
     public List<Conto> getConti() {
         return conti;
     }

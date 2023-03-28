@@ -317,4 +317,21 @@ public class UtentePresenter {
     public List<Utente> getUtenti() {
         return utenti;
     }
+
+    public boolean check30(boolean flag2, String mese_inizio, String giorno_inizio, String mese_fine, String giorno_fine){
+        boolean flag = true;
+
+        if(flag2){
+            if(mese_inizio.equals("11") || mese_inizio.equals("04") || mese_inizio.equals("06") || mese_inizio.equals("09")) {
+                if(giorno_inizio.equals("31")) flag = false;
+            }
+        }
+        else{
+            if(mese_fine.equals("11") || mese_fine.equals("04") || mese_fine.equals("06") || mese_fine.equals("09")) {
+                if(giorno_fine.equals("31")) flag = false;
+            }
+        }
+
+        return flag;
+    }
 }
