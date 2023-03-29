@@ -14,6 +14,7 @@ import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
 
@@ -26,10 +27,19 @@ public class CameriereComandaActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TextView textView_mostra_conto;
 
+    private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cameriere_comanda);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "CameriereComanda");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "CameriereComandaActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         Button torna_indietro = (Button) findViewById(R.id.btn_torna_indietro);
 

@@ -13,6 +13,7 @@ import com.example.ratatuille.Adapter.CategoriaAdapter;
 import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
 
@@ -23,10 +24,19 @@ public class CameriereOrdinazioniActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView recyclerView_1;
 
+    private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cameriere_ordinazioni);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "CameriereOrdinazioni");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "CameriereOrdinazioniActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         ImageButton logout = (ImageButton) findViewById(R.id.cameriere_logout);
         ImageButton aggiungi_tavolo = (ImageButton) findViewById(R.id.cameriere_aggiungi_tavolo);

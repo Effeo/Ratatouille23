@@ -12,6 +12,7 @@ import android.widget.Spinner;
 
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class AdminCreaUtenteActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
@@ -20,10 +21,19 @@ public class AdminCreaUtenteActivity extends AppCompatActivity {
     public EditText editPassword;
     public Spinner spinnerRuoli;
 
+    private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_crea_utente);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "AdminCreaUtente");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "AdminCreaUtenteActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         utentePresenter = UtentePresenter.getInstance();
 

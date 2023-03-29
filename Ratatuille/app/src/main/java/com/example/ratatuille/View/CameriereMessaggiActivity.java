@@ -15,6 +15,7 @@ import com.example.ratatuille.Model.Messaggio_utente;
 import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.List;
 
@@ -26,10 +27,19 @@ public class CameriereMessaggiActivity extends AppCompatActivity {
     private TextView visualizza_messaggio;
     private Button btn_visualizza;
 
+    private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cameriere_messaggi);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "CameriereMessaggi");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "CameriereMessaggiActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         ImageButton logout = (ImageButton) findViewById(R.id.cameriere_logout);
         ImageButton aggiungi_tavolo = (ImageButton) findViewById(R.id.cameriere_aggiungi_tavolo);
