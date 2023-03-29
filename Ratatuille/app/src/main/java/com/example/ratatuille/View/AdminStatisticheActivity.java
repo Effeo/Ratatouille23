@@ -218,7 +218,7 @@ public class AdminStatisticheActivity extends AppCompatActivity {
             Date dataFine = dateFormat.parse(anno_fine + "-" + mese_fine + "-" + giorno_fine);
 
             if(dataInizio.before(dataFine) || dataInizio.equals(dataFine)){
-                if(checkNovembre(1) && checkNovembre(0) && checkFebbraio(1) && checkFebbraio(0)){
+                if(check30(1) && check30(0) && checkFebbraio(1) && checkFebbraio(0)){
                     flag = true;
                 }
             }
@@ -230,7 +230,7 @@ public class AdminStatisticheActivity extends AppCompatActivity {
         return flag;
     }
 
-    public boolean checkNovembre(int i){
+    public boolean check30(int i){
         boolean flag = true;
 
         if(i == 1){

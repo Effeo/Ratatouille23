@@ -1,5 +1,9 @@
 package com.example.ratatuille.Presenter;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import com.example.ratatuille.Model.Ordine;
 import com.example.ratatuille.Service.Callback;
 import com.example.ratatuille.Service.Implementation.ImplOrdineService;
@@ -41,6 +45,7 @@ public class OrdinePresenter {
 
     public void getGreatest(){
         implOrdineService.getGreatest(new Callback() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void returnResult(Object o) {
                 ordine = (Ordine) o;
