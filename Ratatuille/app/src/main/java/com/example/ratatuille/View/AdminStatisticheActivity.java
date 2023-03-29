@@ -62,7 +62,6 @@ public class AdminStatisticheActivity extends AppCompatActivity {
 
     private ArrayList<BarEntry> barArraylist;
 
-
     private BarDataSet barDataSet;
     private BarData barData;
 

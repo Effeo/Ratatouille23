@@ -19,6 +19,7 @@ public class Messaggio_utentePresenter {
     private CuocoMessaggiActivity cuocoMessaggiActivity;
     private CameriereMessaggiActivity cameriereMessaggiActivity;
     private SupervisoreLeggeMessaggiActivity supervisoreLeggeMessaggiActivity;
+    private SupervisoreScriviMessaggioActivity supervisoreScriviMessaggioActivity;
 
     private int posizione_messaggio_letto;
 
@@ -33,8 +34,6 @@ public class Messaggio_utentePresenter {
     public void setSupervisoreScriviMessaggioActivity(SupervisoreScriviMessaggioActivity supervisoreScriviMessaggioActivity) {
         this.supervisoreScriviMessaggioActivity = supervisoreScriviMessaggioActivity;
     }
-
-    private SupervisoreScriviMessaggioActivity supervisoreScriviMessaggioActivity;
 
     public void setCuocoMessaggiActivity(CuocoMessaggiActivity cuocoMessaggiActivity) {
         this.cuocoMessaggiActivity = cuocoMessaggiActivity;

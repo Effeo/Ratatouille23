@@ -105,11 +105,12 @@ public class SupervisoreAggiungiPiattoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!editNome.getText().toString().equals("")){
-                    if(editDescrizione.getText().toString().equals("") || editAllergeni.getText().toString().equals(""))
+                    if(editDescrizione.getText().toString().equals("") || editAllergeni.getText().toString().equals("")){
                         if(editDescrizione.getText().toString().equals(""))
                             openFoodPresenter.getDescrizione(editNome.getText().toString(), utentePresenter.getUtente().getRuolo());
                         if(editAllergeni.getText().toString().equals(""))
                             openFoodPresenter.getAllergeni(editNome.getText().toString(), utentePresenter.getUtente().getRuolo());
+                    }
                     else
                         piattoPresenter.create(supervisoreAggiungiPiattoActivity, utentePresenter.getUtente().getRuolo());
                 }
