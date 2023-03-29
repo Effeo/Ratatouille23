@@ -37,7 +37,7 @@ Per le attività sopracitate, il Committente richiede i seguenti output:
 2. Documento di Design del sistema.
   - -[ ] a Analisi dell’architettura con esplicita definizione dei criteri di design.
   - -[x] b Descrizione/motivazione delle scelte tecnologiche adottate.
-  - -[ ] c Diagramma delle classi di design.
+  - -[x] c Diagramma delle classi di design.
   - -[ ] d Diagrammi di sequenza di design per i casi d’uso identificati al punto 1.a.iii.
 
 3. Codice Sorgente sviluppato, comprensivo di eventuale Dockerfile.
