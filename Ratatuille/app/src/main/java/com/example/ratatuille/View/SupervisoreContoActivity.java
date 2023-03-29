@@ -24,6 +24,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -39,10 +40,19 @@ public class SupervisoreContoActivity extends AppCompatActivity {
     private RecyclerView recyclerView_tavoli;
     private RecyclerView recyclerView_conti;
 
+    private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supervisore_conto);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "SupervisoreConto");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "SupervisoreContoActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         utentePresenter = UtentePresenter.getInstance();
         contoPresenter = ContoPresenter.getInstance();

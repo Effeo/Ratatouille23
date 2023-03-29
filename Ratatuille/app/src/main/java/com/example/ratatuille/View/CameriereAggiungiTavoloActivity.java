@@ -17,6 +17,7 @@ import com.example.ratatuille.Presenter.Ordine_piattoPresenter;
 import com.example.ratatuille.Presenter.TavoloPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class CameriereAggiungiTavoloActivity extends AppCompatActivity {
     private CameriereAggiungiTavoloActivity cameriereAggiungiTavoloActivity;
@@ -30,10 +31,19 @@ public class CameriereAggiungiTavoloActivity extends AppCompatActivity {
     private EditText editTavolo;
     private int id_tavolo;
 
+    private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cameriere_aggiungi_tavolo);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "CameriereAggiungiTavolo");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "CameriereAggiungiTavoloActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         Button conferma = (Button) findViewById(R.id.button_conferma);
         Button torna_indietro = (Button) findViewById(R.id.btn_torna_indietro);

@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
@@ -27,10 +28,19 @@ public class SupervisoreModificaEliminaMenuActivity extends AppCompatActivity {
     public EditText editAllergeni;
     public EditText editPosizione;
 
+    private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supervisore_modifica_elimina_menu);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "SupervisoreModificaEliminaMenu");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "SupervisoreModificaEliminaMenuActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         utentePresenter = UtentePresenter.getInstance();
         piattoPresenter = PiattoPresenter.getInstance();

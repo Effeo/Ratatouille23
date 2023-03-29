@@ -16,12 +16,14 @@ import com.example.ratatuille.Adapter.VisualizzaNomiAdapter;
 import com.example.ratatuille.Model.Utente;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.List;
 
 public class AdminCambiaPasswordUtenteActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private AdminCambiaPasswordUtenteActivity adminCambiaPasswordUtenteActivity;
+    private FirebaseAnalytics firebaseAnalytics;
 
     public EditText editPassword;
     public EditText editConfermaPassword;
@@ -32,6 +34,13 @@ public class AdminCambiaPasswordUtenteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_cambia_password_utente);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "AdminCambiaPasswordUtente");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "AdminCambiaPAsswordUtenteActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         utentePresenter = UtentePresenter.getInstance();
 

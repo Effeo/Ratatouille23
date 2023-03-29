@@ -16,6 +16,7 @@ import com.example.ratatuille.Presenter.OpenFoodPresenter;
 import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class AdminAggiungiPiattoActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
@@ -24,7 +25,7 @@ public class AdminAggiungiPiattoActivity extends AppCompatActivity {
 
     private AdminAggiungiPiattoActivity adminAggiungiPiattoActivity;
 
-    //private FirebaseAnalitics firebaseAnalitics;
+    private FirebaseAnalytics firebaseAnalytics;
 
     public EditText editNome;
     public EditText editCosto;
@@ -37,6 +38,13 @@ public class AdminAggiungiPiattoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_aggiungi_piatto);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "AdminAggiungiPiatto");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "AdminAggiungiPiattoActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         utentePresenter = UtentePresenter.getInstance();
         piattoPresenter = PiattoPresenter.getInstance();

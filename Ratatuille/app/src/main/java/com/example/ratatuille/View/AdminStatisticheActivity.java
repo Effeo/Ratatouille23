@@ -24,6 +24,7 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.DefaultValueFormatter;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -37,6 +38,8 @@ public class AdminStatisticheActivity extends AppCompatActivity {
     private ContoPresenter contoPresenter = ContoPresenter.getInstance();
 
     private AdminStatisticheActivity adminStatisticheActivity;
+
+    private FirebaseAnalytics firebaseAnalytics;
 
     public TextView textIncassoMedio;
     public TextView textValoreMedioConto;
@@ -72,6 +75,13 @@ public class AdminStatisticheActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_statistiche);
 
         utentePresenter = UtentePresenter.getInstance();
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "AdminStatistiche");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "AdminStatisticheActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         ImageButton btn_admin_logout = (ImageButton)  findViewById(R.id.admin_logout);
         ImageButton btn_admin_aggiungi_piatto = (ImageButton) findViewById(R.id.admin_aggiungi_piatto);

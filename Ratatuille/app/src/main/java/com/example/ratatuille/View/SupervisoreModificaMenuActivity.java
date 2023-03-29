@@ -13,6 +13,7 @@ import com.example.ratatuille.Adapter.CategoriePerModificareAdapter;
 import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
 
@@ -23,10 +24,19 @@ public class SupervisoreModificaMenuActivity extends AppCompatActivity {
     private RecyclerView recyclerView_categorie;
     private RecyclerView recyclerView_piatti;
 
+    private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supervisore_modifica_menu);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "SupervisoreModificaMenu");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "SupervisoreModificaMenuActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         utentePresenter = UtentePresenter.getInstance();
         piattoPresenter = PiattoPresenter.getInstance();

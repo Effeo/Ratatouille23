@@ -10,10 +10,13 @@ import android.widget.Toast;
 
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class CambioPasswordActivity extends AppCompatActivity {
     private UtentePresenter utentePresenter;
     private CambioPasswordActivity cambioPasswordActivity;
+
+    private FirebaseAnalytics firebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,13 @@ public class CambioPasswordActivity extends AppCompatActivity {
 
         EditText edit_nuova_password = (EditText) findViewById(R.id.nuova_password);
         EditText edit_conferma_password = (EditText) findViewById(R.id.conferma_password);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "CambioPassword");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "CambioPasswordActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         Button continua = (Button) findViewById(R.id.button_continua);
 

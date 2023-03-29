@@ -17,6 +17,7 @@ import com.example.ratatuille.Model.Messaggio_utente;
 import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.List;
 
@@ -28,10 +29,19 @@ public class SupervisoreLeggeMessaggiActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TextView visualizza_messaggio;
 
+    private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supervisore_legge_messaggi);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "SupervisoreLeggeMessaggi");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "SupervisoreLeggeMessaggiActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         recyclerView = findViewById(R.id.supervisore_lista_messaggi);
         visualizza_messaggio = findViewById(R.id.textView_mex_sup);

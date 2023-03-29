@@ -16,6 +16,7 @@ import com.example.ratatuille.Presenter.OpenFoodPresenter;
 import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class SupervisoreAggiungiPiattoActivity extends AppCompatActivity {
 
@@ -32,10 +33,19 @@ public class SupervisoreAggiungiPiattoActivity extends AppCompatActivity {
     public Spinner spinnerCategoria;
     public EditText editPosizione;
 
+    private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supervisore_aggiungi_piatto);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "SupervisoreAggiungiPiatto");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "SupervisoreAggiungiPiattoActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         utentePresenter = UtentePresenter.getInstance();
         piattoPresenter = PiattoPresenter.getInstance();

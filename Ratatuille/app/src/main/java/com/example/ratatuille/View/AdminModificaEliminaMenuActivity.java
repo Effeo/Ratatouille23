@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import com.example.ratatuille.Presenter.PiattoPresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,8 @@ public class AdminModificaEliminaMenuActivity extends AppCompatActivity {
     private PiattoPresenter piattoPresenter = PiattoPresenter.getInstance();
 
     private AdminModificaEliminaMenuActivity adminModificaEliminaMenuActivity;
+
+    private FirebaseAnalytics firebaseAnalytics;
 
     public EditText editNome;
     public EditText editDescrizione;
@@ -33,6 +36,13 @@ public class AdminModificaEliminaMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_modifica_elimina_menu);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "AdminModificaEliminaMenu");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "AdminModificaEliminaMenuActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         utentePresenter = UtentePresenter.getInstance();
 

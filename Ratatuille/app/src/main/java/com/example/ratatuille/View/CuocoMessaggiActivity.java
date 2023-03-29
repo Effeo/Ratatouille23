@@ -19,6 +19,7 @@ import com.example.ratatuille.Model.Ordine_piatto;
 import com.example.ratatuille.Presenter.Messaggio_utentePresenter;
 import com.example.ratatuille.Presenter.UtentePresenter;
 import com.example.ratatuille.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +32,19 @@ public class CuocoMessaggiActivity extends AppCompatActivity {
     private TextView visualizza_messaggio;
     private Button btn_visualizza;
 
+    private FirebaseAnalytics firebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuoco_messaggi);
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "CuocoMessaggi");
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "CuocoMessaggiActivity");
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+        firebaseAnalytics.setAnalyticsCollectionEnabled(true);
 
         ImageButton logout = (ImageButton) findViewById(R.id.cuoco_logout);
         ImageButton messaggi = (ImageButton) findViewById(R.id.cuoco_messaggi);
