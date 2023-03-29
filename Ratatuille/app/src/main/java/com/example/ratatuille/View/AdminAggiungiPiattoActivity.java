@@ -24,6 +24,8 @@ public class AdminAggiungiPiattoActivity extends AppCompatActivity {
 
     private AdminAggiungiPiattoActivity adminAggiungiPiattoActivity;
 
+    //private FirebaseAnalitics firebaseAnalitics;
+
     public EditText editNome;
     public EditText editCosto;
     public EditText editDescrizione;
@@ -154,4 +156,7 @@ public class AdminAggiungiPiattoActivity extends AppCompatActivity {
     public void setAllergeni(){
         editAllergeni.setText(openFoodPresenter.getAllergeni());
     }
+
+
+
 }

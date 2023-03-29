@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "402141988322",
+    "project_id": "ratatuille2023-7503e",
+    "storage_bucket": "ratatuille2023-7503e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402141988322:android:84d99840d6c3a8d9c3a5bb",
+        "android_client_info": {
+          "package_name": "com.example.ratatuille"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402141988322-1uiladudhjsavom8hj7ha8j0macpl3g9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAZcurIwFR6O5iFzcdTOfAHqYOYZ7jqIQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402141988322-1uiladudhjsavom8hj7ha8j0macpl3g9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
