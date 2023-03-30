@@ -26,7 +26,7 @@ Per le attività sopracitate, il Committente richiede i seguenti output:
     - -[x] iv Prototipazione visuale via Mock-up dell’interfaccia utente per tutti i casi d’uso
       assegnati. Si raccomanda caldamente l’uso del tool “Figma”.
     - -[x] v Valutazione dell’usabilità a priori. (solo gruppi “Nuovo Ordinamento”)
-    - -[ ] vi Glossario.
+    - -[x] vi Glossario.
   - b Specifica dei Requisiti.
     - -[x] i Classi, oggetti e relazioni di analisi.
     - -[x] ii Diagrammi di sequenza di analisi per due casi d’uso significativi a scelta dei
