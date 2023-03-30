@@ -38,12 +38,12 @@ Per le attività sopracitate, il Committente richiede i seguenti output:
   - -[ ] a Analisi dell’architettura con esplicita definizione dei criteri di design.
   - -[x] b Descrizione/motivazione delle scelte tecnologiche adottate.
   - -[x] c Diagramma delle classi di design.
-  - -[ ] d Diagrammi di sequenza di design per i casi d’uso identificati al punto 1.a.iii.
+  - -[x] d Diagrammi di sequenza di design per i casi d’uso identificati al punto 1.a.iii.
 
 3. Codice Sorgente sviluppato, comprensivo di eventuale Dockerfile.
 
 4. Testing e valutazione sul campo dell’usabilità.
-  - -[ ] a Codice xUnit per unit testing di quattro (due, se si consegna prima del 31/03/2023) metodi
+  - -[x] a Codice xUnit per unit testing di quattro (due, se si consegna prima del 31/03/2023) metodi
     non banali, che abbiano almeno due parametri. In aggiunta al codice, una apposita sezione
     della documentazione deve descrivere le strategie adottate per la progettazione dei test dei
     due metodi (e.g.: classi di equivalenza individuate e coperte, criteri di copertura strutturale,
