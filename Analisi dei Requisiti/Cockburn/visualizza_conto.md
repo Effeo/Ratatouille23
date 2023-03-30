@@ -1,4 +1,4 @@
-| Colonna 1 | Colonna 2 |
+
 | --------- | --------- |
 | Use case visualizza conto | Visualizzazione e chiusura del conto  di un tavolo in PDF |
 | Goal in Context           | Un supervisore vuole visualizzare il conto di un tavolo oppure vuole chiudere un conto |
