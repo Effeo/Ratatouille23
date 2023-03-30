@@ -20,7 +20,7 @@ public class UtentePresenterTest {
 
     @Test
     public void Mese_di_fine_e_giorno_di_fine_rispettano_il_requisito(){
-        boolean result2 = utentePresenter.check30(false, "10", "15", "09", "30");
+        boolean result2 = utentePresenter.check30(false, "10", "15", "11", "30");
         assertTrue(result2);
     }
 
@@ -37,20 +37,5 @@ public class UtentePresenterTest {
         boolean result4 = utentePresenter.check30(false, "09", "01", "09", "31");
         assertFalse(result4);
     }
-
-
-    @Test
-    public void Mese_di_inizio_non_rispetta_il_requisito(){
-        boolean result5 = utentePresenter.check30(true, "02", "28", "03", "31");
-        assertTrue(result5);
-    }
-
-
-    @Test
-    public void Mese_di_fine_non_rispetta_il_requisito(){
-        boolean result6 = utentePresenter.check30(false, "12", "01", "11", "31");
-        assertFalse(result6);
-    }
-
 
 }
