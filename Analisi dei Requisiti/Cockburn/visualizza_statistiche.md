@@ -1,5 +1,5 @@
-| Colonna 1 | Colonna 2 |
-| --------- | --------- |
+| Caratteristiche | Descrizione |
+| --------------- | ----------- |
 | Use case visualizza statistiche | Visualizzazione delle statistiche di vendita |
 | Goal in Context | L'amministratore vuole visualizzare le statistiche di vendità del ristorante |
 | Preconditions   | L'amministratore si trova nell'interfaccia di visualizzazione statistiche |
