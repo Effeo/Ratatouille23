@@ -1,19 +1,5 @@
 # Ratatouille23
 
-## COSE DA FARE
-- (M/F) Cambiare i collegamenti del logout dei mockupIII
-- Migliorare individuazione utente (Penso che sia risolto).
-- (M/F) (Per il futuro) Aggiungere eventuali nuovi termini che compariranno.
-- Aggiungere i Toast
-- Pensare come migliorare (e se farlo) la posizione dei piatti
-- Vedere come integrare open food facts
-- (F) Migliorare la grafica di latex se da eventuali problema
-
-## Domande per Starace/SDM
-- L'amministratore deve poter visualizzare i messaggi che invia il supervisore?* 
-- Uno step che può capitare in un qualsiasi momento, come si segna?
-- Check se sono giusti gli step
-
 ## Output
 Per le attività sopracitate, il Committente richiede i seguenti output:
 1. Documento dei Requisiti Software
